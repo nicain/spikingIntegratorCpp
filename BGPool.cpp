@@ -42,7 +42,7 @@ void BGPool::propogate()
 			}
 			else 
 			{
-				numSpikesInCorrPool = (*binomRnd)();				
+				numSpikesInCorrPool = (*binomRnd)();
 				for (i=0; i<numSpikesInCorrPool; i++) 
 				{						
 					// Generate the spike:
@@ -120,6 +120,8 @@ BGPool::BGPool (string poolName_in,
 	poolName = poolName_in;
 	
 	// Setting primitives:
+	tOn = tOn_in;
+	tOff = tOff_in;
 	tau_AMPA_Inv_times_dt = 1/tau_AMPA*dt;
 	FR = FR_in;
 	recordSpikes = recordSpikes_in;

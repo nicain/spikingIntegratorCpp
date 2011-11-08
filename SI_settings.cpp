@@ -15,6 +15,8 @@ namespace SI {
 	float t = 0;
 	bool recordBGSpikes = true;
 	bool recordInputSpikes = true;
+	bool recordSel1Spikes = true;
+	bool recordNSel1Spikes = true;
 	
 	// Network dimension settings:
 	int NN = 2000;

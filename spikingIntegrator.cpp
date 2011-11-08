@@ -13,6 +13,7 @@
 #include "SI_functions.h"
 #include "SI_settings.h"
 #include "BGPool.h"
+#include "ExPool.h"
 
 // Add variable names to scope:
 using namespace std;
@@ -23,7 +24,6 @@ using boost::uuids::uuid;
 
 int main(int argc, char** argv)
 {
-
 	//========================================================================//
 	//======================== Initializations ===============================//
 	//========================================================================//
@@ -75,6 +75,35 @@ int main(int argc, char** argv)
 	BGPool InputSel1("InputSel1", InputPoolSize, NSel, InputPoolFRSel1, inputCorrelation, recordInputSpikes, tOn, tOff);
 	BGPool InputSel2("InputSel2", InputPoolSize, NSel, InputPoolFRSel2, inputCorrelation, recordInputSpikes, tOn, tOff);
 	
+	// Create excitatory populations:
+	ExPool GESel1("GESel1", NSel, recordSel1Spikes);
+	ExPool GESel2("GESel2", NSel, recordSel1Spikes);
+	ExPool GENSel("GENSel", NNSel, recordNSel1Spikes);
+	
+	//========================================================================//
+	//=========================== Make Connections ===========================//
+	//========================================================================//
+	
+	// Connections to GESel1:
+//	GESel1.connectTo(&BGESel1);
+	GESel1.connectTo(&InputSel1);
+//	GESel1.connectTo(&GESel1, wPlus);
+//	GESel1.connectTo(&GESel2, wMinus);
+//	GESel1.connectTo(&GENSel, w);
+//	
+//	// Connections to GESel2:
+//	GESel2.connectTo(&BGESel2);
+//	GESel2.connectTo(&InputSel2);
+//	GESel2.connectTo(&GESel1, wMinus);
+//	GESel2.connectTo(&GESel2, wPlus);
+//	GESel2.connectTo(&GENSel, w);
+//	
+//	// Connections to GENSel:
+//	GENSel.connectTo(&BGENSel);
+//	GENSel.connectTo(&GESel1, w);
+//	GENSel.connectTo(&GESel2, w);
+//	GENSel.connectTo(&GENSel, w);
+	
 	//========================================================================//
 	//========================= Initialize Network ===========================//
 	//========================================================================//
@@ -109,22 +138,47 @@ int main(int argc, char** argv)
 		// Propogate input populations:
 		InputSel1.propogate();
 		InputSel2.propogate();
-
+		
+		// Propogate excitatory populations:
+		GESel1.propogate();
+//		GESel2.propogate();
+//		GENSel.propogate();
 
 
 
 
 		
-
+//	cout << (*GESel1.AMPA)[12] << "\t" << (*GESel2.AMPA)[0] << endl;
 		//Increment time:
-		cout << t << endl;
+//		cout << t << endl;
 
 		t += dt;
 	};
+
+//	cout << BGESel1.getFR() << endl;
+//	cout << BGESel2.getFR() << endl;
+//	cout << BGENSel.getFR() << endl;
+//	cout << BGI.getFR() << endl;
+//	
+//	cout << InputSel1.getFR() << endl;
+//	cout << InputSel2.getFR() << endl;
+//	
+//	cout << GESel1.getFR() << endl;
+	
+	for (int i=0; i<=(*GESel1.spikeRecord_n).size()-1; i++) {
+			cout << (*GESel1.spikeRecord_n)[i] << "\t" << (*GESel1.spikeRecord_t)[i] << endl;
+	}
+	
+	cout << (*GESel1.spikeRecord_n).size() << endl;
+//	cout << (*GESel2.spikeRecord_n)[12] << endl;
+//	cout << GENSel.getFR() << endl;
+	
 	return 0;
+
+
 }
 
-//	cout << InputSel1.getFR() << endl;
+
 //	cout << BGESel1.getFR() << endl;
 //	InputSel1.writeSpikes(UUID_string);
 

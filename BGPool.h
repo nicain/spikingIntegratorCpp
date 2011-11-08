@@ -33,6 +33,13 @@ private:
 	
 	float getInputCorrelation(float p, int N);
 	
+	binomial_distribution<> *binomDist;
+	exponential_distribution<float> *expDist;
+	uniform_real_distribution<float> *uniDist;
+	variate_generator<mt19937&,binomial_distribution<> > *binomRnd;
+	variate_generator<mt19937&,exponential_distribution<float> > *expRnd;
+	variate_generator<mt19937&,uniform_real_distribution<float> > *uniRnd;
+	
 public:
 	string poolName;
 	float masterTrain;
@@ -41,12 +48,7 @@ public:
 	int numberSubPools;
 	bool recordSpikes;
 	
-	binomial_distribution<> *binomDist;
-	exponential_distribution<float> *expDist;
-	uniform_real_distribution<float> *uniDist;
-	variate_generator<mt19937&,binomial_distribution<> > *binomRnd;
-	variate_generator<mt19937&,exponential_distribution<float> > *expRnd;
-	variate_generator<mt19937&,uniform_real_distribution<float> > *uniRnd;
+	//TODO: move some of this stuff to private
 	
 	valarray<float> *AMPA;
 	vector<int> *spikeRecord_n;
