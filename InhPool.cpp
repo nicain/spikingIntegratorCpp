@@ -8,7 +8,7 @@ using namespace boost::random;
 using namespace std;
 using namespace SI;
 
-ExPool::ExPool (string poolName_in,
+InhPool::InhPool(string poolName_in,
 				int totalNeurons_in,
 				bool recordSpikes_in) 
 {
@@ -20,12 +20,9 @@ ExPool::ExPool (string poolName_in,
 	uniRnd = new variate_generator<mt19937&,uniform_real_distribution<float> >(myRNG, *uniDist);
 
 	// Setting primitives:
-	tau_AMPA_Inv_times_dt = 1/tau_AMPA*dt;
-	tau_AMPA_rise_Inv_times_dt = 1/tau_AMPA_rise*dt;
-	one_minus_tau_NMDA_Inv_times_dt = 1-dt/tau_NMDA;
-	alpha_times_dt = alpha*dt;
-	dt_times_gL_E_over_cm_E = dt*gL_E/cm_E;
-	dt_over_cm_E = dt/cm_E;
+	dt_over_cm_I = dt/cm_I;
+	tau_GABA_Inv_times_dt = 1/tau_GABA*dt;
+	dt_times_gL_I_over_cm_I = dt*gL_I/cm_I;
 	recordSpikes = recordSpikes_in;
 	totalNeurons = totalNeurons_in;
 	
@@ -50,14 +47,12 @@ ExPool::ExPool (string poolName_in,
 	Inh_Inputs_GABA = new vector<float*>;
 	
 	// Initialize state vectors:
-	AMPA = new valarray<float>((float)0, totalNeurons);
-	NMDA = new valarray<float>((float)0, totalNeurons);
+	GABA = new valarray<float>((float)0, totalNeurons);
 	ISyn = new valarray<float>((float)0, totalNeurons);
 	V = new valarray<float>((float)0, totalNeurons);
-	X = new valarray<float>((float)0, totalNeurons);
 };
 
-ExPool::~ExPool () 
+InhPool::~InhPool () 
 {
 	delete uniRnd;
 	delete uniDist;
@@ -78,46 +73,42 @@ ExPool::~ExPool ()
 	delete Ex_Inputs_NMDA_w;
 	delete Inh_Inputs_GABA;
 	
-	delete AMPA;
-	delete NMDA;
+	delete GABA;
 	delete ISyn;
 	delete V;
-	delete X;
 };
 
-void ExPool::init()
+void InhPool::init()
 {
-	for (i=0; i<totalNeurons; i++) 
-	{
-		(*V)[i] = (*uniRnd)()*5-55;
-	};
+	for (i=0; i<totalNeurons; i++) {(*V)[i] = (*uniRnd)()*5-55;};
 	
-	AMPA_pooled = 0;
-	NMDA_pooled = 0;
+	GABA_pooled = 0;
 	
 };
 
-void ExPool::propogate() 
+void InhPool::propogate() 
 {
-
-	//	 Compute current coming into the cell:
+	// Compute current coming into the cell:
 	(*ISyn) = valarray<float>((float)0, totalNeurons);
 	(*VTmp) = ((*V) - VE * (*unitVector));
+
 	
 	// First, the background pools:
 	for (i = 0; i < (*BG_Inputs_AMPA).size(); i++)
 	{
-		(*ISyn) += gext_AMPA_E * (*VTmp) * (*((*BG_Inputs_AMPA)[i]));
+		(*ISyn) += gext_AMPA_I * (*VTmp) * (*((*BG_Inputs_AMPA)[i]));
 	}
+	
 
 	// Then, recurrent AMPA:
 	STmp = 0;
 	for (i = 0; i < (*Ex_Inputs_AMPA).size(); i++)
 	{
 		STmp += (*((*Ex_Inputs_AMPA)[i])) * ((*Ex_Inputs_AMPA_w)[i]);
-		
 	}
-	(*ISyn) += grec_AMPA_E * STmp * (*VTmp);
+	(*ISyn) += grec_AMPA_I * STmp * (*VTmp);
+	
+
 
 	// Next, recurrent NMDA:
 	(*VTmp) /= (*unitVector) + exp(K*(*V))/3.57;
@@ -126,7 +117,8 @@ void ExPool::propogate()
 	{
 		STmp += (*((*Ex_Inputs_NMDA)[i])) * ((*Ex_Inputs_NMDA_w)[i]);
 	}
-	(*ISyn) += gNMDA_E * STmp * (*VTmp);
+	(*ISyn) += gNMDA_I * STmp * (*VTmp);
+	
 
 	// Finally, recurrent GABA:
 	(*VTmp) = ((*V) - VI * (*unitVector));
@@ -135,17 +127,17 @@ void ExPool::propogate()
 	{
 		STmp += (*((*Inh_Inputs_GABA)[i]));
 	}
-	(*ISyn) += gGABA_E * STmp * (*VTmp);
+	(*ISyn) += gGABA_I * STmp * (*VTmp);
+	
 
 	// Update voltage:			
-	(*VTmp) = ((*V) - VMin * (*unitVector));	//TODO: optimize below:
-	(*V) -= dt_times_gL_E_over_cm_E * (*VTmp) + dt_over_cm_E*(*ISyn);
-	
+	(*VTmp) = ((*V) - VMin * (*unitVector));
+	(*V) -= dt_times_gL_I_over_cm_I * (*VTmp) + dt_over_cm_I*(*ISyn);
+
 	// Determine who spiked, and update state vars:
 	(*thresholdTest) = (*V) > VMax;
 	(*V)[(*thresholdTest)] = VReset;
-	(*AMPA)[(*thresholdTest)] += valarray<float>(1,(*thresholdTest).sum());
-	(*X)[(*thresholdTest)] += valarray<float>(1,(*thresholdTest).sum());
+	(*GABA)[(*thresholdTest)] += valarray<float>(1,(*thresholdTest).sum());
 	if (recordSpikes)
 	{
 		for (i = 0; i < totalNeurons; i++) 
@@ -153,45 +145,42 @@ void ExPool::propogate()
 			if ((*thresholdTest)[i]==true)
 			{
 				(*spikeRecord_n).push_back(i);
-				(*spikeRecord_t).push_back(t);				
+				(*spikeRecord_t).push_back(t);
 			}
 		}
 	}
-
+	
 	// Update state vars:
-	(*AMPA) -= tau_AMPA_Inv_times_dt*(*AMPA);
-	(*X) -= tau_AMPA_rise_Inv_times_dt*(*X);
-	(*NMDA) = one_minus_tau_NMDA_Inv_times_dt*(*NMDA) + alpha_times_dt*(*X)*(*unitVector - (*NMDA));
+	(*GABA) -= tau_GABA_Inv_times_dt*(*GABA);
 	
 	// Update state vars sums:
-	AMPA_pooled = (*AMPA).sum();
-	NMDA_pooled = (*NMDA).sum();
+	GABA_pooled = (*GABA).sum();
 }
 
-void ExPool::connectTo(BGPool *BGPool_in)
+void InhPool::connectTo(BGPool *BGPool_in)
 {
 	(*BG_Inputs_AMPA).push_back((*BGPool_in).AMPA_pooled);
 }
 
-void ExPool::connectTo(ExPool *ExPool_in, float wIn)
+void InhPool::connectTo(ExPool *ExPool_in, float wIn)
 {
-	(*Ex_Inputs_AMPA).push_back(&(*ExPool_in).AMPA_pooled);
+	(*Ex_Inputs_AMPA).push_back(&(* ExPool_in).AMPA_pooled);
 	(*Ex_Inputs_AMPA_w).push_back(wIn);
-	(*Ex_Inputs_NMDA).push_back(&(*ExPool_in).NMDA_pooled);
+	(*Ex_Inputs_NMDA).push_back(&(* ExPool_in).NMDA_pooled);
 	(*Ex_Inputs_NMDA_w).push_back(wIn);
 }
 
-void ExPool::connectTo(InhPool *InhPool_in)
+void InhPool::connectTo(InhPool *InhPool_in)
 {
 	(*Inh_Inputs_GABA).push_back(&(* InhPool_in).GABA_pooled);
 }
 
-float ExPool::getFR()
+float InhPool::getFR()
 {
 	return float((*spikeRecord_n).size())/(totalNeurons)/t*1000;
 }
 
-void ExPool::writeSpikes(string UUID_string)
+void InhPool::writeSpikes(string UUID_string)
 {
 	// Set up file:
 	string myUnderscore = "_";
@@ -210,17 +199,6 @@ void ExPool::writeSpikes(string UUID_string)
 	}
 	
 	myfile.close();
-	return;
-};
-
-void ExPool::listSpikes()
-{	
-	// List the spikes in "name-time format":
-	for (i = 1; i <= (*spikeRecord_t).size()-1; i++)
-	{
-		cout  << poolName << "_" << (*spikeRecord_n)[i] << "\t" << (*spikeRecord_t)[i] << endl;
-	}
-	
 	return;
 };
 

@@ -82,7 +82,7 @@ void BGPool::propogate()
 
 float BGPool::getFR()
 {
-	return float((*spikeRecord_n).size())/(totalNeurons);
+	return float((*spikeRecord_n).size())/(totalNeurons)/t*1000;
 }
 
 void BGPool::writeSpikes(string UUID_string)

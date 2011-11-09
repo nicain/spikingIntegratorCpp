@@ -1,5 +1,5 @@
-#ifndef EXPOOL_H
-#define EXPOOL_H
+#ifndef INHPOOL_H
+#define INHPOOL_H
 
 #include <valarray>
 #include <boost/random.hpp>
@@ -9,22 +9,19 @@ using boost::random::variate_generator;
 using boost::random::mt19937;
 
 class BGPool;
-class InhPool;
+class ExPool;
 
 using namespace std;
 
-class ExPool 
+class InhPool 
 {
 private:
 	int i;
 	
-	float tau_AMPA_Inv_times_dt;
-	float tau_AMPA_rise_Inv_times_dt;
-	float one_minus_tau_NMDA_Inv_times_dt;
-	float alpha_times_dt;
-	float dt_over_cm_E;
+	float tau_GABA_Inv_times_dt;
+	float dt_over_cm_I;
 	
-	float dt_times_gL_E_over_cm_E;
+	float dt_times_gL_I_over_cm_I; // TODO: make sure you change constants for inh pool here!
 	float STmp;
 	
 	valarray<float> *unitVector;
@@ -42,10 +39,9 @@ private:
 	vector<float*> *Inh_Inputs_GABA;
 	
 public:
-	valarray<float> *X;
-	valarray<float> *V;
-	valarray<float> *AMPA;
-	valarray<float> *NMDA;
+	
+	valarray<float> *V; 
+	valarray<float> *GABA;
 	valarray<float> *ISyn;
 	
 	string poolName;
@@ -55,11 +51,10 @@ public:
 	vector<int> *spikeRecord_n;
 	vector<float> *spikeRecord_t;
 	
-	float AMPA_pooled;
-	float NMDA_pooled;
+	float GABA_pooled;
 	
-	ExPool(string, int, bool);
-	~ExPool();
+	InhPool(string, int, bool);
+	~InhPool();
 	
 	void init();
 	void propogate();
@@ -68,7 +63,6 @@ public:
 	void connectTo(InhPool *InhPool_in);
 	float getFR();
 	void writeSpikes(string UUID_string);
-	void listSpikes();
 };
 
 #endif

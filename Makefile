@@ -1,7 +1,7 @@
 CC=g++
 INCLUDEFLAGS=-I /Users/nicain/local/lib/boost_1_47_0
 RELEASEFLAGS=
-SOURCES=spikingIntegrator.cpp SI_functions.cpp BGPool.cpp SI_settings.cpp ExPool.cpp
+SOURCES=spikingIntegrator.cpp SI_functions.cpp BGPool.cpp SI_settings.cpp ExPool.cpp InhPool.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=SI
 
