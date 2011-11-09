@@ -15,6 +15,9 @@ namespace SI {
 	extern float t;
 	extern const bool recordBGSpikes;
 	extern const bool recordInputSpikes;
+	extern const bool recordSelSpikes;
+	extern const bool recordNSelSpikes;
+	extern const bool recordInhSpikes;
 	
 	// Network dimension settings:
 	extern const int NN;

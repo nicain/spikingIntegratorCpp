@@ -11,10 +11,13 @@ namespace SI {
 	
 	// Simulation Settings:
 	float tBegin = 0;
-	float dt = 0.1;
+	float dt = 0.02;
 	float t = 0;
 	bool recordBGSpikes = true;
 	bool recordInputSpikes = true;
+	bool recordSelSpikes = true;
+	bool recordNSelSpikes = true;
+	bool recordInhSpikes = true;
 	
 	// Network dimension settings:
 	int NN = 2000;
@@ -34,42 +37,38 @@ namespace SI {
 	// Input settings:
 	int InputPoolSize = 1;
 	
-	// Voltage Settings:
+	// Voltage Settings:				
 	float VMin = -70;
 	float VMax = -50;
 	float VReset = -55;
 	float VE = 0;
 	float VI = -70;
 	
-	// Capacitance Settings:
-	float cm_E = .5;
-	float cm_I = .2;
+	// Capacitance Settings:			
+	float cm_E = .000001*.5;
+	float cm_I = .000001*.2;
 	
-	// Conductance Settings:
-	float gL_E = 25;
-	float gext_AMPA_E = 2.1;
-	float grec_AMPA_E = .05;
-	float gNMDA_E = .165;
-	float gGABA_E = 1.3;
-	float gL_I = 20;
-	float gext_AMPA_I = 1.62;
-	float grec_AMPA_I = .04;
-	float gNMDA_I = .13;
-	float gGABA_I = 1.0;
+	// Conductance Settings:			
+	float gL_E = .000000001*25;
+	float gext_AMPA_E = .000000001*2.1;
+	float grec_AMPA_E = .000000001*.05;
+	float gNMDA_E = .000000001*.165;
+	float gGABA_E = .000000001*1.3;
+	float gL_I = .000000001*20;
+	float gext_AMPA_I = .000000001*1.62;
+	float grec_AMPA_I = .000000001*.04;
+	float gNMDA_I = .000000001*.13;
+	float gGABA_I = .000000001*1.0;
 	
-	// Refractory effects:
-	float tRef_E = 2;
-	float tRef_I = 1;
-	
-	// Time ants:
+	// Time constants:					
 	float tau_AMPA = 2;
 	float tau_NMDA = 100;
 	float tau_GABA = 5;
 	float tau_AMPA_rise = 2;
 	
-	// Misc. ants:
+	// Misc. constants:					
 	float alpha = .5;
-	float K = .062;
+	float K = -.062;
 	
 	// RNG:
 	boost::random::mt19937 myRNG;

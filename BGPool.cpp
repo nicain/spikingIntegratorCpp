@@ -42,7 +42,7 @@ void BGPool::propogate()
 			}
 			else 
 			{
-				numSpikesInCorrPool = (*binomRnd)();				
+				numSpikesInCorrPool = (*binomRnd)();
 				for (i=0; i<numSpikesInCorrPool; i++) 
 				{						
 					// Generate the spike:
@@ -82,7 +82,7 @@ void BGPool::propogate()
 
 float BGPool::getFR()
 {
-	return float((*spikeRecord_n).size())/(totalNeurons);
+	return float((*spikeRecord_n).size())/(totalNeurons)/t*1000;
 }
 
 void BGPool::writeSpikes(string UUID_string)
@@ -120,6 +120,8 @@ BGPool::BGPool (string poolName_in,
 	poolName = poolName_in;
 	
 	// Setting primitives:
+	tOn = tOn_in;
+	tOff = tOff_in;
 	tau_AMPA_Inv_times_dt = 1/tau_AMPA*dt;
 	FR = FR_in;
 	recordSpikes = recordSpikes_in;
