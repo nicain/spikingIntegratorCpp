@@ -172,36 +172,40 @@ int main(int argc, char** argv)
 
 		t += dt;
 	};
-	cout << endl;	
 
-	cout << BGESel1.getFR() << endl;
-	cout << BGESel2.getFR() << endl;
-	cout << BGENSel.getFR() << endl;
-	cout << BGI.getFR() << endl;
-	
-	cout << InputSel1.getFR() << endl;
-	cout << InputSel2.getFR() << endl;
-	
-	cout << GESel1.getFR() << endl;
-	cout << GESel2.getFR() << endl;
-	cout << GENSel.getFR() << endl;
-	
-	cout << GI.getFR() << endl;
-	
-	GESel1.writeSpikes("A");
-	GESel2.writeSpikes("A");
-	
-//	GESel1.listSpikes();
-//	GESel2.listSpikes();
-//	GENSel.listSpikes();
-	
-//	for (int i=0; i<=(*GESel1.spikeRecord_n).size()-1; i++) {
-//			cout << (*GESel1.spikeRecord_n)[i] << "\t" << (*GESel1.spikeRecord_t)[i] << endl;
-//	}
-	
-//	cout << (*GESel1.spikeRecord_n).size() << endl;
-//	cout << (*GESel2.spikeRecord_n)[12] << endl;
-//	cout << GENSel.getFR() << endl;
 	
 	return 0;
 }
+
+
+
+//	cout << endl;	
+//
+//	cout << BGESel1.getFR() << endl;
+//	cout << BGESel2.getFR() << endl;
+//	cout << BGENSel.getFR() << endl;
+//	cout << BGI.getFR() << endl;
+//	
+//	cout << InputSel1.getFR() << endl;
+//	cout << InputSel2.getFR() << endl;
+//	
+//	cout << GESel1.getFR() << endl;
+//	cout << GESel2.getFR() << endl;
+//	cout << GENSel.getFR() << endl;
+//	
+//	cout << GI.getFR() << endl;
+//	
+//	GESel1.writeSpikes("A");
+//	GESel2.writeSpikes("A");
+
+//	GESel1.listSpikes();
+//	GESel2.listSpikes();
+//	GENSel.listSpikes();
+
+//	for (int i=0; i<=(*GESel1.spikeRecord_n).size()-1; i++) {
+//			cout << (*GESel1.spikeRecord_n)[i] << "\t" << (*GESel1.spikeRecord_t)[i] << endl;
+//	}
+
+//	cout << (*GESel1.spikeRecord_n).size() << endl;
+//	cout << (*GESel2.spikeRecord_n)[12] << endl;
+//	cout << GENSel.getFR() << endl;
