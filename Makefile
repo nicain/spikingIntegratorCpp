@@ -16,5 +16,9 @@ $(EXECUTABLE): $(OBJECTS)
 
 .cpp.o:
 	$(CC) $(INCLUDEFLAGS) $(RELEASEFLAGS) $< -c
+
+tar:
+	tar -cvzf $(EXECUTABLE).tar.gz $(SOURCES) Makefile
+
 clean:
-	rm *.o SI SI_release
+	rm *.o SI SI_release *.ntf $(EXECUTABLE).tar.gz
