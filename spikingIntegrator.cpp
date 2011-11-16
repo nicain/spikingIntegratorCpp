@@ -72,14 +72,14 @@ int main(int argc, char** argv)
 	Brain Network;
 
 	// Backgroud populations:
-	PoolBGFile BGESel1("BGESel1", Network, "BGESel1_1.ntf"); Network.addPool(BGESel1);
-	PoolBGFile BGESel2("BGESel2", Network, "BGESel2_1.ntf"); Network.addPool(BGESel2);
-	PoolBGFile BGENSel("BGENSel", Network, "BGENSel_1.ntf"); Network.addPool(BGENSel);
-	PoolBGFile BGI("BGI", Network, "BGI_1.ntf"); Network.addPool(BGI);
+	PoolBGFile BGESel1("BGESel1", Network, "BGSpikes/BGESel1_1.ntf"); Network.addPool(BGESel1);
+	PoolBGFile BGESel2("BGESel2", Network, "BGSpikes/BGESel2_1.ntf"); Network.addPool(BGESel2);
+	PoolBGFile BGENSel("BGENSel", Network, "BGSpikes/BGENSel_1.ntf"); Network.addPool(BGENSel);
+	PoolBGFile BGI("BGI", Network, "BGSpikes/BGI_1.ntf"); Network.addPool(BGI);
 	
 	// Input populations:
-	PoolBGFile InputSel1("InputSel1", Network, "InputSel1_1.ntf"); Network.addPool(InputSel1);
-	PoolBGFile InputSel2("InputSel2", Network, "InputSel2_1.ntf"); Network.addPool(InputSel2);
+	PoolBGFile InputSel1("InputSel1", Network, "BGSpikes/InputSel1_1.ntf"); Network.addPool(InputSel1);
+	PoolBGFile InputSel2("InputSel2", Network, "BGSpikes/InputSel2_1.ntf"); Network.addPool(InputSel2);
 	
 	// Excitatory populations:
 	PoolRecEx GESel1("GESel1", Network, NSel, true); Network.addPool(GESel1);
