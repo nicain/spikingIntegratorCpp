@@ -1,7 +1,7 @@
 CC=g++
 INCLUDEFLAGS=-I /Users/nicain/local/lib/boost_1_47_0
 RELEASEFLAGS=
-SOURCES=spikingIntegrator.cpp SI_functions.cpp BGPool.cpp SI_settings.cpp ExPool.cpp InhPool.cpp
+SOURCES=spikingIntegrator.cpp Brain.cpp Pool.cpp SpikeList.cpp PoolBG.cpp PoolBGFile.cpp PoolRec.cpp PoolRecEx.cpp PoolRecInh.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=SI
 
@@ -21,4 +21,4 @@ tar:
 	tar -cvzf $(EXECUTABLE).tar.gz $(SOURCES) Makefile
 
 clean:
-	rm *.o SI SI_release *.ntf $(EXECUTABLE).tar.gz
+	rm *.o SI SI_release $(EXECUTABLE).tar.gz
