@@ -15,6 +15,9 @@
 #include "PoolRecEx.h"
 #include "PoolRecInh.h"
 #include "SpikeList.h"
+#include "Monitor.h"
+#include "MonitorNeuron.h"
+#include "MonitorNeuronFile.h"
 
 // Add variable names to scope:
 using namespace std;
@@ -71,74 +74,76 @@ int main(int argc, char** argv)
 	// Main network:
 	Brain Network;
 
-	// Backgroud populations:
-	PoolBGFile BGESel1("BGESel1", Network, "BGSpikes/BGESel1_1.ntf"); Network.addPool(BGESel1);
-	PoolBGFile BGESel2("BGESel2", Network, "BGSpikes/BGESel2_1.ntf"); Network.addPool(BGESel2);
-	PoolBGFile BGENSel("BGENSel", Network, "BGSpikes/BGENSel_1.ntf"); Network.addPool(BGENSel);
-	PoolBGFile BGI("BGI", Network, "BGSpikes/BGI_1.ntf"); Network.addPool(BGI);
+//	// Backgroud populations:
+//	PoolBGFile BGESel1("BGESel1", Network, "BGSpikes/BGESel1_1.ntf"); Network.addPool(BGESel1);
+//	PoolBGFile BGESel2("BGESel2", Network, "BGSpikes/BGESel2_1.ntf"); Network.addPool(BGESel2);
+//	PoolBGFile BGENSel("BGENSel", Network, "BGSpikes/BGENSel_1.ntf"); Network.addPool(BGENSel);
+//	PoolBGFile BGI("BGI", Network, "BGSpikes/BGI_1.ntf"); Network.addPool(BGI);
 	
 	// Input populations:
 	PoolBGFile InputSel1("InputSel1", Network, "BGSpikes/InputSel1_1.ntf"); Network.addPool(InputSel1);
 	PoolBGFile InputSel2("InputSel2", Network, "BGSpikes/InputSel2_1.ntf"); Network.addPool(InputSel2);
 	
-	// Excitatory populations:
-	PoolRecEx GESel1("GESel1", Network, NSel, true); Network.addPool(GESel1);
-	PoolRecEx GESel2("GESel2", Network, NSel, true); Network.addPool(GESel2);
-	PoolRecEx GENSel("GENSel", Network, NNSel, true); Network.addPool(GENSel);
-	
-	// Inhibitory populations:
-	PoolRecInh GI("GI", Network, NI, true); Network.addPool(GI);
+//	// Excitatory populations:
+//	PoolRecEx GESel1("GESel1", Network, NSel, true); Network.addPool(GESel1);
+//	PoolRecEx GESel2("GESel2", Network, NSel, true); Network.addPool(GESel2);
+//	PoolRecEx GENSel("GENSel", Network, NNSel, true); Network.addPool(GENSel);
+//	
+//	// Inhibitory populations:
+//	PoolRecInh GI("GI", Network, NI, true); Network.addPool(GI);
 	
 	//========================================================================//
 	//========================== Connect Network =============================//
 	//========================================================================//
 
-	// Connections to GESel1:
-	GESel1.connectTo(BGESel1);
-	GESel1.connectTo(InputSel1);
-	GESel1.connectTo(GESel1, wPlus);
-	GESel1.connectTo(GESel2, wMinus);
-	GESel1.connectTo(GENSel, wMinus);
-	GESel1.connectTo(GI);
-	
-	// Connections to GESel2:
-	GESel2.connectTo(BGESel2);
-	GESel2.connectTo(InputSel2);
-	GESel2.connectTo(GESel1, wMinus);
-	GESel2.connectTo(GESel2, wPlus);
-	GESel2.connectTo(GENSel, wMinus);
-	GESel2.connectTo(GI);
-	
-	// Connections to GENSel:
-	GENSel.connectTo(BGENSel);
-	GENSel.connectTo(GESel1, w);
-	GENSel.connectTo(GESel2, w);
-	GENSel.connectTo(GENSel, w);
-	GENSel.connectTo(GI);
-	
-	// Connections to GI:
-	GI.connectTo(BGI);
-	GI.connectTo(GESel1, w);
-	GI.connectTo(GESel2, w);
-	GI.connectTo(GENSel, w);
-	GI.connectTo(GI);
+//	// Connections to GESel1:
+//	GESel1.connectTo(BGESel1);
+//	GESel1.connectTo(InputSel1);
+//	GESel1.connectTo(GESel1, wPlus);
+//	GESel1.connectTo(GESel2, wMinus);
+//	GESel1.connectTo(GENSel, wMinus);
+//	GESel1.connectTo(GI);
+//	
+//	// Connections to GESel2:
+//	GESel2.connectTo(BGESel2);
+//	GESel2.connectTo(InputSel2);
+//	GESel2.connectTo(GESel1, wMinus);
+//	GESel2.connectTo(GESel2, wPlus);
+//	GESel2.connectTo(GENSel, wMinus);
+//	GESel2.connectTo(GI);
+//	
+//	// Connections to GENSel:
+//	GENSel.connectTo(BGENSel);
+//	GENSel.connectTo(GESel1, w);
+//	GENSel.connectTo(GESel2, w);
+//	GENSel.connectTo(GENSel, w);
+//	GENSel.connectTo(GI);
+//	
+//	// Connections to GI:
+//	GI.connectTo(BGI);
+//	GI.connectTo(GESel1, w);
+//	GI.connectTo(GESel2, w);
+//	GI.connectTo(GENSel, w);
+//	GI.connectTo(GI);
 	
 	//========================================================================//
 	//=========================== Run Network ================================//
 	//========================================================================//
 	
+	float tmp = 1.0;
+	
+	cout << &tmp << endl;
+	
+	MonitorNeuronFile tmpMonitor(Network, InputSel1, 0, S_AMPA); Network.addMonitor(tmpMonitor);
 	
 	Network.init();
 	
 	while (Network.t < 1000)
 	{
-		cout << Network.t << "\t" << (*(GESel1.AMPA))[0] << "\t" << (*(GESel1.V))[0] << endl;
 		Network.run(.1);
-
 	}
 	
-	GESel1.toFile("0001");
-	GESel2.toFile("0001");
+	Network.close();
 	
 	return 0;
 }

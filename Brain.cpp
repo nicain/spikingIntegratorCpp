@@ -5,10 +5,10 @@
 
 #include "Brain.h"
 #include "Pool.h"
+#include "Monitor.h"
 
 using namespace std;
 using boost::uuids::uuid;
-
 const float Brain::dt;
 
 Brain::Brain()
@@ -48,6 +48,7 @@ void Brain::construct(string poolName_in)
 	
 	// Initialize as empty:
 	childPool = new vector<Pool*>;
+	monitor = new vector<Monitor*>;
 };
 
 Brain::~Brain() 
@@ -60,12 +61,22 @@ void Brain::addPool(Pool &poolToAdd)
 	childPool->push_back(&poolToAdd);
 }
 
+void Brain::addMonitor(Monitor &monitorToAdd)
+{
+	monitor->push_back(&monitorToAdd);
+}
+
 void Brain::init()
 {
 	t=0;
 	for (i = 0; i < childPool->size(); i++)
 	{
 		(*childPool)[i]->init();
+	};
+
+	for (i = 0; i < monitor->size(); i++)
+	{
+		(*monitor)[i]->init();
 	};
 }
 
@@ -76,6 +87,12 @@ void Brain::run(float deltaT)
 	
 	while (t < stopT)
 	{
+		// Update monitors:
+		for (i = 0; i < monitor->size(); i++)
+		{
+			(*monitor)[i]->propogate();
+		};
+		
 		t += dt;
 		
 		// Update the voltages of the conductance pops:
@@ -100,5 +117,19 @@ void Brain::run(float deltaT)
 	};
 	
 };
+
+void Brain::spikesToFile(string fileName)
+{
+	// Not implemented yet
+}
+
+void Brain::close()
+{
+	// Close out monitors:
+	for (i = 0; i < monitor->size(); i++)
+	{
+		(*monitor)[i]->close();
+	};
+}
 
 

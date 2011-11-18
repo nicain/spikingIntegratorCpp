@@ -46,13 +46,18 @@ void Pool::propogate()
 };
 
 void Pool::updateS() 
-{
+{ 
 	
 };
 
 void Pool::updateV() 
 {
 	
+};
+
+float* Pool::getStateLocation(int whichNeuron, State) 
+{
+	return 0;
 };
 
 void Pool::toFile(string appendString) 

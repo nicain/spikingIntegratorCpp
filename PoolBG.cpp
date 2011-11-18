@@ -4,6 +4,7 @@
 
 class Brain;
 class Pool;
+class Monitor;
 
 using namespace std;
 
@@ -24,7 +25,6 @@ void PoolBG::construct()
 {
 	// Set member data:
 	AMPA = new valarray<float>((float)0, N);
-	
 };
 
 PoolBG::~PoolBG() 
@@ -37,7 +37,21 @@ void PoolBG::updateS()
 	(*AMPA) -= tau_AMPA_Inv_times_dt*(*AMPA);
 };
 
-void PoolBG::updateV() 
+float* PoolBG::getStateLocation(int whichNeuron, State whichState) 
 {
-
+	
+	float *returnAddress;
+	
+	switch (whichState)
+	{
+		case S_AMPA:
+			cout << "AMPAin" << endl;
+			returnAddress = &((*AMPA)[whichNeuron]);
+			break;
+		default:
+			cout << "Unacceptable Monitor variable." << endl;
+			exit(-1);
+	}
+	
+	return returnAddress;
 };

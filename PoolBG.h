@@ -2,6 +2,7 @@
 #define POOLBG_H
 
 #include "Pool.h"
+#include "Monitor.h"
 #include <valarray>
 
 using namespace std;
@@ -11,6 +12,7 @@ class PoolBG: public Pool
 	
 	static const float tau_AMPA = 2;
 	static float tau_AMPA_Inv_times_dt;
+
 	
   public:
 	
@@ -25,7 +27,21 @@ class PoolBG: public Pool
 	
 	// Member functions:
 	void updateS();
-	void updateV();
+	float* getStateLocation(int, State);
 };
 
+
+
 #endif
+
+
+//class test
+//{
+//	static const char arr[3][4] ;
+//public:
+//	test(void);
+//public:
+//	~test(void);
+//};
+//
+//const char test::arr[3][4] = {"a", "bb", "ccc"};

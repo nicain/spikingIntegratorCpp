@@ -16,6 +16,7 @@ using boost::uuids::random_generator;
 using boost::uuids::uuid;
 
 class Pool;
+class Monitor;
 
 class Brain
 {	
@@ -39,12 +40,15 @@ public:
 	string poolName;
 	float t;
 	vector<Pool*> *childPool;
+	vector<Monitor*> *monitor;
 	
 	// Member functions:
 	void addPool(Pool &addPool);
+	void addMonitor(Monitor &monitorToAdd);
 	void init();
 	void run(float);
-	void spikesToFile();
+	void spikesToFile(string fileName);
+	void close();
 	
 	static string removeHyphens(boost::uuids::uuid);
 };

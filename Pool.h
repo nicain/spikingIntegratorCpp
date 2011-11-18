@@ -5,8 +5,10 @@
  1) Undo commented addConnection
  */
 
+#include "Monitor.h"
+
 class Brain;
-class SpikeList;	
+class SpikeList;
 
 using namespace std;
 
@@ -32,6 +34,7 @@ public:
 	virtual void propogate();
 	virtual void updateS();
 	virtual void updateV();
+	virtual float* getStateLocation(int, State);
 	void print();
 	void toFile(string appendString);
 
