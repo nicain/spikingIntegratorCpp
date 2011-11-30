@@ -6,6 +6,7 @@
 #include <valarray>
 
 using namespace std;
+class PoolBGFile;
 
 class PoolBG: public Pool
 {	
@@ -28,6 +29,9 @@ class PoolBG: public Pool
 	// Member functions:
 	void updateS();
 	float* getStateLocation(int, State);
+	
+	// Friends:
+	friend class PoolBGFile;
 };
 
 

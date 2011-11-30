@@ -34,7 +34,8 @@ PoolBG::~PoolBG()
 
 void PoolBG::updateS() 
 {
-	(*AMPA) -= tau_AMPA_Inv_times_dt*(*AMPA);
+//	(*AMPA) -= tau_AMPA_Inv_times_dt*(*AMPA);
+	(*AMPA) *= exp(-tau_AMPA_Inv_times_dt);
 };
 
 float* PoolBG::getStateLocation(int whichNeuron, State whichState) 
@@ -45,7 +46,6 @@ float* PoolBG::getStateLocation(int whichNeuron, State whichState)
 	switch (whichState)
 	{
 		case S_AMPA:
-			cout << "AMPAin" << endl;
 			returnAddress = &((*AMPA)[whichNeuron]);
 			break;
 		default:
@@ -55,3 +55,27 @@ float* PoolBG::getStateLocation(int whichNeuron, State whichState)
 	
 	return returnAddress;
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

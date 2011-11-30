@@ -45,13 +45,35 @@ void PoolBGFile::init()
 
 void PoolBGFile::propogate() 
 {	
-	while  ((*(spikeList->t))[currInd] < parentBrain->t && (currInd < (spikeList->t)->size()))
+	while  ((*(spikeList->t))[currInd] < (parentBrain->t + parentBrain->dt ) && (currInd < (spikeList->t)->size()))
 	{	
-		deltaT = parentBrain->t - (*(spikeList->t))[currInd];
+		deltaT =  (*(spikeList->t))[currInd] - parentBrain->t;
 		
-		(*AMPA)[(*(spikeList->n))[currInd]] += 1;
+		(*AMPA)[(*(spikeList->n))[currInd]] += exp(deltaT/PoolBG::tau_AMPA);
+		
+//		(*AMPA)[(*(spikeList->n))[currInd]] += 1;
 		currInd += 1;
 	}
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

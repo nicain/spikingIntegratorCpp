@@ -4,7 +4,7 @@
  */
 
 #include "Brain.h"
-#include "Pool.h"
+#include "Pool.h" 
 #include "Monitor.h"
 
 using namespace std;
@@ -15,7 +15,7 @@ Brain::Brain()
 {
 	// Initialize with noname:
 	construct("");	
-}
+} 
 
 Brain::Brain(string poolName_in)
 {
@@ -80,25 +80,20 @@ void Brain::init()
 	};
 }
 
-void Brain::run(float deltaT)
+void Brain::run(float deltaT) 
 {
 	// Important: This scheme does synchronous updating
-	stopT = t + (deltaT - dt);
+	stopT = t + deltaT;
 	
 	while (t < stopT)
 	{
+		
+		cout << t << endl;
+		
 		// Update monitors:
 		for (i = 0; i < monitor->size(); i++)
 		{
 			(*monitor)[i]->propogate();
-		};
-		
-		t += dt;
-		
-		// Update the voltages of the conductance pops:
-		for (i = 0; i < childPool->size(); i++)
-		{
-			(*childPool)[i]->updateV();
 		};
 		
 		// Figure out who all spiked, and bump their state vars:
@@ -112,6 +107,15 @@ void Brain::run(float deltaT)
 		{
 			(*childPool)[i]->updateS();
 		};
+		
+		// Update the voltages of the conductance pops:
+		for (i = 0; i < childPool->size(); i++)
+		{
+			(*childPool)[i]->updateV();
+		};
+
+		// Increment time:
+		t += dt;
 		
 
 	};

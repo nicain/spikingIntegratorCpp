@@ -22,7 +22,7 @@ class Brain
 {	
 public:
 	
-	static const float dt = .01;
+	static const float dt = .0001;
 	int i;
 	float stopT;
 		

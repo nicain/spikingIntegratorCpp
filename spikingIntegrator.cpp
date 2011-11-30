@@ -74,7 +74,7 @@ int main(int argc, char** argv)
 	// Main network:
 	Brain Network;
 
-//	// Backgroud populations:
+	// Backgroud populations:
 //	PoolBGFile BGESel1("BGESel1", Network, "BGSpikes/BGESel1_1.ntf"); Network.addPool(BGESel1);
 //	PoolBGFile BGESel2("BGESel2", Network, "BGSpikes/BGESel2_1.ntf"); Network.addPool(BGESel2);
 //	PoolBGFile BGENSel("BGENSel", Network, "BGSpikes/BGENSel_1.ntf"); Network.addPool(BGENSel);
@@ -82,8 +82,8 @@ int main(int argc, char** argv)
 	
 	// Input populations:
 	PoolBGFile InputSel1("InputSel1", Network, "BGSpikes/InputSel1_1.ntf"); Network.addPool(InputSel1);
-	PoolBGFile InputSel2("InputSel2", Network, "BGSpikes/InputSel2_1.ntf"); Network.addPool(InputSel2);
-	
+//	PoolBGFile InputSel2("InputSel2", Network, "BGSpikes/InputSel2_1.ntf"); Network.addPool(InputSel2);
+//	
 //	// Excitatory populations:
 //	PoolRecEx GESel1("GESel1", Network, NSel, true); Network.addPool(GESel1);
 //	PoolRecEx GESel2("GESel2", Network, NSel, true); Network.addPool(GESel2);
@@ -130,9 +130,6 @@ int main(int argc, char** argv)
 	//=========================== Run Network ================================//
 	//========================================================================//
 	
-	float tmp = 1.0;
-	
-	cout << &tmp << endl;
 	
 	MonitorNeuronFile tmpMonitor(Network, InputSel1, 0, S_AMPA); Network.addMonitor(tmpMonitor);
 	
@@ -140,7 +137,7 @@ int main(int argc, char** argv)
 	
 	while (Network.t < 1000)
 	{
-		Network.run(.1);
+		Network.run(10);
 	}
 	
 	Network.close();
