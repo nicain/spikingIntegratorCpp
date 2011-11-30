@@ -6,7 +6,7 @@
 #include "MonitorNeuron.h"
 
 class Monitor;
-
+ 
 using namespace std;
 
 MonitorNeuron::MonitorNeuron(Brain &parentPool_in, Pool &whichPool_in, int whichNeuron_in, State whichState_in): Monitor(parentPool_in)

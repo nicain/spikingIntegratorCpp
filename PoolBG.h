@@ -11,8 +11,8 @@ class PoolBGFile;
 class PoolBG: public Pool
 {	
 	
-	static const float tau_AMPA = 2;
-	static float tau_AMPA_Inv_times_dt;
+	static const double tau_AMPA = 2;
+	static double tau_AMPA_Inv_times_dt;
 
 	
   public:
@@ -24,11 +24,11 @@ class PoolBG: public Pool
 	~PoolBG();
 
 	// Member data:
-	valarray<float> *AMPA;
+	valarray<double> *AMPA;
 	
 	// Member functions:
 	void updateS();
-	float* getStateLocation(int, State);
+	double* getStateLocation(int, State);
 	
 	// Friends:
 	friend class PoolBGFile;

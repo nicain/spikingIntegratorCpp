@@ -1,17 +1,13 @@
 #ifndef SPIKELIST_H
 #define SPIKELIST_H
 
-/* TODO:
- 1) implement fromfile
- */
-
 #include <vector>
 #include <string>
 
 using namespace std;
 
 class SpikeList
-{	
+{	 
 	public:
 		
 		// Constructor+Destructor:
@@ -23,11 +19,11 @@ class SpikeList
 		// Member data:
 		string prefix;
 		vector<int> *n;
-		vector<float> *t;
+		vector<double> *t;
 		
 		// Member functions:
 		void construct(string);
-		void addSpike(int n_in, float t_in);
+		void addSpike(int n_in, double t_in);
 		int size();
 		string getSpikeString(int whichSpike);
 		void toFile(string UUID_string);

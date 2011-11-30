@@ -14,7 +14,7 @@ PoolBGFile::PoolBGFile(string poolName_in, Brain &parentPool_in, string fileName
 {
 	construct(fileName_in, poolName_in);
 };
-
+ 
 PoolBGFile::PoolBGFile(string poolName_in, Brain &parentPool_in, bool recordSpikes_in, string fileName_in): PoolBG(poolName_in, parentPool_in, 0, recordSpikes_in)
 {
 	construct(fileName_in, poolName_in);

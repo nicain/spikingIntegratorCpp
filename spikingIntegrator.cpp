@@ -32,40 +32,40 @@ int main(int argc, char** argv)
 	//========================================================================//
 	
 	// Params passed in args:(Not implemented yet)
-	const float Coh = 50;
-	const float tOn = 0;
-	const float tOff = 2000;
-	const float tMax = tOff;
-	const float inputCorrelation = .1;
+	const double Coh = 50;
+	const double tOn = 0;
+	const double tOff = 2000;
+	const double tMax = tOff;
+	const double inputCorrelation = .1;
 	
 	// Network dimension settings:
 	const int NN = 2000;
-	const float frEx = .8;
-	const float frSel = .15;
-	const float BgFREPool = 2400;
-	const float BgFRIPool = 2400;
+	const double frEx = .8;
+	const double frSel = .15;
+	const double BgFREPool = 2400;
+	const double BgFRIPool = 2400;
 	
 	// Connectivity settings:
-	float w = 1;
-	float wPlus = 1.7;
+	double w = 1;
+	double wPlus = 1.7;
 	
 	// Derived from passed args:
-	const float InputPoolFRSel1 = 40 + .4*Coh;
-	const float InputPoolFRSel2 = 40 - .4*Coh;
+	const double InputPoolFRSel1 = 40 + .4*Coh;
+	const double InputPoolFRSel2 = 40 - .4*Coh;
 	
 	// Network dimension settings, derived from settings:
-	const float frInh = 1-frEx;	
+	const double frInh = 1-frEx;	
 	const int NE = NN*frEx;
 	const int NI = NN-NE;
 	const int NSel = NE*frSel;
 	const int NNSel = NE - 2*NSel;
 	
 	// Connectivity settings, derived from settings:
-	const float wMinus = (1 - frSel*(wPlus - 1)/(1 - frSel));
+	const double wMinus = (1 - frSel*(wPlus - 1)/(1 - frSel));
 	
 	// Background settings, derived from settings:
-	const float BFRE = BgFREPool;
-	const float BFRI = BgFRIPool;
+	const double BFRE = BgFREPool;
+	const double BFRI = BgFRIPool;
 	
 	//========================================================================//
 	//========================== Create Network ==============================//
@@ -75,56 +75,56 @@ int main(int argc, char** argv)
 	Brain Network;
 
 	// Backgroud populations:
-//	PoolBGFile BGESel1("BGESel1", Network, "BGSpikes/BGESel1_1.ntf"); Network.addPool(BGESel1);
-//	PoolBGFile BGESel2("BGESel2", Network, "BGSpikes/BGESel2_1.ntf"); Network.addPool(BGESel2);
-//	PoolBGFile BGENSel("BGENSel", Network, "BGSpikes/BGENSel_1.ntf"); Network.addPool(BGENSel);
-//	PoolBGFile BGI("BGI", Network, "BGSpikes/BGI_1.ntf"); Network.addPool(BGI);
+	PoolBGFile BGESel1("BGESel1", Network, "BGSpikes/BGESel1_1.ntf"); Network.addPool(BGESel1);
+	PoolBGFile BGESel2("BGESel2", Network, "BGSpikes/BGESel2_1.ntf"); Network.addPool(BGESel2);
+	PoolBGFile BGENSel("BGENSel", Network, "BGSpikes/BGENSel_1.ntf"); Network.addPool(BGENSel);
+	PoolBGFile BGI("BGI", Network, "BGSpikes/BGI_1.ntf"); Network.addPool(BGI);
 	
 	// Input populations:
 	PoolBGFile InputSel1("InputSel1", Network, "BGSpikes/InputSel1_1.ntf"); Network.addPool(InputSel1);
-//	PoolBGFile InputSel2("InputSel2", Network, "BGSpikes/InputSel2_1.ntf"); Network.addPool(InputSel2);
-//	
-//	// Excitatory populations:
-//	PoolRecEx GESel1("GESel1", Network, NSel, true); Network.addPool(GESel1);
-//	PoolRecEx GESel2("GESel2", Network, NSel, true); Network.addPool(GESel2);
-//	PoolRecEx GENSel("GENSel", Network, NNSel, true); Network.addPool(GENSel);
-//	
-//	// Inhibitory populations:
-//	PoolRecInh GI("GI", Network, NI, true); Network.addPool(GI);
+	PoolBGFile InputSel2("InputSel2", Network, "BGSpikes/InputSel2_1.ntf"); Network.addPool(InputSel2);
+	
+	// Excitatory populations:
+	PoolRecEx GESel1("GESel1", Network, NSel, true); Network.addPool(GESel1);
+	PoolRecEx GESel2("GESel2", Network, NSel, true); Network.addPool(GESel2);
+	PoolRecEx GENSel("GENSel", Network, NNSel, true); Network.addPool(GENSel);
+	
+	// Inhibitory populations:
+	PoolRecInh GI("GI", Network, NI, true); Network.addPool(GI);
 	
 	//========================================================================//
 	//========================== Connect Network =============================//
 	//========================================================================//
 
-//	// Connections to GESel1:
-//	GESel1.connectTo(BGESel1);
-//	GESel1.connectTo(InputSel1);
-//	GESel1.connectTo(GESel1, wPlus);
-//	GESel1.connectTo(GESel2, wMinus);
-//	GESel1.connectTo(GENSel, wMinus);
-//	GESel1.connectTo(GI);
-//	
-//	// Connections to GESel2:
-//	GESel2.connectTo(BGESel2);
-//	GESel2.connectTo(InputSel2);
-//	GESel2.connectTo(GESel1, wMinus);
-//	GESel2.connectTo(GESel2, wPlus);
-//	GESel2.connectTo(GENSel, wMinus);
-//	GESel2.connectTo(GI);
-//	
-//	// Connections to GENSel:
-//	GENSel.connectTo(BGENSel);
-//	GENSel.connectTo(GESel1, w);
-//	GENSel.connectTo(GESel2, w);
-//	GENSel.connectTo(GENSel, w);
-//	GENSel.connectTo(GI);
-//	
-//	// Connections to GI:
-//	GI.connectTo(BGI);
-//	GI.connectTo(GESel1, w);
-//	GI.connectTo(GESel2, w);
-//	GI.connectTo(GENSel, w);
-//	GI.connectTo(GI);
+	// Connections to GESel1:
+	GESel1.connectTo(BGESel1);
+	GESel1.connectTo(InputSel1);
+	GESel1.connectTo(GESel1, wPlus);
+	GESel1.connectTo(GESel2, wMinus);
+	GESel1.connectTo(GENSel, wMinus);
+	GESel1.connectTo(GI);
+	
+	// Connections to GESel2:
+	GESel2.connectTo(BGESel2);
+	GESel2.connectTo(InputSel2);
+	GESel2.connectTo(GESel1, wMinus);
+	GESel2.connectTo(GESel2, wPlus);
+	GESel2.connectTo(GENSel, wMinus);
+	GESel2.connectTo(GI);
+	
+	// Connections to GENSel:
+	GENSel.connectTo(BGENSel);
+	GENSel.connectTo(GESel1, w);
+	GENSel.connectTo(GESel2, w);
+	GENSel.connectTo(GENSel, w);
+	GENSel.connectTo(GI);
+	
+	// Connections to GI:
+	GI.connectTo(BGI);
+	GI.connectTo(GESel1, w);
+	GI.connectTo(GESel2, w);
+	GI.connectTo(GENSel, w);
+	GI.connectTo(GI);
 	
 	//========================================================================//
 	//=========================== Run Network ================================//

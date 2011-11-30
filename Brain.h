@@ -22,9 +22,9 @@ class Brain
 {	
 public:
 	
-	static const float dt = .0001;
+	static const double dt = .0001;
 	int i;
-	float stopT;
+	double stopT;
 		
 	// Constructor+Destructor:
 	Brain();
@@ -38,7 +38,7 @@ public:
 	seed_seq mySeed;
 	boost::random::mt19937 myRNG;
 	string poolName;
-	float t;
+	double t;
 	vector<Pool*> *childPool;
 	vector<Monitor*> *monitor;
 	
@@ -46,7 +46,7 @@ public:
 	void addPool(Pool &addPool);
 	void addMonitor(Monitor &monitorToAdd);
 	void init();
-	void run(float);
+	void run(double);
 	void spikesToFile(string fileName);
 	void close();
 	

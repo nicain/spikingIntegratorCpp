@@ -11,7 +11,7 @@ class PoolBGFile: public PoolBG
   public:
 	
 	int currInd;
-	float deltaT;
+	double deltaT;
 	
 	// Constructor+Destructor:
 	PoolBGFile(string, Brain&, string);

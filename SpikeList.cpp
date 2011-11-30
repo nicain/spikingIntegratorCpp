@@ -1,6 +1,3 @@
-/* TODO:
- 1) implement fromfile
- */
 
 #include "SpikeList.h"
 #include <iostream>
@@ -14,7 +11,7 @@
 using namespace std;
 
 SpikeList::SpikeList()
-{
+{ 
 	construct("");
 };
 
@@ -40,7 +37,7 @@ SpikeList::SpikeList(string fileName, string prefix)
 		boost::algorithm::split(SplitResult1, inputLine,boost::is_any_of("\t"));
 		boost::algorithm::split(SplitResult2, SplitResult1[0],boost::is_any_of("_"));
 		n->push_back(boost::lexical_cast<int>(SplitResult2[1]));
-		t->push_back(boost::lexical_cast<float>(SplitResult1[1]));	
+		t->push_back(boost::lexical_cast<double>(SplitResult1[1]));	
 	}
 	inputFile.close();
 };
@@ -49,7 +46,7 @@ void SpikeList::construct(string prefix_in)
 {
 	prefix = prefix_in;
 	n = new vector<int>;
-	t = new vector<float>;
+	t = new vector<double>;
 };
 
 SpikeList::~SpikeList() 
@@ -58,7 +55,7 @@ SpikeList::~SpikeList()
 	delete t;
 };
 
-void SpikeList::addSpike(int n_in, float t_in) 
+void SpikeList::addSpike(int n_in, double t_in) 
 {
 	n->push_back(n_in);
 	t->push_back(t_in);

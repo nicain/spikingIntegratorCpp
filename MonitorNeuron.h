@@ -2,7 +2,7 @@
 #define MONITORNEURON_H
 
 #include "Monitor.h"
-
+ 
 class Brain;
 class Pool;
 
@@ -20,7 +20,7 @@ public:
 	Pool *whichPool;
 	int whichNeuron;
 	State whichState;
-	float* stateLocation;
+	double* stateLocation;
 	
 	// Member functions:
 	string getString();

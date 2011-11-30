@@ -3,7 +3,7 @@
 #include "Brain.h"
 #include "Pool.h"
 #include "MonitorNeuronFile.h"
-
+ 
 class Monitor;
 
 using namespace std;

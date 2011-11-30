@@ -10,13 +10,13 @@ class Pool;
 
 using namespace std;
 
-const float PoolRec::VE;
-const float PoolRec::VI;
-const float PoolRec::VMin;
-const float PoolRec::VMax;
-const float PoolRec::VReset;
-const float PoolRec::alpha;
-const float PoolRec::K;
+const double PoolRec::VE;
+const double PoolRec::VI;
+const double PoolRec::VMin;
+const double PoolRec::VMax;
+const double PoolRec::VReset;
+const double PoolRec::alpha;
+const double PoolRec::K;
 
 PoolRec::PoolRec(string poolName_in, Brain &parentPool_in, int N_in): Pool(poolName_in, parentPool_in, N_in)
 {
@@ -30,24 +30,24 @@ PoolRec::PoolRec(string poolName_in, Brain &parentPool_in, int N_in, bool record
 
 void PoolRec::construct()
 {
-	uniDist = new uniform_real_distribution<float>(0,1);
-	uniRnd = new variate_generator<mt19937&,uniform_real_distribution<float> >(parentBrain->myRNG, *uniDist);
+	uniDist = new uniform_real_distribution<double>(0,1);
+	uniRnd = new variate_generator<mt19937&,uniform_real_distribution<double> >(parentBrain->myRNG, *uniDist);
 	
 	// Set member data:
-	V = new valarray<float>((float)0, N);
-	ISyn = new valarray<float>((float)0, N);
+	V = new valarray<double>((double)0, N);
+	ISyn = new valarray<double>((double)0, N);
 	
 	// Initialize connection vectors, and weight vector:
-	BG_Inputs_AMPA = new vector< valarray<float>* >;
-	Ex_Inputs_AMPA = new vector<float*>;
-	Ex_Inputs_AMPA_w = new vector<float>;
-	Ex_Inputs_NMDA = new vector<float*>;
-	Ex_Inputs_NMDA_w = new vector<float>;
-	Inh_Inputs_GABA = new vector<float*>;
+	BG_Inputs_AMPA = new vector< valarray<double>* >;
+	Ex_Inputs_AMPA = new vector<double*>;
+	Ex_Inputs_AMPA_w = new vector<double>;
+	Ex_Inputs_NMDA = new vector<double*>;
+	Ex_Inputs_NMDA_w = new vector<double>;
+	Inh_Inputs_GABA = new vector<double*>;
 	
 	// Create helper vectors:
-	unitVector = new valarray<float>((float)1, N);
-	VTmp = new valarray<float>((float)0, N);
+	unitVector = new valarray<double>((double)1, N);
+	VTmp = new valarray<double>((double)0, N);
 	thresholdTest = new valarray<bool>(false, N);
 	
 };
@@ -76,7 +76,7 @@ PoolRec::~PoolRec()
 void PoolRec::updateV()
 {
 	//	 Compute current coming into the cell:
-	(*ISyn) = valarray<float>((float)0, N);
+	(*ISyn) = valarray<double>((double)0, N);
 	(*VTmp) = ((*V) - VE * (*unitVector));
 	
 	// First, the background pools:
@@ -130,7 +130,7 @@ void PoolRec::connectTo(PoolBG &BGPool_in)
 	BG_Inputs_AMPA->push_back(BGPool_in.AMPA);
 }
 
-void PoolRec::connectTo(PoolRecEx &ExPool_in, float wIn)
+void PoolRec::connectTo(PoolRecEx &ExPool_in, double wIn)
 {
 	Ex_Inputs_AMPA->push_back(&(ExPool_in).AMPA_pooled);
 	Ex_Inputs_AMPA_w->push_back(wIn);

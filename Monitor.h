@@ -8,7 +8,7 @@ enum State {S_AMPA, S_NMDA, S_GABA, S_V, S_ISyn};
 class Monitor
 {	
 public:
-	
+	 
 	// Constructor+Destructor:
 	Monitor(Brain&);
 	~Monitor();

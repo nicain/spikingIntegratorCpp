@@ -8,16 +8,16 @@ class PoolRec;
 
 using namespace std;
 
-const float PoolRecInh::tau_GABA;
-float PoolRecInh::tau_GABA_Inv_times_dt = Brain::dt*(1.0/PoolRecInh::tau_GABA);
-const float PoolRecInh::gext_AMPA_I;
-const float PoolRecInh::grec_AMPA_I;
-const float PoolRecInh::gNMDA_I;
-const float PoolRecInh::gGABA_I;
-const float PoolRecInh::gl_I;
-const float PoolRecInh::cm_I;
-float PoolRecInh::dt_times_gL_I_over_cm_I = Brain::dt*(PoolRecInh::gl_I/PoolRecInh::cm_I);
-float PoolRecInh::dt_over_cm_I = Brain::dt*(1/PoolRecInh::cm_I);
+const double PoolRecInh::tau_GABA;
+double PoolRecInh::tau_GABA_Inv_times_dt = Brain::dt*(1.0/PoolRecInh::tau_GABA);
+const double PoolRecInh::gext_AMPA_I;
+const double PoolRecInh::grec_AMPA_I;
+const double PoolRecInh::gNMDA_I;
+const double PoolRecInh::gGABA_I;
+const double PoolRecInh::gl_I;
+const double PoolRecInh::cm_I;
+double PoolRecInh::dt_times_gL_I_over_cm_I = Brain::dt*(PoolRecInh::gl_I/PoolRecInh::cm_I);
+double PoolRecInh::dt_over_cm_I = Brain::dt*(1/PoolRecInh::cm_I);
 
 PoolRecInh::PoolRecInh(string poolName_in, Brain &parentPool_in, int N_in): PoolRec(poolName_in, parentPool_in, N_in)
 {
@@ -32,7 +32,7 @@ PoolRecInh::PoolRecInh(string poolName_in, Brain &parentPool_in, int N_in, bool 
 void PoolRecInh::construct()
 {	
 	// Initialize connection vectors, and weight vector:
-	GABA = new valarray<float>((float)0, N);
+	GABA = new valarray<double>((double)0, N);
 
 	gext_AMPA = PoolRecInh::gext_AMPA_I;
 	grec_AMPA = PoolRecInh::grec_AMPA_I;
@@ -52,7 +52,7 @@ void PoolRecInh::propogate()
 	// Determine who spiked, and update state vars:
 	(*thresholdTest) = (*V) > PoolRec::VMax;
 	(*V)[(*thresholdTest)] = PoolRec::VReset;
-	(*GABA)[(*thresholdTest)] += valarray<float>(1,(*thresholdTest).sum());
+	(*GABA)[(*thresholdTest)] += valarray<double>(1,(*thresholdTest).sum());
 	if (recordSpikes)
 	{
 		for (i = 0; i < N; i++) 

@@ -10,7 +10,7 @@ Monitor::Monitor(Brain &parentPool_in)
 
 Monitor::~Monitor() 
 {
-
+ 
 };
 
 void Monitor::init() 

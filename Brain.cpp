@@ -9,7 +9,7 @@
 
 using namespace std;
 using boost::uuids::uuid;
-const float Brain::dt;
+const double Brain::dt;
 
 Brain::Brain()
 {
@@ -80,7 +80,7 @@ void Brain::init()
 	};
 }
 
-void Brain::run(float deltaT) 
+void Brain::run(double deltaT) 
 {
 	// Important: This scheme does synchronous updating
 	stopT = t + deltaT;

@@ -55,7 +55,7 @@ void Pool::updateV()
 	
 };
 
-float* Pool::getStateLocation(int whichNeuron, State) 
+double* Pool::getStateLocation(int whichNeuron, State) 
 {
 	return 0;
 };

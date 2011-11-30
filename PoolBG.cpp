@@ -8,8 +8,8 @@ class Monitor;
 
 using namespace std;
 
-const float PoolBG::tau_AMPA;
-float PoolBG::tau_AMPA_Inv_times_dt = Brain::dt*(1.0/PoolBG::tau_AMPA);
+const double PoolBG::tau_AMPA;
+double PoolBG::tau_AMPA_Inv_times_dt = Brain::dt*(1.0/PoolBG::tau_AMPA);
 
 PoolBG::PoolBG(string poolName_in, Brain &parentPool_in, int N_in): Pool(poolName_in, parentPool_in, N_in)
 {
@@ -24,7 +24,7 @@ PoolBG::PoolBG(string poolName_in, Brain &parentPool_in, int N_in, bool recordSp
 void PoolBG::construct()
 {
 	// Set member data:
-	AMPA = new valarray<float>((float)0, N);
+	AMPA = new valarray<double>((double)0, N);
 };
 
 PoolBG::~PoolBG() 
@@ -38,10 +38,10 @@ void PoolBG::updateS()
 	(*AMPA) *= exp(-tau_AMPA_Inv_times_dt);
 };
 
-float* PoolBG::getStateLocation(int whichNeuron, State whichState) 
+double* PoolBG::getStateLocation(int whichNeuron, State whichState) 
 {
 	
-	float *returnAddress;
+	double *returnAddress;
 	
 	switch (whichState)
 	{

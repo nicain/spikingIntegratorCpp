@@ -5,7 +5,7 @@
 #include "Monitor.h"
 #include <string>
 #include <fstream>
-
+ 
 class Brain;
 
 class MonitorNeuronFile: public MonitorNeuron

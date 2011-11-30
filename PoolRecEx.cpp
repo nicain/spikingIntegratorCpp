@@ -8,22 +8,22 @@ class PoolRec;
 
 using namespace std;
 
-const float PoolRecEx::tau_AMPA;
-const float PoolRecEx::tau_AMPA_rise;
-const float PoolRecEx::tau_NMDA;
-float PoolRecEx::tau_AMPA_Inv_times_dt = Brain::dt*(1.0/PoolRecEx::tau_AMPA);
-float PoolRecEx::tau_AMPA_rise_Inv_times_dt = Brain::dt*(1.0/PoolRecEx::tau_AMPA_rise);
-float PoolRecEx::one_minus_tau_NMDA_Inv_times_dt = 1-(Brain::dt*(1.0/PoolRecEx::tau_NMDA));
-float PoolRecEx::alpha_times_dt = Brain::dt*PoolRecEx::alpha;
+const double PoolRecEx::tau_AMPA;
+const double PoolRecEx::tau_AMPA_rise;
+const double PoolRecEx::tau_NMDA;
+double PoolRecEx::tau_AMPA_Inv_times_dt = Brain::dt*(1.0/PoolRecEx::tau_AMPA);
+double PoolRecEx::tau_AMPA_rise_Inv_times_dt = Brain::dt*(1.0/PoolRecEx::tau_AMPA_rise);
+double PoolRecEx::one_minus_tau_NMDA_Inv_times_dt = 1-(Brain::dt*(1.0/PoolRecEx::tau_NMDA));
+double PoolRecEx::alpha_times_dt = Brain::dt*PoolRecEx::alpha;
 
-const float PoolRecEx::gext_AMPA_E;
-const float PoolRecEx::grec_AMPA_E;
-const float PoolRecEx::gNMDA_E;
-const float PoolRecEx::gGABA_E;
-const float PoolRecEx::gl_E;
-const float PoolRecEx::cm_E;
-float PoolRecEx::dt_times_gL_E_over_cm_E = Brain::dt*(PoolRecEx::gl_E/PoolRecEx::cm_E);
-float PoolRecEx::dt_over_cm_E = Brain::dt*(1/PoolRecEx::cm_E);
+const double PoolRecEx::gext_AMPA_E;
+const double PoolRecEx::grec_AMPA_E;
+const double PoolRecEx::gNMDA_E;
+const double PoolRecEx::gGABA_E;
+const double PoolRecEx::gl_E;
+const double PoolRecEx::cm_E;
+double PoolRecEx::dt_times_gL_E_over_cm_E = Brain::dt*(PoolRecEx::gl_E/PoolRecEx::cm_E);
+double PoolRecEx::dt_over_cm_E = Brain::dt*(1/PoolRecEx::cm_E);
 
 PoolRecEx::PoolRecEx(string poolName_in, Brain &parentPool_in, int N_in): PoolRec(poolName_in, parentPool_in, N_in)
 {
@@ -38,9 +38,9 @@ PoolRecEx::PoolRecEx(string poolName_in, Brain &parentPool_in, int N_in, bool re
 void PoolRecEx::construct()
 {	
 	// Initialize connection vectors, and weight vector:
-	AMPA = new valarray<float>((float)0, N);
-	NMDA = new valarray<float>((float)0, N);
-	X = new valarray<float>((float)0, N);	
+	AMPA = new valarray<double>((double)0, N);
+	NMDA = new valarray<double>((double)0, N);
+	X = new valarray<double>((double)0, N);	
 
 
 	gext_AMPA = PoolRecEx::gext_AMPA_E;
@@ -65,8 +65,8 @@ void PoolRecEx::propogate()
 	// Determine who spiked, and update state vars:
 	(*thresholdTest) = (*V) > PoolRec::VMax;
 	(*V)[(*thresholdTest)] = PoolRec::VReset;
-	(*AMPA)[(*thresholdTest)] += valarray<float>(1,(*thresholdTest).sum());
-	(*X)[(*thresholdTest)] += valarray<float>(1,(*thresholdTest).sum());
+	(*AMPA)[(*thresholdTest)] += valarray<double>(1,(*thresholdTest).sum());
+	(*X)[(*thresholdTest)] += valarray<double>(1,(*thresholdTest).sum());
 	if (recordSpikes)
 	{
 		for (i = 0; i < N; i++) 

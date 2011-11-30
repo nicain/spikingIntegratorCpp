@@ -20,23 +20,23 @@ class PoolRec: public Pool
   public:
 	
 	// Used in updateV:
-	static const float VE = 0;
-	static const float VI = -70;
-	static const float VMin = -70;
-	static const float VMax = -50;
-	static const float VReset = -55;
-	static const float alpha = .5;
-	static const float K = -.062;
-	float gext_AMPA;
-	float grec_AMPA;
-	float gNMDA;
-	float gGABA;
-	float dt_times_gL_over_cm;
-	float dt_over_cm;
+	static const double VE = 0;
+	static const double VI = -70;
+	static const double VMin = -70;
+	static const double VMax = -50;
+	static const double VReset = -55;
+	static const double alpha = .5;
+	static const double K = -.062;
+	double gext_AMPA;
+	double grec_AMPA;
+	double gNMDA;
+	double gGABA;
+	double dt_times_gL_over_cm;
+	double dt_over_cm;
 	
 	// Small stuff:
 	int i;
-	float STmp;
+	double STmp;
 	
 	// Constructor+Destructor:
 	PoolRec(string, Brain&, int);
@@ -45,27 +45,27 @@ class PoolRec: public Pool
 	~PoolRec();
 	
 	// RNG:
-	uniform_real_distribution<float> *uniDist;
-	variate_generator<mt19937&,uniform_real_distribution<float> > *uniRnd;
+	uniform_real_distribution<double> *uniDist;
+	variate_generator<mt19937&,uniform_real_distribution<double> > *uniRnd;
 
 	// Member data:
-	valarray<float> *V;
-	valarray<float> *ISyn;
-	vector< valarray<float>* > *BG_Inputs_AMPA;
-	vector<float*> *Ex_Inputs_AMPA;
-	vector<float> *Ex_Inputs_AMPA_w;
-	vector<float*> *Ex_Inputs_NMDA;
-	vector<float> *Ex_Inputs_NMDA_w;
-	vector<float*> *Inh_Inputs_GABA;
+	valarray<double> *V;
+	valarray<double> *ISyn;
+	vector< valarray<double>* > *BG_Inputs_AMPA;
+	vector<double*> *Ex_Inputs_AMPA;
+	vector<double> *Ex_Inputs_AMPA_w;
+	vector<double*> *Ex_Inputs_NMDA;
+	vector<double> *Ex_Inputs_NMDA_w;
+	vector<double*> *Inh_Inputs_GABA;
 	
 	// Helper vectors
-	valarray<float> *unitVector;
-	valarray<float> *VTmp;
+	valarray<double> *unitVector;
+	valarray<double> *VTmp;
 	valarray<bool> *thresholdTest;
 	
 	// Member functions:
 	void connectTo(PoolBG &BGPool_in);
-	void connectTo(PoolRecEx &BGPool_in, float wIn);
+	void connectTo(PoolRecEx &BGPool_in, double wIn);
 	void connectTo(PoolRecInh &BGPool_in);
 	void init();	
 	void updateV();
