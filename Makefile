@@ -7,7 +7,7 @@ EXECUTABLE=SI
 
 all: $(SOURCES) $(EXECUTABLE)
 
-release: RELEASEFLAGS=-DNDEBUG
+release: RELEASEFLAGS= -O3 -funit-at-a-time -DNDEBUG
 release: EXECUTABLE=SI_release
 release: $(SOURCES) $(EXECUTABLE)
 

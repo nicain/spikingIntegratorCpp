@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <sstream>
+//#include <sstream>
 #include "Brain.h"
 #include "Pool.h"
 #include "MonitorNeuron.h"
@@ -24,9 +24,10 @@ MonitorNeuron::~MonitorNeuron()
 
 string MonitorNeuron::getString() 
 {
-	stringstream out;
-	out << parentBrain->t << "\t" << *stateLocation;
-	return out.str();
+	
+	outString = str( boost::format("%9.4f") % parentBrain->t );
+	outString += "\t" + str(boost::format("%9.4e") % *stateLocation);
+	return outString;
 };
 
 void MonitorNeuron::propogate() 

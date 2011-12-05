@@ -88,7 +88,7 @@ void Brain::run(double deltaT)
 	while (t < stopT)
 	{
 		
-		cout << t << endl;
+//		cout << t << endl;
 		
 		// Update monitors:
 		for (i = 0; i < monitor->size(); i++)

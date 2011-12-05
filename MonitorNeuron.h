@@ -21,6 +21,7 @@ public:
 	int whichNeuron;
 	State whichState;
 	double* stateLocation;
+	string outString;
 	
 	// Member functions:
 	string getString();
