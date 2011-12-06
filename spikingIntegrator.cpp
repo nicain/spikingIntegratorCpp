@@ -18,6 +18,7 @@
 #include "Monitor.h"
 #include "MonitorNeuron.h"
 #include "MonitorNeuronFile.h"
+#include "MonitorBrain.h"
 
 // Add variable names to scope:
 using namespace std;
@@ -74,71 +75,72 @@ int main(int argc, char** argv)
 	// Main network:
 	Brain Network;
 
-//	// Backgroud populations:
-//	PoolBGFile BGESel1("BGESel1", Network, "BGSpikes/BGESel1_1.ntf"); Network.addPool(BGESel1);
-//	PoolBGFile BGESel2("BGESel2", Network, "BGSpikes/BGESel2_1.ntf"); Network.addPool(BGESel2);
-//	PoolBGFile BGENSel("BGENSel", Network, "BGSpikes/BGENSel_1.ntf"); Network.addPool(BGENSel);
-//	PoolBGFile BGI("BGI", Network, "BGSpikes/BGI_1.ntf"); Network.addPool(BGI);
+	// Backgroud populations:
+	PoolBGFile BGESel1("BGESel1", Network, "BGSpikes/BGESel1_1.ntf"); Network.addPool(BGESel1);
+	PoolBGFile BGESel2("BGESel2", Network, "BGSpikes/BGESel2_1.ntf"); Network.addPool(BGESel2);
+	PoolBGFile BGENSel("BGENSel", Network, "BGSpikes/BGENSel_1.ntf"); Network.addPool(BGENSel);
+	PoolBGFile BGI("BGI", Network, "BGSpikes/BGI_1.ntf"); Network.addPool(BGI);
 	
 	// Input populations:
 	PoolBGFile InputSel1("InputSel1", Network, "BGSpikes/InputSel1_1.ntf"); Network.addPool(InputSel1);
-//	PoolBGFile InputSel2("InputSel2", Network, "BGSpikes/InputSel2_1.ntf"); Network.addPool(InputSel2);
-//	
-//	// Excitatory populations:
-//	PoolRecEx GESel1("GESel1", Network, NSel, true); Network.addPool(GESel1);
-//	PoolRecEx GESel2("GESel2", Network, NSel, true); Network.addPool(GESel2);
-//	PoolRecEx GENSel("GENSel", Network, NNSel, true); Network.addPool(GENSel);
-//	
-//	// Inhibitory populations:
-//	PoolRecInh GI("GI", Network, NI, true); Network.addPool(GI);
-//	
-//	//========================================================================//
-//	//========================== Connect Network =============================//
-//	//========================================================================//
-//
-//	// Connections to GESel1:
-//	GESel1.connectTo(BGESel1);
-//	GESel1.connectTo(InputSel1);
-//	GESel1.connectTo(GESel1, wPlus);
-//	GESel1.connectTo(GESel2, wMinus);
-//	GESel1.connectTo(GENSel, wMinus);
-//	GESel1.connectTo(GI);
-//	
-//	// Connections to GESel2:
-//	GESel2.connectTo(BGESel2);
-//	GESel2.connectTo(InputSel2);
-//	GESel2.connectTo(GESel1, wMinus);
-//	GESel2.connectTo(GESel2, wPlus);
-//	GESel2.connectTo(GENSel, wMinus);
-//	GESel2.connectTo(GI);
-//	
-//	// Connections to GENSel:
-//	GENSel.connectTo(BGENSel);
-//	GENSel.connectTo(GESel1, w);
-//	GENSel.connectTo(GESel2, w);
-//	GENSel.connectTo(GENSel, w);
-//	GENSel.connectTo(GI);
-//	
-//	// Connections to GI:
-//	GI.connectTo(BGI);
-//	GI.connectTo(GESel1, w);
-//	GI.connectTo(GESel2, w);
-//	GI.connectTo(GENSel, w);
-//	GI.connectTo(GI);
+	PoolBGFile InputSel2("InputSel2", Network, "BGSpikes/InputSel2_1.ntf"); Network.addPool(InputSel2);
+	
+	// Excitatory populations:
+	PoolRecEx GESel1("GESel1", Network, NSel, true); Network.addPool(GESel1);
+	PoolRecEx GESel2("GESel2", Network, NSel, true); Network.addPool(GESel2);
+	PoolRecEx GENSel("GENSel", Network, NNSel, false); Network.addPool(GENSel);
+	
+	// Inhibitory populations:
+	PoolRecInh GI("GI", Network, NI, false); Network.addPool(GI);
+	
+	//========================================================================//
+	//========================== Connect Network =============================//
+	//========================================================================//
+
+	// Connections to GESel1:
+	GESel1.connectTo(BGESel1);
+	GESel1.connectTo(InputSel1);
+	GESel1.connectTo(GESel1, wPlus);
+	GESel1.connectTo(GESel2, wMinus);
+	GESel1.connectTo(GENSel, wMinus);
+	GESel1.connectTo(GI);
+	
+	// Connections to GESel2:
+	GESel2.connectTo(BGESel2);
+	GESel2.connectTo(InputSel2);
+	GESel2.connectTo(GESel1, wMinus);
+	GESel2.connectTo(GESel2, wPlus);
+	GESel2.connectTo(GENSel, wMinus);
+	GESel2.connectTo(GI);
+	
+	// Connections to GENSel:
+	GENSel.connectTo(BGENSel);
+	GENSel.connectTo(GESel1, w);
+	GENSel.connectTo(GESel2, w);
+	GENSel.connectTo(GENSel, w);
+	GENSel.connectTo(GI);
+	
+	// Connections to GI:
+	GI.connectTo(BGI);
+	GI.connectTo(GESel1, w);
+	GI.connectTo(GESel2, w);
+	GI.connectTo(GENSel, w);
+	GI.connectTo(GI);
 	
 	//========================================================================//
 	//=========================== Run Network ================================//
 	//========================================================================//
 	
 	
-	MonitorNeuronFile tmpMonitor(Network, InputSel1, 0, S_AMPA); Network.addMonitor(tmpMonitor);
-	MonitorNeuron tmpMonitor2(Network, InputSel1, 0, S_AMPA); Network.addMonitor(tmpMonitor2);
+//	MonitorNeuronFile tmpMonitor(Network, InputSel1, 0, S_AMPA);
+//	MonitorNeuron tmpMonitor2(Network, InputSel1, 0, S_AMPA);
+	MonitorBrain brainMonitor(Network);
 	
 	Network.init();
 	
 	while (Network.t < 1000)
 	{
-		Network.run(10);
+		Network.run(100);
 	}
 	
 	Network.close();

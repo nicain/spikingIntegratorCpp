@@ -34,18 +34,4 @@ class PoolBG: public Pool
 	friend class PoolBGFile;
 };
 
-
-
 #endif
-
-
-//class test
-//{
-//	static const char arr[3][4] ;
-//public:
-//	test(void);
-//public:
-//	~test(void);
-//};
-//
-//const char test::arr[3][4] = {"a", "bb", "ccc"};

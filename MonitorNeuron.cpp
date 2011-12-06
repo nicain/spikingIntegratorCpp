@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-//#include <sstream>
 #include "Brain.h"
 #include "Pool.h"
 #include "MonitorNeuron.h"

@@ -34,7 +34,6 @@ PoolBG::~PoolBG()
 
 void PoolBG::updateS() 
 {
-//	(*AMPA) -= tau_AMPA_Inv_times_dt*(*AMPA);
 	(*AMPA) *= exp(-tau_AMPA_Inv_times_dt);
 };
 
