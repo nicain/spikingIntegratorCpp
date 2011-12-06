@@ -37,6 +37,7 @@ public:
 	virtual double* getStateLocation(int, State);
 	void print();
 	void toFile(string appendString);
+	double getFR();
 
 };
 

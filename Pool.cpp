@@ -17,6 +17,8 @@ Pool::Pool(string poolName_in, Brain &parentPool_in, int N_in, bool recordSpikes
 
 void Pool::construct(string poolName_in, Brain &parentPool_in, int N_in, bool recordSpikes_in)
 {
+	parentPool_in.addPool(*this);
+	
 	// Set member data:
 	poolName = poolName_in;
 	N = N_in;
@@ -66,5 +68,10 @@ void Pool::toFile(string appendString)
 	string fileNamePrefix = poolName + myUnderscore + appendString;
 	
 	spikeList->toFile(fileNamePrefix);
+};
+
+double Pool::getFR() 
+{
+	return double((spikeList->size()))/parentBrain->t/(double(N))*double(1000);
 };
 

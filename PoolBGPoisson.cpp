@@ -20,11 +20,13 @@ PoolBGPoisson::PoolBGPoisson(string poolName_in,
 												  N_in, 
 												  recordSpikes_in)
 {
+	cout << "make" << endl;
 	construct(FR_in, Corr_in, tOn_in, tOff_in);
 };
 
 void PoolBGPoisson::construct(double FR_in, double Corr_in, double tOn_in, double tOff_in)
 {	
+	
 	// Set member data:
 	FR = FR_in;
 	Corr = Corr_in;
@@ -33,7 +35,9 @@ void PoolBGPoisson::construct(double FR_in, double Corr_in, double tOn_in, doubl
 	
 	// Set other stuff:
 	gamma = FR*.001;
-	Corr_pooled = getInputCorrelation(Corr, N);
+	Corr_pooled = getInputCorrelation(Corr, 1);
+	
+	cout << Corr_pooled << endl;
 	
 	// Random number generators:
 	uniDist = new uniform_real_distribution<double>(0,1);
