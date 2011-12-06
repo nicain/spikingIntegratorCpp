@@ -51,7 +51,6 @@ void PoolBGFile::propogate()
 		
 		(*AMPA)[(*(spikeList->n))[currInd]] += exp(deltaT/PoolBG::tau_AMPA);
 		
-//		(*AMPA)[(*(spikeList->n))[currInd]] += 1;
 		currInd += 1;
 	}
 };

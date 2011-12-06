@@ -1,7 +1,7 @@
 CC=g++
 INCLUDEFLAGS=-I /Users/nicain/local/lib/boost_1_47_0
 RELEASEFLAGS=
-SOURCES=spikingIntegrator.cpp Brain.cpp Pool.cpp SpikeList.cpp PoolBG.cpp PoolBGFile.cpp PoolRec.cpp PoolRecEx.cpp PoolRecInh.cpp Monitor.cpp MonitorNeuron.cpp MonitorNeuronFile.cpp MonitorBrain.cpp
+SOURCES=spikingIntegrator.cpp Brain.cpp Pool.cpp SpikeList.cpp PoolBG.cpp PoolBGFile.cpp PoolBGPoisson.cpp PoolRec.cpp PoolRecEx.cpp PoolRecInh.cpp Monitor.cpp MonitorNeuron.cpp MonitorNeuronFile.cpp MonitorBrain.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=SI
 
