@@ -22,7 +22,7 @@ class Brain
 {	
 public:
 	
-	static const double dt = .01;
+	static const double dt = .1;
 	int i;
 	double stopT;
 		

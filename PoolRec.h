@@ -4,6 +4,7 @@
 #include <valarray>
 #include <boost/random.hpp>
 #include "Pool.h"
+#include "Monitor.h"
 
 using namespace std;
 using boost::random::uniform_real_distribution;
@@ -69,6 +70,8 @@ class PoolRec: public Pool
 	void connectTo(PoolRecInh &BGPool_in);
 	void init();	
 	void updateV();
+	double* getStateLocation(int, State);
+	virtual double* getStateLocationConductance(int, State);
 	
 
 };

@@ -142,3 +142,28 @@ void PoolRec::connectTo(PoolRecInh &InhPool_in)
 {
 	Inh_Inputs_GABA->push_back(&(InhPool_in).GABA_pooled);
 }
+
+double* PoolRec::getStateLocation(int whichNeuron, State whichState) 
+{
+	
+	double *returnAddress;
+	
+	switch (whichState)
+	{
+		case S_V:
+			returnAddress = &((*V)[whichNeuron]);
+			break;
+		case S_ISyn:
+			returnAddress = &((*ISyn)[whichNeuron]);
+			break;
+		default:
+			returnAddress = getStateLocationConductance(whichNeuron, whichState);
+	}
+	
+	return returnAddress;
+};
+
+double* PoolRec::getStateLocationConductance(int whichNeuron, State) 
+{
+	return 0;
+};
