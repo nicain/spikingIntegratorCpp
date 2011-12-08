@@ -82,11 +82,38 @@ void PoolRecEx::propogate()
 void PoolRecEx::updateS()
 {
 	// Update state vars:
-	(*AMPA) -= tau_AMPA_Inv_times_dt*(*AMPA);
-	(*X) -= tau_AMPA_rise_Inv_times_dt*(*X);
+//	(*AMPA) -= tau_AMPA_Inv_times_dt*(*AMPA);
+//	(*X) -= tau_AMPA_rise_Inv_times_dt*(*X);
+	
+	(*AMPA) *= exp(-tau_AMPA_Inv_times_dt);
+	(*X) *= exp(-tau_AMPA_rise_Inv_times_dt);
+	
 	(*NMDA) = one_minus_tau_NMDA_Inv_times_dt*(*NMDA) + alpha_times_dt*(*X)*(*unitVector - (*NMDA));
 	
 	// Update state vars sums:
 	AMPA_pooled = (*AMPA).sum();
 	NMDA_pooled = (*NMDA).sum();
 }
+
+double* PoolRecEx::getStateLocationConductance(int whichNeuron, State whichState) 
+{
+	double *returnAddress;
+	
+	switch (whichState)
+	{
+		case S_AMPA:
+			returnAddress = &((*AMPA)[whichNeuron]);
+			break;
+		case S_NMDA:
+			returnAddress = &((*NMDA)[whichNeuron]);
+			break;
+		case S_X:
+			returnAddress = &((*X)[whichNeuron]);
+			break;
+		default:
+			cout << "Unacceptable Monitor variable." << endl;
+			exit(-1);
+	}
+	
+	return returnAddress;
+};

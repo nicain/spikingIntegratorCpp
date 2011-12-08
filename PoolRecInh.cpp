@@ -68,7 +68,8 @@ void PoolRecInh::propogate()
 void PoolRecInh::updateS()
 {
 	// Update state vars:
-	(*GABA) -= tau_GABA_Inv_times_dt*(*GABA);
+//	(*GABA) -= tau_GABA_Inv_times_dt*(*GABA);
+	(*GABA) *= exp(-tau_GABA_Inv_times_dt);
 	
 	// Update state vars sums:
 	GABA_pooled = (*GABA).sum();

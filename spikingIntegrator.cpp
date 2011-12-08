@@ -88,7 +88,7 @@ int main(int argc, char** argv)
 	PoolBGFile InputSel2("InputSel2", Network, "BGSpikes/InputSel2_1.ntf");
 	
 	// Excitatory populations:
-	PoolRecEx GESel1("GESel1", Network, NSel, true);
+	PoolRecEx GESel1("GESel1", Network, NSel, false);
 	PoolRecEx GESel2("GESel2", Network, NSel, true);
 	PoolRecEx GENSel("GENSel", Network, NNSel, false);
 	
@@ -139,7 +139,7 @@ int main(int argc, char** argv)
 	
 	
 	MonitorBrain brainMonitor(Network);
-	MonitorNeuronFile tmpMonitor(Network, GESel2, 0, S_V);		
+	MonitorNeuronFile tmpMonitor(Network, GESel2, 0, S_ISyn);	
 	
 	
 	Network.init();
@@ -149,8 +149,17 @@ int main(int argc, char** argv)
 		Network.run(100);
 	}
 	
-//	GESel1.toFile("blah");
-//	GESel2.toFile("blah");
+//	GESel1.toFile("all");
+	GESel2.toFile("blah");
+//	GENSel.toFile("all");
+//	GI.toFile("all");
+//	BGESel1.toFile("all");
+//	BGESel2.toFile("all");
+//	BGENSel.toFile("all");
+//	BGI.toFile("all");
+//	InputSel1.toFile("all");
+//	InputSel2.toFile("all");
+	
 	
 	Network.close();
 	

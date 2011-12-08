@@ -37,6 +37,12 @@ void PoolRec::construct()
 	V = new valarray<double>((double)0, N);
 	ISyn = new valarray<double>((double)0, N);
 	
+	// Set up for RK:
+	RK1 = new valarray<double>((double)0, N);
+	RK2 = new valarray<double>((double)0, N);
+	RK3 = new valarray<double>((double)0, N);
+	RK4 = new valarray<double>((double)0, N);
+	
 	// Initialize connection vectors, and weight vector:
 	BG_Inputs_AMPA = new vector< valarray<double>* >;
 	Ex_Inputs_AMPA = new vector<double*>;
@@ -56,6 +62,11 @@ PoolRec::~PoolRec()
 {
 	delete V;
 	delete ISyn;
+	
+	delete RK1;
+	delete RK2;
+	delete RK3;
+	delete RK4;
 	
 	delete uniRnd;
 	delete uniDist;
@@ -114,7 +125,14 @@ void PoolRec::updateV()
 	
 	// Update voltage:			
 	(*VTmp) = ((*V) - VMin * (*unitVector));	//TODO: optimize below:
-	(*V) -= dt_times_gL_over_cm * (*VTmp) + dt_over_cm*(*ISyn);
+	
+	(*RK1) = -dt_times_gL_over_cm*(*VTmp) - dt_over_cm*(*ISyn);
+	(*RK2) = -dt_times_gL_over_cm*(*VTmp + .5*(*RK1)) - dt_over_cm*(*ISyn);
+	(*RK3) = -dt_times_gL_over_cm*(*VTmp + .5*(*RK2)) - dt_over_cm*(*ISyn);
+	(*RK4) = -dt_times_gL_over_cm*(*VTmp + (*RK3)) - dt_over_cm*(*ISyn);
+	
+	(*V) += (double(1)/double(6))*(   (*RK1) + double(2)*(*RK2) + double(2)*(*RK3) + (*RK4)    );
+//	(*V) -= dt_times_gL_over_cm * (*VTmp) + dt_over_cm*(*ISyn);
 }
 
 void PoolRec::init()
@@ -163,7 +181,7 @@ double* PoolRec::getStateLocation(int whichNeuron, State whichState)
 	return returnAddress;
 };
 
-double* PoolRec::getStateLocationConductance(int whichNeuron, State) 
+double* PoolRec::getStateLocationConductance(int whichNeuron, State whichState) 
 {
 	return 0;
 };

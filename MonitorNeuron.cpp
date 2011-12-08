@@ -25,7 +25,7 @@ string MonitorNeuron::getString()
 {
 	
 	outString = str( boost::format("%9.4f") % parentBrain->t );
-	outString += "\t" + str(boost::format("%9.4e") % *stateLocation);
+	outString += "\t" + str(boost::format("%9.5e") % *stateLocation);
 	return outString;
 };
 

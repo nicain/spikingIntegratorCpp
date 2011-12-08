@@ -1,1 +1,9 @@
+SI
+BGSpikes/
+dt_compare/
+dt_exact/
+
 .DS_Store
+/*.ntf
+/*.dat
+/*.o

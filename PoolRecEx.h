@@ -4,6 +4,7 @@
 #include <valarray>
 #include "PoolRec.h"
 #include "SpikeList.h"
+#include "Monitor.h"
 
 using namespace std;
 
@@ -49,6 +50,7 @@ class PoolRecEx: public PoolRec
 	// Member functions:
 	void propogate();
 	void updateS();
+	double* getStateLocationConductance(int, State);
 
 };
 

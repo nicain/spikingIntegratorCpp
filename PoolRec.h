@@ -35,6 +35,12 @@ class PoolRec: public Pool
 	double dt_times_gL_over_cm;
 	double dt_over_cm;
 	
+	// For RK time-stepping in V!
+	valarray<double> *RK1;
+	valarray<double> *RK2;
+	valarray<double> *RK3;
+	valarray<double> *RK4;
+	
 	// Small stuff:
 	int i;
 	double STmp;
