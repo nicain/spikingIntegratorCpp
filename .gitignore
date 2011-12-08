@@ -1,7 +1,9 @@
 SI
 BGSpikes/
 dt_compare/
+dt_compareRK4/
 dt_exact/
+.trash/
 
 .DS_Store
 /*.ntf

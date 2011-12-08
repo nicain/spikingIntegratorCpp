@@ -139,7 +139,7 @@ int main(int argc, char** argv)
 	
 	
 	MonitorBrain brainMonitor(Network);
-	MonitorNeuronFile tmpMonitor(Network, GESel2, 0, S_ISyn);	
+	MonitorNeuronFile tmpMonitor(Network, GESel2, 0, S_V);	
 	
 	
 	Network.init();
