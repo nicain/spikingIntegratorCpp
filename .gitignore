@@ -5,6 +5,7 @@ dt_compareRK4/
 dt_exact/
 .trash/
 
+makefile.bak
 .DS_Store
 /*.ntf
 /*.dat
