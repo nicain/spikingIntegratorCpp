@@ -7,6 +7,7 @@
 
 using namespace std;
 class PoolBGFile;
+class PoolBGOU;
 
 class PoolBG: public Pool
 {	
@@ -32,6 +33,7 @@ class PoolBG: public Pool
 	
 	// Friends:
 	friend class PoolBGFile;
+	friend class PoolBGOU;
 };
 
 #endif

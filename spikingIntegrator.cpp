@@ -13,6 +13,7 @@
 #include "Brain.h"
 #include "PoolBGFile.h"
 #include "PoolBGPoisson.h"
+#include "PoolBGOU.h"
 #include "PoolRecEx.h"
 #include "PoolRecInh.h"
 #include "SpikeList.h"
@@ -36,7 +37,7 @@ int main(int argc, char** argv)
 	// Params passed in args:(Not implemented yet)
 	const double Coh = 50;
 	const double tOn = 0;
-	const double tOff = 10000;
+	const double tOff = 1000;
 	const double tMax = tOff;
 	const double inputCorrelation = .1;
 	
@@ -77,8 +78,9 @@ int main(int argc, char** argv)
 	Brain Network;
 	
 	// Backgroud populations:
-//	PoolBGPoisson BGESel1("BGESel1", Network, NSel, true, BgFREPool, inputCorrelation, tOn, tOff);
-	PoolBGFile BGESel1("BGESel1", Network, "BGSpikes/BGESel1_1.ntf");
+//	PoolBGOU BGESel1("BGESel1", Network, NSel, true, BgFREPool, tOn, tOff);
+	PoolBGPoisson BGESel1("BGESel1", Network, NSel, true, BgFREPool, 0, tOn, tOff);
+//	PoolBGFile BGESel1("BGESel1", Network, "BGSpikes/BGESel1_1.ntf");
 //	PoolBGFile BGESel2("BGESel2", Network, "BGSpikes/BGESel2_1.ntf");
 //	PoolBGFile BGENSel("BGENSel", Network, "BGSpikes/BGENSel_1.ntf");
 //	PoolBGFile BGI("BGI", Network, "BGSpikes/BGI_1.ntf");
@@ -134,23 +136,27 @@ int main(int argc, char** argv)
 	//========================================================================//
 	
 	
-	//	MonitorNeuronFile tmpMonitor(Network, InputSel1, 0, S_AMPA);
-	MonitorNeuron tmpMonitor2(Network, BGESel1, 0, S_AMPA);
+//	MonitorNeuronFile tmpMonitor(Network, InputSel1, 0, S_AMPA);
+//	MonitorNeuron tmpMonitor2(Network, BGESel1, 0, S_AMPA);
+	MonitorNeuronFile tmpMonitor(Network, BGESel1, 0, S_AMPA);
 	
 	
-	MonitorBrain brainMonitor(Network);
+//	MonitorBrain brainMonitor(Network);
 //	MonitorNeuronFile tmpMonitor(Network, GESel2, 0, S_V);	
 	
 	
 	Network.init();
 	
-	while (Network.t < 1000)
+	while (Network.t < tOff)
 	{
 		Network.run(100);
 	}
-	
-//	GESel1.toFile("all");
+
 //	GESel2.toFile("blah");
+	
+	// Spike output:
+//	GESel1.toFile("all");
+//	GESel2.toFile("all");
 //	GENSel.toFile("all");
 //	GI.toFile("all");
 //	BGESel1.toFile("all");
