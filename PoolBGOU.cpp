@@ -68,8 +68,6 @@ void PoolBGOU::updateS()
 		(*randVec)[i] = (*normRnd)();
 	}
 	
-	cout << (*randVec)[0] << endl;
-	
 	(*AMPA) = ((*AMPA) - mu)/exp((Brain::dt)/(PoolBG::tau_AMPA)) + (*randVec);
 }
 
