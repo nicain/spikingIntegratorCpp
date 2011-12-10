@@ -35,14 +35,14 @@ int main(int argc, char** argv)
 	const double tOn = 0;
 	const double tOff = 1000;
 	const double tMax = tOff;
-	const double inputCorrelation = .1;
+	const double inputCorrelation = 0;
 	
 	// Network dimension settings:
 	const int NN = 2000;
 	const double frEx = .8;
 	const double frSel = .15;
-	const double BgFREPool = 2400;
-	const double BgFRIPool = 2400;
+	const double BgFRE = 2400;
+	const double BgFRI = 2400;
 	
 	// Connectivity settings:
 	double w = 1;
@@ -53,7 +53,6 @@ int main(int argc, char** argv)
 	const double InputPoolFRSel2 = 40 - .4*Coh;
 	
 	// Network dimension settings, derived from settings:
-	const double frInh = 1-frEx;	
 	const int NE = NN*frEx;
 	const int NI = NN-NE;
 	const int NSel = NE*frSel;
@@ -61,10 +60,6 @@ int main(int argc, char** argv)
 	
 	// Connectivity settings, derived from settings:
 	const double wMinus = (1 - frSel*(wPlus - 1)/(1 - frSel));
-	
-	// Background settings, derived from settings:
-	const double BFRE = BgFREPool;
-	const double BFRI = BgFRIPool;
 	
 	//========================================================================//
 	//========================== Create Network ==============================//
@@ -80,14 +75,14 @@ int main(int argc, char** argv)
 	//	PoolBGFile BGENSel("BGENSel", Network, "BGSpikes/BGENSel_1.ntf");
 	//	PoolBGFile BGI("BGI", Network, "BGSpikes/BGI_1.ntf");
 	
-	PoolBGOU BGESel1("BGESel1", Network, NSel, true, BgFREPool, tOn, tOff);
-	PoolBGOU BGESel2("BGESel2", Network, NSel, true, BgFREPool, tOn, tOff);
-	PoolBGOU BGENSel("BGENSel", Network, NNSel, true, BgFREPool, tOn, tOff);
-	PoolBGOU BGI("BGI", Network, NI, true, BgFRIPool, tOn, tOff);
+	PoolBGOU BGESel1("BGESel1", Network, NSel, true, BgFRE, tOn, tOff);
+	PoolBGOU BGESel2("BGESel2", Network, NSel, true, BgFRE, tOn, tOff);
+	PoolBGOU BGENSel("BGENSel", Network, NNSel, true, BgFRE, tOn, tOff);
+	PoolBGOU BGI("BGI", Network, NI, true, BgFRI, tOn, tOff);
 	
 	// Input populations:
-	PoolBGPoisson InputSel1("InputSel1", Network, NSel, true, InputPoolFRSel1, 0, tOn, tOff);
-	PoolBGPoisson InputSel2("InputSel2", Network, NSel, true, InputPoolFRSel2, 0, tOn, tOff);
+	PoolBGPoisson InputSel1("InputSel1", Network, NSel, true, InputPoolFRSel1, inputCorrelation, tOn, tOff);
+	PoolBGPoisson InputSel2("InputSel2", Network, NSel, true, InputPoolFRSel2, inputCorrelation, tOn, tOff);
 	
 	//	PoolBGFile InputSel1("InputSel1", Network, "BGSpikes/InputSel1_1.ntf");
 	//	PoolBGFile InputSel2("InputSel2", Network, "BGSpikes/InputSel2_1.ntf");
@@ -149,7 +144,7 @@ int main(int argc, char** argv)
 	
 	Network.init();
 	
-	while (Network.t < tOff)
+	while (Network.t < tMax)
 	{
 		Network.run(100);
 	}

@@ -13,7 +13,6 @@
 		9E826175149325DB0066B67C /* PoolBGOU.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E82616D149325DB0066B67C /* PoolBGOU.cpp */; };
 		9E826176149325DB0066B67C /* PoolBGFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E82616E149325DB0066B67C /* PoolBGFile.cpp */; };
 		9E826177149325DB0066B67C /* PoolBG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E826170149325DB0066B67C /* PoolBG.cpp */; };
-		9E826178149325DB0066B67C /* makefile in Sources */ = {isa = PBXBuildFile; fileRef = 9E826171149325DB0066B67C /* makefile */; };
 		9E82617E149325F60066B67C /* PoolRec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E826179149325F60066B67C /* PoolRec.cpp */; };
 		9E82617F149325F60066B67C /* MonitorNeuron.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E82617B149325F60066B67C /* MonitorNeuron.cpp */; };
 		9E826180149325F60066B67C /* PoolRecInh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E82617C149325F60066B67C /* PoolRecInh.cpp */; };
@@ -47,7 +46,6 @@
 		9E82616E149325DB0066B67C /* PoolBGFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PoolBGFile.cpp; sourceTree = "<group>"; };
 		9E82616F149325DB0066B67C /* PoolBG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolBG.h; sourceTree = "<group>"; };
 		9E826170149325DB0066B67C /* PoolBG.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PoolBG.cpp; sourceTree = "<group>"; };
-		9E826171149325DB0066B67C /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
 		9E826172149325DB0066B67C /* Brain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Brain.h; sourceTree = "<group>"; };
 		9E826179149325F60066B67C /* PoolRec.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PoolRec.cpp; sourceTree = "<group>"; };
 		9E82617A149325F60066B67C /* PoolRec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolRec.h; sourceTree = "<group>"; };
@@ -87,7 +85,6 @@
 			children = (
 				08FB7795FE84155DC02AAC07 /* Source */,
 				1AB674ADFE9D54B511CA2CBB /* Products */,
-				9E8261AE149327FF0066B67C /* Make */,
 			);
 			name = spikingIntegrator;
 			sourceTree = "<group>";
@@ -168,14 +165,6 @@
 			name = Brain;
 			sourceTree = "<group>";
 		};
-		9E8261AE149327FF0066B67C /* Make */ = {
-			isa = PBXGroup;
-			children = (
-				9E826171149325DB0066B67C /* makefile */,
-			);
-			name = Make;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -232,7 +221,6 @@
 				9E826175149325DB0066B67C /* PoolBGOU.cpp in Sources */,
 				9E826176149325DB0066B67C /* PoolBGFile.cpp in Sources */,
 				9E826177149325DB0066B67C /* PoolBG.cpp in Sources */,
-				9E826178149325DB0066B67C /* makefile in Sources */,
 				9E82617E149325F60066B67C /* PoolRec.cpp in Sources */,
 				9E82617F149325F60066B67C /* MonitorNeuron.cpp in Sources */,
 				9E826180149325F60066B67C /* PoolRecInh.cpp in Sources */,
@@ -281,6 +269,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /Users/nicain/local/lib/boost_1_47_0;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
 				SDKROOT = macosx10.6;
