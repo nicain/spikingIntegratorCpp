@@ -114,14 +114,10 @@
 		9E826197149326360066B67C /* Monitor */ = {
 			isa = PBXGroup;
 			children = (
-				9E82618F149326120066B67C /* MonitorNeuronFile.h */,
-				9E826190149326120066B67C /* MonitorNeuronFile.cpp */,
-				9E82618A149326120066B67C /* MonitorNeuron.h */,
-				9E826188149326120066B67C /* MonitorBrain.cpp */,
-				9E82617B149325F60066B67C /* MonitorNeuron.cpp */,
 				9E826187149326120066B67C /* Monitor.cpp */,
-				9E826189149326120066B67C /* MonitorBrain.h */,
 				9E826182149326120066B67C /* Monitor.h */,
+				9EAD355914934DA60058E50D /* MonitorNeuron */,
+				9EAD355A14934DE10058E50D /* MonitorBrain */,
 			);
 			name = Monitor;
 			sourceTree = "<group>";
@@ -130,21 +126,9 @@
 			isa = PBXGroup;
 			children = (
 				9E826185149326120066B67C /* Pool.h */,
-				9E826186149326120066B67C /* PoolBGPoisson.h */,
-				9E826179149325F60066B67C /* PoolRec.cpp */,
-				9E82617A149325F60066B67C /* PoolRec.h */,
-				9E82617C149325F60066B67C /* PoolRecInh.cpp */,
-				9E82617D149325F60066B67C /* PoolRecEx.cpp */,
-				9E82616B149325DB0066B67C /* PoolBGPoisson.cpp */,
-				9E82616C149325DB0066B67C /* PoolBGOU.h */,
-				9E82616D149325DB0066B67C /* PoolBGOU.cpp */,
-				9E82616E149325DB0066B67C /* PoolBGFile.cpp */,
-				9E82616F149325DB0066B67C /* PoolBG.h */,
-				9E826170149325DB0066B67C /* PoolBG.cpp */,
-				9E826183149326120066B67C /* PoolRecEx.h */,
-				9E82618D149326120066B67C /* PoolRecInh.h */,
-				9E82618E149326120066B67C /* PoolBGFile.h */,
 				9E826184149326120066B67C /* Pool.cpp */,
+				9EAD355C14934E1D0058E50D /* PoolBG */,
+				9EAD355B14934DF90058E50D /* PoolRec */,
 			);
 			name = Pool;
 			sourceTree = "<group>";
@@ -165,6 +149,54 @@
 				9E82616A149325DB0066B67C /* Brain.cpp */,
 			);
 			name = Brain;
+			sourceTree = "<group>";
+		};
+		9EAD355914934DA60058E50D /* MonitorNeuron */ = {
+			isa = PBXGroup;
+			children = (
+				9E82617B149325F60066B67C /* MonitorNeuron.cpp */,
+				9E82618A149326120066B67C /* MonitorNeuron.h */,
+				9E826190149326120066B67C /* MonitorNeuronFile.cpp */,
+				9E82618F149326120066B67C /* MonitorNeuronFile.h */,
+			);
+			name = MonitorNeuron;
+			sourceTree = "<group>";
+		};
+		9EAD355A14934DE10058E50D /* MonitorBrain */ = {
+			isa = PBXGroup;
+			children = (
+				9E826189149326120066B67C /* MonitorBrain.h */,
+				9E826188149326120066B67C /* MonitorBrain.cpp */,
+			);
+			name = MonitorBrain;
+			sourceTree = "<group>";
+		};
+		9EAD355B14934DF90058E50D /* PoolRec */ = {
+			isa = PBXGroup;
+			children = (
+				9E826179149325F60066B67C /* PoolRec.cpp */,
+				9E82617A149325F60066B67C /* PoolRec.h */,
+				9E82617D149325F60066B67C /* PoolRecEx.cpp */,
+				9E826183149326120066B67C /* PoolRecEx.h */,
+				9E82617C149325F60066B67C /* PoolRecInh.cpp */,
+				9E82618D149326120066B67C /* PoolRecInh.h */,
+			);
+			name = PoolRec;
+			sourceTree = "<group>";
+		};
+		9EAD355C14934E1D0058E50D /* PoolBG */ = {
+			isa = PBXGroup;
+			children = (
+				9E826170149325DB0066B67C /* PoolBG.cpp */,
+				9E82616F149325DB0066B67C /* PoolBG.h */,
+				9E82616D149325DB0066B67C /* PoolBGOU.cpp */,
+				9E82616C149325DB0066B67C /* PoolBGOU.h */,
+				9E82616B149325DB0066B67C /* PoolBGPoisson.cpp */,
+				9E826186149326120066B67C /* PoolBGPoisson.h */,
+				9E82616E149325DB0066B67C /* PoolBGFile.cpp */,
+				9E82618E149326120066B67C /* PoolBGFile.h */,
+			);
+			name = PoolBG;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
