@@ -44,7 +44,8 @@ void Brain::construct(string poolName_in)
 	
 	// Random number generators:
 	mySeed = seed_seq(UUID_string); 
-	myRNG.seed(1);
+//	myRNG.seed(1);
+	myRNG.seed(mySeed);
 	
 	// Initialize as empty:
 	childPool = new vector<Pool*>;
