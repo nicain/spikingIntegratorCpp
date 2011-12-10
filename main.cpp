@@ -1,7 +1,3 @@
-/* TODO:
- 1) Undo comments
- */
-
 //============================================================================//
 //============================== Preamble ====================================//
 //============================================================================//
@@ -77,24 +73,24 @@ int main(int argc, char** argv)
 	// Main network:
 	Brain Network;
 	
-//	// Backgroud populations:
-//	PoolBGOU BGESel1("BGESel1", Network, NSel, true, BgFREPool, tOn, tOff);
-//	PoolBGFile BGESel1("BGESel1", Network, "BGSpikes/BGESel1_1.ntf");
-//	PoolBGFile BGESel2("BGESel2", Network, "BGSpikes/BGESel2_1.ntf");
-//	PoolBGFile BGENSel("BGENSel", Network, "BGSpikes/BGENSel_1.ntf");
-//	PoolBGFile BGI("BGI", Network, "BGSpikes/BGI_1.ntf");
+	//	// Backgroud populations:
+	//	PoolBGOU BGESel1("BGESel1", Network, NSel, true, BgFREPool, tOn, tOff);
+	//	PoolBGFile BGESel1("BGESel1", Network, "BGSpikes/BGESel1_1.ntf");
+	//	PoolBGFile BGESel2("BGESel2", Network, "BGSpikes/BGESel2_1.ntf");
+	//	PoolBGFile BGENSel("BGENSel", Network, "BGSpikes/BGENSel_1.ntf");
+	//	PoolBGFile BGI("BGI", Network, "BGSpikes/BGI_1.ntf");
 	
 	PoolBGOU BGESel1("BGESel1", Network, NSel, true, BgFREPool, tOn, tOff);
 	PoolBGOU BGESel2("BGESel2", Network, NSel, true, BgFREPool, tOn, tOff);
 	PoolBGOU BGENSel("BGENSel", Network, NNSel, true, BgFREPool, tOn, tOff);
 	PoolBGOU BGI("BGI", Network, NI, true, BgFRIPool, tOn, tOff);
-
+	
 	// Input populations:
 	PoolBGPoisson InputSel1("InputSel1", Network, NSel, true, InputPoolFRSel1, 0, tOn, tOff);
 	PoolBGPoisson InputSel2("InputSel2", Network, NSel, true, InputPoolFRSel2, 0, tOn, tOff);
 	
-//	PoolBGFile InputSel1("InputSel1", Network, "BGSpikes/InputSel1_1.ntf");
-//	PoolBGFile InputSel2("InputSel2", Network, "BGSpikes/InputSel2_1.ntf");
+	//	PoolBGFile InputSel1("InputSel1", Network, "BGSpikes/InputSel1_1.ntf");
+	//	PoolBGFile InputSel2("InputSel2", Network, "BGSpikes/InputSel2_1.ntf");
 	
 	// Excitatory populations:
 	PoolRecEx GESel1("GESel1", Network, NSel, true);
@@ -143,9 +139,9 @@ int main(int argc, char** argv)
 	//========================================================================//
 	
 	
-//	MonitorNeuronFile tmpMonitor(Network, InputSel1, 0, S_AMPA);
-//	MonitorNeuron tmpMonitor2(Network, BGESel1, 0, S_AMPA);
-//	MonitorNeuronFile tmpMonitor(Network, BGESel1, 0, S_AMPA);
+	//	MonitorNeuronFile tmpMonitor(Network, InputSel1, 0, S_AMPA);
+	//	MonitorNeuron tmpMonitor2(Network, BGESel1, 0, S_AMPA);
+	//	MonitorNeuronFile tmpMonitor(Network, BGESel1, 0, S_AMPA);
 	
 	
 	MonitorBrain brainMonitor(Network);
@@ -157,7 +153,7 @@ int main(int argc, char** argv)
 	{
 		Network.run(100);
 	}
-
+	
 	GESel1.toFile("blah");
 	GESel2.toFile("blah");
 	
@@ -165,34 +161,19 @@ int main(int argc, char** argv)
 	cout << InputSel2.getFR() << endl;
 	
 	// Spike output:
-//	GESel1.toFile("all");
-//	GESel2.toFile("all");
-//	GENSel.toFile("all");
-//	GI.toFile("all");
-//	BGESel1.toFile("all");
-//	BGESel2.toFile("all");
-//	BGENSel.toFile("all");
-//	BGI.toFile("all");
-//	InputSel1.toFile("all");
-//	InputSel2.toFile("all");
+	//	GESel1.toFile("all");
+	//	GESel2.toFile("all");
+	//	GENSel.toFile("all");
+	//	GI.toFile("all");
+	//	BGESel1.toFile("all");
+	//	BGESel2.toFile("all");
+	//	BGENSel.toFile("all");
+	//	BGI.toFile("all");
+	//	InputSel1.toFile("all");
+	//	InputSel2.toFile("all");
 	
 	
 	Network.close();
 	
 	return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

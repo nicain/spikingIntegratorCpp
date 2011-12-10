@@ -5,6 +5,7 @@ dt_compare/
 dt_compareRK4/
 dt_exact/
 .trash/
+build/
 
 makefile.bak
 .DS_Store

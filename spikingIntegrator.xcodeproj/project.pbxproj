@@ -1,0 +1,326 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8DD76F650486A84900D96B5E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* main.cpp */; settings = {ATTRIBUTES = (); }; };
+		9E826173149325DB0066B67C /* Brain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E82616A149325DB0066B67C /* Brain.cpp */; };
+		9E826174149325DB0066B67C /* PoolBGPoisson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E82616B149325DB0066B67C /* PoolBGPoisson.cpp */; };
+		9E826175149325DB0066B67C /* PoolBGOU.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E82616D149325DB0066B67C /* PoolBGOU.cpp */; };
+		9E826176149325DB0066B67C /* PoolBGFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E82616E149325DB0066B67C /* PoolBGFile.cpp */; };
+		9E826177149325DB0066B67C /* PoolBG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E826170149325DB0066B67C /* PoolBG.cpp */; };
+		9E826178149325DB0066B67C /* makefile in Sources */ = {isa = PBXBuildFile; fileRef = 9E826171149325DB0066B67C /* makefile */; };
+		9E82617E149325F60066B67C /* PoolRec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E826179149325F60066B67C /* PoolRec.cpp */; };
+		9E82617F149325F60066B67C /* MonitorNeuron.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E82617B149325F60066B67C /* MonitorNeuron.cpp */; };
+		9E826180149325F60066B67C /* PoolRecInh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E82617C149325F60066B67C /* PoolRecInh.cpp */; };
+		9E826181149325F60066B67C /* PoolRecEx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E82617D149325F60066B67C /* PoolRecEx.cpp */; };
+		9E826191149326120066B67C /* Pool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E826184149326120066B67C /* Pool.cpp */; };
+		9E826192149326120066B67C /* Monitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E826187149326120066B67C /* Monitor.cpp */; };
+		9E826193149326120066B67C /* MonitorBrain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E826188149326120066B67C /* MonitorBrain.cpp */; };
+		9E826194149326120066B67C /* SpikeList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E82618C149326120066B67C /* SpikeList.cpp */; };
+		9E826195149326120066B67C /* MonitorNeuronFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E826190149326120066B67C /* MonitorNeuronFile.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8DD76F690486A84900D96B5E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		08FB7796FE84155DC02AAC07 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		8DD76F6C0486A84900D96B5E /* spikingIntegrator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = spikingIntegrator; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E82616A149325DB0066B67C /* Brain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Brain.cpp; sourceTree = "<group>"; };
+		9E82616B149325DB0066B67C /* PoolBGPoisson.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PoolBGPoisson.cpp; sourceTree = "<group>"; };
+		9E82616C149325DB0066B67C /* PoolBGOU.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolBGOU.h; sourceTree = "<group>"; };
+		9E82616D149325DB0066B67C /* PoolBGOU.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PoolBGOU.cpp; sourceTree = "<group>"; };
+		9E82616E149325DB0066B67C /* PoolBGFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PoolBGFile.cpp; sourceTree = "<group>"; };
+		9E82616F149325DB0066B67C /* PoolBG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolBG.h; sourceTree = "<group>"; };
+		9E826170149325DB0066B67C /* PoolBG.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PoolBG.cpp; sourceTree = "<group>"; };
+		9E826171149325DB0066B67C /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
+		9E826172149325DB0066B67C /* Brain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Brain.h; sourceTree = "<group>"; };
+		9E826179149325F60066B67C /* PoolRec.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PoolRec.cpp; sourceTree = "<group>"; };
+		9E82617A149325F60066B67C /* PoolRec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolRec.h; sourceTree = "<group>"; };
+		9E82617B149325F60066B67C /* MonitorNeuron.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MonitorNeuron.cpp; sourceTree = "<group>"; };
+		9E82617C149325F60066B67C /* PoolRecInh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PoolRecInh.cpp; sourceTree = "<group>"; };
+		9E82617D149325F60066B67C /* PoolRecEx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PoolRecEx.cpp; sourceTree = "<group>"; };
+		9E826182149326120066B67C /* Monitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monitor.h; sourceTree = "<group>"; };
+		9E826183149326120066B67C /* PoolRecEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolRecEx.h; sourceTree = "<group>"; };
+		9E826184149326120066B67C /* Pool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Pool.cpp; sourceTree = "<group>"; };
+		9E826185149326120066B67C /* Pool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pool.h; sourceTree = "<group>"; };
+		9E826186149326120066B67C /* PoolBGPoisson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolBGPoisson.h; sourceTree = "<group>"; };
+		9E826187149326120066B67C /* Monitor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Monitor.cpp; sourceTree = "<group>"; };
+		9E826188149326120066B67C /* MonitorBrain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MonitorBrain.cpp; sourceTree = "<group>"; };
+		9E826189149326120066B67C /* MonitorBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonitorBrain.h; sourceTree = "<group>"; };
+		9E82618A149326120066B67C /* MonitorNeuron.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonitorNeuron.h; sourceTree = "<group>"; };
+		9E82618B149326120066B67C /* SpikeList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpikeList.h; sourceTree = "<group>"; };
+		9E82618C149326120066B67C /* SpikeList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpikeList.cpp; sourceTree = "<group>"; };
+		9E82618D149326120066B67C /* PoolRecInh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolRecInh.h; sourceTree = "<group>"; };
+		9E82618E149326120066B67C /* PoolBGFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolBGFile.h; sourceTree = "<group>"; };
+		9E82618F149326120066B67C /* MonitorNeuronFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonitorNeuronFile.h; sourceTree = "<group>"; };
+		9E826190149326120066B67C /* MonitorNeuronFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MonitorNeuronFile.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8DD76F660486A84900D96B5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* spikingIntegrator */ = {
+			isa = PBXGroup;
+			children = (
+				08FB7795FE84155DC02AAC07 /* Source */,
+				1AB674ADFE9D54B511CA2CBB /* Products */,
+				9E8261AE149327FF0066B67C /* Make */,
+			);
+			name = spikingIntegrator;
+			sourceTree = "<group>";
+		};
+		08FB7795FE84155DC02AAC07 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				08FB7796FE84155DC02AAC07 /* main.cpp */,
+				9E826197149326360066B67C /* Monitor */,
+				9E8261AB149327730066B67C /* Pool */,
+				9E8261AC149327AC0066B67C /* SpikeList */,
+				9E8261AD149327D00066B67C /* Brain */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		1AB674ADFE9D54B511CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DD76F6C0486A84900D96B5E /* spikingIntegrator */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9E826197149326360066B67C /* Monitor */ = {
+			isa = PBXGroup;
+			children = (
+				9E82618F149326120066B67C /* MonitorNeuronFile.h */,
+				9E826190149326120066B67C /* MonitorNeuronFile.cpp */,
+				9E82618A149326120066B67C /* MonitorNeuron.h */,
+				9E826188149326120066B67C /* MonitorBrain.cpp */,
+				9E82617B149325F60066B67C /* MonitorNeuron.cpp */,
+				9E826187149326120066B67C /* Monitor.cpp */,
+				9E826189149326120066B67C /* MonitorBrain.h */,
+				9E826182149326120066B67C /* Monitor.h */,
+			);
+			name = Monitor;
+			sourceTree = "<group>";
+		};
+		9E8261AB149327730066B67C /* Pool */ = {
+			isa = PBXGroup;
+			children = (
+				9E826185149326120066B67C /* Pool.h */,
+				9E826186149326120066B67C /* PoolBGPoisson.h */,
+				9E826179149325F60066B67C /* PoolRec.cpp */,
+				9E82617A149325F60066B67C /* PoolRec.h */,
+				9E82617C149325F60066B67C /* PoolRecInh.cpp */,
+				9E82617D149325F60066B67C /* PoolRecEx.cpp */,
+				9E82616B149325DB0066B67C /* PoolBGPoisson.cpp */,
+				9E82616C149325DB0066B67C /* PoolBGOU.h */,
+				9E82616D149325DB0066B67C /* PoolBGOU.cpp */,
+				9E82616E149325DB0066B67C /* PoolBGFile.cpp */,
+				9E82616F149325DB0066B67C /* PoolBG.h */,
+				9E826170149325DB0066B67C /* PoolBG.cpp */,
+				9E826183149326120066B67C /* PoolRecEx.h */,
+				9E82618D149326120066B67C /* PoolRecInh.h */,
+				9E82618E149326120066B67C /* PoolBGFile.h */,
+				9E826184149326120066B67C /* Pool.cpp */,
+			);
+			name = Pool;
+			sourceTree = "<group>";
+		};
+		9E8261AC149327AC0066B67C /* SpikeList */ = {
+			isa = PBXGroup;
+			children = (
+				9E82618C149326120066B67C /* SpikeList.cpp */,
+				9E82618B149326120066B67C /* SpikeList.h */,
+			);
+			name = SpikeList;
+			sourceTree = "<group>";
+		};
+		9E8261AD149327D00066B67C /* Brain */ = {
+			isa = PBXGroup;
+			children = (
+				9E826172149325DB0066B67C /* Brain.h */,
+				9E82616A149325DB0066B67C /* Brain.cpp */,
+			);
+			name = Brain;
+			sourceTree = "<group>";
+		};
+		9E8261AE149327FF0066B67C /* Make */ = {
+			isa = PBXGroup;
+			children = (
+				9E826171149325DB0066B67C /* makefile */,
+			);
+			name = Make;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8DD76F620486A84900D96B5E /* spikingIntegrator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB923108733DC60010E9CD /* Build configuration list for PBXNativeTarget "spikingIntegrator" */;
+			buildPhases = (
+				8DD76F640486A84900D96B5E /* Sources */,
+				8DD76F660486A84900D96B5E /* Frameworks */,
+				8DD76F690486A84900D96B5E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = spikingIntegrator;
+			productInstallPath = "$(HOME)/bin";
+			productName = spikingIntegrator;
+			productReference = 8DD76F6C0486A84900D96B5E /* spikingIntegrator */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB923508733DC60010E9CD /* Build configuration list for PBXProject "spikingIntegrator" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 08FB7794FE84155DC02AAC07 /* spikingIntegrator */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8DD76F620486A84900D96B5E /* spikingIntegrator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8DD76F640486A84900D96B5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DD76F650486A84900D96B5E /* main.cpp in Sources */,
+				9E826173149325DB0066B67C /* Brain.cpp in Sources */,
+				9E826174149325DB0066B67C /* PoolBGPoisson.cpp in Sources */,
+				9E826175149325DB0066B67C /* PoolBGOU.cpp in Sources */,
+				9E826176149325DB0066B67C /* PoolBGFile.cpp in Sources */,
+				9E826177149325DB0066B67C /* PoolBG.cpp in Sources */,
+				9E826178149325DB0066B67C /* makefile in Sources */,
+				9E82617E149325F60066B67C /* PoolRec.cpp in Sources */,
+				9E82617F149325F60066B67C /* MonitorNeuron.cpp in Sources */,
+				9E826180149325F60066B67C /* PoolRecInh.cpp in Sources */,
+				9E826181149325F60066B67C /* PoolRecEx.cpp in Sources */,
+				9E826191149326120066B67C /* Pool.cpp in Sources */,
+				9E826192149326120066B67C /* Monitor.cpp in Sources */,
+				9E826193149326120066B67C /* MonitorBrain.cpp in Sources */,
+				9E826194149326120066B67C /* SpikeList.cpp in Sources */,
+				9E826195149326120066B67C /* MonitorNeuronFile.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB923208733DC60010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = spikingIntegrator;
+			};
+			name = Debug;
+		};
+		1DEB923308733DC60010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = spikingIntegrator;
+			};
+			name = Release;
+		};
+		1DEB923608733DC60010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		1DEB923708733DC60010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB923108733DC60010E9CD /* Build configuration list for PBXNativeTarget "spikingIntegrator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB923208733DC60010E9CD /* Debug */,
+				1DEB923308733DC60010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB923508733DC60010E9CD /* Build configuration list for PBXProject "spikingIntegrator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB923608733DC60010E9CD /* Debug */,
+				1DEB923708733DC60010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}
