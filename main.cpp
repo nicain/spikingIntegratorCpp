@@ -33,7 +33,7 @@ int main(int argc, char** argv)
 	// Params passed in args:(Not implemented yet)
 	const double Coh = 0;
 	const double tOn = 0;
-	const double tOff = 1000;
+	const double tOff = 100;
 	const double tMax = tOff;
 	const double inputCorrelation = 0;
 	
@@ -68,17 +68,22 @@ int main(int argc, char** argv)
 	// Main network:
 	Brain Network;
 	
-	//	// Backgroud populations:
-	//	PoolBGOU BGESel1("BGESel1", Network, NSel, true, BgFREPool, tOn, tOff);
-	//	PoolBGFile BGESel1("BGESel1", Network, "BGSpikes/BGESel1_1.ntf");
-	//	PoolBGFile BGESel2("BGESel2", Network, "BGSpikes/BGESel2_1.ntf");
-	//	PoolBGFile BGENSel("BGENSel", Network, "BGSpikes/BGENSel_1.ntf");
-	//	PoolBGFile BGI("BGI", Network, "BGSpikes/BGI_1.ntf");
+//	// Backgroud populations:
+//	PoolBGOU BGESel1("BGESel1", Network, NSel, true, BgFREPool, tOn, tOff);
+//	PoolBGFile BGESel1("BGESel1", Network, "BGSpikes/BGESel1_1.ntf");
+//	PoolBGFile BGESel2("BGESel2", Network, "BGSpikes/BGESel2_1.ntf");
+//	PoolBGFile BGENSel("BGENSel", Network, "BGSpikes/BGENSel_1.ntf");
+//	PoolBGFile BGI("BGI", Network, "BGSpikes/BGI_1.ntf");
+
+	PoolBGPoisson BGESel1("BGESel1", Network, NSel, true, BgFRE, inputCorrelation, tOn, tOff);
+	PoolBGPoisson BGESel2("BGESel2", Network, NSel, true, BgFRE, inputCorrelation, tOn, tOff);
+	PoolBGPoisson BGENSel("BGENSel", Network, NNSel, true, BgFRE, inputCorrelation, tOn, tOff);
+	PoolBGPoisson BGI("BGI", Network, NI, true, BgFRI, tOn, inputCorrelation, tOff);
 	
-	PoolBGOU BGESel1("BGESel1", Network, NSel, true, BgFRE, tOn, tOff);
-	PoolBGOU BGESel2("BGESel2", Network, NSel, true, BgFRE, tOn, tOff);
-	PoolBGOU BGENSel("BGENSel", Network, NNSel, true, BgFRE, tOn, tOff);
-	PoolBGOU BGI("BGI", Network, NI, true, BgFRI, tOn, tOff);
+//	PoolBGOU BGESel1("BGESel1", Network, NSel, true, BgFRE, tOn, tOff);
+//	PoolBGOU BGESel2("BGESel2", Network, NSel, true, BgFRE, tOn, tOff);
+//	PoolBGOU BGENSel("BGENSel", Network, NNSel, true, BgFRE, tOn, tOff);
+//	PoolBGOU BGI("BGI", Network, NI, true, BgFRI, tOn, tOff);
 	
 	// Input populations:
 	PoolBGPoisson InputSel1("InputSel1", Network, NSel, true, InputPoolFRSel1, inputCorrelation, tOn, tOff);
@@ -149,11 +154,8 @@ int main(int argc, char** argv)
 		Network.run(100);
 	}
 	
-	GESel1.toFile("blah");
-	GESel2.toFile("blah");
-	
-	cout << InputSel1.getFR() << endl;
-	cout << InputSel2.getFR() << endl;
+//	GESel1.toFile("blah");
+//	GESel2.toFile("blah");
 	
 	// Spike output:
 	//	GESel1.toFile("all");
