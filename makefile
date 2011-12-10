@@ -1,4 +1,4 @@
-EXECUTABLE=SI
+EXECUTABLE=spikingIntegrator
 CC=g++
 INCLUDEFLAGS=-I /Users/nicain/local/lib/boost_1_47_0
 RELEASEFLAGS=
@@ -27,7 +27,7 @@ $(EXECUTABLE): $(OBJECTS)
 	$(CC) $(INCLUDEFLAGS) $(RELEASEFLAGS) -c $< -o $@
 
 tar:
-	tar -cvzf $(EXECUTABLE).tar.gz $(OBJECTS) Makefile
+	tar -cvzf $(EXECUTABLE).tar.gz $(HEADERS) $(SOURCES) Makefile
 
 clean:
 	rm *.o SI SI_release $(EXECUTABLE).tar.gz

@@ -67,6 +67,7 @@
 		9E82618E149326120066B67C /* PoolBGFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolBGFile.h; sourceTree = "<group>"; };
 		9E82618F149326120066B67C /* MonitorNeuronFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonitorNeuronFile.h; sourceTree = "<group>"; };
 		9E826190149326120066B67C /* MonitorNeuronFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MonitorNeuronFile.cpp; sourceTree = "<group>"; };
+		9EAD355414934CB20058E50D /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +84,7 @@
 		08FB7794FE84155DC02AAC07 /* spikingIntegrator */ = {
 			isa = PBXGroup;
 			children = (
+				9EAD355414934CB20058E50D /* makefile */,
 				08FB7795FE84155DC02AAC07 /* Source */,
 				1AB674ADFE9D54B511CA2CBB /* Products */,
 			);

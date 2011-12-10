@@ -5,7 +5,6 @@
 		activeExecutable = 9E3E063514932261008FA938 /* spikingIntegrator */;
 		activeTarget = 8DD76F620486A84900D96B5E /* spikingIntegrator */;
 		addToTargets = (
-			8DD76F620486A84900D96B5E /* spikingIntegrator */,
 		);
 		breakpoints = (
 			9EAD34E91493394B0058E50D /* Brain.cpp:107 */,
@@ -45,7 +44,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					997,
+					849,
 					20,
 					48,
 					43,
@@ -67,10 +66,10 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					957,
+					809,
 					60,
 					20,
-					48.16259765625,
+					48,
 					43,
 					43,
 				);
@@ -129,9 +128,9 @@
 	};
 	08FB7796FE84155DC02AAC07 /* main.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1175, 2054}}";
-			sepNavSelRange = "{2105, 367}";
-			sepNavVisRange = "{1611, 2380}";
+			sepNavIntBoundsRect = "{{0, 0}, {1175, 2080}}";
+			sepNavSelRange = "{2449, 0}";
+			sepNavVisRange = "{1611, 1890}";
 			sepNavWindowFrame = "{{0, 4}, {1440, 874}}";
 		};
 	};
