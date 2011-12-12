@@ -47,6 +47,7 @@ public:
 	void addMonitor(Monitor &monitorToAdd);
 	void init();
 	void run(double);
+	void spikesToFile();
 	void spikesToFile(string fileName);
 	void close();
 	

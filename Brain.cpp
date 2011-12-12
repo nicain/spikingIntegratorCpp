@@ -123,9 +123,20 @@ void Brain::run(double deltaT)
 	
 };
 
-void Brain::spikesToFile(string fileName)
+void Brain::spikesToFile()
 {
-	// Not implemented yet
+	spikesToFile(this->UUID_string);
+}
+
+void Brain::spikesToFile(string inputString)
+{
+	// Print out child pool stuff
+	for (i = 0; i < childPool->size(); i++)
+	{
+		if ((*childPool)[i]->recordSpikes) {
+			(*((*childPool)[i])).toFile(inputString);
+		}
+	};
 }
 
 void Brain::close()

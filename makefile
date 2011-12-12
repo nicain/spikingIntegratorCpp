@@ -1,4 +1,4 @@
-EXECUTABLE=spikingIntegrator
+EXECUTABLE=./build/Debug/spikingIntegrator
 CC=g++
 INCLUDEFLAGS=-I /Users/nicain/local/lib/boost_1_47_0
 RELEASEFLAGS=
@@ -22,7 +22,7 @@ depend:
 
 $(EXECUTABLE): $(OBJECTS) 
 	$(CC) $(INCLUDEFLAGS) $(RELEASEFLAGS) $(OBJECTS) -o $@
-	
+
 %.o: %.cpp $(HEADERS)
 	$(CC) $(INCLUDEFLAGS) $(RELEASEFLAGS) -c $< -o $@
 
@@ -30,8 +30,8 @@ tar:
 	tar -cvzf $(EXECUTABLE).tar.gz $(HEADERS) $(SOURCES) Makefile
 
 clean:
-	rm *.o SI SI_release $(EXECUTABLE).tar.gz
-	
+	rm *.o $(EXECUTABLE) $(EXECUTABLE)_release $(EXECUTABLE).tar.gz
+
 
 
 
@@ -12049,7 +12049,7 @@ SpikeList.o: SpikeList.cpp SpikeList.h /usr/include/c++/4.2.1/vector \
   /Users/nicain/local/lib/boost_1_47_0/boost/call_traits.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/detail/call_traits.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/detail/lcast_precision.hpp
-spikingIntegrator.o: spikingIntegrator.cpp /usr/include/c++/4.2.1/string \
+main.o: main.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++config.h \
   /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/os_defines.h \
   /usr/include/unistd.h /usr/include/_types.h /usr/include/sys/_types.h \
@@ -12934,7 +12934,7 @@ spikingIntegrator.o: spikingIntegrator.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/gslice.h \
   /usr/include/c++/4.2.1/bits/gslice_array.h \
   /usr/include/c++/4.2.1/bits/mask_array.h \
-  /usr/include/c++/4.2.1/bits/indirect_array.h PoolBGPoisson.h \
+  /usr/include/c++/4.2.1/bits/indirect_array.h PoolBGPoisson.h PoolBGOU.h \
   PoolRecEx.h PoolRec.h SpikeList.h PoolRecInh.h MonitorNeuron.h \
   MonitorNeuronFile.h /usr/include/c++/4.2.1/fstream \
   /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/basic_file.h \

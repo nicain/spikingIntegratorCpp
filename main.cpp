@@ -24,8 +24,16 @@ using boost::random::seed_seq;
 using boost::uuids::random_generator;
 using boost::uuids::uuid;
 
-int main(int argc, char** argv)
-{
+int main( int argc,      // Number of strings in array argv
+		 char *argv[])
+{	
+    // Display each command-line argument.
+    cout << "\nCommand-line arguments:\n";
+    for(int i = 0; i < argc; i++ )
+		cout << "  argv[" << i << "]   "
+		<< atof(argv[i]) << endl;
+	
+	double tmp = atof(argv[1]);
 	//========================================================================//
 	//======================== Initializations ===============================//
 	//========================================================================//
@@ -75,10 +83,10 @@ int main(int argc, char** argv)
 //	PoolBGFile BGENSel("BGENSel", Network, "BGSpikes/BGENSel_1.ntf");
 //	PoolBGFile BGI("BGI", Network, "BGSpikes/BGI_1.ntf");
 
-	PoolBGPoisson BGESel1("BGESel1", Network, NSel, true, BgFRE, inputCorrelation, tOn, tOff);
-	PoolBGPoisson BGESel2("BGESel2", Network, NSel, true, BgFRE, inputCorrelation, tOn, tOff);
-	PoolBGPoisson BGENSel("BGENSel", Network, NNSel, true, BgFRE, inputCorrelation, tOn, tOff);
-	PoolBGPoisson BGI("BGI", Network, NI, true, BgFRI, tOn, inputCorrelation, tOff);
+	PoolBGPoisson BGESel1("BGESel1", Network, NSel, false, BgFRE, inputCorrelation, tOn, tOff);
+	PoolBGPoisson BGESel2("BGESel2", Network, NSel, false, BgFRE, inputCorrelation, tOn, tOff);
+	PoolBGPoisson BGENSel("BGENSel", Network, NNSel, false, BgFRE, inputCorrelation, tOn, tOff);
+	PoolBGPoisson BGI("BGI", Network, NI, false, BgFRI, tOn, inputCorrelation, tOff);
 	
 //	PoolBGOU BGESel1("BGESel1", Network, NSel, true, BgFRE, tOn, tOff);
 //	PoolBGOU BGESel2("BGESel2", Network, NSel, true, BgFRE, tOn, tOff);
@@ -86,8 +94,8 @@ int main(int argc, char** argv)
 //	PoolBGOU BGI("BGI", Network, NI, true, BgFRI, tOn, tOff);
 	
 	// Input populations:
-	PoolBGPoisson InputSel1("InputSel1", Network, NSel, true, InputPoolFRSel1, inputCorrelation, tOn, tOff);
-	PoolBGPoisson InputSel2("InputSel2", Network, NSel, true, InputPoolFRSel2, inputCorrelation, tOn, tOff);
+	PoolBGPoisson InputSel1("InputSel1", Network, NSel, false, InputPoolFRSel1, inputCorrelation, tOn, tOff);
+	PoolBGPoisson InputSel2("InputSel2", Network, NSel, false, InputPoolFRSel2, inputCorrelation, tOn, tOff);
 	
 	//	PoolBGFile InputSel1("InputSel1", Network, "BGSpikes/InputSel1_1.ntf");
 	//	PoolBGFile InputSel2("InputSel2", Network, "BGSpikes/InputSel2_1.ntf");
@@ -144,7 +152,7 @@ int main(int argc, char** argv)
 	//	MonitorNeuronFile tmpMonitor(Network, BGESel1, 0, S_AMPA);
 	
 	
-	MonitorBrain brainMonitor(Network);
+//	MonitorBrain brainMonitor(Network);
 	
 	
 	Network.init();
@@ -153,6 +161,8 @@ int main(int argc, char** argv)
 	{
 		Network.run(100);
 	}
+	
+	Network.spikesToFile();
 	
 //	GESel1.toFile("blah");
 //	GESel2.toFile("blah");

@@ -39,6 +39,7 @@
 /* Begin PBXFileReference section */
 		08FB7796FE84155DC02AAC07 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		8DD76F6C0486A84900D96B5E /* spikingIntegrator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = spikingIntegrator; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E535CB3149464FC00B147EE /* runSpikingIntegrator.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = runSpikingIntegrator.py; sourceTree = "<group>"; };
 		9E82616A149325DB0066B67C /* Brain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Brain.cpp; sourceTree = "<group>"; };
 		9E82616B149325DB0066B67C /* PoolBGPoisson.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PoolBGPoisson.cpp; sourceTree = "<group>"; };
 		9E82616C149325DB0066B67C /* PoolBGOU.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolBGOU.h; sourceTree = "<group>"; };
@@ -84,6 +85,7 @@
 		08FB7794FE84155DC02AAC07 /* spikingIntegrator */ = {
 			isa = PBXGroup;
 			children = (
+				9E535CB3149464FC00B147EE /* runSpikingIntegrator.py */,
 				9EAD355414934CB20058E50D /* makefile */,
 				08FB7795FE84155DC02AAC07 /* Source */,
 				1AB674ADFE9D54B511CA2CBB /* Products */,
