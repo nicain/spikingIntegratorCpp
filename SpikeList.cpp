@@ -79,7 +79,6 @@ string SpikeList::getSpikeString(int whichSpike)
 	{
 		prefixPlus = this->prefix + "_";
 	}
-
 	
 	out << prefixPlus << (*n)[whichSpike] << "\t" << (*t)[whichSpike] << endl;
 	

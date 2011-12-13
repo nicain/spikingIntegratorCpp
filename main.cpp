@@ -6,6 +6,7 @@
 // Purpose:    spiking simulator
 
 #include <string>
+#include <boost/lexical_cast.hpp>
 #include "Brain.h"
 #include "PoolBGFile.h"
 #include "PoolBGPoisson.h"
@@ -23,27 +24,26 @@ using namespace std;
 using boost::random::seed_seq;
 using boost::uuids::random_generator;
 using boost::uuids::uuid;
+using boost::lexical_cast;
 
 int main( int argc,      // Number of strings in array argv
 		 char *argv[])
 {	
-    // Display each command-line argument.
-    cout << "\nCommand-line arguments:\n";
-    for(int i = 0; i < argc; i++ )
-		cout << "  argv[" << i << "]   "
-		<< atof(argv[i]) << endl;
-	
-	double tmp = atof(argv[1]);
 	//========================================================================//
 	//======================== Initializations ===============================//
 	//========================================================================//
 	
-	// Params passed in args:(Not implemented yet)
-	const double Coh = 0;
-	const double tOn = 0;
-	const double tOff = 100;
-	const double tMax = tOff;
-	const double inputCorrelation = 0;
+	// Simulation settings:
+	string resultDir = "../../Results"
+	
+	// Params passed in args:
+	const double Coh = atof(argv[1]);
+	const double tOn = atof(argv[2]);
+	const double tOff = atof(argv[3]);
+	const double tMax = atof(argv[4]);
+	const double inputCorrelation = atof(argv[5]);
+	const bool saveResults = lexical_cast<bool>(argv[6]);
+	const bool recordBGSpikes = lexical_cast<bool>(argv[7]);
 	
 	// Network dimension settings:
 	const int NN = 2000;
@@ -83,10 +83,10 @@ int main( int argc,      // Number of strings in array argv
 //	PoolBGFile BGENSel("BGENSel", Network, "BGSpikes/BGENSel_1.ntf");
 //	PoolBGFile BGI("BGI", Network, "BGSpikes/BGI_1.ntf");
 
-	PoolBGPoisson BGESel1("BGESel1", Network, NSel, false, BgFRE, inputCorrelation, tOn, tOff);
-	PoolBGPoisson BGESel2("BGESel2", Network, NSel, false, BgFRE, inputCorrelation, tOn, tOff);
-	PoolBGPoisson BGENSel("BGENSel", Network, NNSel, false, BgFRE, inputCorrelation, tOn, tOff);
-	PoolBGPoisson BGI("BGI", Network, NI, false, BgFRI, tOn, inputCorrelation, tOff);
+	PoolBGPoisson BGESel1("BGESel1", Network, NSel, recordBGSpikes, BgFRE, inputCorrelation, tOn, tOff);
+	PoolBGPoisson BGESel2("BGESel2", Network, NSel, recordBGSpikes, BgFRE, inputCorrelation, tOn, tOff);
+	PoolBGPoisson BGENSel("BGENSel", Network, NNSel, recordBGSpikes, BgFRE, inputCorrelation, tOn, tOff);
+	PoolBGPoisson BGI("BGI", Network, NI, recordBGSpikes, BgFRI, tOn, inputCorrelation, tOff);
 	
 //	PoolBGOU BGESel1("BGESel1", Network, NSel, true, BgFRE, tOn, tOff);
 //	PoolBGOU BGESel2("BGESel2", Network, NSel, true, BgFRE, tOn, tOff);
@@ -162,7 +162,9 @@ int main( int argc,      // Number of strings in array argv
 		Network.run(100);
 	}
 	
-	Network.spikesToFile();
+	if (saveResults) {
+		Network.spikesToFile();
+	}
 	
 //	GESel1.toFile("blah");
 //	GESel2.toFile("blah");
