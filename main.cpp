@@ -29,12 +29,14 @@ using boost::lexical_cast;
 int main( int argc,      // Number of strings in array argv
 		 char *argv[])
 {	
+	// Make settings string:
+	string argString = argv[1];
+	for(int i = 2; i < argc; i++)
+		argString += string("_") + argv[i];
+	
 	//========================================================================//
 	//======================== Initializations ===============================//
 	//========================================================================//
-	
-	// Simulation settings:
-	string resultDir = "../../Results"
 	
 	// Params passed in args:
 	const double Coh = atof(argv[1]);
@@ -74,7 +76,7 @@ int main( int argc,      // Number of strings in array argv
 	//========================================================================//
 	
 	// Main network:
-	Brain Network;
+	Brain Network(argString);
 	
 //	// Backgroud populations:
 //	PoolBGOU BGESel1("BGESel1", Network, NSel, true, BgFREPool, tOn, tOff);

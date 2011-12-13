@@ -1,7 +1,7 @@
 #include <string>
 #include "PoolBGOU.h"
 #include "Brain.h"
-#include "spikeList.h"
+#include "SpikeList.h"
 
 class PoolBG;
 

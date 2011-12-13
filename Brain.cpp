@@ -125,7 +125,7 @@ void Brain::run(double deltaT)
 
 void Brain::spikesToFile()
 {
-	spikesToFile(this->UUID_string);
+	spikesToFile(this->UUID_string + "_" + this->poolName);
 }
 
 void Brain::spikesToFile(string inputString)

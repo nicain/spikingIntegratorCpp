@@ -1,7 +1,10 @@
 EXECUTABLE=./build/Debug/spikingIntegrator
 CC=g++
+#CC=/sw/intel/bin/icc
 INCLUDEFLAGS=-I /Users/nicain/local/lib/boost_1_47_0
+#INCLUDEFLAGS=-I /usr/lusers/nicain/local/src/boost_1_48_0
 RELEASEFLAGS=
+#RELEASEFLAGS= -O3
 SOURCES = $(wildcard *.cpp)
 OBJECTS = $(patsubst %.cpp, %.o, $(wildcard *.cpp))
 HEADERS = $(wildcard *.h)
@@ -27,7 +30,7 @@ $(EXECUTABLE): $(OBJECTS)
 	$(CC) $(INCLUDEFLAGS) $(RELEASEFLAGS) -c $< -o $@
 
 tar:
-	tar -cvzf $(EXECUTABLE).tar.gz $(HEADERS) $(SOURCES) Makefile
+	tar -cvzf $(EXECUTABLE).tar.gz $(HEADERS) $(SOURCES) Makefile ./runSpikingIntegrator.py
 
 clean:
 	rm *.o $(EXECUTABLE) $(EXECUTABLE)_release $(EXECUTABLE).tar.gz
@@ -12122,8 +12125,30 @@ main.o: main.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/algorithm /usr/include/c++/4.2.1/bits/stl_algo.h \
   /usr/include/c++/4.2.1/bits/stl_heap.h \
   /usr/include/c++/4.2.1/bits/stl_tempbuf.h \
-  /usr/include/c++/4.2.1/bits/basic_string.tcc Brain.h \
-  /Users/nicain/local/lib/boost_1_47_0/boost/uuid/uuid.hpp \
+  /usr/include/c++/4.2.1/bits/basic_string.tcc \
+  /Users/nicain/local/lib/boost_1_47_0/boost/lexical_cast.hpp \
+  /usr/include/c++/4.2.1/istream /usr/include/c++/4.2.1/ios \
+  /usr/include/c++/4.2.1/bits/localefwd.h \
+  /usr/include/c++/4.2.1/bits/ios_base.h \
+  /usr/include/c++/4.2.1/bits/locale_classes.h \
+  /usr/include/c++/4.2.1/streambuf \
+  /usr/include/c++/4.2.1/bits/streambuf.tcc \
+  /usr/include/c++/4.2.1/bits/basic_ios.h \
+  /usr/include/c++/4.2.1/bits/streambuf_iterator.h \
+  /usr/include/c++/4.2.1/bits/locale_facets.h \
+  /usr/include/c++/4.2.1/cwctype /usr/include/wctype.h \
+  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_base.h \
+  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_inline.h \
+  /usr/include/c++/4.2.1/bits/codecvt.h \
+  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/time_members.h \
+  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/messages_members.h \
+  /usr/include/c++/4.2.1/bits/basic_ios.tcc \
+  /usr/include/c++/4.2.1/bits/istream.tcc /usr/include/c++/4.2.1/locale \
+  /usr/include/c++/4.2.1/bits/locale_facets.tcc \
+  /usr/include/c++/4.2.1/typeinfo /usr/include/c++/4.2.1/ostream \
+  /usr/include/c++/4.2.1/bits/ostream.tcc /usr/include/c++/4.2.1/cmath \
+  /usr/include/math.h /usr/include/architecture/i386/math.h \
+  /usr/include/c++/4.2.1/bits/cmath.tcc \
   /Users/nicain/local/lib/boost_1_47_0/boost/config.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/config/user.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/config/select_compiler_config.hpp \
@@ -12135,30 +12160,42 @@ main.o: main.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/config/platform/macos.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/config/posix_features.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/config/suffix.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/cstdint.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_pod.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/config.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/limits.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/if.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/value_wknd.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/static_cast.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/workaround.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/detail/workaround.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_void.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/detail/bool_trait_def.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/detail/template_arity_spec.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/int.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/int_fwd.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/integral.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/msvc.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/eti.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/na_spec.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/lambda_fwd.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/void_fwd.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/adl_barrier.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/adl.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/msvc.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/intel.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/gcc.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/workaround.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/na.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/bool.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/bool_fwd.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/integral_c_tag.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/static_constant.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/na_fwd.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/ctps.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/lambda.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/ttp.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/int.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/int_fwd.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/nttp_decl.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/nttp.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/integral_wrapper.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/integral_c_tag.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/static_constant.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/static_cast.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/preprocessor/cat.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/preprocessor/config/config.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/lambda_arity_param.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/template_arity_fwd.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/arity.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/dtp.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/preprocessor/params.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/preprocessor.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/preprocessor/comma_if.hpp \
@@ -12175,101 +12212,6 @@ main.o: main.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/preprocessor/tuple/eat.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/preprocessor/inc.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/preprocessor/arithmetic/inc.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/lambda.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/ttp.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/ctps.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/overload_resolution.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/integral_constant.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/bool.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/bool_fwd.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/integral_c.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/integral_c_fwd.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/lambda_support.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/detail/bool_trait_undef.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_scalar.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_arithmetic.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_integral.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_float.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/detail/ice_or.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_enum.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/intrinsics.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/add_reference.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_reference.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_lvalue_reference.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_rvalue_reference.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/ice.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/detail/yes_no_type.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/detail/ice_and.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/detail/ice_not.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/detail/ice_eq.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/detail/type_trait_def.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/detail/type_trait_undef.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_convertible.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_array.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_abstract.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/static_assert.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_class.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_union.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/remove_cv.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/broken_compiler_spec.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/detail/cv_traits_impl.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/add_rvalue_reference.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_function.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/detail/false_result.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/detail/is_function_ptr_helper.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_pointer.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_member_pointer.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_member_function_pointer.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/detail/is_mem_fun_pointer_impl.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/uuid/uuid_generators.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/uuid/nil_generator.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/uuid/string_generator.hpp \
-  /usr/include/c++/4.2.1/iterator /usr/include/c++/4.2.1/ostream \
-  /usr/include/c++/4.2.1/ios /usr/include/c++/4.2.1/bits/localefwd.h \
-  /usr/include/c++/4.2.1/bits/ios_base.h \
-  /usr/include/c++/4.2.1/bits/locale_classes.h \
-  /usr/include/c++/4.2.1/streambuf \
-  /usr/include/c++/4.2.1/bits/streambuf.tcc \
-  /usr/include/c++/4.2.1/bits/basic_ios.h \
-  /usr/include/c++/4.2.1/bits/streambuf_iterator.h \
-  /usr/include/c++/4.2.1/bits/locale_facets.h \
-  /usr/include/c++/4.2.1/cwctype /usr/include/wctype.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_base.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_inline.h \
-  /usr/include/c++/4.2.1/bits/codecvt.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/time_members.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/messages_members.h \
-  /usr/include/c++/4.2.1/bits/basic_ios.tcc \
-  /usr/include/c++/4.2.1/bits/ostream.tcc /usr/include/c++/4.2.1/locale \
-  /usr/include/c++/4.2.1/bits/locale_facets.tcc \
-  /usr/include/c++/4.2.1/typeinfo /usr/include/c++/4.2.1/istream \
-  /usr/include/c++/4.2.1/bits/istream.tcc \
-  /usr/include/c++/4.2.1/bits/stream_iterator.h \
-  /usr/include/c++/4.2.1/stdexcept \
-  /Users/nicain/local/lib/boost_1_47_0/boost/throw_exception.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/exception/detail/attribute_noreturn.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/exception/exception.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/current_function.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/uuid/name_generator.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/uuid/sha1.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/assert.hpp \
-  /usr/include/assert.h /usr/include/c++/4.2.1/iostream \
-  /Users/nicain/local/lib/boost_1_47_0/boost/uuid/random_generator.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/uuid/seed_rng.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/iterator/iterator_facade.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/iterator.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/iterator/interoperable.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/or.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/use_preprocessed.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/nested_type_wknd.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/na_spec.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/lambda_fwd.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/void_fwd.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/na.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/na_fwd.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/lambda_arity_param.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/arity.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/dtp.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/preprocessor/enum.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/preprocessor/def_params_tail.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/limits/arity.hpp \
@@ -12294,56 +12236,52 @@ main.o: main.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/preprocessor/control/detail/while.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/preprocessor/tuple/elem.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/preprocessor/arithmetic/sub.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/eti.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/include_preprocessed.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/compiler.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/preprocessor/stringize.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/preprocessed/gcc/or.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/iterator/detail/config_def.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/iterator/detail/config_undef.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/iterator/iterator_traits.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/detail/iterator.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/iterator/detail/facade_iterator_category.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/iterator/iterator_categories.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/eval_if.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/if.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/value_wknd.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/integral.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/identity.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/placeholders.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/arg.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/arg_fwd.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/na_assert.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/assert.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/not.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/yes_no.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/arrays.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/pp_counter.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/arity_spec.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/arg_typedef.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/preprocessed/gcc/arg.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/and.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/preprocessed/gcc/and.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/overload_resolution.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/lambda_support.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/throw_exception.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/exception/detail/attribute_noreturn.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/exception/exception.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/current_function.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_pointer.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_member_pointer.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/config.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_member_function_pointer.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/detail/is_mem_fun_pointer_impl.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/remove_cv.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/broken_compiler_spec.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/detail/cv_traits_impl.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/detail/type_trait_def.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/detail/template_arity_spec.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/detail/type_trait_undef.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/detail/bool_trait_def.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/integral_constant.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/integral_c.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/integral_c_fwd.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/detail/bool_trait_undef.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/detail/ice_and.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/detail/ice_not.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_integral.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_arithmetic.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_float.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/detail/ice_or.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/numeric/conversion/cast.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/numeric/conversion/converter.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/numeric/conversion/conversion_traits.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/numeric/conversion/detail/conversion_traits.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_same.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_const.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/detail/indirect_traits.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_volatile.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/remove_reference.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/remove_pointer.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/iterator/detail/enable_if.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/implicit_cast.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/add_const.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/add_pointer.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/remove_const.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/always.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/apply.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/apply_fwd.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/preprocessed/gcc/apply_fwd.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/numeric/conversion/detail/meta.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/eval_if.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/equal_to.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/comparison_op.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/numeric_op.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/numeric_cast.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/apply_wrap.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/has_apply.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/has_xxx.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/type_wrapper.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/yes_no.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/arrays.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/has_xxx.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/msvc_typename.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/preprocessor/array/elem.hpp \
@@ -12353,7 +12291,131 @@ main.o: main.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/preprocessor/repetition/enum_trailing_params.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/has_apply.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/msvc_never_true.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/use_preprocessed.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/include_preprocessed.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/compiler.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/preprocessor/stringize.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/preprocessed/gcc/apply_wrap.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/tag.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/eval_if.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/void.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/has_tag.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/numeric_cast_utils.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/forwarding.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/msvc_eti_base.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/is_msvc_eti_arg.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/preprocessed/gcc/equal_to.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/not.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/nested_type_wknd.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/and.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/preprocessed/gcc/and.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/identity.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/numeric/conversion/detail/int_float_mixture.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/numeric/conversion/int_float_mixture_enum.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/numeric/conversion/detail/sign_mixture.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/numeric/conversion/sign_mixture_enum.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/numeric/conversion/detail/udt_builtin_mixture.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/numeric/conversion/udt_builtin_mixture_enum.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/numeric/conversion/detail/is_subranged.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/multiplies.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/times.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/arithmetic_op.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/largest_int.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/preprocessed/gcc/times.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/preprocessor/default_params.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/less.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/preprocessed/gcc/less.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/numeric/conversion/converter_policies.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/config/no_tr1/cmath.hpp \
+  /usr/include/c++/4.2.1/functional \
+  /Users/nicain/local/lib/boost_1_47_0/boost/numeric/conversion/detail/converter.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/numeric/conversion/detail/conversion_traits.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/numeric/conversion/bounds.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/numeric/conversion/detail/bounds.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/ice.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/detail/yes_no_type.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/detail/ice_eq.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/make_unsigned.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_signed.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_enum.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/intrinsics.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/add_reference.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_reference.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_lvalue_reference.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_rvalue_reference.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_convertible.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_array.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_void.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_abstract.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/static_assert.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_class.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_union.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/add_rvalue_reference.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_function.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/detail/false_result.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/detail/is_function_ptr_helper.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_unsigned.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_same.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_const.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_volatile.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/add_const.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/add_volatile.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/call_traits.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/detail/call_traits.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/detail/lcast_precision.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/integer_traits.hpp \
+  /usr/include/c++/4.2.1/sstream /usr/include/c++/4.2.1/bits/sstream.tcc \
+  Brain.h /Users/nicain/local/lib/boost_1_47_0/boost/uuid/uuid.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/cstdint.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_pod.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_scalar.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/uuid/uuid_generators.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/uuid/nil_generator.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/uuid/string_generator.hpp \
+  /usr/include/c++/4.2.1/iterator \
+  /usr/include/c++/4.2.1/bits/stream_iterator.h \
+  /usr/include/c++/4.2.1/stdexcept \
+  /Users/nicain/local/lib/boost_1_47_0/boost/uuid/name_generator.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/uuid/sha1.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/assert.hpp \
+  /usr/include/assert.h /usr/include/c++/4.2.1/iostream \
+  /Users/nicain/local/lib/boost_1_47_0/boost/uuid/random_generator.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/uuid/seed_rng.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/iterator/iterator_facade.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/iterator.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/iterator/interoperable.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/or.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/preprocessed/gcc/or.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/iterator/detail/config_def.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/iterator/detail/config_undef.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/iterator/iterator_traits.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/detail/iterator.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/iterator/detail/facade_iterator_category.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/iterator/iterator_categories.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/identity.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/placeholders.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/arg.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/arg_fwd.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/na_assert.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/assert.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/not.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/pp_counter.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/arity_spec.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/arg_typedef.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/preprocessed/gcc/arg.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/and.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/detail/indirect_traits.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/remove_reference.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/remove_pointer.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/iterator/detail/enable_if.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/implicit_cast.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/add_pointer.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/remove_const.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/always.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/apply.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/apply_fwd.hpp \
+  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/preprocessed/gcc/apply_fwd.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/lambda.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/bind.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/bind_fwd.hpp \
@@ -12366,7 +12428,6 @@ main.o: main.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/preprocessed/gcc/bind.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/full_lambda.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/quote.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/void.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/has_type.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/bcc.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/preprocessed/gcc/quote.hpp \
@@ -12376,21 +12437,15 @@ main.o: main.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/preprocessed/gcc/apply.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/random/uniform_int.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/random/uniform_int_distribution.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/limits.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/random/detail/config.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/random/detail/operators.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/random/detail/uniform_int_float.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/integer.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/integer_fwd.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/integer_traits.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/random/detail/generator_bits.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/random/detail/disable_warnings.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/random/detail/enable_warnings.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/random/detail/signed_unsigned_tools.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/make_unsigned.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_signed.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_unsigned.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/add_volatile.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/random/variate_generator.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/random/detail/ptr_helper.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/random/mersenne_twister.hpp \
@@ -12398,10 +12453,6 @@ main.o: main.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/random/detail/seed.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/utility/enable_if.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/random/detail/seed_impl.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/config/no_tr1/cmath.hpp \
-  /usr/include/c++/4.2.1/cmath /usr/include/math.h \
-  /usr/include/architecture/i386/math.h \
-  /usr/include/c++/4.2.1/bits/cmath.tcc \
   /Users/nicain/local/lib/boost_1_47_0/boost/integer/static_log2.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/random/detail/const_mod.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/random/detail/large_arithmetic.hpp \
@@ -12419,7 +12470,6 @@ main.o: main.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/smart_ptr/detail/sp_counted_base_gcc_x86.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/detail/sp_typeinfo.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/smart_ptr/detail/sp_counted_impl.hpp \
-  /usr/include/c++/4.2.1/functional \
   /Users/nicain/local/lib/boost_1_47_0/boost/smart_ptr/detail/sp_convertible.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/smart_ptr/detail/spinlock_pool.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/smart_ptr/detail/spinlock.hpp \
@@ -12482,7 +12532,6 @@ main.o: main.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/iterator_tags.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/deref.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/msvc_type.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/is_msvc_eti_arg.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/lambda_spec.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/list/aux_/include_preprocessed.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/list/aux_/preprocessed/plain/list10.hpp \
@@ -12492,7 +12541,6 @@ main.o: main.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/contains_fwd.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/sequence_tag.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/sequence_tag_fwd.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/has_tag.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/has_begin.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/contains_impl.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/begin_end.hpp \
@@ -12505,10 +12553,8 @@ main.o: main.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/iter_fold_if.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/logical.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/pair.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/msvc_eti_base.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/iter_fold_if_impl.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/preprocessed/gcc/iter_fold_if_impl.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/config/forwarding.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/same_as.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/remove_if.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/fold.hpp \
@@ -12530,7 +12576,6 @@ main.o: main.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/push_front_impl.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/clear.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/clear_impl.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/preprocessor/default_params.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/vector.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/limits/vector.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/vector/vector20.hpp \
@@ -12553,12 +12598,6 @@ main.o: main.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/vector/aux_/vector0.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/vector/aux_/iterator.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/plus.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/arithmetic_op.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/largest_int.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/numeric_op.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/numeric_cast.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/tag.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/numeric_cast_utils.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/preprocessed/gcc/plus.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/minus.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/preprocessed/gcc/minus.hpp \
@@ -12577,8 +12616,6 @@ main.o: main.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/at_impl.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/advance.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/less.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/comparison_op.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/preprocessed/gcc/less.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/negate.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/advance_forward.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/preprocessed/gcc/advance_forward.hpp \
@@ -12593,7 +12630,6 @@ main.o: main.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/iterator_range.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/comparison.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/equal_to.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/preprocessed/gcc/equal_to.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/not_equal_to.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/preprocessed/gcc/not_equal_to.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/greater.hpp \
@@ -12622,7 +12658,6 @@ main.o: main.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/format/internals.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/optional.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/optional/optional.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/type.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/alignment_of.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/detail/size_t_trait_def.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/mpl/size_t.hpp \
@@ -12677,8 +12712,7 @@ main.o: main.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/tools/promotion.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/type_traits/is_floating_point.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/config/no_tr1/complex.hpp \
-  /usr/include/c++/4.2.1/complex /usr/include/c++/4.2.1/sstream \
-  /usr/include/c++/4.2.1/bits/sstream.tcc \
+  /usr/include/c++/4.2.1/complex \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/log1p.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/tools/series.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/tools/rational.hpp \
@@ -12693,30 +12727,6 @@ main.o: main.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/bessel.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/bessel_jy.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/gamma.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/lexical_cast.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/numeric/conversion/cast.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/numeric/conversion/converter.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/numeric/conversion/conversion_traits.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/numeric/conversion/detail/conversion_traits.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/numeric/conversion/detail/meta.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/numeric/conversion/detail/int_float_mixture.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/numeric/conversion/int_float_mixture_enum.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/numeric/conversion/detail/sign_mixture.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/numeric/conversion/sign_mixture_enum.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/numeric/conversion/detail/udt_builtin_mixture.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/numeric/conversion/udt_builtin_mixture_enum.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/numeric/conversion/detail/is_subranged.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/multiplies.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/times.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/mpl/aux_/preprocessed/gcc/times.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/numeric/conversion/converter_policies.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/numeric/conversion/detail/converter.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/numeric/conversion/detail/conversion_traits.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/numeric/conversion/bounds.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/numeric/conversion/detail/bounds.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/call_traits.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/detail/call_traits.hpp \
-  /Users/nicain/local/lib/boost_1_47_0/boost/detail/lcast_precision.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/tools/fraction.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/constants/constants.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/trunc.hpp \

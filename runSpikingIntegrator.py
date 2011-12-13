@@ -13,7 +13,7 @@ import argparse
 import time
 from subprocess import call as call
 
-maxTDefault = 500
+maxTDefault = 5000
 
 # Parse input arguments:
 parser = argparse.ArgumentParser(description='Spiking Integrator')
