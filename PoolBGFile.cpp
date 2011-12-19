@@ -30,6 +30,9 @@ void PoolBGFile::construct(string fileName_in, string poolName_in)
 	for (int i = 0; i <	(spikeList->n)->size(); i++) {
 		pr = nameSet->insert((*(spikeList->n))[i]);	
 	}
+	
+
+	
 	AMPA->resize(nameSet->size());
 };
 

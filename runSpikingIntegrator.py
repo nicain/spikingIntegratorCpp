@@ -11,7 +11,9 @@
 import sys
 import argparse
 import time
-from subprocess import call as call
+from subprocess import Popen as Popen
+from subprocess import PIPE as PIPE
+import compNeuroPython as CNP
 
 maxTDefault = 5000
 
@@ -62,6 +64,24 @@ parser.add_argument('--recordBGSpikes',
                     const=1,
                     dest='recordBGSpikes',
                     help='Record BG Spikes?')
+parser.add_argument('--recordInputSpikes',
+                    default=0,
+					action='store_const',
+                    const=1,
+                    dest='recordInputSpikes',
+                    help='Record Input Spikes?')
+parser.add_argument('--fr',
+                    default=0,
+					action='store_const',
+                    const=1,
+                    dest='fr',
+                    help='.ntf to .fr?')
+parser.add_argument('--thresholdTest',
+                    default=0,
+					action='store_const',
+                    const=1,
+                    dest='thresholdTest',
+                    help='Perform threshold test?')
 
 args = parser.parse_args(sys.argv[1:])
 
@@ -76,12 +96,24 @@ tBegin = time.mktime(time.localtime())
 callString = executable
 for arg in [args.C, args.tOn, args.tOff, args.tMax, args.correlation,
 			args.saveResults,  
-			args.recordBGSpikes]:
+			args.recordBGSpikes, args.recordInputSpikes]:
 	callString += " " + str(arg)
 
-call(callString, shell=True)
 
-print callString
+process = Popen(callString.split(), shell=False, stdout=PIPE)
+currUUID = process.communicate()[0].strip()
+
+if args.fr == 1:
+	fileNamePrefixList = ["GESel1","GESel2"]
+	for fileNamePrefix in fileNamePrefixList:
+		fileNamePrefix += "_" + currUUID
+		for setting in callString.split()[1:]:
+			fileNamePrefix += "_" + setting
+		
+		CNP.ntfToFRFile(fileNamePrefix + ".ntf")
+
+if args.thresholdTest == 1:
+	CNP.thresholdTestUUID(currUUID, range(1,15+1))
 		   
 tEnd = time.mktime(time.localtime())
 print 'Total Computation Time: ', time.strftime("H:%H M:%M S:%S",time.gmtime(tEnd - tBegin))

@@ -1,23 +1,24 @@
-EXECUTABLE=./build/Debug/spikingIntegrator
-CC=g++
-#CC=/sw/intel/bin/icc
-INCLUDEFLAGS=-I /Users/nicain/local/lib/boost_1_47_0
-#INCLUDEFLAGS=-I /usr/lusers/nicain/local/src/boost_1_48_0
-RELEASEFLAGS=
-#RELEASEFLAGS= -O3
+ifeq ($(JOBLOCATION),Booboo)
+	EXECUTABLE=./build/Debug/spikingIntegrator
+	CC=g++
+	INCLUDEFLAGS=-I /Users/nicain/local/lib/boost_1_47_0
+	RELEASEFLAGS=
+endif
+
+ifeq ($(JOBLOCATION),Hyak)
+	EXECUTABLE=../build/Debug/spikingIntegrator
+	CC=/sw/intel/bin/icc
+	INCLUDEFLAGS=-I /usr/lusers/nicain/local/src/boost_1_48_0
+	RELEASEFLAGS=-O3
+endif
+
 SOURCES = $(wildcard *.cpp)
 OBJECTS = $(patsubst %.cpp, %.o, $(wildcard *.cpp))
 HEADERS = $(wildcard *.h)
 
-
 .PHONY: default all clean
 default: $(EXECUTABLE)
 all: default
-
-release: RELEASEFLAGS= -O3 -funit-at-a-time -DNDEBUG
-release: EXECUTABLE=SI_release
-release: $(OBJECTS) $(EXECUTABLE)
-
 .PRECIOUS: $(TARGET) $(OBJECTS)
 
 depend:

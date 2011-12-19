@@ -35,8 +35,14 @@ SpikeList::SpikeList(string fileName, string prefix)
 	while (getline(inputFile, inputLine))
 	{
 		boost::algorithm::split(SplitResult1, inputLine,boost::is_any_of("\t"));
-		boost::algorithm::split(SplitResult2, SplitResult1[0],boost::is_any_of("_"));
-		n->push_back(boost::lexical_cast<int>(SplitResult2[1]));
+//		boost::algorithm::split(SplitResult2, SplitResult1[0],boost::is_any_of("_"));
+		
+//		cout << inputLine << endl;
+//		cout << SplitResult1[0] << endl;
+//		cout << SplitResult1[1] << endl;
+		
+		
+		n->push_back(boost::lexical_cast<int>(SplitResult1[0]));
 		t->push_back(boost::lexical_cast<double>(SplitResult1[1]));	
 	}
 	inputFile.close();
@@ -99,7 +105,8 @@ void SpikeList::toFile(string fileNamePrefix)
 	// Write the spikes in "name-time format":
 	for (int i = 0; i <= t->size()-1; i++)
 	{
-		myfile << fileNamePrefix << "_" << (*n)[i] << "\t" << (*t)[i] << endl;
+//		myfile << fileNamePrefix << "_" << (*n)[i] << "\t" << (*t)[i] << endl;
+		myfile << (*n)[i] << "\t" << (*t)[i] << endl;
 	}
 	
 	myfile.close();

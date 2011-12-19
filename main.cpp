@@ -46,6 +46,7 @@ int main( int argc,      // Number of strings in array argv
 	const double inputCorrelation = atof(argv[5]);
 	const bool saveResults = lexical_cast<bool>(argv[6]);
 	const bool recordBGSpikes = lexical_cast<bool>(argv[7]);
+	const bool recordInputSpikes = lexical_cast<bool>(argv[8]);
 	
 	// Network dimension settings:
 	const int NN = 2000;
@@ -96,11 +97,11 @@ int main( int argc,      // Number of strings in array argv
 //	PoolBGOU BGI("BGI", Network, NI, true, BgFRI, tOn, tOff);
 	
 	// Input populations:
-	PoolBGPoisson InputSel1("InputSel1", Network, NSel, false, InputPoolFRSel1, inputCorrelation, tOn, tOff);
-	PoolBGPoisson InputSel2("InputSel2", Network, NSel, false, InputPoolFRSel2, inputCorrelation, tOn, tOff);
+	PoolBGPoisson InputSel1("InputSel1", Network, NSel, recordInputSpikes, InputPoolFRSel1, inputCorrelation, tOn, tOff);
+	PoolBGPoisson InputSel2("InputSel2", Network, NSel, recordInputSpikes, InputPoolFRSel2, inputCorrelation, tOn, tOff);
 	
-	//	PoolBGFile InputSel1("InputSel1", Network, "BGSpikes/InputSel1_1.ntf");
-	//	PoolBGFile InputSel2("InputSel2", Network, "BGSpikes/InputSel2_1.ntf");
+//	PoolBGFile InputSel1("InputSel1", Network, "./BGSpikes/InputSel1.ntf");
+//	PoolBGFile InputSel2("InputSel2", Network, "./BGSpikes/InputSel2.ntf");
 	
 	// Excitatory populations:
 	PoolRecEx GESel1("GESel1", Network, NSel, true);
@@ -156,6 +157,7 @@ int main( int argc,      // Number of strings in array argv
 	
 //	MonitorBrain brainMonitor(Network);
 	
+
 	
 	Network.init();
 	
@@ -185,6 +187,8 @@ int main( int argc,      // Number of strings in array argv
 	
 	
 	Network.close();
+	
+	cout << Network.UUID_string << endl;
 	
 	return 0;
 }

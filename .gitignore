@@ -1,4 +1,5 @@
 SI
+analysis/
 compareOUPoisson/
 BGSpikes/
 dt_compare/
@@ -6,7 +7,10 @@ dt_compareRK4/
 dt_exact/
 .trash/
 build/
+hyak/
 
+.rsync_exclude
+syncHyak.sh
 MyTemplate.tracetemplate
 spikingIntegrator.tar.gz
 makefile.bak
