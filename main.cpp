@@ -9,6 +9,7 @@
 #include <boost/lexical_cast.hpp>
 #include "Brain.h"
 #include "PoolBGFile.h"
+#include "PoolBGSL.h"
 #include "PoolBGPoisson.h"
 #include "PoolBGOU.h"
 #include "PoolRecEx.h"
@@ -80,28 +81,14 @@ int main( int argc,      // Number of strings in array argv
 	Brain Network(argString);
 	
 //	// Backgroud populations:
-//	PoolBGOU BGESel1("BGESel1", Network, NSel, true, BgFREPool, tOn, tOff);
-//	PoolBGFile BGESel1("BGESel1", Network, "BGSpikes/BGESel1_1.ntf");
-//	PoolBGFile BGESel2("BGESel2", Network, "BGSpikes/BGESel2_1.ntf");
-//	PoolBGFile BGENSel("BGENSel", Network, "BGSpikes/BGENSel_1.ntf");
-//	PoolBGFile BGI("BGI", Network, "BGSpikes/BGI_1.ntf");
-
 	PoolBGPoisson BGESel1("BGESel1", Network, NSel, recordBGSpikes, BgFRE, inputCorrelation, tOn, tOff);
 	PoolBGPoisson BGESel2("BGESel2", Network, NSel, recordBGSpikes, BgFRE, inputCorrelation, tOn, tOff);
 	PoolBGPoisson BGENSel("BGENSel", Network, NNSel, recordBGSpikes, BgFRE, inputCorrelation, tOn, tOff);
 	PoolBGPoisson BGI("BGI", Network, NI, recordBGSpikes, BgFRI, tOn, inputCorrelation, tOff);
-	
-//	PoolBGOU BGESel1("BGESel1", Network, NSel, true, BgFRE, tOn, tOff);
-//	PoolBGOU BGESel2("BGESel2", Network, NSel, true, BgFRE, tOn, tOff);
-//	PoolBGOU BGENSel("BGENSel", Network, NNSel, true, BgFRE, tOn, tOff);
-//	PoolBGOU BGI("BGI", Network, NI, true, BgFRI, tOn, tOff);
-	
+		
 	// Input populations:
 	PoolBGPoisson InputSel1("InputSel1", Network, NSel, recordInputSpikes, InputPoolFRSel1, inputCorrelation, tOn, tOff);
 	PoolBGPoisson InputSel2("InputSel2", Network, NSel, recordInputSpikes, InputPoolFRSel2, inputCorrelation, tOn, tOff);
-	
-//	PoolBGFile InputSel1("InputSel1", Network, "./BGSpikes/InputSel1.ntf");
-//	PoolBGFile InputSel2("InputSel2", Network, "./BGSpikes/InputSel2.ntf");
 	
 	// Excitatory populations:
 	PoolRecEx GESel1("GESel1", Network, NSel, true);
@@ -148,15 +135,6 @@ int main( int argc,      // Number of strings in array argv
 	//========================================================================//
 	//=========================== Run Network ================================//
 	//========================================================================//
-	
-	
-	//	MonitorNeuronFile tmpMonitor(Network, InputSel1, 0, S_AMPA);
-	//	MonitorNeuron tmpMonitor2(Network, BGESel1, 0, S_AMPA);
-	//	MonitorNeuronFile tmpMonitor(Network, BGESel1, 0, S_AMPA);
-	
-	
-//	MonitorBrain brainMonitor(Network);
-	
 
 	
 	Network.init();
@@ -166,29 +144,80 @@ int main( int argc,      // Number of strings in array argv
 		Network.run(100);
 	}
 	
-	if (saveResults) {
-		Network.spikesToFile();
-	}
-	
-//	GESel1.toFile("blah");
-//	GESel2.toFile("blah");
-	
-	// Spike output:
-	//	GESel1.toFile("all");
-	//	GESel2.toFile("all");
-	//	GENSel.toFile("all");
-	//	GI.toFile("all");
-	//	BGESel1.toFile("all");
-	//	BGESel2.toFile("all");
-	//	BGENSel.toFile("all");
-	//	BGI.toFile("all");
-	//	InputSel1.toFile("all");
-	//	InputSel2.toFile("all");
-	
+	GESel1.toFileExact(GESel1.poolName + "a_" + Network.UUID_string);
+	GESel2.toFileExact(GESel2.poolName + "a_" + Network.UUID_string);
 	
 	Network.close();
 	
-	cout << Network.UUID_string << endl;
+	// Main network:
+	Brain Networkb(argString);
+	
+	//	// Backgroud populations:
+	PoolBGPoisson BGESel1b("BGESel1", Networkb, NSel, recordBGSpikes, BgFRE, inputCorrelation, tOn, tOff);
+	PoolBGPoisson BGESel2b("BGESel2", Networkb, NSel, recordBGSpikes, BgFRE, inputCorrelation, tOn, tOff);
+	PoolBGPoisson BGENSelb("BGENSel", Networkb, NNSel, recordBGSpikes, BgFRE, inputCorrelation, tOn, tOff);
+	PoolBGPoisson BGIb("BGI", Networkb, NI, recordBGSpikes, BgFRI, tOn, inputCorrelation, tOff);
+	
+	// Input populations:
+	PoolBGSL InputSel1b("InputSel1", Networkb, *InputSel1.spikeList);
+	PoolBGSL InputSel2b("InputSel2", Networkb, *InputSel2.spikeList);
+	
+	InputSel1.print();
+	InputSel1b.print();
+	
+	// Excitatory populations:
+	PoolRecEx GESel1b("GESel1", Networkb, NSel, true);
+	PoolRecEx GESel2b("GESel2", Networkb, NSel, true);
+	PoolRecEx GENSelb("GENSel", Networkb, NNSel, false);
+	
+	// Inhibitory populations:
+	PoolRecInh GIb("GI", Networkb, NI, false);
+	
+	//========================================================================//
+	//========================== Connect Network =============================//
+	//========================================================================//
+	
+	// Connections to GESel1:
+	GESel1b.connectTo(BGESel1b);
+	GESel1b.connectTo(InputSel1b);
+	GESel1b.connectTo(GESel1b, wPlus);
+	GESel1b.connectTo(GESel2b, wMinus);
+	GESel1b.connectTo(GENSelb, wMinus);
+	GESel1b.connectTo(GIb);
+	
+	// Connections to GESel2:
+	GESel2b.connectTo(BGESel2b);
+	GESel2b.connectTo(InputSel2b);
+	GESel2b.connectTo(GESel1b, wMinus);
+	GESel2b.connectTo(GESel2b, wPlus);
+	GESel2b.connectTo(GENSelb, wMinus);
+	GESel2b.connectTo(GIb);
+	
+	// Connections to GENSel:
+	GENSelb.connectTo(BGENSelb);
+	GENSelb.connectTo(GESel1b, w);
+	GENSelb.connectTo(GESel2b, w);
+	GENSelb.connectTo(GENSelb, w);
+	GENSelb.connectTo(GIb);
+	
+	// Connections to GI:
+	GIb.connectTo(BGIb);
+	GIb.connectTo(GESel1b, w);
+	GIb.connectTo(GESel2b, w);
+	GIb.connectTo(GENSelb, w);
+	GIb.connectTo(GIb);
+	
+	Networkb.init();
+	
+	while (Networkb.t < tMax)
+	{
+		Networkb.run(100);
+	}
+	
+	GESel1b.toFileExact(GESel1b.poolName + "b_" + Network.UUID_string);
+	GESel2b.toFileExact(GESel2b.poolName + "b_" + Network.UUID_string);
+	
+	Network.close();
 	
 	return 0;
 }

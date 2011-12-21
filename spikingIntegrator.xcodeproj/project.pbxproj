@@ -22,6 +22,7 @@
 		9E826193149326120066B67C /* MonitorBrain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E826188149326120066B67C /* MonitorBrain.cpp */; };
 		9E826194149326120066B67C /* SpikeList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E82618C149326120066B67C /* SpikeList.cpp */; };
 		9E826195149326120066B67C /* MonitorNeuronFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E826190149326120066B67C /* MonitorNeuronFile.cpp */; };
+		9EB5EB7114A274E500287F09 /* PoolBGSL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9EB5EB7014A274E500287F09 /* PoolBGSL.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -69,6 +70,8 @@
 		9E82618F149326120066B67C /* MonitorNeuronFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonitorNeuronFile.h; sourceTree = "<group>"; };
 		9E826190149326120066B67C /* MonitorNeuronFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MonitorNeuronFile.cpp; sourceTree = "<group>"; };
 		9EAD355414934CB20058E50D /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
+		9EB5EB6F14A274E500287F09 /* PoolBGSL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolBGSL.h; sourceTree = "<group>"; };
+		9EB5EB7014A274E500287F09 /* PoolBGSL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PoolBGSL.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +200,8 @@
 				9E826186149326120066B67C /* PoolBGPoisson.h */,
 				9E82616E149325DB0066B67C /* PoolBGFile.cpp */,
 				9E82618E149326120066B67C /* PoolBGFile.h */,
+				9EB5EB6F14A274E500287F09 /* PoolBGSL.h */,
+				9EB5EB7014A274E500287F09 /* PoolBGSL.cpp */,
 			);
 			name = PoolBG;
 			sourceTree = "<group>";
@@ -266,6 +271,7 @@
 				9E826193149326120066B67C /* MonitorBrain.cpp in Sources */,
 				9E826194149326120066B67C /* SpikeList.cpp in Sources */,
 				9E826195149326120066B67C /* MonitorNeuronFile.cpp in Sources */,
+				9EB5EB7114A274E500287F09 /* PoolBGSL.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

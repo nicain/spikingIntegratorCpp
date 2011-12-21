@@ -15,7 +15,6 @@ class PoolBGFile: public PoolBG
 	
 	// Constructor+Destructor:
 	PoolBGFile(string, Brain&, string);
-	PoolBGFile(string, Brain&, bool, string);
 	void construct(string, string);
 	~PoolBGFile();
 	

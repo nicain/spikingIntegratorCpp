@@ -70,6 +70,11 @@ void Pool::toFile(string appendString)
 	spikeList->toFile(fileNamePrefix);
 };
 
+void Pool::toFileExact(string fileNamePrefix) 
+{	
+	spikeList->toFile(fileNamePrefix);
+};
+
 double Pool::getFR() 
 {
 	return double((spikeList->size()))/parentBrain->t/(double(N))*double(1000);

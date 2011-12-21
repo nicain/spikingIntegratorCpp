@@ -15,7 +15,6 @@ class PoolBG: public Pool
 	static const double tau_AMPA = 2;
 	static double tau_AMPA_Inv_times_dt;
 
-	
   public:
 	
 	// Constructor+Destructor:
@@ -34,6 +33,7 @@ class PoolBG: public Pool
 	// Friends:
 	friend class PoolBGFile;
 	friend class PoolBGOU;
+	friend class PoolBGSL;
 };
 
 #endif
