@@ -162,9 +162,6 @@ int main( int argc,      // Number of strings in array argv
 	PoolBGSL InputSel1b("InputSel1", Networkb, *InputSel1.spikeList);
 	PoolBGSL InputSel2b("InputSel2", Networkb, *InputSel2.spikeList);
 	
-	InputSel1.print();
-	InputSel1b.print();
-	
 	// Excitatory populations:
 	PoolRecEx GESel1b("GESel1", Networkb, NSel, true);
 	PoolRecEx GESel2b("GESel2", Networkb, NSel, true);
@@ -218,6 +215,8 @@ int main( int argc,      // Number of strings in array argv
 	GESel2b.toFileExact(GESel2b.poolName + "b_" + Network.UUID_string);
 	
 	Network.close();
+	
+	cout << Network.UUID_string << endl;
 	
 	return 0;
 }
