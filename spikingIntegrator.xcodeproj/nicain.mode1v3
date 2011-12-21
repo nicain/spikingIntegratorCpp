@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>9EB5EC0614A28DA900287F09</string>
+						<string>9EB5EC0E14A291EC00287F09</string>
 						<key>history</key>
 						<array>
 							<string>9EB5EC0414A28DA900287F09</string>
@@ -381,7 +381,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>9EB5EC0114A28DA900287F09</string>
+										<string>9EB5EC0D14A291EC00287F09</string>
 										<key>history</key>
 										<array>
 											<string>9E8261B3149328280066B67C</string>
@@ -621,9 +621,9 @@
 	<array>
 		<string>9EB5EBE014A27DD000287F09</string>
 		<string>9EB5EBE114A27DD000287F09</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>9E3E063C14932267008FA938</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>9EB5EC0214A28DA900287F09</string>
 		<string>/Users/nicain/Desktop/spikingIntegratorCpp/spikingIntegrator.xcodeproj</string>
 	</array>
@@ -1009,7 +1009,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

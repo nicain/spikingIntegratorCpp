@@ -144,8 +144,8 @@ int main( int argc,      // Number of strings in array argv
 		Network.run(100);
 	}
 	
-	GESel1.toFileExact(GESel1.poolName + "a_" + Network.UUID_string);
-	GESel2.toFileExact(GESel2.poolName + "a_" + Network.UUID_string);
+	GESel1.toFileExact(GESel1.poolName + "a_" + Network.UUID_string + "_" + argString);
+	GESel2.toFileExact(GESel2.poolName + "a_" + Network.UUID_string + "_" + argString);
 	
 	Network.close();
 	
@@ -211,8 +211,8 @@ int main( int argc,      // Number of strings in array argv
 		Networkb.run(100);
 	}
 	
-	GESel1b.toFileExact(GESel1b.poolName + "b_" + Network.UUID_string);
-	GESel2b.toFileExact(GESel2b.poolName + "b_" + Network.UUID_string);
+	GESel1b.toFileExact(GESel1b.poolName + "b_" + Network.UUID_string + "_" + argString);
+	GESel2b.toFileExact(GESel2b.poolName + "b_" + Network.UUID_string + "_" + argString);
 	
 	Network.close();
 	
