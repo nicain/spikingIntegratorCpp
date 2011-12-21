@@ -104,7 +104,7 @@ process = Popen(callString.split(), shell=False, stdout=PIPE)
 currUUID = process.communicate()[0].strip()
 
 if args.fr == 1:
-	fileNamePrefixList = ["GESel1","GESel2"]
+	fileNamePrefixList = ["GESel1a","GESel2a","GESel1b","GESel2b"]
 	for fileNamePrefix in fileNamePrefixList:
 		fileNamePrefix += "_" + currUUID
 		for setting in callString.split()[1:]:
