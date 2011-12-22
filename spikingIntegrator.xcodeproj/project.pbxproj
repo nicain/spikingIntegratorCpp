@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		8DD76F650486A84900D96B5E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* main.cpp */; settings = {ATTRIBUTES = (); }; };
 		9E826173149325DB0066B67C /* Brain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E82616A149325DB0066B67C /* Brain.cpp */; };
-		9E826174149325DB0066B67C /* PoolBGPoisson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E82616B149325DB0066B67C /* PoolBGPoisson.cpp */; };
+		9E826174149325DB0066B67C /* PoolBGHPoisson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E82616B149325DB0066B67C /* PoolBGHPoisson.cpp */; };
 		9E826175149325DB0066B67C /* PoolBGOU.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E82616D149325DB0066B67C /* PoolBGOU.cpp */; };
 		9E826176149325DB0066B67C /* PoolBGFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E82616E149325DB0066B67C /* PoolBGFile.cpp */; };
 		9E826177149325DB0066B67C /* PoolBG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E826170149325DB0066B67C /* PoolBG.cpp */; };
@@ -42,7 +42,7 @@
 		8DD76F6C0486A84900D96B5E /* spikingIntegrator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = spikingIntegrator; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E535DC714971C2A00B147EE /* runSpikingIntegrator.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = runSpikingIntegrator.py; sourceTree = "<group>"; };
 		9E82616A149325DB0066B67C /* Brain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Brain.cpp; sourceTree = "<group>"; };
-		9E82616B149325DB0066B67C /* PoolBGPoisson.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PoolBGPoisson.cpp; sourceTree = "<group>"; };
+		9E82616B149325DB0066B67C /* PoolBGHPoisson.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PoolBGHPoisson.cpp; sourceTree = "<group>"; };
 		9E82616C149325DB0066B67C /* PoolBGOU.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolBGOU.h; sourceTree = "<group>"; };
 		9E82616D149325DB0066B67C /* PoolBGOU.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PoolBGOU.cpp; sourceTree = "<group>"; };
 		9E82616E149325DB0066B67C /* PoolBGFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PoolBGFile.cpp; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 		9E826183149326120066B67C /* PoolRecEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolRecEx.h; sourceTree = "<group>"; };
 		9E826184149326120066B67C /* Pool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Pool.cpp; sourceTree = "<group>"; };
 		9E826185149326120066B67C /* Pool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pool.h; sourceTree = "<group>"; };
-		9E826186149326120066B67C /* PoolBGPoisson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolBGPoisson.h; sourceTree = "<group>"; };
+		9E826186149326120066B67C /* PoolBGHPoisson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolBGHPoisson.h; sourceTree = "<group>"; };
 		9E826187149326120066B67C /* Monitor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Monitor.cpp; sourceTree = "<group>"; };
 		9E826188149326120066B67C /* MonitorBrain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MonitorBrain.cpp; sourceTree = "<group>"; };
 		9E826189149326120066B67C /* MonitorBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonitorBrain.h; sourceTree = "<group>"; };
@@ -196,8 +196,8 @@
 				9E82616F149325DB0066B67C /* PoolBG.h */,
 				9E82616D149325DB0066B67C /* PoolBGOU.cpp */,
 				9E82616C149325DB0066B67C /* PoolBGOU.h */,
-				9E82616B149325DB0066B67C /* PoolBGPoisson.cpp */,
-				9E826186149326120066B67C /* PoolBGPoisson.h */,
+				9E82616B149325DB0066B67C /* PoolBGHPoisson.cpp */,
+				9E826186149326120066B67C /* PoolBGHPoisson.h */,
 				9E82616E149325DB0066B67C /* PoolBGFile.cpp */,
 				9E82618E149326120066B67C /* PoolBGFile.h */,
 				9EB5EB6F14A274E500287F09 /* PoolBGSL.h */,
@@ -258,7 +258,7 @@
 			files = (
 				8DD76F650486A84900D96B5E /* main.cpp in Sources */,
 				9E826173149325DB0066B67C /* Brain.cpp in Sources */,
-				9E826174149325DB0066B67C /* PoolBGPoisson.cpp in Sources */,
+				9E826174149325DB0066B67C /* PoolBGHPoisson.cpp in Sources */,
 				9E826175149325DB0066B67C /* PoolBGOU.cpp in Sources */,
 				9E826176149325DB0066B67C /* PoolBGFile.cpp in Sources */,
 				9E826177149325DB0066B67C /* PoolBG.cpp in Sources */,

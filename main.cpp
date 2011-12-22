@@ -10,7 +10,7 @@
 #include "Brain.h"
 #include "PoolBGFile.h"
 #include "PoolBGSL.h"
-#include "PoolBGPoisson.h"
+#include "PoolBGHPoisson.h"
 #include "PoolBGOU.h"
 #include "PoolRecEx.h"
 #include "PoolRecInh.h"
@@ -81,14 +81,14 @@ int main( int argc,      // Number of strings in array argv
 	Brain Network(argString);
 	
 //	// Backgroud populations:
-	PoolBGPoisson BGESel1("BGESel1", Network, NSel, recordBGSpikes, BgFRE, inputCorrelation, tOn, tOff);
-	PoolBGPoisson BGESel2("BGESel2", Network, NSel, recordBGSpikes, BgFRE, inputCorrelation, tOn, tOff);
-	PoolBGPoisson BGENSel("BGENSel", Network, NNSel, recordBGSpikes, BgFRE, inputCorrelation, tOn, tOff);
-	PoolBGPoisson BGI("BGI", Network, NI, recordBGSpikes, BgFRI, tOn, inputCorrelation, tOff);
+	PoolBGHPoisson BGESel1("BGESel1", Network, NSel, recordBGSpikes, BgFRE, inputCorrelation, tOn, tOff);
+	PoolBGHPoisson BGESel2("BGESel2", Network, NSel, recordBGSpikes, BgFRE, inputCorrelation, tOn, tOff);
+	PoolBGHPoisson BGENSel("BGENSel", Network, NNSel, recordBGSpikes, BgFRE, inputCorrelation, tOn, tOff);
+	PoolBGHPoisson BGI("BGI", Network, NI, recordBGSpikes, BgFRI, tOn, inputCorrelation, tOff);
 		
 	// Input populations:
-	PoolBGPoisson InputSel1("InputSel1", Network, NSel, recordInputSpikes, InputPoolFRSel1, inputCorrelation, tOn, tOff);
-	PoolBGPoisson InputSel2("InputSel2", Network, NSel, recordInputSpikes, InputPoolFRSel2, inputCorrelation, tOn, tOff);
+	PoolBGHPoisson InputSel1("InputSel1", Network, NSel, recordInputSpikes, InputPoolFRSel1, inputCorrelation, tOn, tOff);
+	PoolBGHPoisson InputSel2("InputSel2", Network, NSel, recordInputSpikes, InputPoolFRSel2, inputCorrelation, tOn, tOff);
 	
 	// Excitatory populations:
 	PoolRecEx GESel1("GESel1", Network, NSel, true);
@@ -153,10 +153,10 @@ int main( int argc,      // Number of strings in array argv
 	Brain Networkb(argString);
 	
 	//	// Backgroud populations:
-	PoolBGPoisson BGESel1b("BGESel1", Networkb, NSel, recordBGSpikes, BgFRE, inputCorrelation, tOn, tOff);
-	PoolBGPoisson BGESel2b("BGESel2", Networkb, NSel, recordBGSpikes, BgFRE, inputCorrelation, tOn, tOff);
-	PoolBGPoisson BGENSelb("BGENSel", Networkb, NNSel, recordBGSpikes, BgFRE, inputCorrelation, tOn, tOff);
-	PoolBGPoisson BGIb("BGI", Networkb, NI, recordBGSpikes, BgFRI, tOn, inputCorrelation, tOff);
+	PoolBGHPoisson BGESel1b("BGESel1", Networkb, NSel, recordBGSpikes, BgFRE, inputCorrelation, tOn, tOff);
+	PoolBGHPoisson BGESel2b("BGESel2", Networkb, NSel, recordBGSpikes, BgFRE, inputCorrelation, tOn, tOff);
+	PoolBGHPoisson BGENSelb("BGENSel", Networkb, NNSel, recordBGSpikes, BgFRE, inputCorrelation, tOn, tOff);
+	PoolBGHPoisson BGIb("BGI", Networkb, NI, recordBGSpikes, BgFRI, tOn, inputCorrelation, tOff);
 	
 	// Input populations:
 	PoolBGSL InputSel1b("InputSel1", Networkb, *InputSel1.spikeList);
