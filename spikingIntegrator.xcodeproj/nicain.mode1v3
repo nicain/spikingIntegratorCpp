@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>9EB5EC4114A3B62700287F09</string>
+						<string>9EB5EC5314A3B84A00287F09</string>
 						<key>history</key>
 						<array>
 							<string>9EB5EC0414A28DA900287F09</string>
@@ -326,9 +326,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>24</integer>
-									<integer>19</integer>
-									<integer>16</integer>
+									<integer>4</integer>
 									<integer>3</integer>
 									<integer>0</integer>
 								</array>
@@ -371,7 +369,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PoolBGHPoisson.cpp</string>
+								<string>main.cpp</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -379,11 +377,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>PoolBGHPoisson.cpp</string>
+										<string>main.cpp</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>9EB5EC4014A3B62700287F09</string>
+										<string>9EB5EC5214A3B84A00287F09</string>
 										<key>history</key>
 										<array>
 											<string>9E8261B3149328280066B67C</string>
@@ -422,9 +420,11 @@
 											<string>9EB5EBED14A27FA900287F09</string>
 											<string>9EB5EBEE14A27FA900287F09</string>
 											<string>9EB5EBFF14A28DA900287F09</string>
-											<string>9EB5EC3314A3B5DE00287F09</string>
-											<string>9EB5EC3E14A3B62700287F09</string>
-											<string>9EB5EC3F14A3B62700287F09</string>
+											<string>9EB5EC4D14A3B84A00287F09</string>
+											<string>9EB5EC4E14A3B84A00287F09</string>
+											<string>9EB5EC4F14A3B84A00287F09</string>
+											<string>9EB5EC5014A3B84A00287F09</string>
+											<string>9EB5EC5114A3B84A00287F09</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>

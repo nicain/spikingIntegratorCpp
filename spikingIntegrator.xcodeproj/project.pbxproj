@@ -23,6 +23,7 @@
 		9E826194149326120066B67C /* SpikeList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E82618C149326120066B67C /* SpikeList.cpp */; };
 		9E826195149326120066B67C /* MonitorNeuronFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E826190149326120066B67C /* MonitorNeuronFile.cpp */; };
 		9EB5EB7114A274E500287F09 /* PoolBGSL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9EB5EB7014A274E500287F09 /* PoolBGSL.cpp */; };
+		9EB5EC4814A3B7D600287F09 /* PoolBGInHPoisson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9EB5EC4714A3B7D600287F09 /* PoolBGInHPoisson.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -72,6 +73,8 @@
 		9EAD355414934CB20058E50D /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
 		9EB5EB6F14A274E500287F09 /* PoolBGSL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolBGSL.h; sourceTree = "<group>"; };
 		9EB5EB7014A274E500287F09 /* PoolBGSL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PoolBGSL.cpp; sourceTree = "<group>"; };
+		9EB5EC4614A3B7D600287F09 /* PoolBGInHPoisson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolBGInHPoisson.h; sourceTree = "<group>"; };
+		9EB5EC4714A3B7D600287F09 /* PoolBGInHPoisson.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PoolBGInHPoisson.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +201,8 @@
 				9E82616C149325DB0066B67C /* PoolBGOU.h */,
 				9E82616B149325DB0066B67C /* PoolBGHPoisson.cpp */,
 				9E826186149326120066B67C /* PoolBGHPoisson.h */,
+				9EB5EC4614A3B7D600287F09 /* PoolBGInHPoisson.h */,
+				9EB5EC4714A3B7D600287F09 /* PoolBGInHPoisson.cpp */,
 				9E82616E149325DB0066B67C /* PoolBGFile.cpp */,
 				9E82618E149326120066B67C /* PoolBGFile.h */,
 				9EB5EB6F14A274E500287F09 /* PoolBGSL.h */,
@@ -272,6 +277,7 @@
 				9E826194149326120066B67C /* SpikeList.cpp in Sources */,
 				9E826195149326120066B67C /* MonitorNeuronFile.cpp in Sources */,
 				9EB5EB7114A274E500287F09 /* PoolBGSL.cpp in Sources */,
+				9EB5EC4814A3B7D600287F09 /* PoolBGInHPoisson.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

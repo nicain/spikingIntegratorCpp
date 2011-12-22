@@ -233,6 +233,13 @@
 			9EB5EC3F14A3B62700287F09 /* PBXTextBookmark */ = 9EB5EC3F14A3B62700287F09 /* PBXTextBookmark */;
 			9EB5EC4014A3B62700287F09 /* PBXTextBookmark */ = 9EB5EC4014A3B62700287F09 /* PBXTextBookmark */;
 			9EB5EC4114A3B62700287F09 /* PBXTextBookmark */ = 9EB5EC4114A3B62700287F09 /* PBXTextBookmark */;
+			9EB5EC4D14A3B84A00287F09 /* PBXTextBookmark */ = 9EB5EC4D14A3B84A00287F09 /* PBXTextBookmark */;
+			9EB5EC4E14A3B84A00287F09 /* PBXTextBookmark */ = 9EB5EC4E14A3B84A00287F09 /* PBXTextBookmark */;
+			9EB5EC4F14A3B84A00287F09 /* PBXTextBookmark */ = 9EB5EC4F14A3B84A00287F09 /* PBXTextBookmark */;
+			9EB5EC5014A3B84A00287F09 /* PBXTextBookmark */ = 9EB5EC5014A3B84A00287F09 /* PBXTextBookmark */;
+			9EB5EC5114A3B84A00287F09 /* PBXTextBookmark */ = 9EB5EC5114A3B84A00287F09 /* PBXTextBookmark */;
+			9EB5EC5214A3B84A00287F09 /* PBXTextBookmark */ = 9EB5EC5214A3B84A00287F09 /* PBXTextBookmark */;
+			9EB5EC5314A3B84A00287F09 /* PBXTextBookmark */ = 9EB5EC5314A3B84A00287F09 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 9E3E063E14932267008FA938 /* Source Control */;
 		userBuildSettings = {
@@ -240,9 +247,9 @@
 	};
 	08FB7796FE84155DC02AAC07 /* main.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1079, 2782}}";
-			sepNavSelRange = "{3166, 0}";
-			sepNavVisRange = "{2295, 1930}";
+			sepNavIntBoundsRect = "{{0, 0}, {1079, 3029}}";
+			sepNavSelRange = "{2750, 0}";
+			sepNavVisRange = "{2561, 1804}";
 			sepNavWindowFrame = "{{0, 4}, {1440, 874}}";
 		};
 	};
@@ -281,7 +288,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 49";
 		rLen = 0;
-		rLoc = 1663;
+		rLoc = 1693;
 		rType = 0;
 		vrLen = 1029;
 		vrLoc = 5228;
@@ -546,7 +553,7 @@
 	};
 	9E826186149326120066B67C /* PoolBGHPoisson.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1079, 728}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1079, 702}}";
 			sepNavSelRange = "{552, 0}";
 			sepNavVisRange = "{0, 1162}";
 		};
@@ -863,7 +870,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 49";
 		rLen = 0;
-		rLoc = 1663;
+		rLoc = 1693;
 		rType = 0;
 		vrLen = 1055;
 		vrLoc = 5202;
@@ -873,7 +880,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 49";
 		rLen = 0;
-		rLoc = 1663;
+		rLoc = 1693;
 		rType = 0;
 		vrLen = 1054;
 		vrLoc = 5202;
@@ -897,7 +904,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 49";
 		rLen = 0;
-		rLoc = 1663;
+		rLoc = 1693;
 		rType = 0;
 		vrLen = 1054;
 		vrLoc = 5202;
@@ -1246,7 +1253,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 160";
 		rLen = 0;
-		rLoc = 4832;
+		rLoc = 2789;
 		rType = 0;
 		vrLen = 1017;
 		vrLoc = 4594;
@@ -1256,7 +1263,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 161";
 		rLen = 0;
-		rLoc = 4989;
+		rLoc = 2789;
 		rType = 0;
 		vrLen = 1188;
 		vrLoc = 4536;
@@ -1276,7 +1283,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 162";
 		rLen = 0;
-		rLoc = 5602;
+		rLoc = 2789;
 		rType = 0;
 		vrLen = 1792;
 		vrLoc = 4763;
@@ -1286,7 +1293,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 163";
 		rLen = 0;
-		rLoc = 5638;
+		rLoc = 2789;
 		rType = 0;
 		vrLen = 1688;
 		vrLoc = 4740;
@@ -1326,7 +1333,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 163";
 		rLen = 0;
-		rLoc = 5638;
+		rLoc = 2789;
 		rType = 0;
 		vrLen = 1459;
 		vrLoc = 5456;
@@ -1336,7 +1343,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 165";
 		rLen = 0;
-		rLoc = 5659;
+		rLoc = 2789;
 		rType = 0;
 		vrLen = 1664;
 		vrLoc = 4808;
@@ -1346,7 +1353,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 165";
 		rLen = 0;
-		rLoc = 5659;
+		rLoc = 2789;
 		rType = 0;
 		vrLen = 1664;
 		vrLoc = 4808;
@@ -1393,7 +1400,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 165";
 		rLen = 0;
-		rLoc = 5659;
+		rLoc = 2789;
 		rType = 0;
 		vrLen = 1571;
 		vrLoc = 1037;
@@ -1403,7 +1410,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 166";
 		rLen = 0;
-		rLoc = 5659;
+		rLoc = 2789;
 		rType = 0;
 		vrLen = 1731;
 		vrLoc = 4967;
@@ -1413,7 +1420,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 165";
 		rLen = 0;
-		rLoc = 5659;
+		rLoc = 2789;
 		rType = 0;
 		vrLen = 1714;
 		vrLoc = 5015;
@@ -1423,7 +1430,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 166";
 		rLen = 0;
-		rLoc = 5659;
+		rLoc = 2789;
 		rType = 0;
 		vrLen = 1770;
 		vrLoc = 5015;
@@ -1433,7 +1440,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 166";
 		rLen = 0;
-		rLoc = 5659;
+		rLoc = 2789;
 		rType = 0;
 		vrLen = 1736;
 		vrLoc = 4808;
@@ -1453,7 +1460,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 163";
 		rLen = 0;
-		rLoc = 5659;
+		rLoc = 2789;
 		rType = 0;
 		vrLen = 1750;
 		vrLoc = 4813;
@@ -1463,7 +1470,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 219";
 		rLen = 0;
-		rLoc = 7252;
+		rLoc = 7788;
 		rType = 0;
 		vrLen = 1074;
 		vrLoc = 6111;
@@ -1525,7 +1532,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 219";
 		rLen = 0;
-		rLoc = 7252;
+		rLoc = 7788;
 		rType = 0;
 		vrLen = 1678;
 		vrLoc = 4659;
@@ -1545,7 +1552,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 147";
 		rLen = 0;
-		rLoc = 4902;
+		rLoc = 2789;
 		rType = 0;
 		vrLen = 1591;
 		vrLoc = 4276;
@@ -1565,7 +1572,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 147";
 		rLen = 0;
-		rLoc = 4902;
+		rLoc = 2789;
 		rType = 0;
 		vrLen = 1607;
 		vrLoc = 4306;
@@ -1585,7 +1592,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 147";
 		rLen = 0;
-		rLoc = 4902;
+		rLoc = 2789;
 		rType = 0;
 		vrLen = 1607;
 		vrLoc = 4306;
@@ -1605,7 +1612,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 147";
 		rLen = 0;
-		rLoc = 4902;
+		rLoc = 2789;
 		rType = 0;
 		vrLen = 1607;
 		vrLoc = 4306;
@@ -1625,7 +1632,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 147";
 		rLen = 0;
-		rLoc = 4902;
+		rLoc = 2789;
 		rType = 0;
 		vrLen = 1607;
 		vrLoc = 4306;
@@ -1645,7 +1652,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 147";
 		rLen = 0;
-		rLoc = 4902;
+		rLoc = 2789;
 		rType = 0;
 		vrLen = 1607;
 		vrLoc = 4306;
@@ -1665,7 +1672,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 147";
 		rLen = 0;
-		rLoc = 4902;
+		rLoc = 2789;
 		rType = 0;
 		vrLen = 1607;
 		vrLoc = 4306;
@@ -1685,7 +1692,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 147";
 		rLen = 0;
-		rLoc = 4902;
+		rLoc = 2789;
 		rType = 0;
 		vrLen = 1607;
 		vrLoc = 4306;
@@ -1705,7 +1712,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 147";
 		rLen = 0;
-		rLoc = 4902;
+		rLoc = 2789;
 		rType = 0;
 		vrLen = 1607;
 		vrLoc = 4306;
@@ -1725,7 +1732,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 147";
 		rLen = 0;
-		rLoc = 4902;
+		rLoc = 2789;
 		rType = 0;
 		vrLen = 1607;
 		vrLoc = 4306;
@@ -1745,7 +1752,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 147";
 		rLen = 0;
-		rLoc = 4902;
+		rLoc = 2789;
 		rType = 0;
 		vrLen = 1607;
 		vrLoc = 4306;
@@ -1765,7 +1772,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 147";
 		rLen = 0;
-		rLoc = 4902;
+		rLoc = 2789;
 		rType = 0;
 		vrLen = 1607;
 		vrLoc = 4306;
@@ -1785,7 +1792,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 147";
 		rLen = 0;
-		rLoc = 4902;
+		rLoc = 2789;
 		rType = 0;
 		vrLen = 1607;
 		vrLoc = 4306;
@@ -1805,7 +1812,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 147";
 		rLen = 0;
-		rLoc = 4902;
+		rLoc = 2789;
 		rType = 0;
 		vrLen = 1607;
 		vrLoc = 4306;
@@ -1825,7 +1832,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 147";
 		rLen = 0;
-		rLoc = 4902;
+		rLoc = 2789;
 		rType = 0;
 		vrLen = 1607;
 		vrLoc = 4306;
@@ -1845,7 +1852,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 147";
 		rLen = 0;
-		rLoc = 4902;
+		rLoc = 2789;
 		rType = 0;
 		vrLen = 1607;
 		vrLoc = 4306;
@@ -1865,7 +1872,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 147";
 		rLen = 0;
-		rLoc = 4902;
+		rLoc = 2789;
 		rType = 0;
 		vrLen = 1607;
 		vrLoc = 4306;
@@ -1905,7 +1912,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 147";
 		rLen = 0;
-		rLoc = 4902;
+		rLoc = 2789;
 		rType = 0;
 		vrLen = 1605;
 		vrLoc = 4306;
@@ -1935,7 +1942,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
 		name = "main.cpp: 91";
 		rLen = 0;
-		rLoc = 3166;
+		rLoc = 2789;
 		rType = 0;
 		vrLen = 1930;
 		vrLoc = 2295;
@@ -1961,6 +1968,90 @@
 		vrLoc = 699;
 	};
 	9EB5EC4114A3B62700287F09 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9EB5EC0714A28DA900287F09 /* compNeuroPython.py */;
+		name = "compNeuroPython.py: 894";
+		rLen = 0;
+		rLoc = 22849;
+		rType = 0;
+		vrLen = 1574;
+		vrLoc = 21861;
+	};
+	9EB5EC4614A3B7D600287F09 /* PoolBGInHPoisson.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1079, 728}}";
+			sepNavSelRange = "{562, 0}";
+			sepNavVisRange = "{243, 1043}";
+		};
+	};
+	9EB5EC4714A3B7D600287F09 /* PoolBGInHPoisson.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1079, 2158}}";
+			sepNavSelRange = "{2829, 0}";
+			sepNavVisRange = "{2426, 504}";
+		};
+	};
+	9EB5EC4D14A3B84A00287F09 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E82616B149325DB0066B67C /* PoolBGHPoisson.cpp */;
+		name = "PoolBGHPoisson.cpp: 62";
+		rLen = 0;
+		rLoc = 1537;
+		rType = 0;
+		vrLen = 1044;
+		vrLoc = 699;
+	};
+	9EB5EC4E14A3B84A00287F09 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E826186149326120066B67C /* PoolBGHPoisson.h */;
+		name = "PoolBGHPoisson.h: 22";
+		rLen = 0;
+		rLoc = 552;
+		rType = 0;
+		vrLen = 1162;
+		vrLoc = 0;
+	};
+	9EB5EC4F14A3B84A00287F09 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9EB5EC4614A3B7D600287F09 /* PoolBGInHPoisson.h */;
+		name = "PoolBGInHPoisson.h: 22";
+		rLen = 0;
+		rLoc = 562;
+		rType = 0;
+		vrLen = 1043;
+		vrLoc = 243;
+	};
+	9EB5EC5014A3B84A00287F09 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9EB5EC4714A3B7D600287F09 /* PoolBGInHPoisson.cpp */;
+		name = "PoolBGInHPoisson.cpp: 135";
+		rLen = 0;
+		rLoc = 2829;
+		rType = 0;
+		vrLen = 504;
+		vrLoc = 2426;
+	};
+	9EB5EC5114A3B84A00287F09 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
+		name = "main.cpp: 85";
+		rLen = 0;
+		rLoc = 2734;
+		rType = 0;
+		vrLen = 1955;
+		vrLoc = 2151;
+	};
+	9EB5EC5214A3B84A00287F09 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
+		name = "main.cpp: 87";
+		rLen = 0;
+		rLoc = 2750;
+		rType = 0;
+		vrLen = 1804;
+		vrLoc = 2561;
+	};
+	9EB5EC5314A3B84A00287F09 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 9EB5EC0714A28DA900287F09 /* compNeuroPython.py */;
 		name = "compNeuroPython.py: 894";

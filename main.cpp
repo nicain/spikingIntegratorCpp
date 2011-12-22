@@ -11,6 +11,7 @@
 #include "PoolBGFile.h"
 #include "PoolBGSL.h"
 #include "PoolBGHPoisson.h"
+#include "PoolBGInHPoisson.h"
 #include "PoolBGOU.h"
 #include "PoolRecEx.h"
 #include "PoolRecInh.h"
@@ -77,65 +78,9 @@ int main( int argc,      // Number of strings in array argv
 	//========================== Create Network ==============================//
 	//========================================================================//
 	
-	// Main network:
 	Brain Network(argString);
 	
-//	// Backgroud populations:
-	PoolBGHPoisson BGESel1("BGESel1", Network, NSel, recordBGSpikes, BgFRE, inputCorrelation, tOn, tOff);
-	PoolBGHPoisson BGESel2("BGESel2", Network, NSel, recordBGSpikes, BgFRE, inputCorrelation, tOn, tOff);
-	PoolBGHPoisson BGENSel("BGENSel", Network, NNSel, recordBGSpikes, BgFRE, inputCorrelation, tOn, tOff);
-	PoolBGHPoisson BGI("BGI", Network, NI, recordBGSpikes, BgFRI, tOn, inputCorrelation, tOff);
-		
-	// Input populations:
-	PoolBGHPoisson InputSel1("InputSel1", Network, NSel, recordInputSpikes, InputPoolFRSel1, inputCorrelation, tOn, tOff);
-	PoolBGHPoisson InputSel2("InputSel2", Network, NSel, recordInputSpikes, InputPoolFRSel2, inputCorrelation, tOn, tOff);
-	
-	// Excitatory populations:
-	PoolRecEx GESel1("GESel1", Network, NSel, true);
-	PoolRecEx GESel2("GESel2", Network, NSel, true);
-	PoolRecEx GENSel("GENSel", Network, NNSel, false);
-	
-	// Inhibitory populations:
-	PoolRecInh GI("GI", Network, NI, false);
-	
-	//========================================================================//
-	//========================== Connect Network =============================//
-	//========================================================================//
-	
-	// Connections to GESel1:
-	GESel1.connectTo(BGESel1);
-	GESel1.connectTo(InputSel1);
-	GESel1.connectTo(GESel1, wPlus);
-	GESel1.connectTo(GESel2, wMinus);
-	GESel1.connectTo(GENSel, wMinus);
-	GESel1.connectTo(GI);
-	
-	// Connections to GESel2:
-	GESel2.connectTo(BGESel2);
-	GESel2.connectTo(InputSel2);
-	GESel2.connectTo(GESel1, wMinus);
-	GESel2.connectTo(GESel2, wPlus);
-	GESel2.connectTo(GENSel, wMinus);
-	GESel2.connectTo(GI);
-	
-	// Connections to GENSel:
-	GENSel.connectTo(BGENSel);
-	GENSel.connectTo(GESel1, w);
-	GENSel.connectTo(GESel2, w);
-	GENSel.connectTo(GENSel, w);
-	GENSel.connectTo(GI);
-	
-	// Connections to GI:
-	GI.connectTo(BGI);
-	GI.connectTo(GESel1, w);
-	GI.connectTo(GESel2, w);
-	GI.connectTo(GENSel, w);
-	GI.connectTo(GI);
-	
-	//========================================================================//
-	//=========================== Run Network ================================//
-	//========================================================================//
-
+	PoolBGInHPoisson InputSel1("InputSel1", Network, NSel, recordInputSpikes, InputPoolFRSel1, inputCorrelation, tOn, tOff);
 	
 	Network.init();
 	
@@ -144,79 +89,146 @@ int main( int argc,      // Number of strings in array argv
 		Network.run(100);
 	}
 	
-	GESel1.toFileExact(GESel1.poolName + "a_" + Network.UUID_string + "_" + argString);
-	GESel2.toFileExact(GESel2.poolName + "a_" + Network.UUID_string + "_" + argString);
-	
-	Network.close();
-	
-	// Main network:
-	Brain Networkb(argString);
-	
-	//	// Backgroud populations:
-	PoolBGHPoisson BGESel1b("BGESel1", Networkb, NSel, recordBGSpikes, BgFRE, inputCorrelation, tOn, tOff);
-	PoolBGHPoisson BGESel2b("BGESel2", Networkb, NSel, recordBGSpikes, BgFRE, inputCorrelation, tOn, tOff);
-	PoolBGHPoisson BGENSelb("BGENSel", Networkb, NNSel, recordBGSpikes, BgFRE, inputCorrelation, tOn, tOff);
-	PoolBGHPoisson BGIb("BGI", Networkb, NI, recordBGSpikes, BgFRI, tOn, inputCorrelation, tOff);
-	
-	// Input populations:
-	PoolBGSL InputSel1b("InputSel1", Networkb, *InputSel1.spikeList);
-	PoolBGSL InputSel2b("InputSel2", Networkb, *InputSel2.spikeList);
-	
-	// Excitatory populations:
-	PoolRecEx GESel1b("GESel1", Networkb, NSel, true);
-	PoolRecEx GESel2b("GESel2", Networkb, NSel, true);
-	PoolRecEx GENSelb("GENSel", Networkb, NNSel, false);
-	
-	// Inhibitory populations:
-	PoolRecInh GIb("GI", Networkb, NI, false);
-	
-	//========================================================================//
-	//========================== Connect Network =============================//
-	//========================================================================//
-	
-	// Connections to GESel1:
-	GESel1b.connectTo(BGESel1b);
-	GESel1b.connectTo(InputSel1b);
-	GESel1b.connectTo(GESel1b, wPlus);
-	GESel1b.connectTo(GESel2b, wMinus);
-	GESel1b.connectTo(GENSelb, wMinus);
-	GESel1b.connectTo(GIb);
-	
-	// Connections to GESel2:
-	GESel2b.connectTo(BGESel2b);
-	GESel2b.connectTo(InputSel2b);
-	GESel2b.connectTo(GESel1b, wMinus);
-	GESel2b.connectTo(GESel2b, wPlus);
-	GESel2b.connectTo(GENSelb, wMinus);
-	GESel2b.connectTo(GIb);
-	
-	// Connections to GENSel:
-	GENSelb.connectTo(BGENSelb);
-	GENSelb.connectTo(GESel1b, w);
-	GENSelb.connectTo(GESel2b, w);
-	GENSelb.connectTo(GENSelb, w);
-	GENSelb.connectTo(GIb);
-	
-	// Connections to GI:
-	GIb.connectTo(BGIb);
-	GIb.connectTo(GESel1b, w);
-	GIb.connectTo(GESel2b, w);
-	GIb.connectTo(GENSelb, w);
-	GIb.connectTo(GIb);
-	
-	Networkb.init();
-	
-	while (Networkb.t < tMax)
-	{
-		Networkb.run(100);
-	}
-	
-	GESel1b.toFileExact(GESel1b.poolName + "b_" + Network.UUID_string + "_" + argString);
-	GESel2b.toFileExact(GESel2b.poolName + "b_" + Network.UUID_string + "_" + argString);
-	
-	Network.close();
-	
-	cout << Network.UUID_string << endl;
+//	// Main network:
+//	Brain Network(argString);
+//	
+////	// Backgroud populations:
+//	PoolBGHPoisson BGESel1("BGESel1", Network, NSel, recordBGSpikes, BgFRE, inputCorrelation, tOn, tOff);
+//	PoolBGHPoisson BGESel2("BGESel2", Network, NSel, recordBGSpikes, BgFRE, inputCorrelation, tOn, tOff);
+//	PoolBGHPoisson BGENSel("BGENSel", Network, NNSel, recordBGSpikes, BgFRE, inputCorrelation, tOn, tOff);
+//	PoolBGHPoisson BGI("BGI", Network, NI, recordBGSpikes, BgFRI, tOn, inputCorrelation, tOff);
+//		
+//	// Input populations:
+//	PoolBGHPoisson InputSel1("InputSel1", Network, NSel, recordInputSpikes, InputPoolFRSel1, inputCorrelation, tOn, tOff);
+//	PoolBGHPoisson InputSel2("InputSel2", Network, NSel, recordInputSpikes, InputPoolFRSel2, inputCorrelation, tOn, tOff);
+//	
+//	// Excitatory populations:
+//	PoolRecEx GESel1("GESel1", Network, NSel, true);
+//	PoolRecEx GESel2("GESel2", Network, NSel, true);
+//	PoolRecEx GENSel("GENSel", Network, NNSel, false);
+//	
+//	// Inhibitory populations:
+//	PoolRecInh GI("GI", Network, NI, false);
+//	
+//	//========================================================================//
+//	//========================== Connect Network =============================//
+//	//========================================================================//
+//	
+//	// Connections to GESel1:
+//	GESel1.connectTo(BGESel1);
+//	GESel1.connectTo(InputSel1);
+//	GESel1.connectTo(GESel1, wPlus);
+//	GESel1.connectTo(GESel2, wMinus);
+//	GESel1.connectTo(GENSel, wMinus);
+//	GESel1.connectTo(GI);
+//	
+//	// Connections to GESel2:
+//	GESel2.connectTo(BGESel2);
+//	GESel2.connectTo(InputSel2);
+//	GESel2.connectTo(GESel1, wMinus);
+//	GESel2.connectTo(GESel2, wPlus);
+//	GESel2.connectTo(GENSel, wMinus);
+//	GESel2.connectTo(GI);
+//	
+//	// Connections to GENSel:
+//	GENSel.connectTo(BGENSel);
+//	GENSel.connectTo(GESel1, w);
+//	GENSel.connectTo(GESel2, w);
+//	GENSel.connectTo(GENSel, w);
+//	GENSel.connectTo(GI);
+//	
+//	// Connections to GI:
+//	GI.connectTo(BGI);
+//	GI.connectTo(GESel1, w);
+//	GI.connectTo(GESel2, w);
+//	GI.connectTo(GENSel, w);
+//	GI.connectTo(GI);
+//	
+//	//========================================================================//
+//	//=========================== Run Network ================================//
+//	//========================================================================//
+//
+//	
+//	Network.init();
+//	
+//	while (Network.t < tMax)
+//	{
+//		Network.run(100);
+//	}
+//	
+//	GESel1.toFileExact(GESel1.poolName + "a_" + Network.UUID_string + "_" + argString);
+//	GESel2.toFileExact(GESel2.poolName + "a_" + Network.UUID_string + "_" + argString);
+//	
+//	Network.close();
+//	
+//	// Main network:
+//	Brain Networkb(argString);
+//	
+//	//	// Backgroud populations:
+//	PoolBGHPoisson BGESel1b("BGESel1", Networkb, NSel, recordBGSpikes, BgFRE, inputCorrelation, tOn, tOff);
+//	PoolBGHPoisson BGESel2b("BGESel2", Networkb, NSel, recordBGSpikes, BgFRE, inputCorrelation, tOn, tOff);
+//	PoolBGHPoisson BGENSelb("BGENSel", Networkb, NNSel, recordBGSpikes, BgFRE, inputCorrelation, tOn, tOff);
+//	PoolBGHPoisson BGIb("BGI", Networkb, NI, recordBGSpikes, BgFRI, tOn, inputCorrelation, tOff);
+//	
+//	// Input populations:
+//	PoolBGSL InputSel1b("InputSel1", Networkb, *InputSel1.spikeList);
+//	PoolBGSL InputSel2b("InputSel2", Networkb, *InputSel2.spikeList);
+//	
+//	// Excitatory populations:
+//	PoolRecEx GESel1b("GESel1", Networkb, NSel, true);
+//	PoolRecEx GESel2b("GESel2", Networkb, NSel, true);
+//	PoolRecEx GENSelb("GENSel", Networkb, NNSel, false);
+//	
+//	// Inhibitory populations:
+//	PoolRecInh GIb("GI", Networkb, NI, false);
+//	
+//	//========================================================================//
+//	//========================== Connect Network =============================//
+//	//========================================================================//
+//	
+//	// Connections to GESel1:
+//	GESel1b.connectTo(BGESel1b);
+//	GESel1b.connectTo(InputSel1b);
+//	GESel1b.connectTo(GESel1b, wPlus);
+//	GESel1b.connectTo(GESel2b, wMinus);
+//	GESel1b.connectTo(GENSelb, wMinus);
+//	GESel1b.connectTo(GIb);
+//	
+//	// Connections to GESel2:
+//	GESel2b.connectTo(BGESel2b);
+//	GESel2b.connectTo(InputSel2b);
+//	GESel2b.connectTo(GESel1b, wMinus);
+//	GESel2b.connectTo(GESel2b, wPlus);
+//	GESel2b.connectTo(GENSelb, wMinus);
+//	GESel2b.connectTo(GIb);
+//	
+//	// Connections to GENSel:
+//	GENSelb.connectTo(BGENSelb);
+//	GENSelb.connectTo(GESel1b, w);
+//	GENSelb.connectTo(GESel2b, w);
+//	GENSelb.connectTo(GENSelb, w);
+//	GENSelb.connectTo(GIb);
+//	
+//	// Connections to GI:
+//	GIb.connectTo(BGIb);
+//	GIb.connectTo(GESel1b, w);
+//	GIb.connectTo(GESel2b, w);
+//	GIb.connectTo(GENSelb, w);
+//	GIb.connectTo(GIb);
+//	
+//	Networkb.init();
+//	
+//	while (Networkb.t < tMax)
+//	{
+//		Networkb.run(100);
+//	}
+//	
+//	GESel1b.toFileExact(GESel1b.poolName + "b_" + Network.UUID_string + "_" + argString);
+//	GESel2b.toFileExact(GESel2b.poolName + "b_" + Network.UUID_string + "_" + argString);
+//	
+//	Network.close();
+//	
+//	cout << Network.UUID_string << endl;
 	
 	return 0;
 }
