@@ -41,7 +41,7 @@ void PoolBGInHPoisson::construct(double mu_in, double rho_in, double Corr_in, do
 
 	normDist = new normal_distribution<double>(mu, PoolBGInHPoisson::sigma);
 	normRnd = new variate_generator<mt19937&,normal_distribution<double> >(parentBrain->myRNG, *normDist);	
-//	uniDist = new uniform_real_distribution<double>(0,1);
+	uniDist = new uniform_real_distribution<double>(0,1);
 //	if (Corr != 0) {
 //		expDist = new exponential_distribution<double>(gamma/Corr_pooled);
 //		binomDist = new binomial_distribution<>(N, Corr_pooled);
@@ -58,7 +58,7 @@ void PoolBGInHPoisson::construct(double mu_in, double rho_in, double Corr_in, do
 //	}
 	expDist = new exponential_distribution<double>(1);
 	expRnd = new variate_generator<mt19937&,exponential_distribution<double> >(parentBrain->myRNG, *expDist);
-//	uniRnd = new variate_generator<mt19937&,uniform_real_distribution<double> >(parentBrain->myRNG, *uniDist);
+	uniRnd = new variate_generator<mt19937&,uniform_real_distribution<double> >(parentBrain->myRNG, *uniDist);
 
 
 };
@@ -74,11 +74,11 @@ PoolBGInHPoisson::~PoolBGInHPoisson()
 //		delete binomDist;
 //	}
 //	
-//	delete uniRnd;
+	delete uniRnd;
 //	delete expRnd;
 	delete normRnd;
 	delete normDist;
-//	delete uniDist;
+	delete uniDist;
 //	delete expDist;
 
 };
@@ -86,56 +86,36 @@ PoolBGInHPoisson::~PoolBGInHPoisson()
 
 void PoolBGInHPoisson::init()
 {
-//	setCorrPooled(Corr);
+	masterTrain += (*expRnd)();
 	setGamma();
 };
-
-
 
 void PoolBGInHPoisson::propogate() 
 {
 	if ((tOn < parentBrain->t) && (parentBrain->t < tOff))
 	{		
-//		while (masterTrain <= parentBrain->t) 
-//		{
-//			// This means a spike happened in master neuron, in this step...
-//			masterTrain += (*expRnd)();
-//			if (Corr == 0)
-//			{	
-//				// Generate the spike:
-//				whoSpiked = int(N*(*uniRnd)());
-//				(*AMPA)[whoSpiked] += 1;
-//				
-//				// Record the spike:
-//				if (recordSpikes)
-//				{
-//					spikeList->addSpike(whoSpiked, masterTrain);
-//				}
-//			}
-//			else 
-//			{
-//				numSpikesInCorrPool = (*binomRnd)();
-//				for (i=0; i<numSpikesInCorrPool; i++) 
-//				{						
-//					// Generate the spike:
-//					ind2Swap = i+int((*uniRnd)()*(N-i));
-//					swap(randArray[i], randArray[ind2Swap]);
-//					whoSpiked = randArray[i];
-//					(*AMPA)[whoSpiked] += 1;
-//					
-//					// Record the spike:
-//					if (recordSpikes)
-//					{
-//						spikeList->addSpike(whoSpiked, masterTrain);
-//					}						
-//				}
-//			}
-//		}
-//	}
-//	else
-//	{
-//		masterTrain = parentBrain->t;
-//	}
+		while (masterTrain <= parentBrain->t) 
+		{
+			// This means a spike happened in master neuron, in this step...
+			masterTrain += (*expRnd)();
+			if (Corr == 0)
+			{	
+				// Generate the spike:
+				whoSpiked = int(N*(*uniRnd)());
+				(*AMPA)[whoSpiked] += 1;
+				
+				// Record the spike:
+				if (recordSpikes)
+				{
+					spikeList->addSpike(whoSpiked, masterTrain);
+				}
+			}
+		}
+	}
+	else
+	{
+		masterTrain = parentBrain->t;
+	}
 }
 
 //void PoolBGInHPoisson::setCorrPooled(double p)

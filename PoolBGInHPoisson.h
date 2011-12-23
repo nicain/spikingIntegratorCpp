@@ -40,7 +40,7 @@ class PoolBGInHPoisson: public PoolBG
 //	int* randArray;
 //	int ind2Swap;
 
-//	int whoSpiked;
+	int whoSpiked;
 //	int numSpikesInCorrPool;
 
 	
@@ -50,15 +50,14 @@ class PoolBGInHPoisson: public PoolBG
 	exponential_distribution<double> *expDist;
 	variate_generator<mt19937&,exponential_distribution<double> > *expRnd;
 	//	binomial_distribution<> *binomDist;
-//	uniform_real_distribution<double> *uniDist;
+	uniform_real_distribution<double> *uniDist;
 //	variate_generator<mt19937&,binomial_distribution<> > *binomRnd;
-//	variate_generator<mt19937&,uniform_real_distribution<double> > *uniRnd;
+	variate_generator<mt19937&,uniform_real_distribution<double> > *uniRnd;
 	
 	
 	// Member functions:
 	void init();
 	void propogate();
-//	void setCorrPooled(double p);
 	void setGamma();
 };
 
