@@ -56,7 +56,7 @@ void PoolBGInHPoisson::construct(double mu_in, double rho_in, double Corr_in, do
 //	{
 
 //	}
-	expDist = new exponential_distribution<double>(1);
+	expDist = new exponential_distribution<double>();
 	expRnd = new variate_generator<mt19937&,exponential_distribution<double> >(parentBrain->myRNG, *expDist);
 	uniRnd = new variate_generator<mt19937&,uniform_real_distribution<double> >(parentBrain->myRNG, *uniDist);
 
@@ -86,7 +86,7 @@ PoolBGInHPoisson::~PoolBGInHPoisson()
 
 void PoolBGInHPoisson::init()
 {
-	masterTrain += (*expRnd)();
+	masterTrain += (*expRnd)(); //N*.001
 	setGamma();
 };
 
