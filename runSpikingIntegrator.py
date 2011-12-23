@@ -46,12 +46,18 @@ parser.add_argument('--tMax',
 					type=float,
                     dest='tMax',
                     help='Max time')
-parser.add_argument('-p',
+parser.add_argument('-corr',
                     default=0,
                     action='store',
 					type=float,
                     dest='correlation',
                     help='SCC of input pool')
+parser.add_argument('-rho',
+                    default=0,
+                    action='store',
+					type=float,
+                    dest='rho',
+                    help='Inh. Poisson correlation')
 parser.add_argument('-s','--saveResults',
                     default=0,
 					action='store_const',
@@ -95,7 +101,7 @@ tBegin = time.mktime(time.localtime())
 
 callString = executable
 for arg in [args.C, args.tOn, args.tOff, args.tMax, args.correlation,
-			args.saveResults,  
+			args.rho, args.saveResults,  
 			args.recordBGSpikes, args.recordInputSpikes]:
 	callString += " " + str(arg)
 
