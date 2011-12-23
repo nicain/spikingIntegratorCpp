@@ -33,12 +33,13 @@ class PoolBGInHPoisson: public PoolBG
 
 	// Stuff needed for computations:
 	valarray<double> *gamma;
-	int i;	
+	int i;
+	double masterTrain;
 //	double gamma;
 //	double Corr_pooled;
 //	int* randArray;
 //	int ind2Swap;
-//	double masterTrain;
+
 //	int whoSpiked;
 //	int numSpikesInCorrPool;
 
@@ -46,11 +47,11 @@ class PoolBGInHPoisson: public PoolBG
 	// Dists for RNG:
 	normal_distribution<double> *normDist;
 	variate_generator<mt19937&,normal_distribution<> > *normRnd;
-//	binomial_distribution<> *binomDist;
-//	exponential_distribution<double> *expDist;
+	exponential_distribution<double> *expDist;
+	variate_generator<mt19937&,exponential_distribution<double> > *expRnd;
+	//	binomial_distribution<> *binomDist;
 //	uniform_real_distribution<double> *uniDist;
 //	variate_generator<mt19937&,binomial_distribution<> > *binomRnd;
-//	variate_generator<mt19937&,exponential_distribution<double> > *expRnd;
 //	variate_generator<mt19937&,uniform_real_distribution<double> > *uniRnd;
 	
 	

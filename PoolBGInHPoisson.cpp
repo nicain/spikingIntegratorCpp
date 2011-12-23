@@ -54,9 +54,10 @@ void PoolBGInHPoisson::construct(double mu_in, double rho_in, double Corr_in, do
 //	}
 //	else 
 //	{
-//		expDist = new exponential_distribution<double>(gamma*N);
+
 //	}
-//	expRnd = new variate_generator<mt19937&,exponential_distribution<double> >(parentBrain->myRNG, *expDist);
+	expDist = new exponential_distribution<double>(1);
+	expRnd = new variate_generator<mt19937&,exponential_distribution<double> >(parentBrain->myRNG, *expDist);
 //	uniRnd = new variate_generator<mt19937&,uniform_real_distribution<double> >(parentBrain->myRNG, *uniDist);
 
 
@@ -93,8 +94,8 @@ void PoolBGInHPoisson::init()
 
 void PoolBGInHPoisson::propogate() 
 {
-//	if ((tOn < parentBrain->t) && (parentBrain->t < tOff))
-//	{		
+	if ((tOn < parentBrain->t) && (parentBrain->t < tOff))
+	{		
 //		while (masterTrain <= parentBrain->t) 
 //		{
 //			// This means a spike happened in master neuron, in this step...

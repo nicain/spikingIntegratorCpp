@@ -83,12 +83,16 @@ int main( int argc,      // Number of strings in array argv
 	
 	PoolBGInHPoisson InputSel1("InputSel1", Network, NSel, recordInputSpikes, InputPoolFRSel1, inputRho, inputCorrelation, tOn, tOff);
 	
+	MonitorBrain brainMonitor(Network);
+	
 	Network.init();
 	
 	while (Network.t < tMax)
 	{
 		Network.run(100);
 	}
+	
+	cout << InputSel1.getFR() << endl;
 	
 //	// Main network:
 //	Brain Network(argString);
