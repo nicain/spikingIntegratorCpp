@@ -79,24 +79,6 @@ int main( int argc,      // Number of strings in array argv
 	//========================== Create Network ==============================//
 	//========================================================================//
 	
-	//Brain Network(argString);
-//	cout << Network.UUID_string << endl;
-//	
-//	PoolBGInHPoisson InputSel1("InputSel1", Network, NSel, recordInputSpikes, InputPoolFRSel1, inputRho, tOn, tOff);
-//	
-////	MonitorBrain brainMonitor(Network);
-//	
-//	Network.init();
-//	
-//	while (Network.t < tMax)
-//	{
-//		Network.run(100);
-//	}
-//	
-//	InputSel1.toFileExact("InputSel1_doubleStoc");
-//	
-//	Network.close();
-	
 	// Main network:
 	Brain Network(argString);
 	cout << Network.UUID_string << endl;
@@ -110,8 +92,6 @@ int main( int argc,      // Number of strings in array argv
 	PoolBGHPoisson BGI("BGI", Network, NI, recordBGSpikes, BgFRI, tOn, 0, tOff);
 		
 	// Input populations:
-//	PoolBGHPoisson InputSel1("InputSel1", Network, NSel, recordInputSpikes, InputPoolFRSel1, inputCorrelation, tOn, tOff);
-//	PoolBGHPoisson InputSel2("InputSel2", Network, NSel, recordInputSpikes, InputPoolFRSel2, inputCorrelation, tOn, tOff);
 	PoolBGInHPoisson InputSel1("InputSel1", Network, NSel, recordInputSpikes, InputPoolFRSel1, inputRho, tOn, tOff);
 	PoolBGInHPoisson InputSel2("InputSel1", Network, NSel, recordInputSpikes, InputPoolFRSel2, inputRho, tOn, tOff);
 	
@@ -169,75 +149,8 @@ int main( int argc,      // Number of strings in array argv
 		Network.run(100);
 	}
 	
-	GESel1.toFileExact(GESel1.poolName + "a_" + Network.UUID_string + "_" + argString);
-	GESel2.toFileExact(GESel2.poolName + "a_" + Network.UUID_string + "_" + argString);
-	
-	Network.close();
-	
-	// Main network:
-	Brain Networkb(argString);
-	
-	//	// Backgroud populations:
-	PoolBGHPoisson BGESel1b("BGESel1", Networkb, NSel, recordBGSpikes, BgFRE, 0, tOn, tOff);
-	PoolBGHPoisson BGESel2b("BGESel2", Networkb, NSel, recordBGSpikes, BgFRE, 0, tOn, tOff);
-	PoolBGHPoisson BGENSelb("BGENSel", Networkb, NNSel, recordBGSpikes, BgFRE, 0, tOn, tOff);
-	PoolBGHPoisson BGIb("BGI", Networkb, NI, recordBGSpikes, BgFRI, tOn, 0, tOff);
-	
-	// Input populations:
-	PoolBGSL InputSel1b("InputSel1", Networkb, *InputSel1.spikeList);
-	PoolBGSL InputSel2b("InputSel2", Networkb, *InputSel2.spikeList);
-	
-	// Excitatory populations:
-	PoolRecEx GESel1b("GESel1", Networkb, NSel, true);
-	PoolRecEx GESel2b("GESel2", Networkb, NSel, true);
-	PoolRecEx GENSelb("GENSel", Networkb, NNSel, false);
-	
-	// Inhibitory populations:
-	PoolRecInh GIb("GI", Networkb, NI, false);
-	
-	//========================================================================//
-	//========================== Connect Network =============================//
-	//========================================================================//
-	
-	// Connections to GESel1:
-	GESel1b.connectTo(BGESel1b);
-	GESel1b.connectTo(InputSel1b);
-	GESel1b.connectTo(GESel1b, wPlus);
-	GESel1b.connectTo(GESel2b, wMinus);
-	GESel1b.connectTo(GENSelb, wMinus);
-	GESel1b.connectTo(GIb);
-	
-	// Connections to GESel2:
-	GESel2b.connectTo(BGESel2b);
-	GESel2b.connectTo(InputSel2b);
-	GESel2b.connectTo(GESel1b, wMinus);
-	GESel2b.connectTo(GESel2b, wPlus);
-	GESel2b.connectTo(GENSelb, wMinus);
-	GESel2b.connectTo(GIb);
-	
-	// Connections to GENSel:
-	GENSelb.connectTo(BGENSelb);
-	GENSelb.connectTo(GESel1b, w);
-	GENSelb.connectTo(GESel2b, w);
-	GENSelb.connectTo(GENSelb, w);
-	GENSelb.connectTo(GIb);
-	
-	// Connections to GI:
-	GIb.connectTo(BGIb);
-	GIb.connectTo(GESel1b, w);
-	GIb.connectTo(GESel2b, w);
-	GIb.connectTo(GENSelb, w);
-	GIb.connectTo(GIb);
-	
-	Networkb.init();
-	
-	while (Networkb.t < tMax)
-	{
-		Networkb.run(100);
-	}
-	
-	GESel1b.toFileExact(GESel1b.poolName + "b_" + Network.UUID_string + "_" + argString);
-	GESel2b.toFileExact(GESel2b.poolName + "b_" + Network.UUID_string + "_" + argString);
+	GESel1.toFileExact(GESel1.poolName + "_" + Network.UUID_string + "_" + argString);
+	GESel2.toFileExact(GESel2.poolName + "_" + Network.UUID_string + "_" + argString);
 	
 	Network.close();
 	
