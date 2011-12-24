@@ -53,6 +53,11 @@ void SpikeList::construct(string prefix_in)
 	prefix = prefix_in;
 	n = new vector<int>;
 	t = new vector<double>;
+	
+	nBegin = n->begin();
+	tBegin = t->begin();
+	tBeginR = t->rbegin();
+	
 };
 
 SpikeList::~SpikeList() 
@@ -65,6 +70,40 @@ void SpikeList::addSpike(int n_in, double t_in)
 {
 	n->push_back(n_in);
 	t->push_back(t_in);
+};
+
+void SpikeList::addSpike(int n_in, double t_in, int position) 
+{
+	nBegin = n->begin();
+	tBegin = t->begin();
+	
+	
+	n->insert(nBegin + position, n_in);
+	t->insert(tBegin + position, t_in);
+
+};
+
+int SpikeList::insertionPositionFromEnd(double t_in)
+{
+	counter = t->size() + 1;
+//	cout << counter << " (size)" << endl;
+	for (tBeginR=t->rbegin(); tBeginR < t->rend(); tBeginR++)
+	{
+		counter--;
+		if (*tBeginR < t_in)
+		{	
+			return counter;
+		};
+	
+	};
+	
+	return 0;
+};
+
+void SpikeList::addSpikeSorted(int n_in, double t_in) 
+{
+	whereToInsert = insertionPositionFromEnd(t_in);
+	addSpike(n_in, t_in, whereToInsert);
 };
 
 int SpikeList::size() 
@@ -86,7 +125,7 @@ string SpikeList::getSpikeString(int whichSpike)
 		prefixPlus = this->prefix + "_";
 	}
 	
-	out << prefixPlus << (*n)[whichSpike] << "\t" << (*t)[whichSpike] << endl;
+	out << (*n)[whichSpike] << "\t" << (*t)[whichSpike] << endl;
 	
 	return out.str();
 };
@@ -120,3 +159,18 @@ void SpikeList::print()
 		cout << this->getSpikeString(i);
 	}
 };
+
+bool SpikeList::isSorted()
+{
+	bool resultVal = 1;
+	
+	for (tBegin=t->begin()+1; tBegin < t->end(); tBegin++)
+	{
+		if ((*tBegin < *(tBegin-1))) 
+		{
+			resultVal = 0;
+		}
+	};
+	
+	return resultVal;
+}

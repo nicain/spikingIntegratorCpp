@@ -107,7 +107,9 @@ for arg in [args.C, args.tOn, args.tOff, args.tMax, args.correlation,
 
 
 process = Popen(callString.split(), shell=False, stdout=PIPE)
-currUUID = process.communicate()[0].strip()
+currUUID = process.communicate()[0].strip().split("\n")[0]
+
+print currUUID
 
 if args.fr == 1:
 	fileNamePrefixList = ["GESel1a","GESel2a","GESel1b","GESel2b"]

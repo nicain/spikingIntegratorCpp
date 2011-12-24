@@ -20,14 +20,25 @@ class SpikeList
 		string prefix;
 		vector<int> *n;
 		vector<double> *t;
+	
+		// Iterators:
+		int counter;
+		int whereToInsert;
+		vector<int>::iterator nBegin;
+		vector<double>::iterator tBegin;
+		vector<double>::reverse_iterator tBeginR;
 		
 		// Member functions:
 		void construct(string);
 		void addSpike(int n_in, double t_in);
+		void addSpike(int n_in, double t_in, int position);
+		void addSpikeSorted(int n_in, double t_in);
+		int insertionPositionFromEnd(double t_in);
 		int size();
 		string getSpikeString(int whichSpike);
 		void toFile(string UUID_string);
 		void print();
+		bool isSorted();
 };
 
 #endif
