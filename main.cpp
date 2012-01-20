@@ -92,8 +92,8 @@ int main( int argc,      // Number of strings in array argv
 	PoolBGHPoisson BGI("BGI", Network, NI, recordBGSpikes, BgFRI, tOn, 0, tOff);
 		
 	// Input populations:
-	PoolBGInHPoisson InputSel1("InputSel1", Network, NSel, recordInputSpikes, InputPoolFRSel1, inputRho, tOn, tOff);
-	PoolBGInHPoisson InputSel2("InputSel1", Network, NSel, recordInputSpikes, InputPoolFRSel2, inputRho, tOn, tOff);
+	PoolBGHPoisson InputSel1("InputSel1", Network, NSel, recordInputSpikes, InputPoolFRSel1, inputCorrelation, tOn, tOff);
+	PoolBGHPoisson InputSel2("InputSel1", Network, NSel, recordInputSpikes, InputPoolFRSel2, inputCorrelation, tOn, tOff);
 	
 	// Excitatory populations:
 	PoolRecEx GESel1("GESel1", Network, NSel, true);
@@ -153,6 +153,11 @@ int main( int argc,      // Number of strings in array argv
 	GESel2.toFileExact(GESel2.poolName + "_" + Network.UUID_string + "_" + argString);
 	
 	Network.close();
+	
+	if (saveResults)
+	{
+		Network.spikesToFile();
+	}
 	
 	return 0;
 }

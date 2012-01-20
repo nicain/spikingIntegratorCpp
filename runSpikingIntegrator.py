@@ -112,7 +112,7 @@ currUUID = process.communicate()[0].strip().split("\n")[0]
 print currUUID
 
 if args.fr == 1:
-	fileNamePrefixList = ["GESel1a","GESel2a","GESel1b","GESel2b"]
+	fileNamePrefixList = ["GESel1","GESel2"]
 	for fileNamePrefix in fileNamePrefixList:
 		fileNamePrefix += "_" + currUUID
 		for setting in callString.split()[1:]:

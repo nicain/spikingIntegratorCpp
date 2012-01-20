@@ -52,16 +52,17 @@ Brain.o: Brain.cpp Brain.h \
   /Users/nicain/local/lib/boost_1_47_0/boost/config/select_compiler_config.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/config/compiler/gcc.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/config/select_stdlib_config.hpp \
-  /usr/include/c++/4.2.1/cstddef \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++config.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/os_defines.h \
-  /usr/include/unistd.h /usr/include/_types.h /usr/include/sys/_types.h \
-  /usr/include/sys/cdefs.h /usr/include/machine/_types.h \
+  /usr/include/c++/4.2.1/cstddef /usr/include/c++/4.2.1/bits/c++config.h \
+  /usr/include/c++/4.2.1/bits/os_defines.h /usr/include/unistd.h \
+  /usr/include/_types.h /usr/include/sys/_types.h \
+  /usr/include/sys/cdefs.h /usr/include/sys/_symbol_aliasing.h \
+  /usr/include/sys/_posix_availability.h /usr/include/machine/_types.h \
   /usr/include/i386/_types.h /usr/include/sys/unistd.h \
+  /usr/include/Availability.h /usr/include/AvailabilityInternal.h \
   /usr/include/sys/select.h /usr/include/sys/appleapiopts.h \
   /usr/include/sys/_structs.h /usr/include/sys/_select.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/cpu_defines.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h \
+  /usr/include/c++/4.2.1/bits/cpu_defines.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/stddef.h \
   /Users/nicain/local/lib/boost_1_47_0/boost/config/no_tr1/utility.hpp \
   /usr/include/c++/4.2.1/utility /usr/include/c++/4.2.1/bits/stl_relops.h \
   /usr/include/c++/4.2.1/bits/stl_pair.h \
@@ -71,39 +72,37 @@ Brain.o: Brain.cpp Brain.h \
   /Users/nicain/local/lib/boost_1_47_0/boost/config/posix_features.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/config/suffix.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/cstdint.hpp \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h \
-  /usr/include/c++/4.2.1/algorithm \
+  /usr/include/stdint.h /usr/include/c++/4.2.1/algorithm \
   /usr/include/c++/4.2.1/bits/stl_algobase.h \
   /usr/include/c++/4.2.1/cstring /usr/include/string.h \
-  /usr/include/c++/4.2.1/climits \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/syslimits.h \
+  /usr/include/strings.h /usr/include/c++/4.2.1/climits \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/limits.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/syslimits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/limits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/syslimits.h \
   /usr/include/limits.h /usr/include/machine/limits.h \
   /usr/include/i386/limits.h /usr/include/i386/_limits.h \
   /usr/include/sys/syslimits.h /usr/include/c++/4.2.1/cstdlib \
-  /usr/include/stdlib.h /usr/include/Availability.h \
-  /usr/include/AvailabilityInternal.h /usr/include/sys/wait.h \
-  /usr/include/sys/signal.h /usr/include/machine/signal.h \
-  /usr/include/i386/signal.h /usr/include/i386/_structs.h \
-  /usr/include/machine/_structs.h /usr/include/mach/i386/_structs.h \
-  /usr/include/sys/resource.h /usr/include/machine/endian.h \
-  /usr/include/i386/endian.h /usr/include/sys/_endian.h \
-  /usr/include/libkern/_OSByteOrder.h \
+  /usr/include/stdlib.h /usr/include/sys/wait.h /usr/include/sys/signal.h \
+  /usr/include/machine/signal.h /usr/include/i386/signal.h \
+  /usr/include/i386/_structs.h /usr/include/machine/_structs.h \
+  /usr/include/mach/i386/_structs.h /usr/include/sys/resource.h \
+  /usr/include/machine/endian.h /usr/include/i386/endian.h \
+  /usr/include/sys/_endian.h /usr/include/libkern/_OSByteOrder.h \
   /usr/include/libkern/i386/_OSByteOrder.h /usr/include/alloca.h \
   /usr/include/machine/types.h /usr/include/i386/types.h \
   /usr/include/i386/_types.h /usr/include/c++/4.2.1/iosfwd \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++locale.h \
-  /usr/include/c++/4.2.1/clocale /usr/include/locale.h \
-  /usr/include/_locale.h /usr/include/c++/4.2.1/cstdio \
-  /usr/include/stdio.h /usr/include/c++/4.2.1/cstdarg \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++io.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/gthr.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/gthr-default.h \
-  /usr/include/pthread.h /usr/include/pthread_impl.h /usr/include/sched.h \
-  /usr/include/time.h /usr/include/_structs.h \
-  /usr/include/c++/4.2.1/cctype /usr/include/ctype.h \
-  /usr/include/runetype.h /usr/include/c++/4.2.1/bits/stringfwd.h \
+  /usr/include/c++/4.2.1/bits/c++locale.h /usr/include/c++/4.2.1/clocale \
+  /usr/include/locale.h /usr/include/_locale.h \
+  /usr/include/c++/4.2.1/cstdio /usr/include/stdio.h \
+  /usr/include/c++/4.2.1/cstdarg \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/stdarg.h \
+  /usr/include/c++/4.2.1/bits/c++io.h /usr/include/c++/4.2.1/bits/gthr.h \
+  /usr/include/c++/4.2.1/bits/gthr-default.h /usr/include/pthread.h \
+  /usr/include/pthread_impl.h /usr/include/sched.h /usr/include/time.h \
+  /usr/include/_structs.h /usr/include/c++/4.2.1/cctype \
+  /usr/include/ctype.h /usr/include/runetype.h \
+  /usr/include/c++/4.2.1/bits/stringfwd.h \
   /usr/include/c++/4.2.1/bits/postypes.h /usr/include/c++/4.2.1/cwchar \
   /usr/include/c++/4.2.1/ctime /usr/include/wchar.h \
   /usr/include/_wctype.h /usr/include/c++/4.2.1/bits/functexcept.h \
@@ -122,7 +121,7 @@ Brain.o: Brain.cpp Brain.h \
   /usr/include/c++/4.2.1/bits/stl_heap.h \
   /usr/include/c++/4.2.1/bits/stl_tempbuf.h /usr/include/c++/4.2.1/memory \
   /usr/include/c++/4.2.1/bits/allocator.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++allocator.h \
+  /usr/include/c++/4.2.1/bits/c++allocator.h \
   /usr/include/c++/4.2.1/ext/new_allocator.h \
   /usr/include/c++/4.2.1/bits/stl_raw_storage_iter.h \
   /usr/include/c++/4.2.1/limits \
@@ -219,7 +218,7 @@ Brain.o: Brain.cpp Brain.h \
   /usr/include/c++/4.2.1/bits/stl_function.h \
   /usr/include/c++/4.2.1/bits/basic_string.h \
   /usr/include/c++/4.2.1/ext/atomicity.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/atomic_word.h \
+  /usr/include/c++/4.2.1/bits/atomic_word.h \
   /usr/include/c++/4.2.1/bits/basic_string.tcc \
   /usr/include/c++/4.2.1/iterator /usr/include/c++/4.2.1/ostream \
   /usr/include/c++/4.2.1/ios /usr/include/c++/4.2.1/bits/localefwd.h \
@@ -231,11 +230,11 @@ Brain.o: Brain.cpp Brain.h \
   /usr/include/c++/4.2.1/bits/streambuf_iterator.h \
   /usr/include/c++/4.2.1/bits/locale_facets.h \
   /usr/include/c++/4.2.1/cwctype /usr/include/wctype.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_base.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_inline.h \
+  /usr/include/c++/4.2.1/bits/ctype_base.h \
+  /usr/include/c++/4.2.1/bits/ctype_inline.h \
   /usr/include/c++/4.2.1/bits/codecvt.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/time_members.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/messages_members.h \
+  /usr/include/c++/4.2.1/bits/time_members.h \
+  /usr/include/c++/4.2.1/bits/messages_members.h \
   /usr/include/c++/4.2.1/bits/basic_ios.tcc \
   /usr/include/c++/4.2.1/bits/ostream.tcc /usr/include/c++/4.2.1/locale \
   /usr/include/c++/4.2.1/bits/locale_facets.tcc \
@@ -724,10 +723,10 @@ Brain.o: Brain.cpp Brain.h \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/powm1.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/lanczos.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/lanczos_sse2.hpp \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/emmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/xmmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/mmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/mm_malloc.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/emmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/xmmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/mmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/mm_malloc.h \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/igamma_large.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/unchecked_factorial.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/lgamma_small.hpp \
@@ -930,16 +929,17 @@ Monitor.o: Monitor.cpp Brain.h \
   /Users/nicain/local/lib/boost_1_47_0/boost/config/select_compiler_config.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/config/compiler/gcc.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/config/select_stdlib_config.hpp \
-  /usr/include/c++/4.2.1/cstddef \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++config.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/os_defines.h \
-  /usr/include/unistd.h /usr/include/_types.h /usr/include/sys/_types.h \
-  /usr/include/sys/cdefs.h /usr/include/machine/_types.h \
+  /usr/include/c++/4.2.1/cstddef /usr/include/c++/4.2.1/bits/c++config.h \
+  /usr/include/c++/4.2.1/bits/os_defines.h /usr/include/unistd.h \
+  /usr/include/_types.h /usr/include/sys/_types.h \
+  /usr/include/sys/cdefs.h /usr/include/sys/_symbol_aliasing.h \
+  /usr/include/sys/_posix_availability.h /usr/include/machine/_types.h \
   /usr/include/i386/_types.h /usr/include/sys/unistd.h \
+  /usr/include/Availability.h /usr/include/AvailabilityInternal.h \
   /usr/include/sys/select.h /usr/include/sys/appleapiopts.h \
   /usr/include/sys/_structs.h /usr/include/sys/_select.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/cpu_defines.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h \
+  /usr/include/c++/4.2.1/bits/cpu_defines.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/stddef.h \
   /Users/nicain/local/lib/boost_1_47_0/boost/config/no_tr1/utility.hpp \
   /usr/include/c++/4.2.1/utility /usr/include/c++/4.2.1/bits/stl_relops.h \
   /usr/include/c++/4.2.1/bits/stl_pair.h \
@@ -949,39 +949,37 @@ Monitor.o: Monitor.cpp Brain.h \
   /Users/nicain/local/lib/boost_1_47_0/boost/config/posix_features.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/config/suffix.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/cstdint.hpp \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h \
-  /usr/include/c++/4.2.1/algorithm \
+  /usr/include/stdint.h /usr/include/c++/4.2.1/algorithm \
   /usr/include/c++/4.2.1/bits/stl_algobase.h \
   /usr/include/c++/4.2.1/cstring /usr/include/string.h \
-  /usr/include/c++/4.2.1/climits \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/syslimits.h \
+  /usr/include/strings.h /usr/include/c++/4.2.1/climits \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/limits.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/syslimits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/limits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/syslimits.h \
   /usr/include/limits.h /usr/include/machine/limits.h \
   /usr/include/i386/limits.h /usr/include/i386/_limits.h \
   /usr/include/sys/syslimits.h /usr/include/c++/4.2.1/cstdlib \
-  /usr/include/stdlib.h /usr/include/Availability.h \
-  /usr/include/AvailabilityInternal.h /usr/include/sys/wait.h \
-  /usr/include/sys/signal.h /usr/include/machine/signal.h \
-  /usr/include/i386/signal.h /usr/include/i386/_structs.h \
-  /usr/include/machine/_structs.h /usr/include/mach/i386/_structs.h \
-  /usr/include/sys/resource.h /usr/include/machine/endian.h \
-  /usr/include/i386/endian.h /usr/include/sys/_endian.h \
-  /usr/include/libkern/_OSByteOrder.h \
+  /usr/include/stdlib.h /usr/include/sys/wait.h /usr/include/sys/signal.h \
+  /usr/include/machine/signal.h /usr/include/i386/signal.h \
+  /usr/include/i386/_structs.h /usr/include/machine/_structs.h \
+  /usr/include/mach/i386/_structs.h /usr/include/sys/resource.h \
+  /usr/include/machine/endian.h /usr/include/i386/endian.h \
+  /usr/include/sys/_endian.h /usr/include/libkern/_OSByteOrder.h \
   /usr/include/libkern/i386/_OSByteOrder.h /usr/include/alloca.h \
   /usr/include/machine/types.h /usr/include/i386/types.h \
   /usr/include/i386/_types.h /usr/include/c++/4.2.1/iosfwd \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++locale.h \
-  /usr/include/c++/4.2.1/clocale /usr/include/locale.h \
-  /usr/include/_locale.h /usr/include/c++/4.2.1/cstdio \
-  /usr/include/stdio.h /usr/include/c++/4.2.1/cstdarg \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++io.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/gthr.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/gthr-default.h \
-  /usr/include/pthread.h /usr/include/pthread_impl.h /usr/include/sched.h \
-  /usr/include/time.h /usr/include/_structs.h \
-  /usr/include/c++/4.2.1/cctype /usr/include/ctype.h \
-  /usr/include/runetype.h /usr/include/c++/4.2.1/bits/stringfwd.h \
+  /usr/include/c++/4.2.1/bits/c++locale.h /usr/include/c++/4.2.1/clocale \
+  /usr/include/locale.h /usr/include/_locale.h \
+  /usr/include/c++/4.2.1/cstdio /usr/include/stdio.h \
+  /usr/include/c++/4.2.1/cstdarg \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/stdarg.h \
+  /usr/include/c++/4.2.1/bits/c++io.h /usr/include/c++/4.2.1/bits/gthr.h \
+  /usr/include/c++/4.2.1/bits/gthr-default.h /usr/include/pthread.h \
+  /usr/include/pthread_impl.h /usr/include/sched.h /usr/include/time.h \
+  /usr/include/_structs.h /usr/include/c++/4.2.1/cctype \
+  /usr/include/ctype.h /usr/include/runetype.h \
+  /usr/include/c++/4.2.1/bits/stringfwd.h \
   /usr/include/c++/4.2.1/bits/postypes.h /usr/include/c++/4.2.1/cwchar \
   /usr/include/c++/4.2.1/ctime /usr/include/wchar.h \
   /usr/include/_wctype.h /usr/include/c++/4.2.1/bits/functexcept.h \
@@ -1000,7 +998,7 @@ Monitor.o: Monitor.cpp Brain.h \
   /usr/include/c++/4.2.1/bits/stl_heap.h \
   /usr/include/c++/4.2.1/bits/stl_tempbuf.h /usr/include/c++/4.2.1/memory \
   /usr/include/c++/4.2.1/bits/allocator.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++allocator.h \
+  /usr/include/c++/4.2.1/bits/c++allocator.h \
   /usr/include/c++/4.2.1/ext/new_allocator.h \
   /usr/include/c++/4.2.1/bits/stl_raw_storage_iter.h \
   /usr/include/c++/4.2.1/limits \
@@ -1097,7 +1095,7 @@ Monitor.o: Monitor.cpp Brain.h \
   /usr/include/c++/4.2.1/bits/stl_function.h \
   /usr/include/c++/4.2.1/bits/basic_string.h \
   /usr/include/c++/4.2.1/ext/atomicity.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/atomic_word.h \
+  /usr/include/c++/4.2.1/bits/atomic_word.h \
   /usr/include/c++/4.2.1/bits/basic_string.tcc \
   /usr/include/c++/4.2.1/iterator /usr/include/c++/4.2.1/ostream \
   /usr/include/c++/4.2.1/ios /usr/include/c++/4.2.1/bits/localefwd.h \
@@ -1109,11 +1107,11 @@ Monitor.o: Monitor.cpp Brain.h \
   /usr/include/c++/4.2.1/bits/streambuf_iterator.h \
   /usr/include/c++/4.2.1/bits/locale_facets.h \
   /usr/include/c++/4.2.1/cwctype /usr/include/wctype.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_base.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_inline.h \
+  /usr/include/c++/4.2.1/bits/ctype_base.h \
+  /usr/include/c++/4.2.1/bits/ctype_inline.h \
   /usr/include/c++/4.2.1/bits/codecvt.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/time_members.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/messages_members.h \
+  /usr/include/c++/4.2.1/bits/time_members.h \
+  /usr/include/c++/4.2.1/bits/messages_members.h \
   /usr/include/c++/4.2.1/bits/basic_ios.tcc \
   /usr/include/c++/4.2.1/bits/ostream.tcc /usr/include/c++/4.2.1/locale \
   /usr/include/c++/4.2.1/bits/locale_facets.tcc \
@@ -1602,10 +1600,10 @@ Monitor.o: Monitor.cpp Brain.h \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/powm1.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/lanczos.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/lanczos_sse2.hpp \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/emmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/xmmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/mmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/mm_malloc.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/emmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/xmmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/mmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/mm_malloc.h \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/igamma_large.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/unchecked_factorial.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/lgamma_small.hpp \
@@ -1802,54 +1800,54 @@ Monitor.o: Monitor.cpp Brain.h \
   /Users/nicain/local/lib/boost_1_47_0/boost/random/weibull_distribution.hpp \
   Monitor.h
 MonitorBrain.o: MonitorBrain.cpp /usr/include/c++/4.2.1/iostream \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++config.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/os_defines.h \
-  /usr/include/unistd.h /usr/include/_types.h /usr/include/sys/_types.h \
-  /usr/include/sys/cdefs.h /usr/include/machine/_types.h \
+  /usr/include/c++/4.2.1/bits/c++config.h \
+  /usr/include/c++/4.2.1/bits/os_defines.h /usr/include/unistd.h \
+  /usr/include/_types.h /usr/include/sys/_types.h \
+  /usr/include/sys/cdefs.h /usr/include/sys/_symbol_aliasing.h \
+  /usr/include/sys/_posix_availability.h /usr/include/machine/_types.h \
   /usr/include/i386/_types.h /usr/include/sys/unistd.h \
+  /usr/include/Availability.h /usr/include/AvailabilityInternal.h \
   /usr/include/sys/select.h /usr/include/sys/appleapiopts.h \
   /usr/include/sys/_structs.h /usr/include/sys/_select.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/cpu_defines.h \
+  /usr/include/c++/4.2.1/bits/cpu_defines.h \
   /usr/include/c++/4.2.1/ostream /usr/include/c++/4.2.1/ios \
-  /usr/include/c++/4.2.1/iosfwd \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++locale.h \
+  /usr/include/c++/4.2.1/iosfwd /usr/include/c++/4.2.1/bits/c++locale.h \
   /usr/include/c++/4.2.1/clocale /usr/include/locale.h \
   /usr/include/_locale.h /usr/include/c++/4.2.1/cstring \
   /usr/include/c++/4.2.1/cstddef \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h \
-  /usr/include/string.h /usr/include/c++/4.2.1/cstdio \
-  /usr/include/stdio.h /usr/include/c++/4.2.1/cstdarg \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++io.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/gthr.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/gthr-default.h \
-  /usr/include/pthread.h /usr/include/pthread_impl.h /usr/include/sched.h \
-  /usr/include/time.h /usr/include/_structs.h \
-  /usr/include/c++/4.2.1/cctype /usr/include/ctype.h \
-  /usr/include/runetype.h /usr/include/c++/4.2.1/bits/stringfwd.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/stddef.h \
+  /usr/include/string.h /usr/include/strings.h \
+  /usr/include/c++/4.2.1/cstdio /usr/include/stdio.h \
+  /usr/include/c++/4.2.1/cstdarg \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/stdarg.h \
+  /usr/include/c++/4.2.1/bits/c++io.h /usr/include/c++/4.2.1/bits/gthr.h \
+  /usr/include/c++/4.2.1/bits/gthr-default.h /usr/include/pthread.h \
+  /usr/include/pthread_impl.h /usr/include/sched.h /usr/include/time.h \
+  /usr/include/_structs.h /usr/include/c++/4.2.1/cctype \
+  /usr/include/ctype.h /usr/include/runetype.h \
+  /usr/include/c++/4.2.1/bits/stringfwd.h \
   /usr/include/c++/4.2.1/bits/postypes.h /usr/include/c++/4.2.1/cwchar \
   /usr/include/c++/4.2.1/ctime /usr/include/wchar.h \
-  /usr/include/_wctype.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h \
+  /usr/include/_wctype.h /usr/include/stdint.h \
   /usr/include/c++/4.2.1/bits/functexcept.h \
   /usr/include/c++/4.2.1/exception_defines.h \
   /usr/include/c++/4.2.1/exception \
   /usr/include/c++/4.2.1/bits/char_traits.h \
   /usr/include/c++/4.2.1/bits/stl_algobase.h \
   /usr/include/c++/4.2.1/climits \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/syslimits.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/limits.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/syslimits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/limits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/syslimits.h \
   /usr/include/limits.h /usr/include/machine/limits.h \
   /usr/include/i386/limits.h /usr/include/i386/_limits.h \
   /usr/include/sys/syslimits.h /usr/include/c++/4.2.1/cstdlib \
-  /usr/include/stdlib.h /usr/include/Availability.h \
-  /usr/include/AvailabilityInternal.h /usr/include/sys/wait.h \
-  /usr/include/sys/signal.h /usr/include/machine/signal.h \
-  /usr/include/i386/signal.h /usr/include/i386/_structs.h \
-  /usr/include/machine/_structs.h /usr/include/mach/i386/_structs.h \
-  /usr/include/sys/resource.h /usr/include/machine/endian.h \
-  /usr/include/i386/endian.h /usr/include/sys/_endian.h \
-  /usr/include/libkern/_OSByteOrder.h \
+  /usr/include/stdlib.h /usr/include/sys/wait.h /usr/include/sys/signal.h \
+  /usr/include/machine/signal.h /usr/include/i386/signal.h \
+  /usr/include/i386/_structs.h /usr/include/machine/_structs.h \
+  /usr/include/mach/i386/_structs.h /usr/include/sys/resource.h \
+  /usr/include/machine/endian.h /usr/include/i386/endian.h \
+  /usr/include/sys/_endian.h /usr/include/libkern/_OSByteOrder.h \
   /usr/include/libkern/i386/_OSByteOrder.h /usr/include/alloca.h \
   /usr/include/machine/types.h /usr/include/i386/types.h \
   /usr/include/i386/_types.h /usr/include/c++/4.2.1/bits/stl_pair.h \
@@ -1864,11 +1862,11 @@ MonitorBrain.o: MonitorBrain.cpp /usr/include/c++/4.2.1/iostream \
   /usr/include/c++/4.2.1/bits/localefwd.h \
   /usr/include/c++/4.2.1/bits/ios_base.h \
   /usr/include/c++/4.2.1/ext/atomicity.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/atomic_word.h \
+  /usr/include/c++/4.2.1/bits/atomic_word.h \
   /usr/include/c++/4.2.1/bits/locale_classes.h \
   /usr/include/c++/4.2.1/string /usr/include/c++/4.2.1/memory \
   /usr/include/c++/4.2.1/bits/allocator.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++allocator.h \
+  /usr/include/c++/4.2.1/bits/c++allocator.h \
   /usr/include/c++/4.2.1/ext/new_allocator.h /usr/include/c++/4.2.1/new \
   /usr/include/c++/4.2.1/bits/stl_construct.h \
   /usr/include/c++/4.2.1/bits/stl_uninitialized.h \
@@ -1887,11 +1885,11 @@ MonitorBrain.o: MonitorBrain.cpp /usr/include/c++/4.2.1/iostream \
   /usr/include/c++/4.2.1/bits/streambuf_iterator.h \
   /usr/include/c++/4.2.1/bits/locale_facets.h \
   /usr/include/c++/4.2.1/cwctype /usr/include/wctype.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_base.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_inline.h \
+  /usr/include/c++/4.2.1/bits/ctype_base.h \
+  /usr/include/c++/4.2.1/bits/ctype_inline.h \
   /usr/include/c++/4.2.1/bits/codecvt.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/time_members.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/messages_members.h \
+  /usr/include/c++/4.2.1/bits/time_members.h \
+  /usr/include/c++/4.2.1/bits/messages_members.h \
   /usr/include/c++/4.2.1/bits/basic_ios.tcc \
   /usr/include/c++/4.2.1/bits/ostream.tcc /usr/include/c++/4.2.1/locale \
   /usr/include/c++/4.2.1/bits/locale_facets.tcc \
@@ -2482,10 +2480,10 @@ MonitorBrain.o: MonitorBrain.cpp /usr/include/c++/4.2.1/iostream \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/powm1.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/lanczos.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/lanczos_sse2.hpp \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/emmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/xmmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/mmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/mm_malloc.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/emmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/xmmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/mmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/mm_malloc.h \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/igamma_large.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/unchecked_factorial.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/lgamma_small.hpp \
@@ -2682,54 +2680,54 @@ MonitorBrain.o: MonitorBrain.cpp /usr/include/c++/4.2.1/iostream \
   /Users/nicain/local/lib/boost_1_47_0/boost/random/weibull_distribution.hpp \
   MonitorBrain.h Monitor.h
 MonitorNeuron.o: MonitorNeuron.cpp /usr/include/c++/4.2.1/iostream \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++config.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/os_defines.h \
-  /usr/include/unistd.h /usr/include/_types.h /usr/include/sys/_types.h \
-  /usr/include/sys/cdefs.h /usr/include/machine/_types.h \
+  /usr/include/c++/4.2.1/bits/c++config.h \
+  /usr/include/c++/4.2.1/bits/os_defines.h /usr/include/unistd.h \
+  /usr/include/_types.h /usr/include/sys/_types.h \
+  /usr/include/sys/cdefs.h /usr/include/sys/_symbol_aliasing.h \
+  /usr/include/sys/_posix_availability.h /usr/include/machine/_types.h \
   /usr/include/i386/_types.h /usr/include/sys/unistd.h \
+  /usr/include/Availability.h /usr/include/AvailabilityInternal.h \
   /usr/include/sys/select.h /usr/include/sys/appleapiopts.h \
   /usr/include/sys/_structs.h /usr/include/sys/_select.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/cpu_defines.h \
+  /usr/include/c++/4.2.1/bits/cpu_defines.h \
   /usr/include/c++/4.2.1/ostream /usr/include/c++/4.2.1/ios \
-  /usr/include/c++/4.2.1/iosfwd \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++locale.h \
+  /usr/include/c++/4.2.1/iosfwd /usr/include/c++/4.2.1/bits/c++locale.h \
   /usr/include/c++/4.2.1/clocale /usr/include/locale.h \
   /usr/include/_locale.h /usr/include/c++/4.2.1/cstring \
   /usr/include/c++/4.2.1/cstddef \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h \
-  /usr/include/string.h /usr/include/c++/4.2.1/cstdio \
-  /usr/include/stdio.h /usr/include/c++/4.2.1/cstdarg \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++io.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/gthr.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/gthr-default.h \
-  /usr/include/pthread.h /usr/include/pthread_impl.h /usr/include/sched.h \
-  /usr/include/time.h /usr/include/_structs.h \
-  /usr/include/c++/4.2.1/cctype /usr/include/ctype.h \
-  /usr/include/runetype.h /usr/include/c++/4.2.1/bits/stringfwd.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/stddef.h \
+  /usr/include/string.h /usr/include/strings.h \
+  /usr/include/c++/4.2.1/cstdio /usr/include/stdio.h \
+  /usr/include/c++/4.2.1/cstdarg \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/stdarg.h \
+  /usr/include/c++/4.2.1/bits/c++io.h /usr/include/c++/4.2.1/bits/gthr.h \
+  /usr/include/c++/4.2.1/bits/gthr-default.h /usr/include/pthread.h \
+  /usr/include/pthread_impl.h /usr/include/sched.h /usr/include/time.h \
+  /usr/include/_structs.h /usr/include/c++/4.2.1/cctype \
+  /usr/include/ctype.h /usr/include/runetype.h \
+  /usr/include/c++/4.2.1/bits/stringfwd.h \
   /usr/include/c++/4.2.1/bits/postypes.h /usr/include/c++/4.2.1/cwchar \
   /usr/include/c++/4.2.1/ctime /usr/include/wchar.h \
-  /usr/include/_wctype.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h \
+  /usr/include/_wctype.h /usr/include/stdint.h \
   /usr/include/c++/4.2.1/bits/functexcept.h \
   /usr/include/c++/4.2.1/exception_defines.h \
   /usr/include/c++/4.2.1/exception \
   /usr/include/c++/4.2.1/bits/char_traits.h \
   /usr/include/c++/4.2.1/bits/stl_algobase.h \
   /usr/include/c++/4.2.1/climits \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/syslimits.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/limits.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/syslimits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/limits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/syslimits.h \
   /usr/include/limits.h /usr/include/machine/limits.h \
   /usr/include/i386/limits.h /usr/include/i386/_limits.h \
   /usr/include/sys/syslimits.h /usr/include/c++/4.2.1/cstdlib \
-  /usr/include/stdlib.h /usr/include/Availability.h \
-  /usr/include/AvailabilityInternal.h /usr/include/sys/wait.h \
-  /usr/include/sys/signal.h /usr/include/machine/signal.h \
-  /usr/include/i386/signal.h /usr/include/i386/_structs.h \
-  /usr/include/machine/_structs.h /usr/include/mach/i386/_structs.h \
-  /usr/include/sys/resource.h /usr/include/machine/endian.h \
-  /usr/include/i386/endian.h /usr/include/sys/_endian.h \
-  /usr/include/libkern/_OSByteOrder.h \
+  /usr/include/stdlib.h /usr/include/sys/wait.h /usr/include/sys/signal.h \
+  /usr/include/machine/signal.h /usr/include/i386/signal.h \
+  /usr/include/i386/_structs.h /usr/include/machine/_structs.h \
+  /usr/include/mach/i386/_structs.h /usr/include/sys/resource.h \
+  /usr/include/machine/endian.h /usr/include/i386/endian.h \
+  /usr/include/sys/_endian.h /usr/include/libkern/_OSByteOrder.h \
   /usr/include/libkern/i386/_OSByteOrder.h /usr/include/alloca.h \
   /usr/include/machine/types.h /usr/include/i386/types.h \
   /usr/include/i386/_types.h /usr/include/c++/4.2.1/bits/stl_pair.h \
@@ -2744,11 +2742,11 @@ MonitorNeuron.o: MonitorNeuron.cpp /usr/include/c++/4.2.1/iostream \
   /usr/include/c++/4.2.1/bits/localefwd.h \
   /usr/include/c++/4.2.1/bits/ios_base.h \
   /usr/include/c++/4.2.1/ext/atomicity.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/atomic_word.h \
+  /usr/include/c++/4.2.1/bits/atomic_word.h \
   /usr/include/c++/4.2.1/bits/locale_classes.h \
   /usr/include/c++/4.2.1/string /usr/include/c++/4.2.1/memory \
   /usr/include/c++/4.2.1/bits/allocator.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++allocator.h \
+  /usr/include/c++/4.2.1/bits/c++allocator.h \
   /usr/include/c++/4.2.1/ext/new_allocator.h /usr/include/c++/4.2.1/new \
   /usr/include/c++/4.2.1/bits/stl_construct.h \
   /usr/include/c++/4.2.1/bits/stl_uninitialized.h \
@@ -2767,11 +2765,11 @@ MonitorNeuron.o: MonitorNeuron.cpp /usr/include/c++/4.2.1/iostream \
   /usr/include/c++/4.2.1/bits/streambuf_iterator.h \
   /usr/include/c++/4.2.1/bits/locale_facets.h \
   /usr/include/c++/4.2.1/cwctype /usr/include/wctype.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_base.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_inline.h \
+  /usr/include/c++/4.2.1/bits/ctype_base.h \
+  /usr/include/c++/4.2.1/bits/ctype_inline.h \
   /usr/include/c++/4.2.1/bits/codecvt.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/time_members.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/messages_members.h \
+  /usr/include/c++/4.2.1/bits/time_members.h \
+  /usr/include/c++/4.2.1/bits/messages_members.h \
   /usr/include/c++/4.2.1/bits/basic_ios.tcc \
   /usr/include/c++/4.2.1/bits/ostream.tcc /usr/include/c++/4.2.1/locale \
   /usr/include/c++/4.2.1/bits/locale_facets.tcc \
@@ -3362,10 +3360,10 @@ MonitorNeuron.o: MonitorNeuron.cpp /usr/include/c++/4.2.1/iostream \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/powm1.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/lanczos.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/lanczos_sse2.hpp \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/emmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/xmmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/mmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/mm_malloc.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/emmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/xmmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/mmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/mm_malloc.h \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/igamma_large.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/unchecked_factorial.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/lgamma_small.hpp \
@@ -3562,55 +3560,54 @@ MonitorNeuron.o: MonitorNeuron.cpp /usr/include/c++/4.2.1/iostream \
   /Users/nicain/local/lib/boost_1_47_0/boost/random/weibull_distribution.hpp \
   Pool.h Monitor.h MonitorNeuron.h
 MonitorNeuronFile.o: MonitorNeuronFile.cpp \
-  /usr/include/c++/4.2.1/iostream \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++config.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/os_defines.h \
-  /usr/include/unistd.h /usr/include/_types.h /usr/include/sys/_types.h \
-  /usr/include/sys/cdefs.h /usr/include/machine/_types.h \
+  /usr/include/c++/4.2.1/iostream /usr/include/c++/4.2.1/bits/c++config.h \
+  /usr/include/c++/4.2.1/bits/os_defines.h /usr/include/unistd.h \
+  /usr/include/_types.h /usr/include/sys/_types.h \
+  /usr/include/sys/cdefs.h /usr/include/sys/_symbol_aliasing.h \
+  /usr/include/sys/_posix_availability.h /usr/include/machine/_types.h \
   /usr/include/i386/_types.h /usr/include/sys/unistd.h \
+  /usr/include/Availability.h /usr/include/AvailabilityInternal.h \
   /usr/include/sys/select.h /usr/include/sys/appleapiopts.h \
   /usr/include/sys/_structs.h /usr/include/sys/_select.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/cpu_defines.h \
+  /usr/include/c++/4.2.1/bits/cpu_defines.h \
   /usr/include/c++/4.2.1/ostream /usr/include/c++/4.2.1/ios \
-  /usr/include/c++/4.2.1/iosfwd \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++locale.h \
+  /usr/include/c++/4.2.1/iosfwd /usr/include/c++/4.2.1/bits/c++locale.h \
   /usr/include/c++/4.2.1/clocale /usr/include/locale.h \
   /usr/include/_locale.h /usr/include/c++/4.2.1/cstring \
   /usr/include/c++/4.2.1/cstddef \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h \
-  /usr/include/string.h /usr/include/c++/4.2.1/cstdio \
-  /usr/include/stdio.h /usr/include/c++/4.2.1/cstdarg \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++io.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/gthr.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/gthr-default.h \
-  /usr/include/pthread.h /usr/include/pthread_impl.h /usr/include/sched.h \
-  /usr/include/time.h /usr/include/_structs.h \
-  /usr/include/c++/4.2.1/cctype /usr/include/ctype.h \
-  /usr/include/runetype.h /usr/include/c++/4.2.1/bits/stringfwd.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/stddef.h \
+  /usr/include/string.h /usr/include/strings.h \
+  /usr/include/c++/4.2.1/cstdio /usr/include/stdio.h \
+  /usr/include/c++/4.2.1/cstdarg \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/stdarg.h \
+  /usr/include/c++/4.2.1/bits/c++io.h /usr/include/c++/4.2.1/bits/gthr.h \
+  /usr/include/c++/4.2.1/bits/gthr-default.h /usr/include/pthread.h \
+  /usr/include/pthread_impl.h /usr/include/sched.h /usr/include/time.h \
+  /usr/include/_structs.h /usr/include/c++/4.2.1/cctype \
+  /usr/include/ctype.h /usr/include/runetype.h \
+  /usr/include/c++/4.2.1/bits/stringfwd.h \
   /usr/include/c++/4.2.1/bits/postypes.h /usr/include/c++/4.2.1/cwchar \
   /usr/include/c++/4.2.1/ctime /usr/include/wchar.h \
-  /usr/include/_wctype.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h \
+  /usr/include/_wctype.h /usr/include/stdint.h \
   /usr/include/c++/4.2.1/bits/functexcept.h \
   /usr/include/c++/4.2.1/exception_defines.h \
   /usr/include/c++/4.2.1/exception \
   /usr/include/c++/4.2.1/bits/char_traits.h \
   /usr/include/c++/4.2.1/bits/stl_algobase.h \
   /usr/include/c++/4.2.1/climits \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/syslimits.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/limits.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/syslimits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/limits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/syslimits.h \
   /usr/include/limits.h /usr/include/machine/limits.h \
   /usr/include/i386/limits.h /usr/include/i386/_limits.h \
   /usr/include/sys/syslimits.h /usr/include/c++/4.2.1/cstdlib \
-  /usr/include/stdlib.h /usr/include/Availability.h \
-  /usr/include/AvailabilityInternal.h /usr/include/sys/wait.h \
-  /usr/include/sys/signal.h /usr/include/machine/signal.h \
-  /usr/include/i386/signal.h /usr/include/i386/_structs.h \
-  /usr/include/machine/_structs.h /usr/include/mach/i386/_structs.h \
-  /usr/include/sys/resource.h /usr/include/machine/endian.h \
-  /usr/include/i386/endian.h /usr/include/sys/_endian.h \
-  /usr/include/libkern/_OSByteOrder.h \
+  /usr/include/stdlib.h /usr/include/sys/wait.h /usr/include/sys/signal.h \
+  /usr/include/machine/signal.h /usr/include/i386/signal.h \
+  /usr/include/i386/_structs.h /usr/include/machine/_structs.h \
+  /usr/include/mach/i386/_structs.h /usr/include/sys/resource.h \
+  /usr/include/machine/endian.h /usr/include/i386/endian.h \
+  /usr/include/sys/_endian.h /usr/include/libkern/_OSByteOrder.h \
   /usr/include/libkern/i386/_OSByteOrder.h /usr/include/alloca.h \
   /usr/include/machine/types.h /usr/include/i386/types.h \
   /usr/include/i386/_types.h /usr/include/c++/4.2.1/bits/stl_pair.h \
@@ -3625,11 +3622,11 @@ MonitorNeuronFile.o: MonitorNeuronFile.cpp \
   /usr/include/c++/4.2.1/bits/localefwd.h \
   /usr/include/c++/4.2.1/bits/ios_base.h \
   /usr/include/c++/4.2.1/ext/atomicity.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/atomic_word.h \
+  /usr/include/c++/4.2.1/bits/atomic_word.h \
   /usr/include/c++/4.2.1/bits/locale_classes.h \
   /usr/include/c++/4.2.1/string /usr/include/c++/4.2.1/memory \
   /usr/include/c++/4.2.1/bits/allocator.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++allocator.h \
+  /usr/include/c++/4.2.1/bits/c++allocator.h \
   /usr/include/c++/4.2.1/ext/new_allocator.h /usr/include/c++/4.2.1/new \
   /usr/include/c++/4.2.1/bits/stl_construct.h \
   /usr/include/c++/4.2.1/bits/stl_uninitialized.h \
@@ -3648,11 +3645,11 @@ MonitorNeuronFile.o: MonitorNeuronFile.cpp \
   /usr/include/c++/4.2.1/bits/streambuf_iterator.h \
   /usr/include/c++/4.2.1/bits/locale_facets.h \
   /usr/include/c++/4.2.1/cwctype /usr/include/wctype.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_base.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_inline.h \
+  /usr/include/c++/4.2.1/bits/ctype_base.h \
+  /usr/include/c++/4.2.1/bits/ctype_inline.h \
   /usr/include/c++/4.2.1/bits/codecvt.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/time_members.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/messages_members.h \
+  /usr/include/c++/4.2.1/bits/time_members.h \
+  /usr/include/c++/4.2.1/bits/messages_members.h \
   /usr/include/c++/4.2.1/bits/basic_ios.tcc \
   /usr/include/c++/4.2.1/bits/ostream.tcc /usr/include/c++/4.2.1/locale \
   /usr/include/c++/4.2.1/bits/locale_facets.tcc \
@@ -4243,10 +4240,10 @@ MonitorNeuronFile.o: MonitorNeuronFile.cpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/powm1.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/lanczos.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/lanczos_sse2.hpp \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/emmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/xmmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/mmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/mm_malloc.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/emmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/xmmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/mmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/mm_malloc.h \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/igamma_large.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/unchecked_factorial.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/lgamma_small.hpp \
@@ -4442,55 +4439,55 @@ MonitorNeuronFile.o: MonitorNeuronFile.cpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/random/uniform_smallint.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/random/weibull_distribution.hpp \
   Pool.h Monitor.h MonitorNeuronFile.h MonitorNeuron.h \
-  /usr/include/c++/4.2.1/fstream \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/basic_file.h \
+  /usr/include/c++/4.2.1/fstream /usr/include/c++/4.2.1/bits/basic_file.h \
   /usr/include/c++/4.2.1/bits/fstream.tcc
 Pool.o: Pool.cpp /usr/include/c++/4.2.1/string \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++config.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/os_defines.h \
-  /usr/include/unistd.h /usr/include/_types.h /usr/include/sys/_types.h \
-  /usr/include/sys/cdefs.h /usr/include/machine/_types.h \
+  /usr/include/c++/4.2.1/bits/c++config.h \
+  /usr/include/c++/4.2.1/bits/os_defines.h /usr/include/unistd.h \
+  /usr/include/_types.h /usr/include/sys/_types.h \
+  /usr/include/sys/cdefs.h /usr/include/sys/_symbol_aliasing.h \
+  /usr/include/sys/_posix_availability.h /usr/include/machine/_types.h \
   /usr/include/i386/_types.h /usr/include/sys/unistd.h \
+  /usr/include/Availability.h /usr/include/AvailabilityInternal.h \
   /usr/include/sys/select.h /usr/include/sys/appleapiopts.h \
   /usr/include/sys/_structs.h /usr/include/sys/_select.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/cpu_defines.h \
+  /usr/include/c++/4.2.1/bits/cpu_defines.h \
   /usr/include/c++/4.2.1/bits/stringfwd.h \
   /usr/include/c++/4.2.1/bits/char_traits.h \
   /usr/include/c++/4.2.1/cstring /usr/include/c++/4.2.1/cstddef \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h \
-  /usr/include/string.h /usr/include/c++/4.2.1/bits/stl_algobase.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/stddef.h \
+  /usr/include/string.h /usr/include/strings.h \
+  /usr/include/c++/4.2.1/bits/stl_algobase.h \
   /usr/include/c++/4.2.1/climits \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/syslimits.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/limits.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/syslimits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/limits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/syslimits.h \
   /usr/include/limits.h /usr/include/machine/limits.h \
   /usr/include/i386/limits.h /usr/include/i386/_limits.h \
   /usr/include/sys/syslimits.h /usr/include/c++/4.2.1/cstdlib \
-  /usr/include/stdlib.h /usr/include/Availability.h \
-  /usr/include/AvailabilityInternal.h /usr/include/sys/wait.h \
-  /usr/include/sys/signal.h /usr/include/machine/signal.h \
-  /usr/include/i386/signal.h /usr/include/i386/_structs.h \
-  /usr/include/machine/_structs.h /usr/include/mach/i386/_structs.h \
-  /usr/include/sys/resource.h /usr/include/machine/endian.h \
-  /usr/include/i386/endian.h /usr/include/sys/_endian.h \
-  /usr/include/libkern/_OSByteOrder.h \
+  /usr/include/stdlib.h /usr/include/sys/wait.h /usr/include/sys/signal.h \
+  /usr/include/machine/signal.h /usr/include/i386/signal.h \
+  /usr/include/i386/_structs.h /usr/include/machine/_structs.h \
+  /usr/include/mach/i386/_structs.h /usr/include/sys/resource.h \
+  /usr/include/machine/endian.h /usr/include/i386/endian.h \
+  /usr/include/sys/_endian.h /usr/include/libkern/_OSByteOrder.h \
   /usr/include/libkern/i386/_OSByteOrder.h /usr/include/alloca.h \
   /usr/include/machine/types.h /usr/include/i386/types.h \
   /usr/include/i386/_types.h /usr/include/c++/4.2.1/iosfwd \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++locale.h \
-  /usr/include/c++/4.2.1/clocale /usr/include/locale.h \
-  /usr/include/_locale.h /usr/include/c++/4.2.1/cstdio \
-  /usr/include/stdio.h /usr/include/c++/4.2.1/cstdarg \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++io.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/gthr.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/gthr-default.h \
-  /usr/include/pthread.h /usr/include/pthread_impl.h /usr/include/sched.h \
-  /usr/include/time.h /usr/include/_structs.h \
-  /usr/include/c++/4.2.1/cctype /usr/include/ctype.h \
-  /usr/include/runetype.h /usr/include/c++/4.2.1/bits/postypes.h \
-  /usr/include/c++/4.2.1/cwchar /usr/include/c++/4.2.1/ctime \
-  /usr/include/wchar.h /usr/include/_wctype.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h \
+  /usr/include/c++/4.2.1/bits/c++locale.h /usr/include/c++/4.2.1/clocale \
+  /usr/include/locale.h /usr/include/_locale.h \
+  /usr/include/c++/4.2.1/cstdio /usr/include/stdio.h \
+  /usr/include/c++/4.2.1/cstdarg \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/stdarg.h \
+  /usr/include/c++/4.2.1/bits/c++io.h /usr/include/c++/4.2.1/bits/gthr.h \
+  /usr/include/c++/4.2.1/bits/gthr-default.h /usr/include/pthread.h \
+  /usr/include/pthread_impl.h /usr/include/sched.h /usr/include/time.h \
+  /usr/include/_structs.h /usr/include/c++/4.2.1/cctype \
+  /usr/include/ctype.h /usr/include/runetype.h \
+  /usr/include/c++/4.2.1/bits/postypes.h /usr/include/c++/4.2.1/cwchar \
+  /usr/include/c++/4.2.1/ctime /usr/include/wchar.h \
+  /usr/include/_wctype.h /usr/include/stdint.h \
   /usr/include/c++/4.2.1/bits/functexcept.h \
   /usr/include/c++/4.2.1/exception_defines.h \
   /usr/include/c++/4.2.1/bits/stl_pair.h \
@@ -4503,7 +4500,7 @@ Pool.o: Pool.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/stl_iterator.h \
   /usr/include/c++/4.2.1/debug/debug.h /usr/include/c++/4.2.1/memory \
   /usr/include/c++/4.2.1/bits/allocator.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++allocator.h \
+  /usr/include/c++/4.2.1/bits/c++allocator.h \
   /usr/include/c++/4.2.1/ext/new_allocator.h /usr/include/c++/4.2.1/new \
   /usr/include/c++/4.2.1/exception \
   /usr/include/c++/4.2.1/bits/stl_construct.h \
@@ -4514,7 +4511,7 @@ Pool.o: Pool.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/stl_function.h \
   /usr/include/c++/4.2.1/bits/basic_string.h \
   /usr/include/c++/4.2.1/ext/atomicity.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/atomic_word.h \
+  /usr/include/c++/4.2.1/bits/atomic_word.h \
   /usr/include/c++/4.2.1/algorithm /usr/include/c++/4.2.1/bits/stl_algo.h \
   /usr/include/c++/4.2.1/bits/stl_heap.h \
   /usr/include/c++/4.2.1/bits/stl_tempbuf.h \
@@ -4630,11 +4627,11 @@ Pool.o: Pool.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/streambuf_iterator.h \
   /usr/include/c++/4.2.1/bits/locale_facets.h \
   /usr/include/c++/4.2.1/cwctype /usr/include/wctype.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_base.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_inline.h \
+  /usr/include/c++/4.2.1/bits/ctype_base.h \
+  /usr/include/c++/4.2.1/bits/ctype_inline.h \
   /usr/include/c++/4.2.1/bits/codecvt.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/time_members.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/messages_members.h \
+  /usr/include/c++/4.2.1/bits/time_members.h \
+  /usr/include/c++/4.2.1/bits/messages_members.h \
   /usr/include/c++/4.2.1/bits/basic_ios.tcc \
   /usr/include/c++/4.2.1/bits/ostream.tcc /usr/include/c++/4.2.1/locale \
   /usr/include/c++/4.2.1/bits/locale_facets.tcc \
@@ -5123,10 +5120,10 @@ Pool.o: Pool.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/powm1.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/lanczos.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/lanczos_sse2.hpp \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/emmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/xmmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/mmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/mm_malloc.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/emmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/xmmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/mmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/mm_malloc.h \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/igamma_large.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/unchecked_factorial.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/lgamma_small.hpp \
@@ -5323,51 +5320,52 @@ Pool.o: Pool.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/random/weibull_distribution.hpp \
   SpikeList.h Pool.h Monitor.h
 PoolBG.o: PoolBG.cpp /usr/include/c++/4.2.1/string \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++config.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/os_defines.h \
-  /usr/include/unistd.h /usr/include/_types.h /usr/include/sys/_types.h \
-  /usr/include/sys/cdefs.h /usr/include/machine/_types.h \
+  /usr/include/c++/4.2.1/bits/c++config.h \
+  /usr/include/c++/4.2.1/bits/os_defines.h /usr/include/unistd.h \
+  /usr/include/_types.h /usr/include/sys/_types.h \
+  /usr/include/sys/cdefs.h /usr/include/sys/_symbol_aliasing.h \
+  /usr/include/sys/_posix_availability.h /usr/include/machine/_types.h \
   /usr/include/i386/_types.h /usr/include/sys/unistd.h \
+  /usr/include/Availability.h /usr/include/AvailabilityInternal.h \
   /usr/include/sys/select.h /usr/include/sys/appleapiopts.h \
   /usr/include/sys/_structs.h /usr/include/sys/_select.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/cpu_defines.h \
+  /usr/include/c++/4.2.1/bits/cpu_defines.h \
   /usr/include/c++/4.2.1/bits/stringfwd.h \
   /usr/include/c++/4.2.1/bits/char_traits.h \
   /usr/include/c++/4.2.1/cstring /usr/include/c++/4.2.1/cstddef \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h \
-  /usr/include/string.h /usr/include/c++/4.2.1/bits/stl_algobase.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/stddef.h \
+  /usr/include/string.h /usr/include/strings.h \
+  /usr/include/c++/4.2.1/bits/stl_algobase.h \
   /usr/include/c++/4.2.1/climits \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/syslimits.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/limits.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/syslimits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/limits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/syslimits.h \
   /usr/include/limits.h /usr/include/machine/limits.h \
   /usr/include/i386/limits.h /usr/include/i386/_limits.h \
   /usr/include/sys/syslimits.h /usr/include/c++/4.2.1/cstdlib \
-  /usr/include/stdlib.h /usr/include/Availability.h \
-  /usr/include/AvailabilityInternal.h /usr/include/sys/wait.h \
-  /usr/include/sys/signal.h /usr/include/machine/signal.h \
-  /usr/include/i386/signal.h /usr/include/i386/_structs.h \
-  /usr/include/machine/_structs.h /usr/include/mach/i386/_structs.h \
-  /usr/include/sys/resource.h /usr/include/machine/endian.h \
-  /usr/include/i386/endian.h /usr/include/sys/_endian.h \
-  /usr/include/libkern/_OSByteOrder.h \
+  /usr/include/stdlib.h /usr/include/sys/wait.h /usr/include/sys/signal.h \
+  /usr/include/machine/signal.h /usr/include/i386/signal.h \
+  /usr/include/i386/_structs.h /usr/include/machine/_structs.h \
+  /usr/include/mach/i386/_structs.h /usr/include/sys/resource.h \
+  /usr/include/machine/endian.h /usr/include/i386/endian.h \
+  /usr/include/sys/_endian.h /usr/include/libkern/_OSByteOrder.h \
   /usr/include/libkern/i386/_OSByteOrder.h /usr/include/alloca.h \
   /usr/include/machine/types.h /usr/include/i386/types.h \
   /usr/include/i386/_types.h /usr/include/c++/4.2.1/iosfwd \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++locale.h \
-  /usr/include/c++/4.2.1/clocale /usr/include/locale.h \
-  /usr/include/_locale.h /usr/include/c++/4.2.1/cstdio \
-  /usr/include/stdio.h /usr/include/c++/4.2.1/cstdarg \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++io.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/gthr.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/gthr-default.h \
-  /usr/include/pthread.h /usr/include/pthread_impl.h /usr/include/sched.h \
-  /usr/include/time.h /usr/include/_structs.h \
-  /usr/include/c++/4.2.1/cctype /usr/include/ctype.h \
-  /usr/include/runetype.h /usr/include/c++/4.2.1/bits/postypes.h \
-  /usr/include/c++/4.2.1/cwchar /usr/include/c++/4.2.1/ctime \
-  /usr/include/wchar.h /usr/include/_wctype.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h \
+  /usr/include/c++/4.2.1/bits/c++locale.h /usr/include/c++/4.2.1/clocale \
+  /usr/include/locale.h /usr/include/_locale.h \
+  /usr/include/c++/4.2.1/cstdio /usr/include/stdio.h \
+  /usr/include/c++/4.2.1/cstdarg \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/stdarg.h \
+  /usr/include/c++/4.2.1/bits/c++io.h /usr/include/c++/4.2.1/bits/gthr.h \
+  /usr/include/c++/4.2.1/bits/gthr-default.h /usr/include/pthread.h \
+  /usr/include/pthread_impl.h /usr/include/sched.h /usr/include/time.h \
+  /usr/include/_structs.h /usr/include/c++/4.2.1/cctype \
+  /usr/include/ctype.h /usr/include/runetype.h \
+  /usr/include/c++/4.2.1/bits/postypes.h /usr/include/c++/4.2.1/cwchar \
+  /usr/include/c++/4.2.1/ctime /usr/include/wchar.h \
+  /usr/include/_wctype.h /usr/include/stdint.h \
   /usr/include/c++/4.2.1/bits/functexcept.h \
   /usr/include/c++/4.2.1/exception_defines.h \
   /usr/include/c++/4.2.1/bits/stl_pair.h \
@@ -5380,7 +5378,7 @@ PoolBG.o: PoolBG.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/stl_iterator.h \
   /usr/include/c++/4.2.1/debug/debug.h /usr/include/c++/4.2.1/memory \
   /usr/include/c++/4.2.1/bits/allocator.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++allocator.h \
+  /usr/include/c++/4.2.1/bits/c++allocator.h \
   /usr/include/c++/4.2.1/ext/new_allocator.h /usr/include/c++/4.2.1/new \
   /usr/include/c++/4.2.1/exception \
   /usr/include/c++/4.2.1/bits/stl_construct.h \
@@ -5391,7 +5389,7 @@ PoolBG.o: PoolBG.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/stl_function.h \
   /usr/include/c++/4.2.1/bits/basic_string.h \
   /usr/include/c++/4.2.1/ext/atomicity.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/atomic_word.h \
+  /usr/include/c++/4.2.1/bits/atomic_word.h \
   /usr/include/c++/4.2.1/algorithm /usr/include/c++/4.2.1/bits/stl_algo.h \
   /usr/include/c++/4.2.1/bits/stl_heap.h \
   /usr/include/c++/4.2.1/bits/stl_tempbuf.h \
@@ -5409,11 +5407,11 @@ PoolBG.o: PoolBG.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/streambuf_iterator.h \
   /usr/include/c++/4.2.1/bits/locale_facets.h \
   /usr/include/c++/4.2.1/cwctype /usr/include/wctype.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_base.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_inline.h \
+  /usr/include/c++/4.2.1/bits/ctype_base.h \
+  /usr/include/c++/4.2.1/bits/ctype_inline.h \
   /usr/include/c++/4.2.1/bits/codecvt.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/time_members.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/messages_members.h \
+  /usr/include/c++/4.2.1/bits/time_members.h \
+  /usr/include/c++/4.2.1/bits/messages_members.h \
   /usr/include/c++/4.2.1/bits/basic_ios.tcc \
   /usr/include/c++/4.2.1/bits/ostream.tcc /usr/include/c++/4.2.1/locale \
   /usr/include/c++/4.2.1/bits/locale_facets.tcc \
@@ -6010,10 +6008,10 @@ PoolBG.o: PoolBG.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/powm1.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/lanczos.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/lanczos_sse2.hpp \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/emmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/xmmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/mmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/mm_malloc.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/emmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/xmmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/mmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/mm_malloc.h \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/igamma_large.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/unchecked_factorial.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/lgamma_small.hpp \
@@ -6207,51 +6205,52 @@ PoolBG.o: PoolBG.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/random/uniform_smallint.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/random/weibull_distribution.hpp
 PoolBGFile.o: PoolBGFile.cpp /usr/include/c++/4.2.1/string \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++config.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/os_defines.h \
-  /usr/include/unistd.h /usr/include/_types.h /usr/include/sys/_types.h \
-  /usr/include/sys/cdefs.h /usr/include/machine/_types.h \
+  /usr/include/c++/4.2.1/bits/c++config.h \
+  /usr/include/c++/4.2.1/bits/os_defines.h /usr/include/unistd.h \
+  /usr/include/_types.h /usr/include/sys/_types.h \
+  /usr/include/sys/cdefs.h /usr/include/sys/_symbol_aliasing.h \
+  /usr/include/sys/_posix_availability.h /usr/include/machine/_types.h \
   /usr/include/i386/_types.h /usr/include/sys/unistd.h \
+  /usr/include/Availability.h /usr/include/AvailabilityInternal.h \
   /usr/include/sys/select.h /usr/include/sys/appleapiopts.h \
   /usr/include/sys/_structs.h /usr/include/sys/_select.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/cpu_defines.h \
+  /usr/include/c++/4.2.1/bits/cpu_defines.h \
   /usr/include/c++/4.2.1/bits/stringfwd.h \
   /usr/include/c++/4.2.1/bits/char_traits.h \
   /usr/include/c++/4.2.1/cstring /usr/include/c++/4.2.1/cstddef \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h \
-  /usr/include/string.h /usr/include/c++/4.2.1/bits/stl_algobase.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/stddef.h \
+  /usr/include/string.h /usr/include/strings.h \
+  /usr/include/c++/4.2.1/bits/stl_algobase.h \
   /usr/include/c++/4.2.1/climits \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/syslimits.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/limits.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/syslimits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/limits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/syslimits.h \
   /usr/include/limits.h /usr/include/machine/limits.h \
   /usr/include/i386/limits.h /usr/include/i386/_limits.h \
   /usr/include/sys/syslimits.h /usr/include/c++/4.2.1/cstdlib \
-  /usr/include/stdlib.h /usr/include/Availability.h \
-  /usr/include/AvailabilityInternal.h /usr/include/sys/wait.h \
-  /usr/include/sys/signal.h /usr/include/machine/signal.h \
-  /usr/include/i386/signal.h /usr/include/i386/_structs.h \
-  /usr/include/machine/_structs.h /usr/include/mach/i386/_structs.h \
-  /usr/include/sys/resource.h /usr/include/machine/endian.h \
-  /usr/include/i386/endian.h /usr/include/sys/_endian.h \
-  /usr/include/libkern/_OSByteOrder.h \
+  /usr/include/stdlib.h /usr/include/sys/wait.h /usr/include/sys/signal.h \
+  /usr/include/machine/signal.h /usr/include/i386/signal.h \
+  /usr/include/i386/_structs.h /usr/include/machine/_structs.h \
+  /usr/include/mach/i386/_structs.h /usr/include/sys/resource.h \
+  /usr/include/machine/endian.h /usr/include/i386/endian.h \
+  /usr/include/sys/_endian.h /usr/include/libkern/_OSByteOrder.h \
   /usr/include/libkern/i386/_OSByteOrder.h /usr/include/alloca.h \
   /usr/include/machine/types.h /usr/include/i386/types.h \
   /usr/include/i386/_types.h /usr/include/c++/4.2.1/iosfwd \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++locale.h \
-  /usr/include/c++/4.2.1/clocale /usr/include/locale.h \
-  /usr/include/_locale.h /usr/include/c++/4.2.1/cstdio \
-  /usr/include/stdio.h /usr/include/c++/4.2.1/cstdarg \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++io.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/gthr.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/gthr-default.h \
-  /usr/include/pthread.h /usr/include/pthread_impl.h /usr/include/sched.h \
-  /usr/include/time.h /usr/include/_structs.h \
-  /usr/include/c++/4.2.1/cctype /usr/include/ctype.h \
-  /usr/include/runetype.h /usr/include/c++/4.2.1/bits/postypes.h \
-  /usr/include/c++/4.2.1/cwchar /usr/include/c++/4.2.1/ctime \
-  /usr/include/wchar.h /usr/include/_wctype.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h \
+  /usr/include/c++/4.2.1/bits/c++locale.h /usr/include/c++/4.2.1/clocale \
+  /usr/include/locale.h /usr/include/_locale.h \
+  /usr/include/c++/4.2.1/cstdio /usr/include/stdio.h \
+  /usr/include/c++/4.2.1/cstdarg \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/stdarg.h \
+  /usr/include/c++/4.2.1/bits/c++io.h /usr/include/c++/4.2.1/bits/gthr.h \
+  /usr/include/c++/4.2.1/bits/gthr-default.h /usr/include/pthread.h \
+  /usr/include/pthread_impl.h /usr/include/sched.h /usr/include/time.h \
+  /usr/include/_structs.h /usr/include/c++/4.2.1/cctype \
+  /usr/include/ctype.h /usr/include/runetype.h \
+  /usr/include/c++/4.2.1/bits/postypes.h /usr/include/c++/4.2.1/cwchar \
+  /usr/include/c++/4.2.1/ctime /usr/include/wchar.h \
+  /usr/include/_wctype.h /usr/include/stdint.h \
   /usr/include/c++/4.2.1/bits/functexcept.h \
   /usr/include/c++/4.2.1/exception_defines.h \
   /usr/include/c++/4.2.1/bits/stl_pair.h \
@@ -6264,7 +6263,7 @@ PoolBGFile.o: PoolBGFile.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/stl_iterator.h \
   /usr/include/c++/4.2.1/debug/debug.h /usr/include/c++/4.2.1/memory \
   /usr/include/c++/4.2.1/bits/allocator.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++allocator.h \
+  /usr/include/c++/4.2.1/bits/c++allocator.h \
   /usr/include/c++/4.2.1/ext/new_allocator.h /usr/include/c++/4.2.1/new \
   /usr/include/c++/4.2.1/exception \
   /usr/include/c++/4.2.1/bits/stl_construct.h \
@@ -6275,7 +6274,7 @@ PoolBGFile.o: PoolBGFile.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/stl_function.h \
   /usr/include/c++/4.2.1/bits/basic_string.h \
   /usr/include/c++/4.2.1/ext/atomicity.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/atomic_word.h \
+  /usr/include/c++/4.2.1/bits/atomic_word.h \
   /usr/include/c++/4.2.1/algorithm /usr/include/c++/4.2.1/bits/stl_algo.h \
   /usr/include/c++/4.2.1/bits/stl_heap.h \
   /usr/include/c++/4.2.1/bits/stl_tempbuf.h \
@@ -6290,11 +6289,11 @@ PoolBGFile.o: PoolBGFile.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/streambuf_iterator.h \
   /usr/include/c++/4.2.1/bits/locale_facets.h \
   /usr/include/c++/4.2.1/cwctype /usr/include/wctype.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_base.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_inline.h \
+  /usr/include/c++/4.2.1/bits/ctype_base.h \
+  /usr/include/c++/4.2.1/bits/ctype_inline.h \
   /usr/include/c++/4.2.1/bits/codecvt.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/time_members.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/messages_members.h \
+  /usr/include/c++/4.2.1/bits/time_members.h \
+  /usr/include/c++/4.2.1/bits/messages_members.h \
   /usr/include/c++/4.2.1/bits/basic_ios.tcc \
   /usr/include/c++/4.2.1/bits/ostream.tcc /usr/include/c++/4.2.1/locale \
   /usr/include/c++/4.2.1/bits/locale_facets.tcc \
@@ -6895,10 +6894,10 @@ PoolBGFile.o: PoolBGFile.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/powm1.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/lanczos.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/lanczos_sse2.hpp \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/emmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/xmmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/mmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/mm_malloc.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/emmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/xmmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/mmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/mm_malloc.h \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/igamma_large.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/unchecked_factorial.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/lgamma_small.hpp \
@@ -7096,51 +7095,52 @@ PoolBGFile.o: PoolBGFile.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/stl_set.h \
   /usr/include/c++/4.2.1/bits/stl_multiset.h
 PoolBGHPoisson.o: PoolBGHPoisson.cpp /usr/include/c++/4.2.1/string \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++config.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/os_defines.h \
-  /usr/include/unistd.h /usr/include/_types.h /usr/include/sys/_types.h \
-  /usr/include/sys/cdefs.h /usr/include/machine/_types.h \
+  /usr/include/c++/4.2.1/bits/c++config.h \
+  /usr/include/c++/4.2.1/bits/os_defines.h /usr/include/unistd.h \
+  /usr/include/_types.h /usr/include/sys/_types.h \
+  /usr/include/sys/cdefs.h /usr/include/sys/_symbol_aliasing.h \
+  /usr/include/sys/_posix_availability.h /usr/include/machine/_types.h \
   /usr/include/i386/_types.h /usr/include/sys/unistd.h \
+  /usr/include/Availability.h /usr/include/AvailabilityInternal.h \
   /usr/include/sys/select.h /usr/include/sys/appleapiopts.h \
   /usr/include/sys/_structs.h /usr/include/sys/_select.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/cpu_defines.h \
+  /usr/include/c++/4.2.1/bits/cpu_defines.h \
   /usr/include/c++/4.2.1/bits/stringfwd.h \
   /usr/include/c++/4.2.1/bits/char_traits.h \
   /usr/include/c++/4.2.1/cstring /usr/include/c++/4.2.1/cstddef \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h \
-  /usr/include/string.h /usr/include/c++/4.2.1/bits/stl_algobase.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/stddef.h \
+  /usr/include/string.h /usr/include/strings.h \
+  /usr/include/c++/4.2.1/bits/stl_algobase.h \
   /usr/include/c++/4.2.1/climits \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/syslimits.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/limits.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/syslimits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/limits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/syslimits.h \
   /usr/include/limits.h /usr/include/machine/limits.h \
   /usr/include/i386/limits.h /usr/include/i386/_limits.h \
   /usr/include/sys/syslimits.h /usr/include/c++/4.2.1/cstdlib \
-  /usr/include/stdlib.h /usr/include/Availability.h \
-  /usr/include/AvailabilityInternal.h /usr/include/sys/wait.h \
-  /usr/include/sys/signal.h /usr/include/machine/signal.h \
-  /usr/include/i386/signal.h /usr/include/i386/_structs.h \
-  /usr/include/machine/_structs.h /usr/include/mach/i386/_structs.h \
-  /usr/include/sys/resource.h /usr/include/machine/endian.h \
-  /usr/include/i386/endian.h /usr/include/sys/_endian.h \
-  /usr/include/libkern/_OSByteOrder.h \
+  /usr/include/stdlib.h /usr/include/sys/wait.h /usr/include/sys/signal.h \
+  /usr/include/machine/signal.h /usr/include/i386/signal.h \
+  /usr/include/i386/_structs.h /usr/include/machine/_structs.h \
+  /usr/include/mach/i386/_structs.h /usr/include/sys/resource.h \
+  /usr/include/machine/endian.h /usr/include/i386/endian.h \
+  /usr/include/sys/_endian.h /usr/include/libkern/_OSByteOrder.h \
   /usr/include/libkern/i386/_OSByteOrder.h /usr/include/alloca.h \
   /usr/include/machine/types.h /usr/include/i386/types.h \
   /usr/include/i386/_types.h /usr/include/c++/4.2.1/iosfwd \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++locale.h \
-  /usr/include/c++/4.2.1/clocale /usr/include/locale.h \
-  /usr/include/_locale.h /usr/include/c++/4.2.1/cstdio \
-  /usr/include/stdio.h /usr/include/c++/4.2.1/cstdarg \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++io.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/gthr.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/gthr-default.h \
-  /usr/include/pthread.h /usr/include/pthread_impl.h /usr/include/sched.h \
-  /usr/include/time.h /usr/include/_structs.h \
-  /usr/include/c++/4.2.1/cctype /usr/include/ctype.h \
-  /usr/include/runetype.h /usr/include/c++/4.2.1/bits/postypes.h \
-  /usr/include/c++/4.2.1/cwchar /usr/include/c++/4.2.1/ctime \
-  /usr/include/wchar.h /usr/include/_wctype.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h \
+  /usr/include/c++/4.2.1/bits/c++locale.h /usr/include/c++/4.2.1/clocale \
+  /usr/include/locale.h /usr/include/_locale.h \
+  /usr/include/c++/4.2.1/cstdio /usr/include/stdio.h \
+  /usr/include/c++/4.2.1/cstdarg \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/stdarg.h \
+  /usr/include/c++/4.2.1/bits/c++io.h /usr/include/c++/4.2.1/bits/gthr.h \
+  /usr/include/c++/4.2.1/bits/gthr-default.h /usr/include/pthread.h \
+  /usr/include/pthread_impl.h /usr/include/sched.h /usr/include/time.h \
+  /usr/include/_structs.h /usr/include/c++/4.2.1/cctype \
+  /usr/include/ctype.h /usr/include/runetype.h \
+  /usr/include/c++/4.2.1/bits/postypes.h /usr/include/c++/4.2.1/cwchar \
+  /usr/include/c++/4.2.1/ctime /usr/include/wchar.h \
+  /usr/include/_wctype.h /usr/include/stdint.h \
   /usr/include/c++/4.2.1/bits/functexcept.h \
   /usr/include/c++/4.2.1/exception_defines.h \
   /usr/include/c++/4.2.1/bits/stl_pair.h \
@@ -7153,7 +7153,7 @@ PoolBGHPoisson.o: PoolBGHPoisson.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/stl_iterator.h \
   /usr/include/c++/4.2.1/debug/debug.h /usr/include/c++/4.2.1/memory \
   /usr/include/c++/4.2.1/bits/allocator.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++allocator.h \
+  /usr/include/c++/4.2.1/bits/c++allocator.h \
   /usr/include/c++/4.2.1/ext/new_allocator.h /usr/include/c++/4.2.1/new \
   /usr/include/c++/4.2.1/exception \
   /usr/include/c++/4.2.1/bits/stl_construct.h \
@@ -7164,7 +7164,7 @@ PoolBGHPoisson.o: PoolBGHPoisson.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/stl_function.h \
   /usr/include/c++/4.2.1/bits/basic_string.h \
   /usr/include/c++/4.2.1/ext/atomicity.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/atomic_word.h \
+  /usr/include/c++/4.2.1/bits/atomic_word.h \
   /usr/include/c++/4.2.1/algorithm /usr/include/c++/4.2.1/bits/stl_algo.h \
   /usr/include/c++/4.2.1/bits/stl_heap.h \
   /usr/include/c++/4.2.1/bits/stl_tempbuf.h \
@@ -7183,11 +7183,11 @@ PoolBGHPoisson.o: PoolBGHPoisson.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/streambuf_iterator.h \
   /usr/include/c++/4.2.1/bits/locale_facets.h \
   /usr/include/c++/4.2.1/cwctype /usr/include/wctype.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_base.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_inline.h \
+  /usr/include/c++/4.2.1/bits/ctype_base.h \
+  /usr/include/c++/4.2.1/bits/ctype_inline.h \
   /usr/include/c++/4.2.1/bits/codecvt.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/time_members.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/messages_members.h \
+  /usr/include/c++/4.2.1/bits/time_members.h \
+  /usr/include/c++/4.2.1/bits/messages_members.h \
   /usr/include/c++/4.2.1/bits/basic_ios.tcc \
   /usr/include/c++/4.2.1/bits/ostream.tcc /usr/include/c++/4.2.1/locale \
   /usr/include/c++/4.2.1/bits/locale_facets.tcc \
@@ -7755,10 +7755,10 @@ PoolBGHPoisson.o: PoolBGHPoisson.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/powm1.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/lanczos.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/lanczos_sse2.hpp \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/emmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/xmmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/mmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/mm_malloc.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/emmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/xmmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/mmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/mm_malloc.h \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/igamma_large.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/unchecked_factorial.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/lgamma_small.hpp \
@@ -7981,51 +7981,52 @@ PoolBGHPoisson.o: PoolBGHPoisson.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/io/ios_state.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/io_fwd.hpp SpikeList.h
 PoolBGInHPoisson.o: PoolBGInHPoisson.cpp /usr/include/c++/4.2.1/string \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++config.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/os_defines.h \
-  /usr/include/unistd.h /usr/include/_types.h /usr/include/sys/_types.h \
-  /usr/include/sys/cdefs.h /usr/include/machine/_types.h \
+  /usr/include/c++/4.2.1/bits/c++config.h \
+  /usr/include/c++/4.2.1/bits/os_defines.h /usr/include/unistd.h \
+  /usr/include/_types.h /usr/include/sys/_types.h \
+  /usr/include/sys/cdefs.h /usr/include/sys/_symbol_aliasing.h \
+  /usr/include/sys/_posix_availability.h /usr/include/machine/_types.h \
   /usr/include/i386/_types.h /usr/include/sys/unistd.h \
+  /usr/include/Availability.h /usr/include/AvailabilityInternal.h \
   /usr/include/sys/select.h /usr/include/sys/appleapiopts.h \
   /usr/include/sys/_structs.h /usr/include/sys/_select.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/cpu_defines.h \
+  /usr/include/c++/4.2.1/bits/cpu_defines.h \
   /usr/include/c++/4.2.1/bits/stringfwd.h \
   /usr/include/c++/4.2.1/bits/char_traits.h \
   /usr/include/c++/4.2.1/cstring /usr/include/c++/4.2.1/cstddef \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h \
-  /usr/include/string.h /usr/include/c++/4.2.1/bits/stl_algobase.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/stddef.h \
+  /usr/include/string.h /usr/include/strings.h \
+  /usr/include/c++/4.2.1/bits/stl_algobase.h \
   /usr/include/c++/4.2.1/climits \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/syslimits.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/limits.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/syslimits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/limits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/syslimits.h \
   /usr/include/limits.h /usr/include/machine/limits.h \
   /usr/include/i386/limits.h /usr/include/i386/_limits.h \
   /usr/include/sys/syslimits.h /usr/include/c++/4.2.1/cstdlib \
-  /usr/include/stdlib.h /usr/include/Availability.h \
-  /usr/include/AvailabilityInternal.h /usr/include/sys/wait.h \
-  /usr/include/sys/signal.h /usr/include/machine/signal.h \
-  /usr/include/i386/signal.h /usr/include/i386/_structs.h \
-  /usr/include/machine/_structs.h /usr/include/mach/i386/_structs.h \
-  /usr/include/sys/resource.h /usr/include/machine/endian.h \
-  /usr/include/i386/endian.h /usr/include/sys/_endian.h \
-  /usr/include/libkern/_OSByteOrder.h \
+  /usr/include/stdlib.h /usr/include/sys/wait.h /usr/include/sys/signal.h \
+  /usr/include/machine/signal.h /usr/include/i386/signal.h \
+  /usr/include/i386/_structs.h /usr/include/machine/_structs.h \
+  /usr/include/mach/i386/_structs.h /usr/include/sys/resource.h \
+  /usr/include/machine/endian.h /usr/include/i386/endian.h \
+  /usr/include/sys/_endian.h /usr/include/libkern/_OSByteOrder.h \
   /usr/include/libkern/i386/_OSByteOrder.h /usr/include/alloca.h \
   /usr/include/machine/types.h /usr/include/i386/types.h \
   /usr/include/i386/_types.h /usr/include/c++/4.2.1/iosfwd \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++locale.h \
-  /usr/include/c++/4.2.1/clocale /usr/include/locale.h \
-  /usr/include/_locale.h /usr/include/c++/4.2.1/cstdio \
-  /usr/include/stdio.h /usr/include/c++/4.2.1/cstdarg \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++io.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/gthr.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/gthr-default.h \
-  /usr/include/pthread.h /usr/include/pthread_impl.h /usr/include/sched.h \
-  /usr/include/time.h /usr/include/_structs.h \
-  /usr/include/c++/4.2.1/cctype /usr/include/ctype.h \
-  /usr/include/runetype.h /usr/include/c++/4.2.1/bits/postypes.h \
-  /usr/include/c++/4.2.1/cwchar /usr/include/c++/4.2.1/ctime \
-  /usr/include/wchar.h /usr/include/_wctype.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h \
+  /usr/include/c++/4.2.1/bits/c++locale.h /usr/include/c++/4.2.1/clocale \
+  /usr/include/locale.h /usr/include/_locale.h \
+  /usr/include/c++/4.2.1/cstdio /usr/include/stdio.h \
+  /usr/include/c++/4.2.1/cstdarg \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/stdarg.h \
+  /usr/include/c++/4.2.1/bits/c++io.h /usr/include/c++/4.2.1/bits/gthr.h \
+  /usr/include/c++/4.2.1/bits/gthr-default.h /usr/include/pthread.h \
+  /usr/include/pthread_impl.h /usr/include/sched.h /usr/include/time.h \
+  /usr/include/_structs.h /usr/include/c++/4.2.1/cctype \
+  /usr/include/ctype.h /usr/include/runetype.h \
+  /usr/include/c++/4.2.1/bits/postypes.h /usr/include/c++/4.2.1/cwchar \
+  /usr/include/c++/4.2.1/ctime /usr/include/wchar.h \
+  /usr/include/_wctype.h /usr/include/stdint.h \
   /usr/include/c++/4.2.1/bits/functexcept.h \
   /usr/include/c++/4.2.1/exception_defines.h \
   /usr/include/c++/4.2.1/bits/stl_pair.h \
@@ -8038,7 +8039,7 @@ PoolBGInHPoisson.o: PoolBGInHPoisson.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/stl_iterator.h \
   /usr/include/c++/4.2.1/debug/debug.h /usr/include/c++/4.2.1/memory \
   /usr/include/c++/4.2.1/bits/allocator.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++allocator.h \
+  /usr/include/c++/4.2.1/bits/c++allocator.h \
   /usr/include/c++/4.2.1/ext/new_allocator.h /usr/include/c++/4.2.1/new \
   /usr/include/c++/4.2.1/exception \
   /usr/include/c++/4.2.1/bits/stl_construct.h \
@@ -8049,7 +8050,7 @@ PoolBGInHPoisson.o: PoolBGInHPoisson.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/stl_function.h \
   /usr/include/c++/4.2.1/bits/basic_string.h \
   /usr/include/c++/4.2.1/ext/atomicity.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/atomic_word.h \
+  /usr/include/c++/4.2.1/bits/atomic_word.h \
   /usr/include/c++/4.2.1/algorithm /usr/include/c++/4.2.1/bits/stl_algo.h \
   /usr/include/c++/4.2.1/bits/stl_heap.h \
   /usr/include/c++/4.2.1/bits/stl_tempbuf.h \
@@ -8068,11 +8069,11 @@ PoolBGInHPoisson.o: PoolBGInHPoisson.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/streambuf_iterator.h \
   /usr/include/c++/4.2.1/bits/locale_facets.h \
   /usr/include/c++/4.2.1/cwctype /usr/include/wctype.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_base.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_inline.h \
+  /usr/include/c++/4.2.1/bits/ctype_base.h \
+  /usr/include/c++/4.2.1/bits/ctype_inline.h \
   /usr/include/c++/4.2.1/bits/codecvt.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/time_members.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/messages_members.h \
+  /usr/include/c++/4.2.1/bits/time_members.h \
+  /usr/include/c++/4.2.1/bits/messages_members.h \
   /usr/include/c++/4.2.1/bits/basic_ios.tcc \
   /usr/include/c++/4.2.1/bits/ostream.tcc /usr/include/c++/4.2.1/locale \
   /usr/include/c++/4.2.1/bits/locale_facets.tcc \
@@ -8640,10 +8641,10 @@ PoolBGInHPoisson.o: PoolBGInHPoisson.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/powm1.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/lanczos.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/lanczos_sse2.hpp \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/emmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/xmmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/mmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/mm_malloc.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/emmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/xmmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/mmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/mm_malloc.h \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/igamma_large.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/unchecked_factorial.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/lgamma_small.hpp \
@@ -8949,51 +8950,52 @@ PoolBGInHPoisson.o: PoolBGInHPoisson.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/io/ios_state.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/io_fwd.hpp SpikeList.h
 PoolBGOU.o: PoolBGOU.cpp /usr/include/c++/4.2.1/string \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++config.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/os_defines.h \
-  /usr/include/unistd.h /usr/include/_types.h /usr/include/sys/_types.h \
-  /usr/include/sys/cdefs.h /usr/include/machine/_types.h \
+  /usr/include/c++/4.2.1/bits/c++config.h \
+  /usr/include/c++/4.2.1/bits/os_defines.h /usr/include/unistd.h \
+  /usr/include/_types.h /usr/include/sys/_types.h \
+  /usr/include/sys/cdefs.h /usr/include/sys/_symbol_aliasing.h \
+  /usr/include/sys/_posix_availability.h /usr/include/machine/_types.h \
   /usr/include/i386/_types.h /usr/include/sys/unistd.h \
+  /usr/include/Availability.h /usr/include/AvailabilityInternal.h \
   /usr/include/sys/select.h /usr/include/sys/appleapiopts.h \
   /usr/include/sys/_structs.h /usr/include/sys/_select.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/cpu_defines.h \
+  /usr/include/c++/4.2.1/bits/cpu_defines.h \
   /usr/include/c++/4.2.1/bits/stringfwd.h \
   /usr/include/c++/4.2.1/bits/char_traits.h \
   /usr/include/c++/4.2.1/cstring /usr/include/c++/4.2.1/cstddef \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h \
-  /usr/include/string.h /usr/include/c++/4.2.1/bits/stl_algobase.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/stddef.h \
+  /usr/include/string.h /usr/include/strings.h \
+  /usr/include/c++/4.2.1/bits/stl_algobase.h \
   /usr/include/c++/4.2.1/climits \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/syslimits.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/limits.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/syslimits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/limits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/syslimits.h \
   /usr/include/limits.h /usr/include/machine/limits.h \
   /usr/include/i386/limits.h /usr/include/i386/_limits.h \
   /usr/include/sys/syslimits.h /usr/include/c++/4.2.1/cstdlib \
-  /usr/include/stdlib.h /usr/include/Availability.h \
-  /usr/include/AvailabilityInternal.h /usr/include/sys/wait.h \
-  /usr/include/sys/signal.h /usr/include/machine/signal.h \
-  /usr/include/i386/signal.h /usr/include/i386/_structs.h \
-  /usr/include/machine/_structs.h /usr/include/mach/i386/_structs.h \
-  /usr/include/sys/resource.h /usr/include/machine/endian.h \
-  /usr/include/i386/endian.h /usr/include/sys/_endian.h \
-  /usr/include/libkern/_OSByteOrder.h \
+  /usr/include/stdlib.h /usr/include/sys/wait.h /usr/include/sys/signal.h \
+  /usr/include/machine/signal.h /usr/include/i386/signal.h \
+  /usr/include/i386/_structs.h /usr/include/machine/_structs.h \
+  /usr/include/mach/i386/_structs.h /usr/include/sys/resource.h \
+  /usr/include/machine/endian.h /usr/include/i386/endian.h \
+  /usr/include/sys/_endian.h /usr/include/libkern/_OSByteOrder.h \
   /usr/include/libkern/i386/_OSByteOrder.h /usr/include/alloca.h \
   /usr/include/machine/types.h /usr/include/i386/types.h \
   /usr/include/i386/_types.h /usr/include/c++/4.2.1/iosfwd \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++locale.h \
-  /usr/include/c++/4.2.1/clocale /usr/include/locale.h \
-  /usr/include/_locale.h /usr/include/c++/4.2.1/cstdio \
-  /usr/include/stdio.h /usr/include/c++/4.2.1/cstdarg \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++io.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/gthr.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/gthr-default.h \
-  /usr/include/pthread.h /usr/include/pthread_impl.h /usr/include/sched.h \
-  /usr/include/time.h /usr/include/_structs.h \
-  /usr/include/c++/4.2.1/cctype /usr/include/ctype.h \
-  /usr/include/runetype.h /usr/include/c++/4.2.1/bits/postypes.h \
-  /usr/include/c++/4.2.1/cwchar /usr/include/c++/4.2.1/ctime \
-  /usr/include/wchar.h /usr/include/_wctype.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h \
+  /usr/include/c++/4.2.1/bits/c++locale.h /usr/include/c++/4.2.1/clocale \
+  /usr/include/locale.h /usr/include/_locale.h \
+  /usr/include/c++/4.2.1/cstdio /usr/include/stdio.h \
+  /usr/include/c++/4.2.1/cstdarg \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/stdarg.h \
+  /usr/include/c++/4.2.1/bits/c++io.h /usr/include/c++/4.2.1/bits/gthr.h \
+  /usr/include/c++/4.2.1/bits/gthr-default.h /usr/include/pthread.h \
+  /usr/include/pthread_impl.h /usr/include/sched.h /usr/include/time.h \
+  /usr/include/_structs.h /usr/include/c++/4.2.1/cctype \
+  /usr/include/ctype.h /usr/include/runetype.h \
+  /usr/include/c++/4.2.1/bits/postypes.h /usr/include/c++/4.2.1/cwchar \
+  /usr/include/c++/4.2.1/ctime /usr/include/wchar.h \
+  /usr/include/_wctype.h /usr/include/stdint.h \
   /usr/include/c++/4.2.1/bits/functexcept.h \
   /usr/include/c++/4.2.1/exception_defines.h \
   /usr/include/c++/4.2.1/bits/stl_pair.h \
@@ -9006,7 +9008,7 @@ PoolBGOU.o: PoolBGOU.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/stl_iterator.h \
   /usr/include/c++/4.2.1/debug/debug.h /usr/include/c++/4.2.1/memory \
   /usr/include/c++/4.2.1/bits/allocator.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++allocator.h \
+  /usr/include/c++/4.2.1/bits/c++allocator.h \
   /usr/include/c++/4.2.1/ext/new_allocator.h /usr/include/c++/4.2.1/new \
   /usr/include/c++/4.2.1/exception \
   /usr/include/c++/4.2.1/bits/stl_construct.h \
@@ -9017,7 +9019,7 @@ PoolBGOU.o: PoolBGOU.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/stl_function.h \
   /usr/include/c++/4.2.1/bits/basic_string.h \
   /usr/include/c++/4.2.1/ext/atomicity.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/atomic_word.h \
+  /usr/include/c++/4.2.1/bits/atomic_word.h \
   /usr/include/c++/4.2.1/algorithm /usr/include/c++/4.2.1/bits/stl_algo.h \
   /usr/include/c++/4.2.1/bits/stl_heap.h \
   /usr/include/c++/4.2.1/bits/stl_tempbuf.h \
@@ -9035,11 +9037,11 @@ PoolBGOU.o: PoolBGOU.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/streambuf_iterator.h \
   /usr/include/c++/4.2.1/bits/locale_facets.h \
   /usr/include/c++/4.2.1/cwctype /usr/include/wctype.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_base.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_inline.h \
+  /usr/include/c++/4.2.1/bits/ctype_base.h \
+  /usr/include/c++/4.2.1/bits/ctype_inline.h \
   /usr/include/c++/4.2.1/bits/codecvt.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/time_members.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/messages_members.h \
+  /usr/include/c++/4.2.1/bits/time_members.h \
+  /usr/include/c++/4.2.1/bits/messages_members.h \
   /usr/include/c++/4.2.1/bits/basic_ios.tcc \
   /usr/include/c++/4.2.1/bits/ostream.tcc /usr/include/c++/4.2.1/locale \
   /usr/include/c++/4.2.1/bits/locale_facets.tcc \
@@ -9607,10 +9609,10 @@ PoolBGOU.o: PoolBGOU.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/powm1.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/lanczos.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/lanczos_sse2.hpp \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/emmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/xmmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/mmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/mm_malloc.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/emmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/xmmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/mmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/mm_malloc.h \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/igamma_large.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/unchecked_factorial.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/lgamma_small.hpp \
@@ -9833,51 +9835,52 @@ PoolBGOU.o: PoolBGOU.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/io/ios_state.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/io_fwd.hpp SpikeList.h
 PoolBGSL.o: PoolBGSL.cpp /usr/include/c++/4.2.1/string \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++config.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/os_defines.h \
-  /usr/include/unistd.h /usr/include/_types.h /usr/include/sys/_types.h \
-  /usr/include/sys/cdefs.h /usr/include/machine/_types.h \
+  /usr/include/c++/4.2.1/bits/c++config.h \
+  /usr/include/c++/4.2.1/bits/os_defines.h /usr/include/unistd.h \
+  /usr/include/_types.h /usr/include/sys/_types.h \
+  /usr/include/sys/cdefs.h /usr/include/sys/_symbol_aliasing.h \
+  /usr/include/sys/_posix_availability.h /usr/include/machine/_types.h \
   /usr/include/i386/_types.h /usr/include/sys/unistd.h \
+  /usr/include/Availability.h /usr/include/AvailabilityInternal.h \
   /usr/include/sys/select.h /usr/include/sys/appleapiopts.h \
   /usr/include/sys/_structs.h /usr/include/sys/_select.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/cpu_defines.h \
+  /usr/include/c++/4.2.1/bits/cpu_defines.h \
   /usr/include/c++/4.2.1/bits/stringfwd.h \
   /usr/include/c++/4.2.1/bits/char_traits.h \
   /usr/include/c++/4.2.1/cstring /usr/include/c++/4.2.1/cstddef \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h \
-  /usr/include/string.h /usr/include/c++/4.2.1/bits/stl_algobase.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/stddef.h \
+  /usr/include/string.h /usr/include/strings.h \
+  /usr/include/c++/4.2.1/bits/stl_algobase.h \
   /usr/include/c++/4.2.1/climits \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/syslimits.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/limits.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/syslimits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/limits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/syslimits.h \
   /usr/include/limits.h /usr/include/machine/limits.h \
   /usr/include/i386/limits.h /usr/include/i386/_limits.h \
   /usr/include/sys/syslimits.h /usr/include/c++/4.2.1/cstdlib \
-  /usr/include/stdlib.h /usr/include/Availability.h \
-  /usr/include/AvailabilityInternal.h /usr/include/sys/wait.h \
-  /usr/include/sys/signal.h /usr/include/machine/signal.h \
-  /usr/include/i386/signal.h /usr/include/i386/_structs.h \
-  /usr/include/machine/_structs.h /usr/include/mach/i386/_structs.h \
-  /usr/include/sys/resource.h /usr/include/machine/endian.h \
-  /usr/include/i386/endian.h /usr/include/sys/_endian.h \
-  /usr/include/libkern/_OSByteOrder.h \
+  /usr/include/stdlib.h /usr/include/sys/wait.h /usr/include/sys/signal.h \
+  /usr/include/machine/signal.h /usr/include/i386/signal.h \
+  /usr/include/i386/_structs.h /usr/include/machine/_structs.h \
+  /usr/include/mach/i386/_structs.h /usr/include/sys/resource.h \
+  /usr/include/machine/endian.h /usr/include/i386/endian.h \
+  /usr/include/sys/_endian.h /usr/include/libkern/_OSByteOrder.h \
   /usr/include/libkern/i386/_OSByteOrder.h /usr/include/alloca.h \
   /usr/include/machine/types.h /usr/include/i386/types.h \
   /usr/include/i386/_types.h /usr/include/c++/4.2.1/iosfwd \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++locale.h \
-  /usr/include/c++/4.2.1/clocale /usr/include/locale.h \
-  /usr/include/_locale.h /usr/include/c++/4.2.1/cstdio \
-  /usr/include/stdio.h /usr/include/c++/4.2.1/cstdarg \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++io.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/gthr.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/gthr-default.h \
-  /usr/include/pthread.h /usr/include/pthread_impl.h /usr/include/sched.h \
-  /usr/include/time.h /usr/include/_structs.h \
-  /usr/include/c++/4.2.1/cctype /usr/include/ctype.h \
-  /usr/include/runetype.h /usr/include/c++/4.2.1/bits/postypes.h \
-  /usr/include/c++/4.2.1/cwchar /usr/include/c++/4.2.1/ctime \
-  /usr/include/wchar.h /usr/include/_wctype.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h \
+  /usr/include/c++/4.2.1/bits/c++locale.h /usr/include/c++/4.2.1/clocale \
+  /usr/include/locale.h /usr/include/_locale.h \
+  /usr/include/c++/4.2.1/cstdio /usr/include/stdio.h \
+  /usr/include/c++/4.2.1/cstdarg \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/stdarg.h \
+  /usr/include/c++/4.2.1/bits/c++io.h /usr/include/c++/4.2.1/bits/gthr.h \
+  /usr/include/c++/4.2.1/bits/gthr-default.h /usr/include/pthread.h \
+  /usr/include/pthread_impl.h /usr/include/sched.h /usr/include/time.h \
+  /usr/include/_structs.h /usr/include/c++/4.2.1/cctype \
+  /usr/include/ctype.h /usr/include/runetype.h \
+  /usr/include/c++/4.2.1/bits/postypes.h /usr/include/c++/4.2.1/cwchar \
+  /usr/include/c++/4.2.1/ctime /usr/include/wchar.h \
+  /usr/include/_wctype.h /usr/include/stdint.h \
   /usr/include/c++/4.2.1/bits/functexcept.h \
   /usr/include/c++/4.2.1/exception_defines.h \
   /usr/include/c++/4.2.1/bits/stl_pair.h \
@@ -9890,7 +9893,7 @@ PoolBGSL.o: PoolBGSL.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/stl_iterator.h \
   /usr/include/c++/4.2.1/debug/debug.h /usr/include/c++/4.2.1/memory \
   /usr/include/c++/4.2.1/bits/allocator.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++allocator.h \
+  /usr/include/c++/4.2.1/bits/c++allocator.h \
   /usr/include/c++/4.2.1/ext/new_allocator.h /usr/include/c++/4.2.1/new \
   /usr/include/c++/4.2.1/exception \
   /usr/include/c++/4.2.1/bits/stl_construct.h \
@@ -9901,7 +9904,7 @@ PoolBGSL.o: PoolBGSL.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/stl_function.h \
   /usr/include/c++/4.2.1/bits/basic_string.h \
   /usr/include/c++/4.2.1/ext/atomicity.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/atomic_word.h \
+  /usr/include/c++/4.2.1/bits/atomic_word.h \
   /usr/include/c++/4.2.1/algorithm /usr/include/c++/4.2.1/bits/stl_algo.h \
   /usr/include/c++/4.2.1/bits/stl_heap.h \
   /usr/include/c++/4.2.1/bits/stl_tempbuf.h \
@@ -9916,11 +9919,11 @@ PoolBGSL.o: PoolBGSL.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/streambuf_iterator.h \
   /usr/include/c++/4.2.1/bits/locale_facets.h \
   /usr/include/c++/4.2.1/cwctype /usr/include/wctype.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_base.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_inline.h \
+  /usr/include/c++/4.2.1/bits/ctype_base.h \
+  /usr/include/c++/4.2.1/bits/ctype_inline.h \
   /usr/include/c++/4.2.1/bits/codecvt.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/time_members.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/messages_members.h \
+  /usr/include/c++/4.2.1/bits/time_members.h \
+  /usr/include/c++/4.2.1/bits/messages_members.h \
   /usr/include/c++/4.2.1/bits/basic_ios.tcc \
   /usr/include/c++/4.2.1/bits/ostream.tcc /usr/include/c++/4.2.1/locale \
   /usr/include/c++/4.2.1/bits/locale_facets.tcc \
@@ -10521,10 +10524,10 @@ PoolBGSL.o: PoolBGSL.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/powm1.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/lanczos.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/lanczos_sse2.hpp \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/emmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/xmmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/mmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/mm_malloc.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/emmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/xmmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/mmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/mm_malloc.h \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/igamma_large.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/unchecked_factorial.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/lgamma_small.hpp \
@@ -10722,51 +10725,52 @@ PoolBGSL.o: PoolBGSL.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/stl_set.h \
   /usr/include/c++/4.2.1/bits/stl_multiset.h
 PoolRec.o: PoolRec.cpp /usr/include/c++/4.2.1/string \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++config.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/os_defines.h \
-  /usr/include/unistd.h /usr/include/_types.h /usr/include/sys/_types.h \
-  /usr/include/sys/cdefs.h /usr/include/machine/_types.h \
+  /usr/include/c++/4.2.1/bits/c++config.h \
+  /usr/include/c++/4.2.1/bits/os_defines.h /usr/include/unistd.h \
+  /usr/include/_types.h /usr/include/sys/_types.h \
+  /usr/include/sys/cdefs.h /usr/include/sys/_symbol_aliasing.h \
+  /usr/include/sys/_posix_availability.h /usr/include/machine/_types.h \
   /usr/include/i386/_types.h /usr/include/sys/unistd.h \
+  /usr/include/Availability.h /usr/include/AvailabilityInternal.h \
   /usr/include/sys/select.h /usr/include/sys/appleapiopts.h \
   /usr/include/sys/_structs.h /usr/include/sys/_select.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/cpu_defines.h \
+  /usr/include/c++/4.2.1/bits/cpu_defines.h \
   /usr/include/c++/4.2.1/bits/stringfwd.h \
   /usr/include/c++/4.2.1/bits/char_traits.h \
   /usr/include/c++/4.2.1/cstring /usr/include/c++/4.2.1/cstddef \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h \
-  /usr/include/string.h /usr/include/c++/4.2.1/bits/stl_algobase.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/stddef.h \
+  /usr/include/string.h /usr/include/strings.h \
+  /usr/include/c++/4.2.1/bits/stl_algobase.h \
   /usr/include/c++/4.2.1/climits \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/syslimits.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/limits.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/syslimits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/limits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/syslimits.h \
   /usr/include/limits.h /usr/include/machine/limits.h \
   /usr/include/i386/limits.h /usr/include/i386/_limits.h \
   /usr/include/sys/syslimits.h /usr/include/c++/4.2.1/cstdlib \
-  /usr/include/stdlib.h /usr/include/Availability.h \
-  /usr/include/AvailabilityInternal.h /usr/include/sys/wait.h \
-  /usr/include/sys/signal.h /usr/include/machine/signal.h \
-  /usr/include/i386/signal.h /usr/include/i386/_structs.h \
-  /usr/include/machine/_structs.h /usr/include/mach/i386/_structs.h \
-  /usr/include/sys/resource.h /usr/include/machine/endian.h \
-  /usr/include/i386/endian.h /usr/include/sys/_endian.h \
-  /usr/include/libkern/_OSByteOrder.h \
+  /usr/include/stdlib.h /usr/include/sys/wait.h /usr/include/sys/signal.h \
+  /usr/include/machine/signal.h /usr/include/i386/signal.h \
+  /usr/include/i386/_structs.h /usr/include/machine/_structs.h \
+  /usr/include/mach/i386/_structs.h /usr/include/sys/resource.h \
+  /usr/include/machine/endian.h /usr/include/i386/endian.h \
+  /usr/include/sys/_endian.h /usr/include/libkern/_OSByteOrder.h \
   /usr/include/libkern/i386/_OSByteOrder.h /usr/include/alloca.h \
   /usr/include/machine/types.h /usr/include/i386/types.h \
   /usr/include/i386/_types.h /usr/include/c++/4.2.1/iosfwd \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++locale.h \
-  /usr/include/c++/4.2.1/clocale /usr/include/locale.h \
-  /usr/include/_locale.h /usr/include/c++/4.2.1/cstdio \
-  /usr/include/stdio.h /usr/include/c++/4.2.1/cstdarg \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++io.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/gthr.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/gthr-default.h \
-  /usr/include/pthread.h /usr/include/pthread_impl.h /usr/include/sched.h \
-  /usr/include/time.h /usr/include/_structs.h \
-  /usr/include/c++/4.2.1/cctype /usr/include/ctype.h \
-  /usr/include/runetype.h /usr/include/c++/4.2.1/bits/postypes.h \
-  /usr/include/c++/4.2.1/cwchar /usr/include/c++/4.2.1/ctime \
-  /usr/include/wchar.h /usr/include/_wctype.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h \
+  /usr/include/c++/4.2.1/bits/c++locale.h /usr/include/c++/4.2.1/clocale \
+  /usr/include/locale.h /usr/include/_locale.h \
+  /usr/include/c++/4.2.1/cstdio /usr/include/stdio.h \
+  /usr/include/c++/4.2.1/cstdarg \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/stdarg.h \
+  /usr/include/c++/4.2.1/bits/c++io.h /usr/include/c++/4.2.1/bits/gthr.h \
+  /usr/include/c++/4.2.1/bits/gthr-default.h /usr/include/pthread.h \
+  /usr/include/pthread_impl.h /usr/include/sched.h /usr/include/time.h \
+  /usr/include/_structs.h /usr/include/c++/4.2.1/cctype \
+  /usr/include/ctype.h /usr/include/runetype.h \
+  /usr/include/c++/4.2.1/bits/postypes.h /usr/include/c++/4.2.1/cwchar \
+  /usr/include/c++/4.2.1/ctime /usr/include/wchar.h \
+  /usr/include/_wctype.h /usr/include/stdint.h \
   /usr/include/c++/4.2.1/bits/functexcept.h \
   /usr/include/c++/4.2.1/exception_defines.h \
   /usr/include/c++/4.2.1/bits/stl_pair.h \
@@ -10779,7 +10783,7 @@ PoolRec.o: PoolRec.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/stl_iterator.h \
   /usr/include/c++/4.2.1/debug/debug.h /usr/include/c++/4.2.1/memory \
   /usr/include/c++/4.2.1/bits/allocator.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++allocator.h \
+  /usr/include/c++/4.2.1/bits/c++allocator.h \
   /usr/include/c++/4.2.1/ext/new_allocator.h /usr/include/c++/4.2.1/new \
   /usr/include/c++/4.2.1/exception \
   /usr/include/c++/4.2.1/bits/stl_construct.h \
@@ -10790,7 +10794,7 @@ PoolRec.o: PoolRec.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/stl_function.h \
   /usr/include/c++/4.2.1/bits/basic_string.h \
   /usr/include/c++/4.2.1/ext/atomicity.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/atomic_word.h \
+  /usr/include/c++/4.2.1/bits/atomic_word.h \
   /usr/include/c++/4.2.1/algorithm /usr/include/c++/4.2.1/bits/stl_algo.h \
   /usr/include/c++/4.2.1/bits/stl_heap.h \
   /usr/include/c++/4.2.1/bits/stl_tempbuf.h \
@@ -10808,11 +10812,11 @@ PoolRec.o: PoolRec.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/streambuf_iterator.h \
   /usr/include/c++/4.2.1/bits/locale_facets.h \
   /usr/include/c++/4.2.1/cwctype /usr/include/wctype.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_base.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_inline.h \
+  /usr/include/c++/4.2.1/bits/ctype_base.h \
+  /usr/include/c++/4.2.1/bits/ctype_inline.h \
   /usr/include/c++/4.2.1/bits/codecvt.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/time_members.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/messages_members.h \
+  /usr/include/c++/4.2.1/bits/time_members.h \
+  /usr/include/c++/4.2.1/bits/messages_members.h \
   /usr/include/c++/4.2.1/bits/basic_ios.tcc \
   /usr/include/c++/4.2.1/bits/ostream.tcc /usr/include/c++/4.2.1/locale \
   /usr/include/c++/4.2.1/bits/locale_facets.tcc \
@@ -11380,10 +11384,10 @@ PoolRec.o: PoolRec.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/powm1.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/lanczos.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/lanczos_sse2.hpp \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/emmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/xmmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/mmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/mm_malloc.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/emmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/xmmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/mmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/mm_malloc.h \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/igamma_large.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/unchecked_factorial.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/lgamma_small.hpp \
@@ -11607,51 +11611,52 @@ PoolRec.o: PoolRec.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/io/ios_state.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/io_fwd.hpp
 PoolRecEx.o: PoolRecEx.cpp /usr/include/c++/4.2.1/string \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++config.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/os_defines.h \
-  /usr/include/unistd.h /usr/include/_types.h /usr/include/sys/_types.h \
-  /usr/include/sys/cdefs.h /usr/include/machine/_types.h \
+  /usr/include/c++/4.2.1/bits/c++config.h \
+  /usr/include/c++/4.2.1/bits/os_defines.h /usr/include/unistd.h \
+  /usr/include/_types.h /usr/include/sys/_types.h \
+  /usr/include/sys/cdefs.h /usr/include/sys/_symbol_aliasing.h \
+  /usr/include/sys/_posix_availability.h /usr/include/machine/_types.h \
   /usr/include/i386/_types.h /usr/include/sys/unistd.h \
+  /usr/include/Availability.h /usr/include/AvailabilityInternal.h \
   /usr/include/sys/select.h /usr/include/sys/appleapiopts.h \
   /usr/include/sys/_structs.h /usr/include/sys/_select.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/cpu_defines.h \
+  /usr/include/c++/4.2.1/bits/cpu_defines.h \
   /usr/include/c++/4.2.1/bits/stringfwd.h \
   /usr/include/c++/4.2.1/bits/char_traits.h \
   /usr/include/c++/4.2.1/cstring /usr/include/c++/4.2.1/cstddef \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h \
-  /usr/include/string.h /usr/include/c++/4.2.1/bits/stl_algobase.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/stddef.h \
+  /usr/include/string.h /usr/include/strings.h \
+  /usr/include/c++/4.2.1/bits/stl_algobase.h \
   /usr/include/c++/4.2.1/climits \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/syslimits.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/limits.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/syslimits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/limits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/syslimits.h \
   /usr/include/limits.h /usr/include/machine/limits.h \
   /usr/include/i386/limits.h /usr/include/i386/_limits.h \
   /usr/include/sys/syslimits.h /usr/include/c++/4.2.1/cstdlib \
-  /usr/include/stdlib.h /usr/include/Availability.h \
-  /usr/include/AvailabilityInternal.h /usr/include/sys/wait.h \
-  /usr/include/sys/signal.h /usr/include/machine/signal.h \
-  /usr/include/i386/signal.h /usr/include/i386/_structs.h \
-  /usr/include/machine/_structs.h /usr/include/mach/i386/_structs.h \
-  /usr/include/sys/resource.h /usr/include/machine/endian.h \
-  /usr/include/i386/endian.h /usr/include/sys/_endian.h \
-  /usr/include/libkern/_OSByteOrder.h \
+  /usr/include/stdlib.h /usr/include/sys/wait.h /usr/include/sys/signal.h \
+  /usr/include/machine/signal.h /usr/include/i386/signal.h \
+  /usr/include/i386/_structs.h /usr/include/machine/_structs.h \
+  /usr/include/mach/i386/_structs.h /usr/include/sys/resource.h \
+  /usr/include/machine/endian.h /usr/include/i386/endian.h \
+  /usr/include/sys/_endian.h /usr/include/libkern/_OSByteOrder.h \
   /usr/include/libkern/i386/_OSByteOrder.h /usr/include/alloca.h \
   /usr/include/machine/types.h /usr/include/i386/types.h \
   /usr/include/i386/_types.h /usr/include/c++/4.2.1/iosfwd \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++locale.h \
-  /usr/include/c++/4.2.1/clocale /usr/include/locale.h \
-  /usr/include/_locale.h /usr/include/c++/4.2.1/cstdio \
-  /usr/include/stdio.h /usr/include/c++/4.2.1/cstdarg \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++io.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/gthr.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/gthr-default.h \
-  /usr/include/pthread.h /usr/include/pthread_impl.h /usr/include/sched.h \
-  /usr/include/time.h /usr/include/_structs.h \
-  /usr/include/c++/4.2.1/cctype /usr/include/ctype.h \
-  /usr/include/runetype.h /usr/include/c++/4.2.1/bits/postypes.h \
-  /usr/include/c++/4.2.1/cwchar /usr/include/c++/4.2.1/ctime \
-  /usr/include/wchar.h /usr/include/_wctype.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h \
+  /usr/include/c++/4.2.1/bits/c++locale.h /usr/include/c++/4.2.1/clocale \
+  /usr/include/locale.h /usr/include/_locale.h \
+  /usr/include/c++/4.2.1/cstdio /usr/include/stdio.h \
+  /usr/include/c++/4.2.1/cstdarg \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/stdarg.h \
+  /usr/include/c++/4.2.1/bits/c++io.h /usr/include/c++/4.2.1/bits/gthr.h \
+  /usr/include/c++/4.2.1/bits/gthr-default.h /usr/include/pthread.h \
+  /usr/include/pthread_impl.h /usr/include/sched.h /usr/include/time.h \
+  /usr/include/_structs.h /usr/include/c++/4.2.1/cctype \
+  /usr/include/ctype.h /usr/include/runetype.h \
+  /usr/include/c++/4.2.1/bits/postypes.h /usr/include/c++/4.2.1/cwchar \
+  /usr/include/c++/4.2.1/ctime /usr/include/wchar.h \
+  /usr/include/_wctype.h /usr/include/stdint.h \
   /usr/include/c++/4.2.1/bits/functexcept.h \
   /usr/include/c++/4.2.1/exception_defines.h \
   /usr/include/c++/4.2.1/bits/stl_pair.h \
@@ -11664,7 +11669,7 @@ PoolRecEx.o: PoolRecEx.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/stl_iterator.h \
   /usr/include/c++/4.2.1/debug/debug.h /usr/include/c++/4.2.1/memory \
   /usr/include/c++/4.2.1/bits/allocator.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++allocator.h \
+  /usr/include/c++/4.2.1/bits/c++allocator.h \
   /usr/include/c++/4.2.1/ext/new_allocator.h /usr/include/c++/4.2.1/new \
   /usr/include/c++/4.2.1/exception \
   /usr/include/c++/4.2.1/bits/stl_construct.h \
@@ -11675,7 +11680,7 @@ PoolRecEx.o: PoolRecEx.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/stl_function.h \
   /usr/include/c++/4.2.1/bits/basic_string.h \
   /usr/include/c++/4.2.1/ext/atomicity.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/atomic_word.h \
+  /usr/include/c++/4.2.1/bits/atomic_word.h \
   /usr/include/c++/4.2.1/algorithm /usr/include/c++/4.2.1/bits/stl_algo.h \
   /usr/include/c++/4.2.1/bits/stl_heap.h \
   /usr/include/c++/4.2.1/bits/stl_tempbuf.h \
@@ -11693,11 +11698,11 @@ PoolRecEx.o: PoolRecEx.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/streambuf_iterator.h \
   /usr/include/c++/4.2.1/bits/locale_facets.h \
   /usr/include/c++/4.2.1/cwctype /usr/include/wctype.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_base.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_inline.h \
+  /usr/include/c++/4.2.1/bits/ctype_base.h \
+  /usr/include/c++/4.2.1/bits/ctype_inline.h \
   /usr/include/c++/4.2.1/bits/codecvt.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/time_members.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/messages_members.h \
+  /usr/include/c++/4.2.1/bits/time_members.h \
+  /usr/include/c++/4.2.1/bits/messages_members.h \
   /usr/include/c++/4.2.1/bits/basic_ios.tcc \
   /usr/include/c++/4.2.1/bits/ostream.tcc /usr/include/c++/4.2.1/locale \
   /usr/include/c++/4.2.1/bits/locale_facets.tcc \
@@ -12265,10 +12270,10 @@ PoolRecEx.o: PoolRecEx.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/powm1.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/lanczos.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/lanczos_sse2.hpp \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/emmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/xmmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/mmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/mm_malloc.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/emmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/xmmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/mmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/mm_malloc.h \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/igamma_large.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/unchecked_factorial.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/lgamma_small.hpp \
@@ -12492,51 +12497,52 @@ PoolRecEx.o: PoolRecEx.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/io/ios_state.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/io_fwd.hpp
 PoolRecInh.o: PoolRecInh.cpp /usr/include/c++/4.2.1/string \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++config.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/os_defines.h \
-  /usr/include/unistd.h /usr/include/_types.h /usr/include/sys/_types.h \
-  /usr/include/sys/cdefs.h /usr/include/machine/_types.h \
+  /usr/include/c++/4.2.1/bits/c++config.h \
+  /usr/include/c++/4.2.1/bits/os_defines.h /usr/include/unistd.h \
+  /usr/include/_types.h /usr/include/sys/_types.h \
+  /usr/include/sys/cdefs.h /usr/include/sys/_symbol_aliasing.h \
+  /usr/include/sys/_posix_availability.h /usr/include/machine/_types.h \
   /usr/include/i386/_types.h /usr/include/sys/unistd.h \
+  /usr/include/Availability.h /usr/include/AvailabilityInternal.h \
   /usr/include/sys/select.h /usr/include/sys/appleapiopts.h \
   /usr/include/sys/_structs.h /usr/include/sys/_select.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/cpu_defines.h \
+  /usr/include/c++/4.2.1/bits/cpu_defines.h \
   /usr/include/c++/4.2.1/bits/stringfwd.h \
   /usr/include/c++/4.2.1/bits/char_traits.h \
   /usr/include/c++/4.2.1/cstring /usr/include/c++/4.2.1/cstddef \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h \
-  /usr/include/string.h /usr/include/c++/4.2.1/bits/stl_algobase.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/stddef.h \
+  /usr/include/string.h /usr/include/strings.h \
+  /usr/include/c++/4.2.1/bits/stl_algobase.h \
   /usr/include/c++/4.2.1/climits \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/syslimits.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/limits.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/syslimits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/limits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/syslimits.h \
   /usr/include/limits.h /usr/include/machine/limits.h \
   /usr/include/i386/limits.h /usr/include/i386/_limits.h \
   /usr/include/sys/syslimits.h /usr/include/c++/4.2.1/cstdlib \
-  /usr/include/stdlib.h /usr/include/Availability.h \
-  /usr/include/AvailabilityInternal.h /usr/include/sys/wait.h \
-  /usr/include/sys/signal.h /usr/include/machine/signal.h \
-  /usr/include/i386/signal.h /usr/include/i386/_structs.h \
-  /usr/include/machine/_structs.h /usr/include/mach/i386/_structs.h \
-  /usr/include/sys/resource.h /usr/include/machine/endian.h \
-  /usr/include/i386/endian.h /usr/include/sys/_endian.h \
-  /usr/include/libkern/_OSByteOrder.h \
+  /usr/include/stdlib.h /usr/include/sys/wait.h /usr/include/sys/signal.h \
+  /usr/include/machine/signal.h /usr/include/i386/signal.h \
+  /usr/include/i386/_structs.h /usr/include/machine/_structs.h \
+  /usr/include/mach/i386/_structs.h /usr/include/sys/resource.h \
+  /usr/include/machine/endian.h /usr/include/i386/endian.h \
+  /usr/include/sys/_endian.h /usr/include/libkern/_OSByteOrder.h \
   /usr/include/libkern/i386/_OSByteOrder.h /usr/include/alloca.h \
   /usr/include/machine/types.h /usr/include/i386/types.h \
   /usr/include/i386/_types.h /usr/include/c++/4.2.1/iosfwd \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++locale.h \
-  /usr/include/c++/4.2.1/clocale /usr/include/locale.h \
-  /usr/include/_locale.h /usr/include/c++/4.2.1/cstdio \
-  /usr/include/stdio.h /usr/include/c++/4.2.1/cstdarg \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++io.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/gthr.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/gthr-default.h \
-  /usr/include/pthread.h /usr/include/pthread_impl.h /usr/include/sched.h \
-  /usr/include/time.h /usr/include/_structs.h \
-  /usr/include/c++/4.2.1/cctype /usr/include/ctype.h \
-  /usr/include/runetype.h /usr/include/c++/4.2.1/bits/postypes.h \
-  /usr/include/c++/4.2.1/cwchar /usr/include/c++/4.2.1/ctime \
-  /usr/include/wchar.h /usr/include/_wctype.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h \
+  /usr/include/c++/4.2.1/bits/c++locale.h /usr/include/c++/4.2.1/clocale \
+  /usr/include/locale.h /usr/include/_locale.h \
+  /usr/include/c++/4.2.1/cstdio /usr/include/stdio.h \
+  /usr/include/c++/4.2.1/cstdarg \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/stdarg.h \
+  /usr/include/c++/4.2.1/bits/c++io.h /usr/include/c++/4.2.1/bits/gthr.h \
+  /usr/include/c++/4.2.1/bits/gthr-default.h /usr/include/pthread.h \
+  /usr/include/pthread_impl.h /usr/include/sched.h /usr/include/time.h \
+  /usr/include/_structs.h /usr/include/c++/4.2.1/cctype \
+  /usr/include/ctype.h /usr/include/runetype.h \
+  /usr/include/c++/4.2.1/bits/postypes.h /usr/include/c++/4.2.1/cwchar \
+  /usr/include/c++/4.2.1/ctime /usr/include/wchar.h \
+  /usr/include/_wctype.h /usr/include/stdint.h \
   /usr/include/c++/4.2.1/bits/functexcept.h \
   /usr/include/c++/4.2.1/exception_defines.h \
   /usr/include/c++/4.2.1/bits/stl_pair.h \
@@ -12549,7 +12555,7 @@ PoolRecInh.o: PoolRecInh.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/stl_iterator.h \
   /usr/include/c++/4.2.1/debug/debug.h /usr/include/c++/4.2.1/memory \
   /usr/include/c++/4.2.1/bits/allocator.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++allocator.h \
+  /usr/include/c++/4.2.1/bits/c++allocator.h \
   /usr/include/c++/4.2.1/ext/new_allocator.h /usr/include/c++/4.2.1/new \
   /usr/include/c++/4.2.1/exception \
   /usr/include/c++/4.2.1/bits/stl_construct.h \
@@ -12560,7 +12566,7 @@ PoolRecInh.o: PoolRecInh.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/stl_function.h \
   /usr/include/c++/4.2.1/bits/basic_string.h \
   /usr/include/c++/4.2.1/ext/atomicity.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/atomic_word.h \
+  /usr/include/c++/4.2.1/bits/atomic_word.h \
   /usr/include/c++/4.2.1/algorithm /usr/include/c++/4.2.1/bits/stl_algo.h \
   /usr/include/c++/4.2.1/bits/stl_heap.h \
   /usr/include/c++/4.2.1/bits/stl_tempbuf.h \
@@ -12578,11 +12584,11 @@ PoolRecInh.o: PoolRecInh.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/streambuf_iterator.h \
   /usr/include/c++/4.2.1/bits/locale_facets.h \
   /usr/include/c++/4.2.1/cwctype /usr/include/wctype.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_base.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_inline.h \
+  /usr/include/c++/4.2.1/bits/ctype_base.h \
+  /usr/include/c++/4.2.1/bits/ctype_inline.h \
   /usr/include/c++/4.2.1/bits/codecvt.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/time_members.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/messages_members.h \
+  /usr/include/c++/4.2.1/bits/time_members.h \
+  /usr/include/c++/4.2.1/bits/messages_members.h \
   /usr/include/c++/4.2.1/bits/basic_ios.tcc \
   /usr/include/c++/4.2.1/bits/ostream.tcc /usr/include/c++/4.2.1/locale \
   /usr/include/c++/4.2.1/bits/locale_facets.tcc \
@@ -13150,10 +13156,10 @@ PoolRecInh.o: PoolRecInh.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/powm1.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/lanczos.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/lanczos_sse2.hpp \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/emmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/xmmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/mmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/mm_malloc.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/emmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/xmmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/mmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/mm_malloc.h \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/igamma_large.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/unchecked_factorial.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/lgamma_small.hpp \
@@ -13378,51 +13384,52 @@ PoolRecInh.o: PoolRecInh.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/io_fwd.hpp
 SpikeList.o: SpikeList.cpp SpikeList.h /usr/include/c++/4.2.1/vector \
   /usr/include/c++/4.2.1/bits/functexcept.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++config.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/os_defines.h \
-  /usr/include/unistd.h /usr/include/_types.h /usr/include/sys/_types.h \
-  /usr/include/sys/cdefs.h /usr/include/machine/_types.h \
+  /usr/include/c++/4.2.1/bits/c++config.h \
+  /usr/include/c++/4.2.1/bits/os_defines.h /usr/include/unistd.h \
+  /usr/include/_types.h /usr/include/sys/_types.h \
+  /usr/include/sys/cdefs.h /usr/include/sys/_symbol_aliasing.h \
+  /usr/include/sys/_posix_availability.h /usr/include/machine/_types.h \
   /usr/include/i386/_types.h /usr/include/sys/unistd.h \
+  /usr/include/Availability.h /usr/include/AvailabilityInternal.h \
   /usr/include/sys/select.h /usr/include/sys/appleapiopts.h \
   /usr/include/sys/_structs.h /usr/include/sys/_select.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/cpu_defines.h \
+  /usr/include/c++/4.2.1/bits/cpu_defines.h \
   /usr/include/c++/4.2.1/exception_defines.h \
   /usr/include/c++/4.2.1/bits/stl_algobase.h \
   /usr/include/c++/4.2.1/cstring /usr/include/c++/4.2.1/cstddef \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h \
-  /usr/include/string.h /usr/include/c++/4.2.1/climits \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/syslimits.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/stddef.h \
+  /usr/include/string.h /usr/include/strings.h \
+  /usr/include/c++/4.2.1/climits \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/limits.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/syslimits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/limits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/syslimits.h \
   /usr/include/limits.h /usr/include/machine/limits.h \
   /usr/include/i386/limits.h /usr/include/i386/_limits.h \
   /usr/include/sys/syslimits.h /usr/include/c++/4.2.1/cstdlib \
-  /usr/include/stdlib.h /usr/include/Availability.h \
-  /usr/include/AvailabilityInternal.h /usr/include/sys/wait.h \
-  /usr/include/sys/signal.h /usr/include/machine/signal.h \
-  /usr/include/i386/signal.h /usr/include/i386/_structs.h \
-  /usr/include/machine/_structs.h /usr/include/mach/i386/_structs.h \
-  /usr/include/sys/resource.h /usr/include/machine/endian.h \
-  /usr/include/i386/endian.h /usr/include/sys/_endian.h \
-  /usr/include/libkern/_OSByteOrder.h \
+  /usr/include/stdlib.h /usr/include/sys/wait.h /usr/include/sys/signal.h \
+  /usr/include/machine/signal.h /usr/include/i386/signal.h \
+  /usr/include/i386/_structs.h /usr/include/machine/_structs.h \
+  /usr/include/mach/i386/_structs.h /usr/include/sys/resource.h \
+  /usr/include/machine/endian.h /usr/include/i386/endian.h \
+  /usr/include/sys/_endian.h /usr/include/libkern/_OSByteOrder.h \
   /usr/include/libkern/i386/_OSByteOrder.h /usr/include/alloca.h \
   /usr/include/machine/types.h /usr/include/i386/types.h \
   /usr/include/i386/_types.h /usr/include/c++/4.2.1/iosfwd \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++locale.h \
-  /usr/include/c++/4.2.1/clocale /usr/include/locale.h \
-  /usr/include/_locale.h /usr/include/c++/4.2.1/cstdio \
-  /usr/include/stdio.h /usr/include/c++/4.2.1/cstdarg \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++io.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/gthr.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/gthr-default.h \
-  /usr/include/pthread.h /usr/include/pthread_impl.h /usr/include/sched.h \
-  /usr/include/time.h /usr/include/_structs.h \
-  /usr/include/c++/4.2.1/cctype /usr/include/ctype.h \
-  /usr/include/runetype.h /usr/include/c++/4.2.1/bits/stringfwd.h \
+  /usr/include/c++/4.2.1/bits/c++locale.h /usr/include/c++/4.2.1/clocale \
+  /usr/include/locale.h /usr/include/_locale.h \
+  /usr/include/c++/4.2.1/cstdio /usr/include/stdio.h \
+  /usr/include/c++/4.2.1/cstdarg \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/stdarg.h \
+  /usr/include/c++/4.2.1/bits/c++io.h /usr/include/c++/4.2.1/bits/gthr.h \
+  /usr/include/c++/4.2.1/bits/gthr-default.h /usr/include/pthread.h \
+  /usr/include/pthread_impl.h /usr/include/sched.h /usr/include/time.h \
+  /usr/include/_structs.h /usr/include/c++/4.2.1/cctype \
+  /usr/include/ctype.h /usr/include/runetype.h \
+  /usr/include/c++/4.2.1/bits/stringfwd.h \
   /usr/include/c++/4.2.1/bits/postypes.h /usr/include/c++/4.2.1/cwchar \
   /usr/include/c++/4.2.1/ctime /usr/include/wchar.h \
-  /usr/include/_wctype.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h \
+  /usr/include/_wctype.h /usr/include/stdint.h \
   /usr/include/c++/4.2.1/bits/stl_pair.h \
   /usr/include/c++/4.2.1/bits/cpp_type_traits.h \
   /usr/include/c++/4.2.1/ext/type_traits.h /usr/include/c++/4.2.1/utility \
@@ -13433,7 +13440,7 @@ SpikeList.o: SpikeList.cpp SpikeList.h /usr/include/c++/4.2.1/vector \
   /usr/include/c++/4.2.1/bits/stl_iterator.h \
   /usr/include/c++/4.2.1/debug/debug.h \
   /usr/include/c++/4.2.1/bits/allocator.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++allocator.h \
+  /usr/include/c++/4.2.1/bits/c++allocator.h \
   /usr/include/c++/4.2.1/ext/new_allocator.h /usr/include/c++/4.2.1/new \
   /usr/include/c++/4.2.1/exception \
   /usr/include/c++/4.2.1/bits/stl_construct.h \
@@ -13448,7 +13455,7 @@ SpikeList.o: SpikeList.cpp SpikeList.h /usr/include/c++/4.2.1/vector \
   /usr/include/c++/4.2.1/bits/stl_function.h \
   /usr/include/c++/4.2.1/bits/basic_string.h \
   /usr/include/c++/4.2.1/ext/atomicity.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/atomic_word.h \
+  /usr/include/c++/4.2.1/bits/atomic_word.h \
   /usr/include/c++/4.2.1/algorithm /usr/include/c++/4.2.1/bits/stl_algo.h \
   /usr/include/c++/4.2.1/bits/stl_heap.h \
   /usr/include/c++/4.2.1/bits/stl_tempbuf.h \
@@ -13463,18 +13470,18 @@ SpikeList.o: SpikeList.cpp SpikeList.h /usr/include/c++/4.2.1/vector \
   /usr/include/c++/4.2.1/bits/streambuf_iterator.h \
   /usr/include/c++/4.2.1/bits/locale_facets.h \
   /usr/include/c++/4.2.1/cwctype /usr/include/wctype.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_base.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_inline.h \
+  /usr/include/c++/4.2.1/bits/ctype_base.h \
+  /usr/include/c++/4.2.1/bits/ctype_inline.h \
   /usr/include/c++/4.2.1/bits/codecvt.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/time_members.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/messages_members.h \
+  /usr/include/c++/4.2.1/bits/time_members.h \
+  /usr/include/c++/4.2.1/bits/messages_members.h \
   /usr/include/c++/4.2.1/bits/basic_ios.tcc \
   /usr/include/c++/4.2.1/bits/ostream.tcc /usr/include/c++/4.2.1/locale \
   /usr/include/c++/4.2.1/bits/locale_facets.tcc \
   /usr/include/c++/4.2.1/typeinfo /usr/include/c++/4.2.1/istream \
   /usr/include/c++/4.2.1/bits/istream.tcc /usr/include/c++/4.2.1/sstream \
   /usr/include/c++/4.2.1/bits/sstream.tcc /usr/include/c++/4.2.1/fstream \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/basic_file.h \
+  /usr/include/c++/4.2.1/bits/basic_file.h \
   /usr/include/c++/4.2.1/bits/fstream.tcc \
   /Users/nicain/local/lib/boost_1_47_0/boost/algorithm/string/split.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/algorithm/string/config.hpp \
@@ -13911,51 +13918,52 @@ SpikeList.o: SpikeList.cpp SpikeList.h /usr/include/c++/4.2.1/vector \
   /Users/nicain/local/lib/boost_1_47_0/boost/detail/call_traits.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/detail/lcast_precision.hpp
 main.o: main.cpp /usr/include/c++/4.2.1/string \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++config.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/os_defines.h \
-  /usr/include/unistd.h /usr/include/_types.h /usr/include/sys/_types.h \
-  /usr/include/sys/cdefs.h /usr/include/machine/_types.h \
+  /usr/include/c++/4.2.1/bits/c++config.h \
+  /usr/include/c++/4.2.1/bits/os_defines.h /usr/include/unistd.h \
+  /usr/include/_types.h /usr/include/sys/_types.h \
+  /usr/include/sys/cdefs.h /usr/include/sys/_symbol_aliasing.h \
+  /usr/include/sys/_posix_availability.h /usr/include/machine/_types.h \
   /usr/include/i386/_types.h /usr/include/sys/unistd.h \
+  /usr/include/Availability.h /usr/include/AvailabilityInternal.h \
   /usr/include/sys/select.h /usr/include/sys/appleapiopts.h \
   /usr/include/sys/_structs.h /usr/include/sys/_select.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/cpu_defines.h \
+  /usr/include/c++/4.2.1/bits/cpu_defines.h \
   /usr/include/c++/4.2.1/bits/stringfwd.h \
   /usr/include/c++/4.2.1/bits/char_traits.h \
   /usr/include/c++/4.2.1/cstring /usr/include/c++/4.2.1/cstddef \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h \
-  /usr/include/string.h /usr/include/c++/4.2.1/bits/stl_algobase.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/stddef.h \
+  /usr/include/string.h /usr/include/strings.h \
+  /usr/include/c++/4.2.1/bits/stl_algobase.h \
   /usr/include/c++/4.2.1/climits \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/syslimits.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/limits.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/syslimits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/limits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include/syslimits.h \
   /usr/include/limits.h /usr/include/machine/limits.h \
   /usr/include/i386/limits.h /usr/include/i386/_limits.h \
   /usr/include/sys/syslimits.h /usr/include/c++/4.2.1/cstdlib \
-  /usr/include/stdlib.h /usr/include/Availability.h \
-  /usr/include/AvailabilityInternal.h /usr/include/sys/wait.h \
-  /usr/include/sys/signal.h /usr/include/machine/signal.h \
-  /usr/include/i386/signal.h /usr/include/i386/_structs.h \
-  /usr/include/machine/_structs.h /usr/include/mach/i386/_structs.h \
-  /usr/include/sys/resource.h /usr/include/machine/endian.h \
-  /usr/include/i386/endian.h /usr/include/sys/_endian.h \
-  /usr/include/libkern/_OSByteOrder.h \
+  /usr/include/stdlib.h /usr/include/sys/wait.h /usr/include/sys/signal.h \
+  /usr/include/machine/signal.h /usr/include/i386/signal.h \
+  /usr/include/i386/_structs.h /usr/include/machine/_structs.h \
+  /usr/include/mach/i386/_structs.h /usr/include/sys/resource.h \
+  /usr/include/machine/endian.h /usr/include/i386/endian.h \
+  /usr/include/sys/_endian.h /usr/include/libkern/_OSByteOrder.h \
   /usr/include/libkern/i386/_OSByteOrder.h /usr/include/alloca.h \
   /usr/include/machine/types.h /usr/include/i386/types.h \
   /usr/include/i386/_types.h /usr/include/c++/4.2.1/iosfwd \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++locale.h \
-  /usr/include/c++/4.2.1/clocale /usr/include/locale.h \
-  /usr/include/_locale.h /usr/include/c++/4.2.1/cstdio \
-  /usr/include/stdio.h /usr/include/c++/4.2.1/cstdarg \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++io.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/gthr.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/gthr-default.h \
-  /usr/include/pthread.h /usr/include/pthread_impl.h /usr/include/sched.h \
-  /usr/include/time.h /usr/include/_structs.h \
-  /usr/include/c++/4.2.1/cctype /usr/include/ctype.h \
-  /usr/include/runetype.h /usr/include/c++/4.2.1/bits/postypes.h \
-  /usr/include/c++/4.2.1/cwchar /usr/include/c++/4.2.1/ctime \
-  /usr/include/wchar.h /usr/include/_wctype.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h \
+  /usr/include/c++/4.2.1/bits/c++locale.h /usr/include/c++/4.2.1/clocale \
+  /usr/include/locale.h /usr/include/_locale.h \
+  /usr/include/c++/4.2.1/cstdio /usr/include/stdio.h \
+  /usr/include/c++/4.2.1/cstdarg \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/stdarg.h \
+  /usr/include/c++/4.2.1/bits/c++io.h /usr/include/c++/4.2.1/bits/gthr.h \
+  /usr/include/c++/4.2.1/bits/gthr-default.h /usr/include/pthread.h \
+  /usr/include/pthread_impl.h /usr/include/sched.h /usr/include/time.h \
+  /usr/include/_structs.h /usr/include/c++/4.2.1/cctype \
+  /usr/include/ctype.h /usr/include/runetype.h \
+  /usr/include/c++/4.2.1/bits/postypes.h /usr/include/c++/4.2.1/cwchar \
+  /usr/include/c++/4.2.1/ctime /usr/include/wchar.h \
+  /usr/include/_wctype.h /usr/include/stdint.h \
   /usr/include/c++/4.2.1/bits/functexcept.h \
   /usr/include/c++/4.2.1/exception_defines.h \
   /usr/include/c++/4.2.1/bits/stl_pair.h \
@@ -13968,7 +13976,7 @@ main.o: main.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/stl_iterator.h \
   /usr/include/c++/4.2.1/debug/debug.h /usr/include/c++/4.2.1/memory \
   /usr/include/c++/4.2.1/bits/allocator.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/c++allocator.h \
+  /usr/include/c++/4.2.1/bits/c++allocator.h \
   /usr/include/c++/4.2.1/ext/new_allocator.h /usr/include/c++/4.2.1/new \
   /usr/include/c++/4.2.1/exception \
   /usr/include/c++/4.2.1/bits/stl_construct.h \
@@ -13979,7 +13987,7 @@ main.o: main.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/stl_function.h \
   /usr/include/c++/4.2.1/bits/basic_string.h \
   /usr/include/c++/4.2.1/ext/atomicity.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/atomic_word.h \
+  /usr/include/c++/4.2.1/bits/atomic_word.h \
   /usr/include/c++/4.2.1/algorithm /usr/include/c++/4.2.1/bits/stl_algo.h \
   /usr/include/c++/4.2.1/bits/stl_heap.h \
   /usr/include/c++/4.2.1/bits/stl_tempbuf.h \
@@ -13995,11 +14003,11 @@ main.o: main.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/streambuf_iterator.h \
   /usr/include/c++/4.2.1/bits/locale_facets.h \
   /usr/include/c++/4.2.1/cwctype /usr/include/wctype.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_base.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/ctype_inline.h \
+  /usr/include/c++/4.2.1/bits/ctype_base.h \
+  /usr/include/c++/4.2.1/bits/ctype_inline.h \
   /usr/include/c++/4.2.1/bits/codecvt.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/time_members.h \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/messages_members.h \
+  /usr/include/c++/4.2.1/bits/time_members.h \
+  /usr/include/c++/4.2.1/bits/messages_members.h \
   /usr/include/c++/4.2.1/bits/basic_ios.tcc \
   /usr/include/c++/4.2.1/bits/istream.tcc /usr/include/c++/4.2.1/locale \
   /usr/include/c++/4.2.1/bits/locale_facets.tcc \
@@ -14595,10 +14603,10 @@ main.o: main.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/powm1.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/lanczos.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/lanczos_sse2.hpp \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/emmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/xmmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/mmintrin.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/mm_malloc.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/emmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/xmmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/mmintrin.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include/mm_malloc.h \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/igamma_large.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/unchecked_factorial.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/math/special_functions/detail/lgamma_small.hpp \
@@ -14887,5 +14895,5 @@ main.o: main.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/numeric/ublas/detail/matrix_assign.hpp \
   PoolBGOU.h PoolRecEx.h PoolRec.h SpikeList.h PoolRecInh.h \
   MonitorNeuron.h MonitorNeuronFile.h /usr/include/c++/4.2.1/fstream \
-  /usr/include/c++/4.2.1/i686-apple-darwin10/x86_64/bits/basic_file.h \
+  /usr/include/c++/4.2.1/bits/basic_file.h \
   /usr/include/c++/4.2.1/bits/fstream.tcc MonitorBrain.h
