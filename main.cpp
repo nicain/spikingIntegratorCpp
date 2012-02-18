@@ -81,8 +81,9 @@ int main( int argc,      // Number of strings in array argv
 	
 	// Main network:
 	Brain Network(argString);
+    
+    // Output
 	cout << Network.UUID_string << endl;
-	
 	MonitorBrain brainMonitor(Network);
 	
 	// Backgroud populations:
@@ -146,7 +147,7 @@ int main( int argc,      // Number of strings in array argv
 	
 	while (Network.t < tMax)
 	{
-		Network.run(100);
+		Network.run(1);
 	}
 	
 	GESel1.toFileExact(GESel1.poolName + "_" + Network.UUID_string + "_" + argString);
