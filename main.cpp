@@ -150,9 +150,6 @@ int main( int argc,      // Number of strings in array argv
 		Network.run(1);
 	}
 	
-	GESel1.toFileExact(GESel1.poolName + "_" + Network.UUID_string + "_" + argString);
-	GESel2.toFileExact(GESel2.poolName + "_" + Network.UUID_string + "_" + argString);
-	
 	Network.close();
 	
 	if (saveResults)
