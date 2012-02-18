@@ -46,10 +46,9 @@ int main( int argc,      // Number of strings in array argv
 	const double tOff = atof(argv[3]);
 	const double tMax = atof(argv[4]);
 	const double inputCorrelation = atof(argv[5]);
-	const double inputRho = atof(argv[6]);
-	const bool saveResults = lexical_cast<bool>(argv[7]);
-	const bool recordBGSpikes = lexical_cast<bool>(argv[8]);
-	const bool recordInputSpikes = lexical_cast<bool>(argv[9]);
+	const bool saveResults = lexical_cast<bool>(argv[6]);
+	const bool recordBGSpikes = lexical_cast<bool>(argv[7]);
+	const bool recordInputSpikes = lexical_cast<bool>(argv[8]);
 	
 	// Network dimension settings:
 	const int NN = 2000;
@@ -141,8 +140,7 @@ int main( int argc,      // Number of strings in array argv
 	//========================================================================//
 	//=========================== Run Network ================================//
 	//========================================================================//
-
-	
+    
 	Network.init();
 	
 	while (Network.t < tMax)
