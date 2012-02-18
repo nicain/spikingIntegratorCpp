@@ -81,9 +81,11 @@ int main( int argc,      // Number of strings in array argv
 	// Main network:
 	Brain Network(argString);
     
-    // Output
+    // Output UUID, so that FR can be automatically computed
 	cout << Network.UUID_string << endl;
-	MonitorBrain brainMonitor(Network);
+	
+    // Monitor time, if you want:
+    //MonitorBrain brainMonitor(Network);
 	
 	// Backgroud populations:
 	PoolBGHPoisson BGESel1("BGESel1", Network, NSel, recordBGSpikes, BgFRE, 0, tOn, tOff);

@@ -52,12 +52,6 @@ parser.add_argument('-corr',
 					type=float,
                     dest='correlation',
                     help='SCC of input pool')
-parser.add_argument('-rho',
-                    default=0,
-                    action='store',
-					type=float,
-                    dest='rho',
-                    help='Inh. Poisson correlation')
 parser.add_argument('-s','--saveResults',
                     default=0,
 					action='store_const',
@@ -95,14 +89,13 @@ args = parser.parse_args(sys.argv[1:])
 #################################### Run #######################################
 ################################################################################
 	
-executable = "../build/Debug/spikingIntegrator"
+executable = ".spikingIntegrator"
 	
 tBegin = time.mktime(time.localtime())
 
 callString = executable
 for arg in [args.C, args.tOn, args.tOff, args.tMax, args.correlation,
-			args.rho, args.saveResults,  
-			args.recordBGSpikes, args.recordInputSpikes]:
+            args.saveResults, args.recordBGSpikes, args.recordInputSpikes]:
 	callString += " " + str(arg)
 
 
