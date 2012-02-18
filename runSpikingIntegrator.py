@@ -89,7 +89,7 @@ args = parser.parse_args(sys.argv[1:])
 #################################### Run #######################################
 ################################################################################
 	
-executable = ".spikingIntegrator"
+executable = "./spikingIntegrator"
 	
 tBegin = time.mktime(time.localtime())
 
