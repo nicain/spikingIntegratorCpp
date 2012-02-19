@@ -1,5 +1,5 @@
-#ifndef POOLBGHPOISSON_H
-#define POOLBGHPOISSON_H
+#ifndef POOLBGHPOISSONSIP_H
+#define POOLBGHPOISSONSIP_H
 
 #include "PoolBG.h"
 #include <boost/random.hpp>
@@ -12,14 +12,14 @@ using boost::random::mt19937;
 
 using namespace std;
 
-class PoolBGHPoisson: public PoolBG
+class PoolBGHPoissonSIP: public PoolBG
 {	
   public:
 	
 	// Constructor+Destructor:
-	PoolBGHPoisson(string, Brain&, int, bool, double, double, double, double);
+	PoolBGHPoissonSIP(string, Brain&, int, bool, double, double, double, double);
 	void construct(double, double, double, double);
-	~PoolBGHPoisson();
+	~PoolBGHPoissonSIP();
 	
 	// Member data:
 	double FR;

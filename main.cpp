@@ -10,7 +10,7 @@
 #include "Brain.h"
 #include "PoolBGFile.h"
 #include "PoolBGSL.h"
-#include "PoolBGHPoisson.h"
+#include "PoolBGHPoissonSIP.h"
 #include "PoolBGInHPoisson.h"
 #include "PoolBGOU.h"
 #include "PoolRecEx.h"
@@ -88,14 +88,14 @@ int main( int argc,      // Number of strings in array argv
     //MonitorBrain brainMonitor(Network);
 	
 	// Backgroud populations:
-	PoolBGHPoisson BGESel1("BGESel1", Network, NSel, recordBGSpikes, BgFRE, 0, tOn, tOff);
-	PoolBGHPoisson BGESel2("BGESel2", Network, NSel, recordBGSpikes, BgFRE, 0, tOn, tOff);
-	PoolBGHPoisson BGENSel("BGENSel", Network, NNSel, recordBGSpikes, BgFRE, 0, tOn, tOff);
-	PoolBGHPoisson BGI("BGI", Network, NI, recordBGSpikes, BgFRI, tOn, 0, tOff);
+	PoolBGHPoissonSIP BGESel1("BGESel1", Network, NSel, recordBGSpikes, BgFRE, 0, tOn, tOff);
+	PoolBGHPoissonSIP BGESel2("BGESel2", Network, NSel, recordBGSpikes, BgFRE, 0, tOn, tOff);
+	PoolBGHPoissonSIP BGENSel("BGENSel", Network, NNSel, recordBGSpikes, BgFRE, 0, tOn, tOff);
+	PoolBGHPoissonSIP BGI("BGI", Network, NI, recordBGSpikes, BgFRI, tOn, 0, tOff);
 		
 	// Input populations:
-	PoolBGHPoisson InputSel1("InputSel1", Network, NSel, recordInputSpikes, InputPoolFRSel1, inputCorrelation, tOn, tOff);
-	PoolBGHPoisson InputSel2("InputSel1", Network, NSel, recordInputSpikes, InputPoolFRSel2, inputCorrelation, tOn, tOff);
+	PoolBGHPoissonSIP InputSel1("InputSel1", Network, NSel, recordInputSpikes, InputPoolFRSel1, inputCorrelation, tOn, tOff);
+	PoolBGHPoissonSIP InputSel2("InputSel1", Network, NSel, recordInputSpikes, InputPoolFRSel2, inputCorrelation, tOn, tOff);
 	
 	// Excitatory populations:
 	PoolRecEx GESel1("GESel1", Network, NSel, true);

@@ -1,5 +1,5 @@
 #include <string>
-#include "PoolBGHPoisson.h"
+#include "PoolBGHPoissonSIP.h"
 #include "Brain.h"
 #include "SpikeList.h"
 
@@ -8,7 +8,7 @@ class PoolBG;
 using namespace boost::random;
 using namespace std;
 
-PoolBGHPoisson::PoolBGHPoisson(string poolName_in,
+PoolBGHPoissonSIP::PoolBGHPoissonSIP(string poolName_in,
 						  Brain &parentPool_in,
 						  int N_in, 
 						  bool recordSpikes_in, 
@@ -23,7 +23,7 @@ PoolBGHPoisson::PoolBGHPoisson(string poolName_in,
 	construct(FR_in, Corr_in, tOn_in, tOff_in);
 };
 
-void PoolBGHPoisson::construct(double FR_in, double Corr_in, double tOn_in, double tOff_in)
+void PoolBGHPoissonSIP::construct(double FR_in, double Corr_in, double tOn_in, double tOff_in)
 {	
 	
 	// Set member data:
@@ -59,7 +59,7 @@ void PoolBGHPoisson::construct(double FR_in, double Corr_in, double tOn_in, doub
 };
 
 
-PoolBGHPoisson::~PoolBGHPoisson() 
+PoolBGHPoissonSIP::~PoolBGHPoissonSIP() 
 {
 
 	if (Corr != 0) 
@@ -77,7 +77,7 @@ PoolBGHPoisson::~PoolBGHPoisson()
 };
 
 
-void PoolBGHPoisson::init()
+void PoolBGHPoissonSIP::init()
 {
 	masterTrain = (*expRnd)();
 	
@@ -86,7 +86,7 @@ void PoolBGHPoisson::init()
 
 
 
-void PoolBGHPoisson::propogate() 
+void PoolBGHPoissonSIP::propogate() 
 {
 	if ((tOn < parentBrain->t) && (parentBrain->t < tOff))
 	{		
@@ -132,7 +132,7 @@ void PoolBGHPoisson::propogate()
 	}
 }
 
-double PoolBGHPoisson::getInputCorrelation(double p, int N)
+double PoolBGHPoissonSIP::getInputCorrelation(double p, int N)
 {		
 	return p/(p + double(N)*(1 - p));
 };

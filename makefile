@@ -7094,7 +7094,7 @@ PoolBGFile.o: PoolBGFile.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/stl_tree.h \
   /usr/include/c++/4.2.1/bits/stl_set.h \
   /usr/include/c++/4.2.1/bits/stl_multiset.h
-PoolBGHPoisson.o: PoolBGHPoisson.cpp /usr/include/c++/4.2.1/string \
+PoolBGHPoissonSIP.o: PoolBGHPoissonSIP.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/c++config.h \
   /usr/include/c++/4.2.1/bits/os_defines.h /usr/include/unistd.h \
   /usr/include/_types.h /usr/include/sys/_types.h \
@@ -7168,8 +7168,8 @@ PoolBGHPoisson.o: PoolBGHPoisson.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/algorithm /usr/include/c++/4.2.1/bits/stl_algo.h \
   /usr/include/c++/4.2.1/bits/stl_heap.h \
   /usr/include/c++/4.2.1/bits/stl_tempbuf.h \
-  /usr/include/c++/4.2.1/bits/basic_string.tcc PoolBGHPoisson.h PoolBG.h \
-  Pool.h Monitor.h /usr/include/c++/4.2.1/valarray \
+  /usr/include/c++/4.2.1/bits/basic_string.tcc PoolBGHPoissonSIP.h \
+  PoolBG.h Pool.h Monitor.h /usr/include/c++/4.2.1/valarray \
   /usr/include/c++/4.2.1/cmath /usr/include/math.h \
   /usr/include/architecture/i386/math.h \
   /usr/include/c++/4.2.1/bits/cmath.tcc /usr/include/c++/4.2.1/numeric \
@@ -14811,7 +14811,7 @@ main.o: main.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/gslice_array.h \
   /usr/include/c++/4.2.1/bits/mask_array.h \
   /usr/include/c++/4.2.1/bits/indirect_array.h PoolBGSL.h \
-  PoolBGHPoisson.h PoolBGInHPoisson.h \
+  PoolBGHPoissonSIP.h PoolBGInHPoisson.h \
   /Users/nicain/local/lib/boost_1_47_0/boost/numeric/ublas/vector.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/numeric/ublas/storage.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/serialization/array.hpp \
