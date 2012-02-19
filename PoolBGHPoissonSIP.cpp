@@ -39,14 +39,9 @@ void PoolBGHPoissonSIP::construct(double FR_in, double Corr_in, double tOn_in, d
 	// Random number generators:
 	uniDist = new uniform_real_distribution<double>(0,1);
 	if (Corr != 0) {
-		expDist = new exponential_distribution<double>(gamma/Corr_pooled);
-		binomDist = new binomial_distribution<>(N, Corr_pooled);
-		binomRnd = new variate_generator<mt19937&,binomial_distribution<> >(parentBrain->myRNG, *binomDist);
-		randArray = new int[N];
-		for(i = 0 ; i < N; i++ ) 
-		{
-			randArray[i] = i;
-		}
+		expDist = new exponential_distribution<double>(gamma*Corr_pooled);
+		expDistInd = new exponential_distribution<double>(gamma*(1-Corr_pooled)*N);
+       	expRndInd = new variate_generator<mt19937&,exponential_distribution<double> >(parentBrain->myRNG, *expDistInd);
 	}
 	else 
 	{
@@ -54,7 +49,6 @@ void PoolBGHPoissonSIP::construct(double FR_in, double Corr_in, double tOn_in, d
 	}
 	expRnd = new variate_generator<mt19937&,exponential_distribution<double> >(parentBrain->myRNG, *expDist);
 	uniRnd = new variate_generator<mt19937&,uniform_real_distribution<double> >(parentBrain->myRNG, *uniDist);
-	
 	
 };
 
@@ -64,9 +58,8 @@ PoolBGHPoissonSIP::~PoolBGHPoissonSIP()
 
 	if (Corr != 0) 
 	{
-		delete binomRnd;
-		delete binomDist;
-		delete randArray;
+        delete expDistInd;
+        delete expRndInd;
 	}
 	
 	delete uniRnd;
@@ -80,6 +73,10 @@ PoolBGHPoissonSIP::~PoolBGHPoissonSIP()
 void PoolBGHPoissonSIP::init()
 {
 	masterTrain = (*expRnd)();
+    if (Corr != 0) 
+    {
+        indTrain = (*expRndInd)();
+    }
 	
 	// Maybe randomize ampa vals? Something like 3-->6...
 };
@@ -89,46 +86,81 @@ void PoolBGHPoissonSIP::init()
 void PoolBGHPoissonSIP::propogate() 
 {
 	if ((tOn < parentBrain->t) && (parentBrain->t < tOff))
-	{		
-		while (masterTrain <= parentBrain->t) 
-		{
-			// This means a spike happened in master neuron, in this step...
-			masterTrain += (*expRnd)();
-			if (Corr == 0)
-			{	
-				// Generate the spike:
-				whoSpiked = int(N*(*uniRnd)());
-				(*AMPA)[whoSpiked] += 1;
-				
-				// Record the spike:
-				if (recordSpikes)
-				{
-					spikeList->addSpike(whoSpiked, masterTrain);
-				}
-			}
-			else 
-			{
-				numSpikesInCorrPool = (*binomRnd)();
-				for (i=0; i<numSpikesInCorrPool; i++) 
-				{						
-					// Generate the spike:
-					ind2Swap = i+int((*uniRnd)()*(N-i));
-					swap(randArray[i], randArray[ind2Swap]);
-					whoSpiked = randArray[i];
-					(*AMPA)[whoSpiked] += 1;
-					
-					// Record the spike:
-					if (recordSpikes)
-					{
-						spikeList->addSpike(whoSpiked, masterTrain);
-					}						
-				}
-			}
-		}
+	{
+		
+        if (Corr == 0)
+        {	
+            while (masterTrain <= parentBrain->t)
+            {
+                // This means a spike happened in master neuron, in this step...
+                masterTrain += (*expRnd)();
+            
+                // Generate the spike:
+                whoSpiked = int(N*(*uniRnd)());
+                (*AMPA)[whoSpiked] += 1;
+                
+                // Record the spike:
+                if (recordSpikes)
+                {
+                    spikeList->addSpike(whoSpiked, masterTrain);
+                }
+            }
+        }
+        else
+        {
+        
+            while ((masterTrain <= parentBrain->t) && indTrain <= parentBrain->t)
+            {
+                // Don't advance until no more spikes, indep. and master.
+                
+                if (masterTrain < indTrain)
+                {
+                    // Next spike was a master spike:
+                    
+                    masterTrain += (*expRnd)(); // Set up NEXT master spike
+                    
+                    // Generate spikes in all neurons:
+                    for (i=0; i<N; i++) 
+                    {						
+                        (*AMPA)[i] += 1;
+                        
+                        // Record the spike:
+                        if (recordSpikes)
+                        {
+                            spikeList->addSpike(i, masterTrain);
+                        }						
+                    }
+                    
+                }
+                else
+                {
+                    // Next spike was an ind. spike:
+                    
+                    indTrain += (*expRndInd)(); // Set up NEXT ind. spike
+                    
+                    // Generate the spike:
+                    whoSpiked = int(N*(*uniRnd)());
+                    (*AMPA)[whoSpiked] += 1;
+                    
+                    // Record the spike:
+                    if (recordSpikes)
+                    {
+                        spikeList->addSpike(whoSpiked, indTrain);
+                    }
+                    
+                }
+                
+            }
+        }
 	}
 	else
 	{
 		masterTrain = parentBrain->t;
+        if (Corr != 0) 
+        {
+            indTrain = parentBrain->t;
+        }
+        
 	}
 }
 

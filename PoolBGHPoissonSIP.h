@@ -33,16 +33,17 @@ class PoolBGHPoissonSIP: public PoolBG
 	int* randArray;
 	int ind2Swap;
 	double masterTrain;
+    double indTrain;
 	int whoSpiked;
 	int numSpikesInCorrPool;
 	int i;
 	
 	// Dists for RNG:
-	binomial_distribution<> *binomDist;
 	exponential_distribution<double> *expDist;
+    exponential_distribution<double> *expDistInd;
 	uniform_real_distribution<double> *uniDist;
-	variate_generator<mt19937&,binomial_distribution<> > *binomRnd;
 	variate_generator<mt19937&,exponential_distribution<double> > *expRnd;
+	variate_generator<mt19937&,exponential_distribution<double> > *expRndInd;
 	variate_generator<mt19937&,uniform_real_distribution<double> > *uniRnd;
 	
 	
