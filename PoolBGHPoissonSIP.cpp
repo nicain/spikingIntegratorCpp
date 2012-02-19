@@ -95,14 +95,17 @@ void PoolBGHPoissonSIP::propogate()
                 // This means a spike happened in master neuron, in this step...
                 masterTrain += (*expRnd)();
             
-                // Generate the spike:
-                whoSpiked = int(N*(*uniRnd)());
-                (*AMPA)[whoSpiked] += 1;
-                
-                // Record the spike:
-                if (recordSpikes)
+                if ((tOn < masterTrain) && (masterTrain < tOff))
                 {
-                    spikeList->addSpike(whoSpiked, masterTrain);
+                    // Generate the spike:
+                    whoSpiked = int(N*(*uniRnd)());
+                    (*AMPA)[whoSpiked] += 1;
+                    
+                    // Record the spike:
+                    if (recordSpikes)
+                    {
+                        spikeList->addSpike(whoSpiked, masterTrain);
+                    }
                 }
             }
         }
@@ -119,16 +122,19 @@ void PoolBGHPoissonSIP::propogate()
                     
                     masterTrain += (*expRnd)(); // Set up NEXT master spike
                     
-                    // Generate spikes in all neurons:
-                    for (i=0; i<N; i++) 
-                    {						
-                        (*AMPA)[i] += 1;
-                        
-                        // Record the spike:
-                        if (recordSpikes)
-                        {
-                            spikeList->addSpike(i, masterTrain);
-                        }						
+                    if ((tOn < masterTrain) && (masterTrain < tOff))
+                    {
+                        // Generate spikes in all neurons:
+                        for (i=0; i<N; i++) 
+                        {						
+                            (*AMPA)[i] += 1;
+                            
+                            // Record the spike:
+                            if (recordSpikes)
+                            {
+                                spikeList->addSpike(i, masterTrain);
+                            }						
+                        }
                     }
                     
                 }
@@ -138,14 +144,17 @@ void PoolBGHPoissonSIP::propogate()
                     
                     indTrain += (*expRndInd)(); // Set up NEXT ind. spike
                     
-                    // Generate the spike:
-                    whoSpiked = int(N*(*uniRnd)());
-                    (*AMPA)[whoSpiked] += 1;
-                    
-                    // Record the spike:
-                    if (recordSpikes)
+                    if ((tOn < indTrain) && (indTrain < tOff))
                     {
-                        spikeList->addSpike(whoSpiked, indTrain);
+                        // Generate the spike:
+                        whoSpiked = int(N*(*uniRnd)());
+                        (*AMPA)[whoSpiked] += 1;
+                        
+                        // Record the spike:
+                        if (recordSpikes)
+                        {
+                            spikeList->addSpike(whoSpiked, indTrain);
+                        }
                     }
                     
                 }
