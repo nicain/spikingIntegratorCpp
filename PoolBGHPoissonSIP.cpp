@@ -109,7 +109,7 @@ void PoolBGHPoissonSIP::propogate()
         else
         {
         
-            while ((masterTrain <= parentBrain->t) && indTrain <= parentBrain->t)
+            while ((masterTrain <= parentBrain->t) || indTrain <= parentBrain->t)
             {
                 // Don't advance until no more spikes, indep. and master.
                 
