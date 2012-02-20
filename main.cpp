@@ -88,10 +88,10 @@ int main( int argc,      // Number of strings in array argv
     MonitorBrain brainMonitor(Network);
 	
 	// Backgroud populations:
-	PoolBGHPoissonSIP BGESel1("BGESel1", Network, NSel, recordBGSpikes, BgFRE, 0, tOn, tOff);
-	PoolBGHPoissonSIP BGESel2("BGESel2", Network, NSel, recordBGSpikes, BgFRE, 0, tOn, tOff);
-	PoolBGHPoissonSIP BGENSel("BGENSel", Network, NNSel, recordBGSpikes, BgFRE, 0, tOn, tOff);
-	PoolBGHPoissonSIP BGI("BGI", Network, NI, recordBGSpikes, BgFRI, 0, tOn, tOff);
+	PoolBGHPoissonSIP BGESel1("BGESel1", Network, NSel, recordBGSpikes, BgFRE, 0, 0, tOff);
+	PoolBGHPoissonSIP BGESel2("BGESel2", Network, NSel, recordBGSpikes, BgFRE, 0, 0, tOff);
+	PoolBGHPoissonSIP BGENSel("BGENSel", Network, NNSel, recordBGSpikes, BgFRE, 0, 0, tOff);
+	PoolBGHPoissonSIP BGI("BGI", Network, NI, recordBGSpikes, BgFRI, 0, 0, tOff);
 		
 	// Input populations:
 	PoolBGHPoissonSIP InputSel1("InputSel1", Network, NSel, recordInputSpikes, InputPoolFRSel1, inputCorrelation, tOn, tOff);
