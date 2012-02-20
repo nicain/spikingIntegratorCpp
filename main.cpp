@@ -91,7 +91,7 @@ int main( int argc,      // Number of strings in array argv
 	PoolBGHPoisson BGESel1("BGESel1", Network, NSel, recordBGSpikes, BgFRE, 0, tOn, tOff);
 	PoolBGHPoisson BGESel2("BGESel2", Network, NSel, recordBGSpikes, BgFRE, 0, tOn, tOff);
 	PoolBGHPoisson BGENSel("BGENSel", Network, NNSel, recordBGSpikes, BgFRE, 0, tOn, tOff);
-	PoolBGHPoisson BGI("BGI", Network, NI, recordBGSpikes, BgFRI, tOn, 0, tOff);
+	PoolBGHPoisson BGI("BGI", Network, NI, recordBGSpikes, BgFRI, 0, tOn, tOff);
 		
 	// Input populations:
 	PoolBGHPoisson InputSel1("InputSel1", Network, NSel, recordInputSpikes, InputPoolFRSel1, inputCorrelation, tOn, tOff);
