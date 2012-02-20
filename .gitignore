@@ -8,8 +8,13 @@ dt_exact/
 .trash/
 build/
 hyak/
+Results/
 
+XCodeBuild
 .rsync_exclude
+.rsync_exclude~
+.gitignore
+.gitignore~
 syncHyak.sh
 MyTemplate.tracetemplate
 spikingIntegrator.tar.gz
@@ -18,3 +23,4 @@ makefile.bak
 /*.ntf
 /*.dat
 /*.o
+spikingIntegrator
