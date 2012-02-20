@@ -85,7 +85,7 @@ int main( int argc,      // Number of strings in array argv
 	cout << Network.UUID_string << endl;
 	
     // Monitor time, if you want:
-//    MonitorBrain brainMonitor(Network);
+    MonitorBrain brainMonitor(Network);
 	
 	// Backgroud populations:
 	PoolBGHPoissonSIP BGESel1("BGESel1", Network, NSel, recordBGSpikes, BgFRE, 0, tOn, tOff);
