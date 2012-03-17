@@ -95,7 +95,7 @@ int main( int argc,      // Number of strings in array argv
 		
 	// Input populations:
 	PoolBGHPoisson InputSel1("InputSel1", Network, NSel, recordInputSpikes, InputPoolFRSel1, inputCorrelation, tOn, tOff);
-	PoolBGHPoisson InputSel2("InputSel1", Network, NSel, recordInputSpikes, InputPoolFRSel2, inputCorrelation, tOn, tOff);
+	PoolBGHPoisson InputSel2("InputSel2", Network, NSel, recordInputSpikes, InputPoolFRSel2, inputCorrelation, tOn, tOff);
 	
 	// Excitatory populations:
 	PoolRecEx GESel1("GESel1", Network, NSel, true);
