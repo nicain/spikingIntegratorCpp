@@ -80,7 +80,7 @@ int main( int argc,      // Number of strings in array argv
 	
 	// Main network:
 	Brain Network;
-    //SWK
+    //SWK NHC
     // Output UUID, so that FR can be automatically computed
 	cout << Network.UUID_string << endl;
 	
