@@ -34,8 +34,8 @@ string Brain::removeHyphens(boost::uuids::uuid uuid)
 }
 
 void Brain::construct(string poolName_in)
-{
-	// Set the name:
+{    
+    // Set the name:
 	poolName = poolName_in;
 	
 	// Create UUID as string:
@@ -88,8 +88,6 @@ void Brain::run(double deltaT)
 	
 	while (t < stopT)
 	{
-		
-//		cout << t << endl;
 		
 		// Update monitors:
 		for (i = 0; i < monitor->size(); i++)
