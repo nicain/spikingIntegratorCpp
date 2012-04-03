@@ -18,13 +18,16 @@ Pool::Pool(string poolName_in, Brain &parentPool_in, int N_in, bool recordSpikes
 void Pool::construct(string poolName_in, Brain &parentPool_in, int N_in, bool recordSpikes_in)
 {
 	parentPool_in.addPool(*this);
-	
+
 	// Set member data:
 	poolName = poolName_in;
 	N = N_in;
 	recordSpikes = recordSpikes_in;
 	parentBrain = &parentPool_in;
 	spikeList = new SpikeList(poolName);
+	
+	
+
 };
 
 Pool::~Pool() 

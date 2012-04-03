@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8DD76F650486A84900D96B5E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* main.cpp */; settings = {ATTRIBUTES = (); }; };
+		979F999C152557F000C69BFA /* PoolODE.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 979F999B152557F000C69BFA /* PoolODE.cpp */; };
 		9E826173149325DB0066B67C /* Brain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E82616A149325DB0066B67C /* Brain.cpp */; };
-		9E826174149325DB0066B67C /* PoolBGHPoisson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E82616B149325DB0066B67C /* PoolBGHPoisson.cpp */; };
+		9E826174149325DB0066B67C /* PoolPoisson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E82616B149325DB0066B67C /* PoolPoisson.cpp */; };
 		9E826175149325DB0066B67C /* PoolBGOU.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E82616D149325DB0066B67C /* PoolBGOU.cpp */; };
 		9E826176149325DB0066B67C /* PoolBGFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E82616E149325DB0066B67C /* PoolBGFile.cpp */; };
 		9E826177149325DB0066B67C /* PoolBG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E826170149325DB0066B67C /* PoolBG.cpp */; };
@@ -41,9 +42,11 @@
 /* Begin PBXFileReference section */
 		08FB7796FE84155DC02AAC07 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		8DD76F6C0486A84900D96B5E /* spikingIntegrator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = spikingIntegrator; sourceTree = BUILT_PRODUCTS_DIR; };
+		979F999A152557F000C69BFA /* PoolODE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolODE.h; sourceTree = "<group>"; };
+		979F999B152557F000C69BFA /* PoolODE.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PoolODE.cpp; sourceTree = "<group>"; };
 		9E535DC714971C2A00B147EE /* runSpikingIntegrator.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = runSpikingIntegrator.py; sourceTree = "<group>"; };
 		9E82616A149325DB0066B67C /* Brain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Brain.cpp; sourceTree = "<group>"; };
-		9E82616B149325DB0066B67C /* PoolBGHPoisson.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PoolBGHPoisson.cpp; sourceTree = "<group>"; };
+		9E82616B149325DB0066B67C /* PoolPoisson.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PoolPoisson.cpp; sourceTree = "<group>"; };
 		9E82616C149325DB0066B67C /* PoolBGOU.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolBGOU.h; sourceTree = "<group>"; };
 		9E82616D149325DB0066B67C /* PoolBGOU.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PoolBGOU.cpp; sourceTree = "<group>"; };
 		9E82616E149325DB0066B67C /* PoolBGFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PoolBGFile.cpp; sourceTree = "<group>"; };
@@ -59,7 +62,7 @@
 		9E826183149326120066B67C /* PoolRecEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolRecEx.h; sourceTree = "<group>"; };
 		9E826184149326120066B67C /* Pool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Pool.cpp; sourceTree = "<group>"; };
 		9E826185149326120066B67C /* Pool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pool.h; sourceTree = "<group>"; };
-		9E826186149326120066B67C /* PoolBGHPoisson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolBGHPoisson.h; sourceTree = "<group>"; };
+		9E826186149326120066B67C /* PoolPoisson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolPoisson.h; sourceTree = "<group>"; };
 		9E826187149326120066B67C /* Monitor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Monitor.cpp; sourceTree = "<group>"; };
 		9E826188149326120066B67C /* MonitorBrain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MonitorBrain.cpp; sourceTree = "<group>"; };
 		9E826189149326120066B67C /* MonitorBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonitorBrain.h; sourceTree = "<group>"; };
@@ -119,6 +122,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		979F999D152557F800C69BFA /* ODE */ = {
+			isa = PBXGroup;
+			children = (
+				9E82616B149325DB0066B67C /* PoolPoisson.cpp */,
+				9E826186149326120066B67C /* PoolPoisson.h */,
+				979F999A152557F000C69BFA /* PoolODE.h */,
+				979F999B152557F000C69BFA /* PoolODE.cpp */,
+			);
+			name = ODE;
+			sourceTree = "<group>";
+		};
 		9E826197149326360066B67C /* Monitor */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +149,7 @@
 			children = (
 				9E826185149326120066B67C /* Pool.h */,
 				9E826184149326120066B67C /* Pool.cpp */,
+				979F999D152557F800C69BFA /* ODE */,
 				9EAD355C14934E1D0058E50D /* PoolBG */,
 				9EAD355B14934DF90058E50D /* PoolRec */,
 			);
@@ -199,8 +214,6 @@
 				9E82616F149325DB0066B67C /* PoolBG.h */,
 				9E82616D149325DB0066B67C /* PoolBGOU.cpp */,
 				9E82616C149325DB0066B67C /* PoolBGOU.h */,
-				9E82616B149325DB0066B67C /* PoolBGHPoisson.cpp */,
-				9E826186149326120066B67C /* PoolBGHPoisson.h */,
 				9EB5EC4614A3B7D600287F09 /* PoolBGInHPoisson.h */,
 				9EB5EC4714A3B7D600287F09 /* PoolBGInHPoisson.cpp */,
 				9E82616E149325DB0066B67C /* PoolBGFile.cpp */,
@@ -239,7 +252,6 @@
 			isa = PBXProject;
 			buildConfigurationList = 1DEB923508733DC60010E9CD /* Build configuration list for PBXProject "spikingIntegrator" */;
 			compatibilityVersion = "Xcode 3.1";
-			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -263,7 +275,7 @@
 			files = (
 				8DD76F650486A84900D96B5E /* main.cpp in Sources */,
 				9E826173149325DB0066B67C /* Brain.cpp in Sources */,
-				9E826174149325DB0066B67C /* PoolBGHPoisson.cpp in Sources */,
+				9E826174149325DB0066B67C /* PoolPoisson.cpp in Sources */,
 				9E826175149325DB0066B67C /* PoolBGOU.cpp in Sources */,
 				9E826176149325DB0066B67C /* PoolBGFile.cpp in Sources */,
 				9E826177149325DB0066B67C /* PoolBG.cpp in Sources */,
@@ -278,6 +290,7 @@
 				9E826195149326120066B67C /* MonitorNeuronFile.cpp in Sources */,
 				9EB5EB7114A274E500287F09 /* PoolBGSL.cpp in Sources */,
 				9EB5EC4814A3B7D600287F09 /* PoolBGInHPoisson.cpp in Sources */,
+				979F999C152557F000C69BFA /* PoolODE.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

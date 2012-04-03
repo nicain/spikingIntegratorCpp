@@ -9,12 +9,15 @@
 
 class Brain;
 class SpikeList;
+#include <boost/random.hpp>
+
 
 using namespace std;
 
 class Pool
 {	
 public:
+
 	
 	// Constructor+Destructor:
 	Pool(string, Brain&, int);
@@ -28,6 +31,8 @@ public:
 	Brain *parentBrain;
 	bool recordSpikes;
 	SpikeList *spikeList;
+	int L;
+	vector<double> spks;
 	
 	// Member functions:
 	virtual void init();
@@ -39,7 +44,9 @@ public:
 	void toFile(string appendString);
 	void toFileExact(string fileNamePrefix);
 	double getFR();
+	
 
+	
 };
 
 #endif

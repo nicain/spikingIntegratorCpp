@@ -59,11 +59,13 @@ Brain::~Brain()
 
 void Brain::addPool(Pool &poolToAdd)
 {
+
 	childPool->push_back(&poolToAdd);
 }
 
 void Brain::addMonitor(Monitor &monitorToAdd)
 {
+	
 	monitor->push_back(&monitorToAdd);
 }
 
@@ -72,7 +74,9 @@ void Brain::init()
 	t=0;
 	for (i = 0; i < childPool->size(); i++)
 	{
+			
 		(*childPool)[i]->init();
+		
 	};
 
 	for (i = 0; i < monitor->size(); i++)

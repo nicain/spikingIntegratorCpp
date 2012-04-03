@@ -8,18 +8,20 @@
 #include <string>
 #include <boost/lexical_cast.hpp>
 #include "Brain.h"
-#include "PoolBGFile.h"
-#include "PoolBGSL.h"
-#include "PoolBGHPoisson.h"
-#include "PoolBGInHPoisson.h"
-#include "PoolBGOU.h"
-#include "PoolRecEx.h"
-#include "PoolRecInh.h"
-#include "SpikeList.h"
+#include "PoolODE.h"
+//#include "PoolPoisson.h"
+//#include "PoolBGFile.h"
+//#include "PoolBGSL.h"
+//#include "PoolBGHPoisson.h"
+//#include "PoolBGInHPoisson.h"
+//#include "PoolBGOU.h"
+//#include "PoolRecEx.h"
+//#include "PoolRecInh.h"
+//#include "SpikeList.h"
 #include "Monitor.h"
-#include "MonitorNeuron.h"
-#include "MonitorNeuronFile.h"
-#include "MonitorBrain.h"
+//#include "MonitorNeuron.h"
+//#include "MonitorNeuronFile.h"
+//#include "MonitorBrain.h"
 
 // Add variable names to scope:
 using namespace std;
@@ -36,27 +38,34 @@ int main( int argc,      // Number of strings in array argv
 //	for(int i = 2; i < argc; i++)
 //		argString += string("_") + argv[i];
 	
+	if(argc < 11)
+	{
+		cout << "Not enough inputs. Input format: Coh tOn tOff tMax Corr saveRes recBGspks recINspks I0 w N" << endl;
+		return 0;
+	}
+	
+	
 	//========================================================================//
 	//======================== Initializations ===============================//
 	//========================================================================//
-	
 	// Params passed in args:
-//	const double Coh = atof(argv[1]);
-//	const double tOn = atof(argv[2]);
-//	const double tOff = atof(argv[3]);
-//	const double tMax = atof(argv[4]);
-//	const double inputCorrelation = atof(argv[5]);
-//	const bool saveResults = lexical_cast<bool>(argv[6]);
-//	const bool recordBGSpikes = lexical_cast<bool>(argv[7]);
-//	const bool recordInputSpikes = lexical_cast<bool>(argv[8]);
+	const double Coh = atof(argv[1]);
+	const double tOn = atof(argv[2]);
+	const double tOff = atof(argv[3]);
+	const double tMax = atof(argv[4]);
+	const double inputCorrelation = atof(argv[5]);
+	const bool saveResults = lexical_cast<bool>(argv[6]);
+	const bool recordBGSpikes = lexical_cast<bool>(argv[7]);
+	const bool recordInputSpikes = lexical_cast<bool>(argv[8]);
+	const double I0 = atof(argv[9]);
+	const double w = atof(argv[10]);
+	const int N = atof(argv[11]);
 //	
-//	// Network dimension settings:
-//	const int NN = 2000;
-//	const double frEx = .8;
-//	const double frSel = .15;
-//	const double BgFRE = 2400;
-//	const double BgFRI = 2400;
-//	
+	// Network dimension settings:
+	const double BgFR = 2400; // background noise firing rate
+	const double InFR1 = 40 + .4*Coh; // "correct choice" input firing rate
+	const double InFR2 = 40 - .4*Coh; // "false choice" input firing rate
+	
 //	// Connectivity settings:
 //	double w = 1;
 //	double wPlus = 1.7;
@@ -87,63 +96,30 @@ int main( int argc,      // Number of strings in array argv
     // Monitor time, if you want:
     //MonitorBrain brainMonitor(Network);
 	
-	// Backgroud populations:
-//	PoolBGHPoisson BGESel1("BGESel1", Network, NSel, recordBGSpikes, BgFRE, 0, 0, tOff);
-//	PoolBGHPoisson BGESel2("BGESel2", Network, NSel, recordBGSpikes, BgFRE, 0, 0, tOff);
-//	PoolBGHPoisson BGENSel("BGENSel", Network, NNSel, recordBGSpikes, BgFRE, 0, 0, tOff);
-//	PoolBGHPoisson BGI("BGI", Network, NI, recordBGSpikes, BgFRI, 0, 0, tOff);
-//		
-//	// Input populations:
-//	PoolBGHPoisson InputSel1("InputSel1", Network, NSel, recordInputSpikes, InputPoolFRSel1, inputCorrelation, tOn, tOff);
-//	PoolBGHPoisson InputSel2("InputSel2", Network, NSel, recordInputSpikes, InputPoolFRSel2, inputCorrelation, tOn, tOff);
-//	
-//	// Excitatory populations:
-//	PoolRecEx GESel1("GESel1", Network, NSel, true);
-//	PoolRecEx GESel2("GESel2", Network, NSel, true);
-//	PoolRecEx GENSel("GENSel", Network, NNSel, false);
-//	
-//	// Inhibitory populations:
-//	PoolRecInh GI("GI", Network, NI, false);
+	// Test poisson population
+	PoolPoisson BG1("BG1",Network,N,0,BgFR*N,0,0,tOff,tMax);
+	PoolPoisson BG2("BG2",Network,N,0,BgFR*N,0,0,tOff,tMax);
+	PoolPoisson In1("In1",Network,N,0,InFR1*N,0,tOn,tOff,tMax);
+	PoolPoisson In2("In2",Network,N,0,InFR2*N,0,tOn,tOff,tMax);
+	PoolODE ODE("ODE",Network,w,tMax,270,108,0.154,0.2609,0.0497,0.1,0.641,I0);
 	
-	//========================================================================//
-	//========================== Connect Network =============================//
-	//========================================================================//
-	
-	// Connections to GESel1:
-//	GESel1.connectTo(BGESel1);
-//	GESel1.connectTo(InputSel1);
-//	GESel1.connectTo(GESel1, wPlus);
-//	GESel1.connectTo(GESel2, wMinus);
-//	GESel1.connectTo(GENSel, wMinus);
-//	GESel1.connectTo(GI);
-//	
-//	// Connections to GESel2:
-//	GESel2.connectTo(BGESel2);
-//	GESel2.connectTo(InputSel2);
-//	GESel2.connectTo(GESel1, wMinus);
-//	GESel2.connectTo(GESel2, wPlus);
-//	GESel2.connectTo(GENSel, wMinus);
-//	GESel2.connectTo(GI);
-//	
-//	// Connections to GENSel:
-//	GENSel.connectTo(BGENSel);
-//	GENSel.connectTo(GESel1, w);
-//	GENSel.connectTo(GESel2, w);
-//	GENSel.connectTo(GENSel, w);
-//	GENSel.connectTo(GI);
-//	
-//	// Connections to GI:
-//	GI.connectTo(BGI);
-//	GI.connectTo(GESel1, w);
-//	GI.connectTo(GESel2, w);
-//	GI.connectTo(GENSel, w);
-//	GI.connectTo(GI);
-	
+
 	//========================================================================//
 	//=========================== Run Network ================================//
 	//========================================================================//
-    
+	
+
+	
 	Network.init();
+	
+	ODE.run(In1,BG1,In2,BG2);
+	
+//	for(int i = 0;i<ODE.S1.size();i=i+1000)
+//	{
+//		cout << "timepoint " << i << ": "<<  ODE.S1[i] << " " << ODE.S2[i] << endl;
+//	}
+	
+	cout << "finished" << endl;
 	
 //	while (Network.t < tMax)
 //	{
