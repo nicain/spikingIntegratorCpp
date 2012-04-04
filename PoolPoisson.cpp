@@ -91,10 +91,11 @@ PoolPoisson::~PoolPoisson()
 
 void PoolPoisson::init()
 {
-	int T;
 	masterTrain = (*expRnd)();
 	for ( t=0; t <= tmax; t = t + dt)
 	{
+		T = (double)(t/dt);
+		spks[T] = 0;
 		if ((tOn < t) && (t < tOff))
 		{		
 			while (masterTrain <= t) 
@@ -104,7 +105,6 @@ void PoolPoisson::init()
 				if (Corr == 0)
 				{	
 					// add the spike
-					T = (double)(t/dt);
 					spks[T] = spks[T] + (double)1/N;
 				}
 				else 

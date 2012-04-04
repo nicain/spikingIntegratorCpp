@@ -28,7 +28,7 @@ class PoolPoisson: public Pool
 	double dt;
 	double t;
 	int Nn;
-
+	int T;
 	
 	// Stuff needed for computations:
 	double gamma;

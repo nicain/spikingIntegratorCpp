@@ -87,7 +87,7 @@ void Brain::init()
 
 void Brain::run(double deltaT) 
 {
-	// Important: This scheme does synchronous updating
+	 //Important: This scheme does synchronous updating
 	stopT = t + deltaT;
 	
 	while (t < stopT)

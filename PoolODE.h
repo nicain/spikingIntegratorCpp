@@ -38,8 +38,8 @@ class PoolODE: public Pool
 		// Member functions:
 		void init();
 		void propogate();
-		void run(PoolPoisson, PoolPoisson, PoolPoisson, PoolPoisson);
-		
+		void run(PoolPoisson&, PoolPoisson&, PoolPoisson&, PoolPoisson&);
+
 	};
 
 	
