@@ -20,6 +20,7 @@ class PoolPoisson: public Pool
 	~PoolPoisson();
 	
 	// Member data:
+	double tau;
 	double FR;
 	double Corr;
 	double tOn;
@@ -29,6 +30,7 @@ class PoolPoisson: public Pool
 	double t;
 	int Nn;
 	int T;
+	double deltaT;
 	
 	// Stuff needed for computations:
 	double gamma;

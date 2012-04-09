@@ -8,20 +8,21 @@ class PoolODE: public Pool
 	public:
 		
 		// Constructor+Destructor:
-		PoolODE(string,Brain&, double, double, double, double, double, double, double, double,double,double);
-		void construct(Brain&, double, double, double, double, double, double, double, double,double,double);
+		PoolODE(string,Brain&, double, double, double, double, double, double, double, double,double,double,double);
+		void construct(Brain&, double, double, double, double, double, double, double, double,double,double,double);
 		~PoolODE();
 		
 		// counters:
 		int T;
 		
 		// constant:
-		double w;
 		double a;
 		double b;
 		double c;
 		double Jii;
 		double Jij;
+		double JAin;
+		double JAbg;
 		double tau;
 		double gamma;
 		double tmax;	
@@ -39,6 +40,7 @@ class PoolODE: public Pool
 		void init();
 		void propogate();
 		void run(PoolPoisson&, PoolPoisson&, PoolPoisson&, PoolPoisson&);
+		void run2(PoolPoisson&, PoolPoisson&, PoolPoisson&, PoolPoisson&,PoolPoisson&,PoolPoisson&);
 
 	};
 

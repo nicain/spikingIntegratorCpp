@@ -29,8 +29,8 @@ PoolPoisson::PoolPoisson(string poolName_in,
 void PoolPoisson::construct(Brain &parentPool_in, double FR_in, double Corr_in, double tOn_in, double tOff_in, double tmax_in)
 {	
 	
-
-	
+	// set constants
+	tau = 2e-3;
 	
 	// Set member data:
 	FR = FR_in;
@@ -91,21 +91,61 @@ PoolPoisson::~PoolPoisson()
 
 void PoolPoisson::init()
 {
+	T = 0;
 	masterTrain = (*expRnd)();
-	for ( t=0; t <= tmax; t = t + dt)
+	t = dt;
+	spks[T]= 0;
+	
+	if ((tOn < t) && (t < tOff))
+	{		
+		while (masterTrain <= t) 
+		{
+			// This means a spike happened.... in this step:
+			if (Corr == 0)
+			{	
+				deltaT = t - masterTrain;
+				// add the exponential
+				spks[T] = spks[T] + (double)1/N * 1/tau * exp(-deltaT/tau);
+				
+			}
+			else 
+			{
+				numSpikesInCorrPool = (*binomRnd)();
+				for (i=0; i<numSpikesInCorrPool; i++) 
+				{						
+					// Generate the spike:
+					ind2Swap = i+int((*uniRnd)()*(N-i));
+					swap(randArray[i], randArray[ind2Swap]);
+					//whoSpiked = randArray[i];
+					
+				}
+			}
+			masterTrain += (*expRnd)();
+			
+		}
+		
+	}
+	else
 	{
-		T = (double)(t/dt);
-		spks[T] = 0;
+		masterTrain = t;
+	}
+	T++;
+	
+	for ( t=2*dt; t <= tmax; t = t + dt)
+	{
+		deltaT = dt;
+		//decay lingering spike effects
+		spks[T] = spks[T-1]*exp(-deltaT/tau);
 		if ((tOn < t) && (t < tOff))
 		{		
 			while (masterTrain <= t) 
 			{
-				// This means a spike happened in master neuron, in this step...
-				masterTrain += (*expRnd)();
+				// This means a spike happened.... in this step:
 				if (Corr == 0)
 				{	
+					deltaT = t - masterTrain;
 					// add the spike
-					spks[T] = spks[T] + (double)1/N;
+					spks[T] = spks[T] + (double)1/N * 1/tau * exp(-deltaT/tau);
 				}
 				else 
 				{
@@ -119,16 +159,19 @@ void PoolPoisson::init()
 				
 					}
 				}
+				masterTrain += (*expRnd)();
+
 			}
+			
 		}
 		else
 		{
 			masterTrain = t;
 		}
+		T++;
 	
 	}
 	
-
 	
 };
 
