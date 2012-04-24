@@ -24,7 +24,7 @@ int main( int argc,      // Number of strings in array argv
 		 char *argv[])
 {	
 	
-	if(argc < 12)
+	if(argc < 1)
 	{
 		cout << "Not enough inputs. Input format: Coh tOn tOff tMax Corr saveRes recBGspks recINspks I0 JAin JAbg N runs" << endl;
 		return 0;
@@ -82,8 +82,8 @@ int main( int argc,      // Number of strings in array argv
 	PoolPoisson BG2("BG2",Network,N,0,BgFR*N,0,0,tOff,tMax);
 	PoolPoisson In1("In1",Network,N,0,InFR1*N,0,tOn,tOff,tMax);
 	PoolPoisson In2("In2",Network,N,0,InFR2*N,0,tOn,tOff,tMax);
-	PoolPoisson I01("I01",Network,N,0,-I0/JAbg*N,0,0,tOff,tMax);
-	PoolPoisson I02("I02",Network,N,0,-I0/JAbg*N,0,0,tOff,tMax);
+	//PoolPoisson I01("I01",Network,N,0,-I0/JAbg*N,0,0,tOff,tMax);
+	//PoolPoisson I02("I02",Network,N,0,-I0/JAbg*N,0,0,tOff,tMax);
 
 	
 	// ODE system
@@ -96,8 +96,8 @@ int main( int argc,      // Number of strings in array argv
 	{		
 		cout << "Run " << j << endl;
 		Network.init();	
-		//ODE.run(In1,BG1,In2,BG2);
-		ODE.run2(In1,BG1,In2,BG2,I01,I02);
+		ODE.run(In1,BG1,In2,BG2);
+		//ODE.run2(In1,BG1,In2,BG2,I01,I02);
 		
 		if(saveResults)
 		{
@@ -121,10 +121,10 @@ int main( int argc,      // Number of strings in array argv
 			myfile << endl;
 			for(int i=0;i < K ; i=i+stepsz) myfile << In2.spks[i] << " ";
 			myfile << endl;
-			for(int i=0;i < K ; i=i+stepsz) myfile << I01.spks[i] << " ";
-			myfile << endl;
-			for(int i=0;i < K ; i=i+stepsz) myfile << I02.spks[i] << " ";
-			myfile << endl;
+			//for(int i=0;i < K ; i=i+stepsz) myfile << I01.spks[i] << " ";
+			//myfile << endl;
+			//for(int i=0;i < K ; i=i+stepsz) myfile << I02.spks[i] << " ";
+			//myfile << endl;
 			
 		}
 		//int K = ODE.S1.size();
