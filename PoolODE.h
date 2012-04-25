@@ -41,7 +41,7 @@ class PoolODE: public Pool
 		void propogate();
 		void run(PoolPoisson&, PoolPoisson&, PoolPoisson&, PoolPoisson&);
 		void run2(PoolPoisson&, PoolPoisson&, PoolPoisson&, PoolPoisson&,PoolPoisson&,PoolPoisson&);
-
+		void run3(PoolPoisson&, PoolPoisson&, PoolPoisson&, PoolPoisson&,PoolPoisson&,PoolPoisson&);
 	};
 
 	

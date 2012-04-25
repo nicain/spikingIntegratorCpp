@@ -82,9 +82,15 @@ int main( int argc,      // Number of strings in array argv
 	PoolPoisson BG2("BG2",Network,N,0,BgFR*N,0,0,tOff,tMax);
 	PoolPoisson In1("In1",Network,N,0,InFR1*N,0,tOn,tOff,tMax);
 	PoolPoisson In2("In2",Network,N,0,InFR2*N,0,tOn,tOff,tMax);
+	
 	//PoolPoisson I01("I01",Network,N,0,-I0/JAbg*N,0,0,tOff,tMax);
 	//PoolPoisson I02("I02",Network,N,0,-I0/JAbg*N,0,0,tOff,tMax);
 
+	PoolPoisson INS("INS",Network,N,0,2240*N,0,0,tOff,tMax);
+	PoolPoisson INH("INH",Network,N,0,4000*N,0,0,tOff,tMax);
+	
+	//PoolPoisson In2("In2",Network,N,0,InFR2*N,0,tOn,tOff,tMax);
+	//PoolPoisson In2("In2",Network,N,0,InFR2*N,0,tOn,tOff,tMax);
 	
 	// ODE system
 	PoolODE ODE("ODE",Network,tMax,270,108,0.154,0.2609,-0.0497,JAin,JAbg,0.1,0.641,I0);
@@ -96,8 +102,9 @@ int main( int argc,      // Number of strings in array argv
 	{		
 		cout << "Run " << j << endl;
 		Network.init();	
-		ODE.run(In1,BG1,In2,BG2);
+		//ODE.run(In1,BG1,In2,BG2);
 		//ODE.run2(In1,BG1,In2,BG2,I01,I02);
+		ODE.run3(In1,BG1,In2,BG2,INS,INH);
 		
 		if(saveResults)
 		{
