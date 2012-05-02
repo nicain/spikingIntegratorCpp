@@ -88,8 +88,8 @@ int main( int argc,      // Number of strings in array argv
 
 	PoolPoisson INS1("INS1",Network,N,0,2240*N,0,0,tOff,tMax);
 	PoolPoisson INH1("INH1",Network,N,0,4000*N,0,0,tOff,tMax);
-	PoolPoisson INS2("INS2",Network,N,0,2240*N,0,0,tOff,tMax);
-	PoolPoisson INH2("INH2",Network,N,0,4000*N,0,0,tOff,tMax);
+	//PoolPoisson INS2("INS2",Network,N,0,2240*N,0,0,tOff,tMax);
+	//PoolPoisson INH2("INH2",Network,N,0,4000*N,0,0,tOff,tMax);
 	
 	//PoolPoisson In2("In2",Network,N,0,InFR2*N,0,tOn,tOff,tMax);
 	//PoolPoisson In2("In2",Network,N,0,InFR2*N,0,tOn,tOff,tMax);

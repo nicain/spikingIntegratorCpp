@@ -9,7 +9,7 @@ ifeq ($(JOBLOCATION),Hyak)
 	EXECUTABLE=./spikingIntegrator
 	CC=/sw/intel/bin/icc
 	INCLUDEFLAGS=-I /usr/lusers/skeemink/boost_1_48_0
-	RELEASEFLAGS=-O3
+	RELEASEFLAGS=
 endif
 
 ifeq ($(JOBLOCATION),swk)
