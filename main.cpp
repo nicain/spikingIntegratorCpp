@@ -34,19 +34,19 @@ int main( int argc,      // Number of strings in array argv
 	//======================== Initializations ===============================//
 	//========================================================================//
 	// Params passed in args:
-	const double Coh = atof(argv[1]);
-	const double tOn = atof(argv[2]);
-	const double tOff = atof(argv[3]);
-	const double tMax = atof(argv[4]);
-	const double inputCorrelation = atof(argv[5]);
-	const bool saveResults = lexical_cast<bool>(argv[6]);
-	const bool recordBGSpikes = lexical_cast<bool>(argv[7]);
-	const bool recordInputSpikes = lexical_cast<bool>(argv[8]);
-	const double I0 = atof(argv[9]);
-	const double JAin = atof(argv[10]);
-	const double JAbg = atof(argv[11]);
-	const int N = atof(argv[12]);
-	const int runs = atof(argv[13]);
+	const double Coh = 6.4;//atof(argv[1]);
+	const double tOn = 0.5;//atof(argv[2]);
+	const double tOff = 5;//atof(argv[3]);
+	const double tMax = 5;//atof(argv[4]);
+	const double inputCorrelation = 0;//atof(argv[5]);
+	const bool saveResults = 0;//lexical_cast<bool>(argv[6]);
+	const bool recordBGSpikes = 0;//lexical_cast<bool>(argv[7]);
+	const bool recordInputSpikes = 0;//lexical_cast<bool>(argv[8]);
+	const double I0 = -0.9225;//atof(argv[9]);
+	const double JAin = 5.2E-4;//atof(argv[10]);
+	const double JAbg = 5.2E-4;//atof(argv[11]);
+	const int N = 240;//atof(argv[12]);
+	const int runs = atof(argv[1]);
 	const int stepsz = 1;
 	
 //	
@@ -172,7 +172,7 @@ int main( int argc,      // Number of strings in array argv
 	if(saveResults) myfile.close();
 	
 				
-				myfile.open("data2b.txt");	
+				myfile.open(argv[2]);	
 	
 
 				for(int i=0;i < L ; i++)
