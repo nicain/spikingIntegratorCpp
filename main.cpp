@@ -42,7 +42,7 @@ int main( int argc,      // Number of strings in array argv
 	const bool saveResults = 1;//lexical_cast<bool>(argv[6]);
 	const bool recordBGSpikes = 0;//lexical_cast<bool>(argv[7]);
 	const bool recordInputSpikes = 0;//lexical_cast<bool>(argv[8]);
-	const double I0 = -0.0073-0.015;//-0.9225;//atof(argv[9]);
+	const double I0 = -0.9225;//-0.0073-0.015;//atof(argv[9]);
 	const double JAin = 5.2E-4;//atof(argv[10]);
 	const double JAbg = 5.2E-4;//atof(argv[11]);
 	const int N = 240;//atof(argv[12]);
@@ -104,9 +104,9 @@ int main( int argc,      // Number of strings in array argv
 	{		
 		cout << "Run " << j << endl;
 		Network.init();	
-		//ODE.run(In1,BG1,In2,BG2);
+		ODE.run(In1,BG1,In2,BG2);
 		//ODE.run2(In1,BG1,In2,BG2,I01,I02);
-		ODE.run3(In1,BG1,In2,BG2,INS1,INH1,INS1,INH1);
+		//ODE.run3(In1,BG1,In2,BG2,INS1,INH1,INS1,INH1);
 		
 		if(saveResults)
 		{
