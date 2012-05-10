@@ -86,8 +86,8 @@ int main( int argc,      // Number of strings in array argv
 	//PoolPoisson I01("I01",Network,N,0,-I0/JAbg*N,0,0,tOff,tMax);
 	//PoolPoisson I02("I02",Network,N,0,-I0/JAbg*N,0,0,tOff,tMax);
 
-	PoolPoisson INS1("INS1",Network,N,0,2240*N,0,0,tOff,tMax);
-	PoolPoisson INH1("INH1",Network,N,0,4000*N,0,0,tOff,tMax);
+	//PoolPoisson INS1("INS1",Network,N,0,2240*N,0,0,tOff,tMax);
+	//PoolPoisson INH1("INH1",Network,N,0,4000*N,0,0,tOff,tMax);
 	//PoolPoisson INS2("INS2",Network,N,0,2240*N,0,0,tOff,tMax);
 	//PoolPoisson INH2("INH2",Network,N,0,4000*N,0,0,tOff,tMax);
 	
@@ -102,7 +102,6 @@ int main( int argc,      // Number of strings in array argv
 
 	for(int j = 0; j < runs ; j++)
 	{		
-		cout << "Run " << j << endl;
 		Network.init();	
 		ODE.run(In1,BG1,In2,BG2);
 		//ODE.run2(In1,BG1,In2,BG2,I01,I02);
@@ -181,7 +180,7 @@ int main( int argc,      // Number of strings in array argv
 				times_mean[i] = 0;
 				for(int j = 0;j < runs ; j++) times_mean[i] = times_mean[i] + times[i][j]*Network.dt*0.001/runs;
 				
-				cout << acc[i] << " " << times_mean[i] << endl; 
+				//cout << acc[i] << " " << times_mean[i] << endl; 
 
 				myfile << times_mean[i] << " " << acc[i] << endl;
 				
