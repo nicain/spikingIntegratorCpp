@@ -36,14 +36,22 @@ int main( int argc,      // Number of strings in array argv
 	//========================================================================//
 	// Params passed in args:
 	const double Coh = 6.4;//atof(argv[1]);
+<<<<<<< HEAD
+	const double tOn = 1;//atof(argv[2]);
+=======
 	const double tOn = 6;//atof(argv[2]);
+>>>>>>> 4c085b33ab479c4abdf9fd024186d0d0b0c28ee3
 	const double tOff = 6;//atof(argv[3]);
 	const double tMax = 6;//atof(argv[4]);
 	const double inputCorrelation = 0;//atof(argv[5]);
 	const bool saveResults = 1;//lexical_cast<bool>(argv[6]);
 	const bool recordBGSpikes = 0;//lexical_cast<bool>(argv[7]);
 	const bool recordInputSpikes = 0;//lexical_cast<bool>(argv[8]);
+<<<<<<< HEAD
+	const double I0 = -0.9225;//atof(argv[9]);
+=======
 	const double I0 = -0.9225;//-0.0073-0.015;//atof(argv[9]);
+>>>>>>> 4c085b33ab479c4abdf9fd024186d0d0b0c28ee3
 	const double JAin = 5.2E-4;//atof(argv[10]);
 	const double JAbg = 5.2E-4;//atof(argv[11]);
 	const int N = 240;//atof(argv[12]);
