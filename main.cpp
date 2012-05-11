@@ -69,8 +69,8 @@ int main( int argc,      // Number of strings in array argv
 	double Th_step = 0.001;
 	int L = 1 + (Th_max-Th_start)/Th_step;
 	int count;
-	int Thi[L];
-	int voids;
+	int Thi;
+	int voids[L];
 	bool f;
 	double acc[L];
 	double hits[L];
