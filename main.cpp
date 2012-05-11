@@ -35,7 +35,7 @@ int main( int argc,      // Number of strings in array argv
 	//========================================================================//
 	// Params passed in args:
 	const double Coh = 6.4;//atof(argv[1]);
-	const double tOn = 2;//atof(argv[2]);
+	const double tOn = 6;//atof(argv[2]);
 	const double tOff = 6;//atof(argv[3]);
 	const double tMax = 6;//atof(argv[4]);
 	const double inputCorrelation = 0;//atof(argv[5]);
@@ -61,7 +61,8 @@ int main( int argc,      // Number of strings in array argv
 	double Th_step = 0.001;
 	int L = 1 + (Th_max-Th_start)/Th_step;
 	int count;
-	int Thi;
+	int Thi[L];
+	int voids;
 	bool f;
 	double acc[L];
 	double hits[L];
@@ -129,10 +130,10 @@ int main( int argc,      // Number of strings in array argv
 			myfile << endl;
 			for(int i=0;i < K ; i=i+stepsz) myfile << In2.spks[i] << " ";
 			myfile << endl;
-			for(int i=0;i < K ; i=i+stepsz) myfile << INS1.spks[i] << " ";
-			myfile << endl;
-			for(int i=0;i < K ; i=i+stepsz) myfile << INH1.spks[i] << " ";
-			myfile << endl;
+			//for(int i=0;i < K ; i=i+stepsz) myfile << INS1.spks[i] << " ";
+			//myfile << endl;
+			//for(int i=0;i < K ; i=i+stepsz) myfile << INH1.spks[i] << " ";
+			//myfile << endl;
 			
 		}
 		//int K = ODE.S1.size();
@@ -142,26 +143,37 @@ int main( int argc,      // Number of strings in array argv
 		{
 			f = true;
 			count = 0;
+			voids[Thi] = 0;
 			while(f)
 			{
-				
-				if(ODE.S1[count] >= Th)
-				{
-					hits[Thi]++;
-					times[Thi][j] = count;
+				if(ODE.S1[count] >= Th && ODE.S2[count] >= Th){
 					f = false;
+					voids[Thi] = voids[Thi] + 1;
 				}
+				
 				else
 				{
-					if(ODE.S2[count] >= Th)
+					if(ODE.S1[count] >= Th)
 					{
-						misses[Thi]++;
+						hits[Thi]++;
 						times[Thi][j] = count;
 						f = false;
 					}
+					else
+					{
+						if(ODE.S2[count] >= Th)
+						{
+							misses[Thi]++;
+							times[Thi][j] = count;
+							f = false;
+						}
+					}
 				}
 				count++;
-				if(count == ODE.S2.size()) f = false;
+				if(count == ODE.S2.size()){
+					voids[Thi] = voids[Thi] + 1;
+					f = false;
+				}
 			}
 			Thi++;
 		}
@@ -176,13 +188,13 @@ int main( int argc,      // Number of strings in array argv
 
 				for(int i=0;i < L ; i++)
 				{
-				acc[i] = hits[i]/(hits[i]+misses[i]);
-				times_mean[i] = 0;
-				for(int j = 0;j < runs ; j++) times_mean[i] = times_mean[i] + times[i][j]*Network.dt*0.001/runs;
+					acc[i] = hits[i]/(hits[i]+misses[i]);
+					times_mean[i] = 0;
+					for(int j = 0;j < runs ; j++) times_mean[i] = times_mean[i] + times[i][j]*Network.dt*0.001/(runs-voids[i]);
 				
-				//cout << acc[i] << " " << times_mean[i] << endl; 
+					cout << acc[i] << " " << times_mean[i] << endl; 
 
-				myfile << times_mean[i] << " " << acc[i] << endl;
+					myfile << times_mean[i] << " " << acc[i] << endl;
 				
 				}
 				myfile.close();
