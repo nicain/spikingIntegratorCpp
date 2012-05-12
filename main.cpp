@@ -49,8 +49,7 @@ int main( int argc,      // Number of strings in array argv
 	const int N = 240;//atof(argv[12]);
 	const int runs = atof(argv[1]);
 	const int stepsz = 1;
-	
-//	
+		
 	// Network dimension settings:
 	const double BgFR = 2400; // background noise firing rate
 	const double InFR1 = 40 + .4*Coh; // "correct choice" input firing rate
