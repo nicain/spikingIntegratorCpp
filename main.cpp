@@ -57,8 +57,8 @@ int main( int argc,      // Number of strings in array argv
 	//
 	// variables for thresholding
 	double Th_start = 5;
-	double Th_max = 45;
-	double Th_step = 0.01;
+	double Th_max = 40;
+	double Th_step = 0.025;
 	int L = 1 + (Th_max-Th_start)/Th_step;
 	int count;
 	int Thi;
