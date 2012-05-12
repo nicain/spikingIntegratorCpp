@@ -62,7 +62,7 @@ int main( int argc,      // Number of strings in array argv
 	int L = 1 + (Th_max-Th_start)/Th_step;
 	int count;
 	int Thi;
-	int voids[L];
+	int number[L];
 	bool f;
 	double acc[L];
 	double hits[L];
@@ -143,13 +143,12 @@ int main( int argc,      // Number of strings in array argv
 		for(double Th = Th_start; Th <= Th_max ; Th = Th + Th_step)
 		{
 			f = true;
-			count = tOn/(Network.dt*0.001)+1;
-			voids[Thi] = 0;
+			count = tOn/(Network.dt*0.001)-1;
+			number[Thi] = 0;
 			while(f)
 			{
 				if(ODE.F1[count] >= Th && ODE.F2[count] >= Th){
 					f = false;
-					voids[Thi] = voids[Thi] + 1;
 				}
 				
 				else
@@ -158,6 +157,7 @@ int main( int argc,      // Number of strings in array argv
 					{
 						hits[Thi]++;
 						times[Thi][j] = count+1;
+						number[Thi] = number[Thi] + 1;
 						f = false;
 					}
 					else
@@ -166,13 +166,13 @@ int main( int argc,      // Number of strings in array argv
 						{
 							misses[Thi]++;
 							times[Thi][j] = count+1;
+							number[Thi] = number[Thi] + 1;
 							f = false;
 						}
 					}
 				}
 				count++;
 				if(count == ODE.S2.size()){
-					voids[Thi] = voids[Thi] + 1;
 					f = false;
 				}
 			}
@@ -191,7 +191,7 @@ int main( int argc,      // Number of strings in array argv
 				{
 					acc[i] = hits[i]/(hits[i]+misses[i]);
 					times_mean[i] = 0;
-					for(int j = 0;j < runs ; j++) times_mean[i] = times_mean[i] + times[i][j]*Network.dt*0.001/(runs-voids[i]);
+					for(int j = 0;j < runs ; j++) times_mean[i] = times_mean[i] + times[i][j]*Network.dt*0.001/(number[i]);
 				
 					//cout << acc[i] << " " << times_mean[i] << endl; 
 
