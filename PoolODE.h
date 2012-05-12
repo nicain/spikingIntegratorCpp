@@ -35,8 +35,11 @@ class PoolODE: public Pool
 		vector<double> X1;
 		vector<double> S2;
 		vector<double> X2;
+		vector<double> F1; // firing rate
+		vector<double> F2; // firing rate
 		
 		// Member functions:
+		double phi(double);
 		void init();
 		void propogate();
 		void run(PoolPoisson&, PoolPoisson&, PoolPoisson&, PoolPoisson&);
