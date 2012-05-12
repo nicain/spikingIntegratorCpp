@@ -58,7 +58,7 @@ int main( int argc,      // Number of strings in array argv
 	// variables for thresholding
 	double Th_start = 5;
 	double Th_max = 30;
-	double Th_step = 0.1;
+	double Th_step = 0.05;
 	int L = 1 + (Th_max-Th_start)/Th_step;
 	int count;
 	int Thi;
@@ -71,7 +71,6 @@ int main( int argc,      // Number of strings in array argv
 	for(int i=0;i < L ; i++) misses[i] = 0;
 	double times[L][runs];
 	double times_mean[L];
-
 	// Main network:
 	Brain Network;
 	
@@ -144,7 +143,7 @@ int main( int argc,      // Number of strings in array argv
 		for(double Th = Th_start; Th <= Th_max ; Th = Th + Th_step)
 		{
 			f = true;
-			count = 0;
+			count = tOn/(dt*0.001);
 			voids[Thi] = 0;
 			while(f)
 			{
