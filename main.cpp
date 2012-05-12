@@ -54,7 +54,7 @@ int main( int argc,      // Number of strings in array argv
 	const double BgFR = 2400; // background noise firing rate
 	const double InFR1 = 40 + .4*Coh; // "correct choice" input firing rate
 	const double InFR2 = 40 - .4*Coh; // "false choice" input firing rate
-	//
+	
 	// variables for thresholding
 	double Th_start = 5;
 	double Th_max = 40;
