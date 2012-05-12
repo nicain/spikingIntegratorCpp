@@ -40,7 +40,7 @@ int main( int argc,      // Number of strings in array argv
 	const double tOff = 6;//atof(argv[3]);
 	const double tMax = 6;//atof(argv[4]);
 	const double inputCorrelation = 0;//atof(argv[5]);
-	const bool saveResults = 0;//lexical_cast<bool>(argv[6]);
+	const bool saveResults = 1;//lexical_cast<bool>(argv[6]);
 	const bool recordBGSpikes = 0;//lexical_cast<bool>(argv[7]);
 	const bool recordInputSpikes = 0;//lexical_cast<bool>(argv[8]);
 	const double I0 = -0.9225;//-0.0073-0.015;//atof(argv[9]);
@@ -57,7 +57,7 @@ int main( int argc,      // Number of strings in array argv
 	//
 	// variables for thresholding
 	double Th_start = 5;
-	double Th_max = 40;
+	double Th_max = 45;
 	double Th_step = 0.01;
 	int L = 1 + (Th_max-Th_start)/Th_step;
 	int count;
@@ -143,7 +143,7 @@ int main( int argc,      // Number of strings in array argv
 		for(double Th = Th_start; Th <= Th_max ; Th = Th + Th_step)
 		{
 			f = true;
-			count = tOn/(Network.dt*0.001)-1;
+			count = tOn/(Network.dt*0.001)+1;
 			voids[Thi] = 0;
 			while(f)
 			{
