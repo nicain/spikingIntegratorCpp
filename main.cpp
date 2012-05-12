@@ -58,11 +58,12 @@ int main( int argc,      // Number of strings in array argv
 	// variables for thresholding
 	double Th_start = 5;
 	double Th_max = 40;
-	double Th_step = 0.025;
+	double Th_step = 0.05;
 	int L = 1 + (Th_max-Th_start)/Th_step;
 	int count;
 	int Thi;
 	int number[L];
+	for(int i =0;i < L; i++) number[L] = 0;
 	bool f;
 	double acc[L];
 	double hits[L];
@@ -144,7 +145,6 @@ int main( int argc,      // Number of strings in array argv
 		{
 			f = true;
 			count = tOn/(Network.dt*0.001)-1;
-			number[Thi] = 0;
 			while(f)
 			{
 				if(ODE.F1[count] >= Th && ODE.F2[count] >= Th){
