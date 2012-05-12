@@ -143,7 +143,7 @@ int main( int argc,      // Number of strings in array argv
 		for(double Th = Th_start; Th <= Th_max ; Th = Th + Th_step)
 		{
 			f = true;
-			count = tOn/(dt*0.001);
+			count = tOn/(Network.dt*0.001);
 			voids[Thi] = 0;
 			while(f)
 			{
