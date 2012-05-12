@@ -36,22 +36,14 @@ int main( int argc,      // Number of strings in array argv
 	//========================================================================//
 	// Params passed in args:
 	const double Coh = 6.4;//atof(argv[1]);
-<<<<<<< HEAD
-	const double tOn = 1;//atof(argv[2]);
-=======
-	const double tOn = 6;//atof(argv[2]);
->>>>>>> 4c085b33ab479c4abdf9fd024186d0d0b0c28ee3
+	const double tOn = 3;//atof(argv[2]);
 	const double tOff = 6;//atof(argv[3]);
 	const double tMax = 6;//atof(argv[4]);
 	const double inputCorrelation = 0;//atof(argv[5]);
 	const bool saveResults = 1;//lexical_cast<bool>(argv[6]);
 	const bool recordBGSpikes = 0;//lexical_cast<bool>(argv[7]);
 	const bool recordInputSpikes = 0;//lexical_cast<bool>(argv[8]);
-<<<<<<< HEAD
-	const double I0 = -0.9225;//atof(argv[9]);
-=======
 	const double I0 = -0.9225;//-0.0073-0.015;//atof(argv[9]);
->>>>>>> 4c085b33ab479c4abdf9fd024186d0d0b0c28ee3
 	const double JAin = 5.2E-4;//atof(argv[10]);
 	const double JAbg = 5.2E-4;//atof(argv[11]);
 	const int N = 240;//atof(argv[12]);
@@ -65,9 +57,9 @@ int main( int argc,      // Number of strings in array argv
 	const double InFR2 = 40 - .4*Coh; // "false choice" input firing rate
 	
 	// variables for thresholding
-	double Th_start = 0.01;
-	double Th_max = 0.7;
-	double Th_step = 0.001;
+	double Th_start = 5;
+	double Th_max = 30;
+	double Th_step = 0.1;
 	int L = 1 + (Th_max-Th_start)/Th_step;
 	int count;
 	int Thi;
@@ -121,11 +113,13 @@ int main( int argc,      // Number of strings in array argv
 		{
 			int K = ODE.S1.size();
 
-			
-		
 			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.X1[i] << " ";
 			myfile << endl;
 			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.X2[i] << " ";
+			myfile << endl;	
+			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.F1[i] << " ";
+			myfile << endl;
+			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.F2[i] << " ";
 			myfile << endl;
 			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.S1[i] << " ";
 			myfile << endl;
@@ -155,14 +149,14 @@ int main( int argc,      // Number of strings in array argv
 			voids[Thi] = 0;
 			while(f)
 			{
-				if(ODE.S1[count] >= Th && ODE.S2[count] >= Th){
+				if(ODE.F1[count] >= Th && ODE.F2[count] >= Th){
 					f = false;
 					voids[Thi] = voids[Thi] + 1;
 				}
 				
 				else
 				{
-					if(ODE.S1[count] >= Th)
+					if(ODE.F1[count] >= Th)
 					{
 						hits[Thi]++;
 						times[Thi][j] = count;
@@ -170,7 +164,7 @@ int main( int argc,      // Number of strings in array argv
 					}
 					else
 					{
-						if(ODE.S2[count] >= Th)
+						if(ODE.F2[count] >= Th)
 						{
 							misses[Thi]++;
 							times[Thi][j] = count;
@@ -201,7 +195,7 @@ int main( int argc,      // Number of strings in array argv
 					times_mean[i] = 0;
 					for(int j = 0;j < runs ; j++) times_mean[i] = times_mean[i] + times[i][j]*Network.dt*0.001/(runs-voids[i]);
 				
-					cout << acc[i] << " " << times_mean[i] << endl; 
+					//cout << acc[i] << " " << times_mean[i] << endl; 
 
 					myfile << times_mean[i] << " " << acc[i] << endl;
 				
