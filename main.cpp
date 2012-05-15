@@ -34,36 +34,47 @@ int main( int argc,      // Number of strings in array argv
 	//========================================================================//
 	//======================== Initializations ===============================//
 	//========================================================================//
-	// Params passed in args:
+	// general parameters:
 	const double Coh = 6.4;//atof(argv[1]);
 	const double tOn = 0.5;//atof(argv[2]);
 	const double tOff = 6;//atof(argv[3]);
 	const double tMax = 6;//atof(argv[4]);
 	const double inputCorrelation = 0;//atof(argv[5]);
-	const bool saveResults = 0;//lexical_cast<bool>(argv[6]);
+	const bool saveResults = 1;//lexical_cast<bool>(argv[6]);
 	const bool recordBGSpikes = 0;//lexical_cast<bool>(argv[7]);
 	const bool recordInputSpikes = 0;//lexical_cast<bool>(argv[8]);
-	const double I0 = -0.9225;//-0.0073-0.015;//atof(argv[9]);
-	const double JAin = 5.2E-4;//atof(argv[10]);
-	const double JAbg = 5.2E-4;//atof(argv[11]);
 	const int N = 240;//atof(argv[12]);
 	const int runs = atof(argv[1]);
 	const int stepsz = 1;
 		
 	// Network dimension settings:
-	const double BgFR = 2400; // background noise firing rate
+		//  weights
+	double JAii = 0;//9.9026E-4;
+	double JAij = 0;//6.5177E-5;
+	double JNii = 0.2609;
+	double JNij = 0.0497;
+	double JAext= 5.2E-4;
+		// H function parameters
+	double a = 239400*JAii + 270; 
+	double b = 97000*JAii + 108; 	
+	double c = -30*JAii + 0.1540;
+	
+		// other
+	double tau = 0.1;
+	double gamma = 0.641;
+		// firing rates
+	const double BgFR = atof(argv[2]); // background noise firing rate
 	const double InFR1 = 40 + .4*Coh; // "correct choice" input firing rate
 	const double InFR2 = 40 - .4*Coh; // "false choice" input firing rate
+	const double I0 = 0.2346 - JAext*BgFR;
 	
-	// variables for thresholding
+	// Variables for thresholding:
 	double Th_start = 5;
 	double Th_max = 40;
 	double Th_step = 0.05;
 	int L = 1 + (Th_max-Th_start)/Th_step;
 	int count;
 	int Thi;
-	int number[L];
-	for(int i =0;i < L; i++) number[L] = 0;
 	bool f;
 	double acc[L];
 	double hits[L];
@@ -96,11 +107,13 @@ int main( int argc,      // Number of strings in array argv
 	//PoolPoisson In2("In2",Network,N,0,InFR2*N,0,tOn,tOff,tMax);
 	
 	// ODE system
-	PoolODE ODE("ODE",Network,tMax,270,108,0.154,0.2609,-0.0497,JAin,JAbg,0.1,0.641,I0);
+	PoolODE ODE("ODE",Network,tMax,a,b,c,JNii,JNij,JAij,JAext,JAext,tau,gamma,I0);
 	
+	// file declaration
 	ofstream myfile;
-	if(saveResults) myfile.open("dataFR.txt");
+	if(saveResults) myfile.open(argv[2]);
 
+	// simulate "runs" trials
 	for(int j = 0; j < runs ; j++)
 	{		
 		Network.init();	
@@ -140,70 +153,70 @@ int main( int argc,      // Number of strings in array argv
 		}
 		//int K = ODE.S1.size();
 	//cout << "I0 = " << I0 << ": "<<  ODE.S1[K-10] << " " << ODE.S2[K-10] << endl;
-		Thi = 0;
-		for(double Th = Th_start; Th <= Th_max ; Th = Th + Th_step)
-		{
-			f = true;
-			count = tOn/(Network.dt*0.001)-1;
-			while(f)
-			{
-				if(ODE.F1[count] >= Th && ODE.F2[count] >= Th){
-					f = false;
-				}
-				
-				else
-				{
-					if(ODE.F1[count] >= Th)
-					{
-						hits[Thi]++;
-						times[Thi][j] = count+1;
-						number[Thi] = number[Thi] + 1;
-						f = false;
-					}
-					else
-					{
-						if(ODE.F2[count] >= Th)
-						{
-							misses[Thi]++;
-							times[Thi][j] = count+1;
-							number[Thi] = number[Thi] + 1;
-							f = false;
-						}
-					}
-				}
-				count++;
-				if(count == ODE.S2.size()){
-					f = false;
-				}
-			}
-			Thi++;
-		}
-	
+//		Thi = 0;
+//		for(double Th = Th_start; Th <= Th_max ; Th = Th + Th_step)
+//		{
+//			f = true;
+//			count = tOn/(Network.dt*0.001)-1;
+//			while(f)
+//			{
+//				if(ODE.F1[count] >= Th && ODE.F2[count] >= Th){
+//					f = false;
+//				}
+//				
+//				else
+//				{
+//					if(ODE.F1[count] >= Th)
+//					{
+//						hits[Thi]++;
+//						times[Thi][j] = count+1;
+//						f = false;
+//					}
+//					else
+//					{
+//						if(ODE.F2[count] >= Th)
+//						{
+//							misses[Thi]++;
+//							times[Thi][j] = count+1;
+//							f = false;
+//						}
+//					}
+//				}
+//				
+//				if(count == ODE.S2.size()){
+//					f = false;
+//				}
+//				count++;
+//			}
+//			Thi++;
+//		}
+//	
 	}
 
 	if(saveResults) myfile.close();
 	
 				
-				myfile.open(argv[2]);	
-	
-
-				for(int i=0;i < L ; i++)
-				{
-					acc[i] = hits[i]/(hits[i]+misses[i]);
-					times_mean[i] = 0;
-					for(int j = 0;j < runs ; j++) times_mean[i] = times_mean[i] + times[i][j]*Network.dt*0.001/(number[i]);
-				
-					//cout << acc[i] << " " << times_mean[i] << endl; 
-
-					myfile << times_mean[i] << " " << acc[i] << endl;
-				
-				}
-				myfile.close();
-			
+//				myfile.open(argv[2]);	
+//	
+//
+//				for(int i=0;i < L ; i++)
+//				{
+//					acc[i] = hits[i]/(hits[i]+misses[i]);
+//					times_mean[i] = 0;
+//					for(int j = 0;j < runs ; j++) times_mean[i] = times_mean[i] + times[i][j]*Network.dt*0.001/(hits[i]+misses[i]);
+//				
+//					//cout << acc[i] << " " << times_mean[i] << endl; 
+//
+//					myfile << times_mean[i] << " " << acc[i] << endl;
+//				
+//				}
+//				myfile.close();
+//			
 	
 				
 				
 				
 	cout << "finished" << endl;
 	return 0;
+	
 }

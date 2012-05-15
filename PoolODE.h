@@ -8,8 +8,8 @@ class PoolODE: public Pool
 	public:
 		
 		// Constructor+Destructor:
-		PoolODE(string,Brain&, double, double, double, double, double, double, double, double,double,double,double);
-		void construct(Brain&, double, double, double, double, double, double, double, double,double,double,double);
+		PoolODE(string,Brain&, double, double, double, double, double, double, double, double, double,double,double,double);
+		void construct(Brain&, double, double, double, double, double, double, double, double, double,double,double,double);
 		~PoolODE();
 		
 		// counters:
@@ -21,6 +21,7 @@ class PoolODE: public Pool
 		double c;
 		double Jii;
 		double Jij;
+		double JAij;
 		double JAin;
 		double JAbg;
 		double tau;
@@ -39,7 +40,8 @@ class PoolODE: public Pool
 		vector<double> F2; // firing rate
 		
 		// Member functions:
-		double phi(double);
+		double phi(double,double);
+		double fA(double);
 		void init();
 		void propogate();
 		void run(PoolPoisson&, PoolPoisson&, PoolPoisson&, PoolPoisson&);
