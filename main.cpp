@@ -58,7 +58,6 @@ int main( int argc,      // Number of strings in array argv
 	double a = 239400*JAii + 270; 
 	double b = 97000*JAii + 108; 	
 	double c = -30*JAii + 0.1540;
-	
 		// other
 	double tau = 0.1;
 	double gamma = 0.641;
@@ -66,8 +65,8 @@ int main( int argc,      // Number of strings in array argv
 	const double BgFR = atof(argv[2]); // background noise firing rate
 	const double InFR1 = 40 + .4*Coh; // "correct choice" input firing rate
 	const double InFR2 = 40 - .4*Coh; // "false choice" input firing rate
-	const double I0 = 0.2346 - JAext*BgFR;
-	
+	const double I0 = 0.3255 - JAext*BgFR;
+		
 	// Variables for thresholding:
 	double Th_start = 5;
 	double Th_max = 40;
@@ -83,6 +82,7 @@ int main( int argc,      // Number of strings in array argv
 	for(int i=0;i < L ; i++) misses[i] = 0;
 	double times[L][runs];
 	double times_mean[L];
+	
 	// Main network:
 	Brain Network;
 	
@@ -113,6 +113,12 @@ int main( int argc,      // Number of strings in array argv
 	ofstream myfile;
 	if(saveResults) myfile.open(argv[2]);
 
+	double tot = 1/(0.001*Network.dt);
+		
+	
+	
+    double temp[2];
+	
 	// simulate "runs" trials
 	for(int j = 0; j < runs ; j++)
 	{		
@@ -124,27 +130,37 @@ int main( int argc,      // Number of strings in array argv
 		if(saveResults)
 		{
 			int K = ODE.S1.size();
-
-			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.X1[i] << " ";
-			myfile << endl;
-			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.X2[i] << " ";
-			myfile << endl;	
-			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.F1[i] << " ";
-			myfile << endl;
-			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.F2[i] << " ";
-			myfile << endl;
-			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.S1[i] << " ";
-			myfile << endl;
-			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.S2[i] << " ";
-			myfile << endl;
-			for(int i=0;i < K ; i=i+stepsz) myfile << BG1.spks[i] << " ";
-			myfile << endl;
-			for(int i=0;i < K ; i=i+stepsz) myfile << BG2.spks[i] << " ";
-			myfile << endl;
-			for(int i=0;i < K ; i=i+stepsz) myfile << In1.spks[i] << " ";
-			myfile << endl;
-			for(int i=0;i < K ; i=i+stepsz) myfile << In2.spks[i] << " ";
-			myfile << endl;
+			temp[1] = 0;
+			temp[2] = 0;
+			for(int k = (tOff-1)/(Network.dt*0.001); k < tOff/(Network.dt*0.001) ; k++)
+			{
+				temp[1] = temp[1] + ODE.S1[k]/tot;
+				temp[2] = temp[2] + ODE.S2[k]/tot;
+							}
+				
+			myfile << temp[1] << " " << temp[2] << endl;
+			
+			
+			//for(int i=0;i < K ; i=i+stepsz) myfile << ODE.X1[i] << " ";
+//			myfile << endl;
+//			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.X2[i] << " ";
+//			myfile << endl;	
+//			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.F1[i] << " ";
+//			myfile << endl;
+//			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.F2[i] << " ";
+//			myfile << endl;
+//			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.S1[i] << " ";
+//			myfile << endl;
+//			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.S2[i] << " ";
+//			myfile << endl;
+//			for(int i=0;i < K ; i=i+stepsz) myfile << BG1.spks[i] << " ";
+//			myfile << endl;
+//			for(int i=0;i < K ; i=i+stepsz) myfile << BG2.spks[i] << " ";
+//			myfile << endl;
+//			for(int i=0;i < K ; i=i+stepsz) myfile << In1.spks[i] << " ";
+//			myfile << endl;
+//			for(int i=0;i < K ; i=i+stepsz) myfile << In2.spks[i] << " ";
+//			myfile << endl;
 			//for(int i=0;i < K ; i=i+stepsz) myfile << INS1.spks[i] << " ";
 			//myfile << endl;
 			//for(int i=0;i < K ; i=i+stepsz) myfile << INH1.spks[i] << " ";

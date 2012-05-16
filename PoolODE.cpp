@@ -68,14 +68,14 @@ void PoolODE::run(PoolPoisson &I1, PoolPoisson &IBG1, PoolPoisson &I2, PoolPoiss
 	T = 1;
 	for ( t=dt; t <= tmax; t = t + dt)
 	{
-		X1[T-1] = JAin*I1.spks[T-1] + JAbg*IBG1.spks[T-1] + I0 + Jii*S1[T-1] + Jij*S2[T-1];
-		X2[T-1] = JAin*I2.spks[T-1] + JAbg*IBG2.spks[T-1] + I0 + Jii*S2[T-1] + Jij*S1[T-1];
+		X1[T-1] = JAin*I1.spks[T-1] + JAbg*IBG1.spks[T-1] + I0 + Jii*S1[T-1] - Jij*S2[T-1];
+		X2[T-1] = JAin*I2.spks[T-1] + JAbg*IBG2.spks[T-1] + I0 + Jii*S2[T-1] - Jij*S1[T-1];
 		
 		F1[T-1] = phi(X1[T-1],X2[T-1]);
 		F2[T-1] = phi(X2[T-1],X1[T-1]);
-		
-		S1[T] = S1[T-1] + dt*(-S1[T-1]/tau + gamma*(1-S1[T-1])*F1[T-1]);
-		S2[T] = S2[T-1] + dt*(-S2[T-1]/tau + gamma*(1-S2[T-1])*F2[T-1]);
+		 
+		S1[T] = S1[T-1] + dt*( -S1[T-1]/tau + gamma*(1-S1[T-1])*F1[T-1] );
+		S2[T] = S2[T-1] + dt*( -S2[T-1]/tau + gamma*(1-S2[T-1])*F2[T-1] );
 		T++;
 	}
 		 
