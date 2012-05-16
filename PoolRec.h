@@ -58,6 +58,7 @@ class PoolRec: public Pool
 	// Member data:
 	valarray<double> *V;
 	valarray<double> *ISyn;
+	valarray<double> *ISynBG;
 	vector< valarray<double>* > *BG_Inputs_AMPA;
 	vector<double*> *Ex_Inputs_AMPA;
 	vector<double> *Ex_Inputs_AMPA_w;

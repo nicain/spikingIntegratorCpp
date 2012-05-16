@@ -85,7 +85,7 @@ int main( int argc,      // Number of strings in array argv
 	cout << Network.UUID_string << endl;
 	
     // Monitor time, if you want:
-    //MonitorBrain brainMonitor(Network);
+    MonitorBrain brainMonitor(Network);
 	
 	// Backgroud populations:
 	PoolBGHPoisson BGESel1("BGESel1", Network, NSel, recordBGSpikes, BgFRE, 0, 0, tOff);
@@ -108,6 +108,9 @@ int main( int argc,      // Number of strings in array argv
 	//========================================================================//
 	//========================== Connect Network =============================//
 	//========================================================================//
+    
+//    MonitorNeuronFile GESel1MonitorConst(Network, GESel1, 0, S_ISynBG, "GESel1Monitor2");
+//    MonitorNeuron GESel1MonitorConstLive(Network, GESel1, 0, S_ISynBG);
 	
 	// Connections to GESel1:
 	GESel1.connectTo(BGESel1);

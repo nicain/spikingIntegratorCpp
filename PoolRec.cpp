@@ -36,6 +36,7 @@ void PoolRec::construct()
 	// Set member data:
 	V = new valarray<double>((double)0, N);
 	ISyn = new valarray<double>((double)0, N);
+    ISynBG = new valarray<double>((double)0, N);
 	
 	// Set up for RK:
 	RK1 = new valarray<double>((double)0, N);
@@ -62,6 +63,7 @@ PoolRec::~PoolRec()
 {
 	delete V;
 	delete ISyn;
+    delete ISynBG;
 	
 	delete RK1;
 	delete RK2;
@@ -86,15 +88,17 @@ PoolRec::~PoolRec()
 
 void PoolRec::updateV()
 {
-	//	 Compute current coming into the cell:
-	(*ISyn) = valarray<double>((double)0, N);
+	//	 Compute current coming into the cell:.000005436
+	(*ISyn) = valarray<double>((double)-.000050436, N); //-5.4360e-07 = original value
+	(*ISynBG) = valarray<double>((double)-.000005436, N);
 	(*VTmp) = ((*V) - VE * (*unitVector));
 	
 	// First, the background pools:
-	for (i = 0; i < (*BG_Inputs_AMPA).size(); i++)
-	{
-		(*ISyn) += gext_AMPA * (*VTmp) * (*((*BG_Inputs_AMPA)[i]));
-	}
+//	for (i = 0; i < (*BG_Inputs_AMPA).size(); i++)
+//	{
+//		(*ISyn) += gext_AMPA * (*VTmp) * (*((*BG_Inputs_AMPA)[i]));
+//		(*ISynBG) += gext_AMPA * (*VTmp) * (*((*BG_Inputs_AMPA)[i]));
+//	}
 	
 	// Then, recurrent AMPA:
 	STmp = 0;
@@ -173,6 +177,9 @@ double* PoolRec::getStateLocation(int whichNeuron, State whichState)
 			break;
 		case S_ISyn:
 			returnAddress = &((*ISyn)[whichNeuron]);
+			break;
+		case S_ISynBG:
+			returnAddress = &((*ISynBG)[whichNeuron]);
 			break;
 		default:
 			returnAddress = getStateLocationConductance(whichNeuron, whichState);

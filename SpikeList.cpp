@@ -142,11 +142,13 @@ void SpikeList::toFile(string fileNamePrefix)
 	myfile.open(charFileName);
 	
 	// Write the spikes in "name-time format":
+    if (t->size() != 0) {
+    cout << "size: " << t->size() << endl;
 	for (int i = 0; i <= t->size()-1; i++)
 	{
 //		myfile << fileNamePrefix << "_" << (*n)[i] << "\t" << (*t)[i] << endl;
 		myfile << (*n)[i] << "\t" << (*t)[i] << endl;
-	}
+	}}
 	
 	myfile.close();
 	return;
