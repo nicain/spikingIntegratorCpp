@@ -85,7 +85,7 @@ int main( int argc,      // Number of strings in array argv
 	cout << Network.UUID_string << endl;
 	
     // Monitor time, if you want:
-    //MonitorBrain brainMonitor(Network);
+    MonitorBrain brainMonitor(Network);
 	
 	// Backgroud populations:
 	PoolBGHPoisson BGESel1("BGESel1", Network, NSel, recordBGSpikes, BgFRE, 0, 0, tOff);
@@ -100,10 +100,10 @@ int main( int argc,      // Number of strings in array argv
 	// Excitatory populations:
 	PoolRecEx GESel1("GESel1", Network, NSel, true);
 	PoolRecEx GESel2("GESel2", Network, NSel, true);
-	PoolRecEx GENSel("GENSel", Network, NNSel, false);
+	PoolRecEx GENSel("GENSel", Network, NNSel, true);
 	
 	// Inhibitory populations:
-	PoolRecInh GI("GI", Network, NI, false);
+	PoolRecInh GI("GI", Network, NI, true);
 	
 	//========================================================================//
 	//========================== Connect Network =============================//
