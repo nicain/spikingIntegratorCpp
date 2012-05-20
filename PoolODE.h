@@ -42,6 +42,7 @@ class PoolODE: public Pool
 		// Member functions:
 		double phi(double,double);
 		double fA(double);
+		double gaus(double);
 		void init();
 		void propogate();
 		void run(PoolPoisson&, PoolPoisson&, PoolPoisson&, PoolPoisson&);

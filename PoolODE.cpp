@@ -156,3 +156,13 @@ double PoolODE::fA(double x)
 	
 	
 };
+
+double PoolODE::gaus(double x)
+{
+	double bla[3] ={ 2.1668, 105.7406, 0.4};
+	
+	if(x == 0)
+
+	return bla[1]*exp(-bla[2]*(x-bla[3])*(x-bla[3]));
+
+};

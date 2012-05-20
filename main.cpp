@@ -113,11 +113,11 @@ int main( int argc,      // Number of strings in array argv
 	ofstream myfile;
 	if(saveResults) myfile.open(argv[2]);
 
-	double tot = 1/(0.001*Network.dt);
+	//double tot = 1/(0.001*Network.dt);
 		
 	
 	
-    double temp[2];
+    //double temp[2];
 	
 	// simulate "runs" trials
 	for(int j = 0; j < runs ; j++)
@@ -129,19 +129,19 @@ int main( int argc,      // Number of strings in array argv
 		
 		if(saveResults)
 		{
-			int K = ODE.S1.size();
-			temp[1] = 0;
-			temp[2] = 0;
-			for(int k = (tOff-1)/(Network.dt*0.001); k < tOff/(Network.dt*0.001) ; k++)
-			{
-				temp[1] = temp[1] + ODE.S1[k]/tot;
-				temp[2] = temp[2] + ODE.S2[k]/tot;
-							}
-				
-			myfile << temp[1] << " " << temp[2] << endl;
+			//int K = ODE.S1.size();
+//			temp[1] = 0;
+//			temp[2] = 0;
+//			for(int k = (tOff-1)/(Network.dt*0.001); k < tOff/(Network.dt*0.001) ; k++)
+//			{
+//				temp[1] = temp[1] + ODE.S1[k]/tot;
+//				temp[2] = temp[2] + ODE.S2[k]/tot;
+//			}
+//				
+//			myfile << temp[1] << " " << temp[2] << endl;
+			myfile << ODE.S1[50000] << " " << ODE.S2[50000] << endl;
 			
-			
-			//for(int i=0;i < K ; i=i+stepsz) myfile << ODE.X1[i] << " ";
+//			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.X1[i] << " ";
 //			myfile << endl;
 //			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.X2[i] << " ";
 //			myfile << endl;	
