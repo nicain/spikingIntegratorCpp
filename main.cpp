@@ -46,7 +46,7 @@ int main( int argc,      // Number of strings in array argv
 	const int N = 240;//atof(argv[12]);
 	const int runs = atof(argv[1]);
 	const int stepsz = 1;
-cout << argv[2] << endl;		
+
 	// Network dimension settings:
 		//  weights
 	double JAii = 0;//9.9026E-4;
