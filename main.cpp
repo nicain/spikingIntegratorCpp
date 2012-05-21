@@ -111,7 +111,7 @@ int main( int argc,      // Number of strings in array argv
 	
 	// file declaration
 	ofstream myfile;
-	if(saveResults) myfile.open(argv[2]);
+	if(saveResults) myfile.open(argv[3]);
 
 	//double tot = 1/(0.001*Network.dt);
 		
@@ -129,7 +129,7 @@ int main( int argc,      // Number of strings in array argv
 		
 		if(saveResults)
 		{
-			//int K = ODE.S1.size();
+			int K = ODE.S1.size();
 //			temp[1] = 0;
 //			temp[2] = 0;
 //			for(int k = (tOff-1)/(Network.dt*0.001); k < tOff/(Network.dt*0.001) ; k++)
@@ -139,28 +139,28 @@ int main( int argc,      // Number of strings in array argv
 //			}
 //				
 //			myfile << temp[1] << " " << temp[2] << endl;
-			myfile << ODE.S1[50000] << " " << ODE.S2[50000] << endl;
+//			myfile << ODE.S1[50000] << " " << ODE.S2[50000] << endl;
 			
-//			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.X1[i] << " ";
-//			myfile << endl;
-//			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.X2[i] << " ";
-//			myfile << endl;	
-//			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.F1[i] << " ";
-//			myfile << endl;
-//			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.F2[i] << " ";
-//			myfile << endl;
-//			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.S1[i] << " ";
-//			myfile << endl;
-//			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.S2[i] << " ";
-//			myfile << endl;
-//			for(int i=0;i < K ; i=i+stepsz) myfile << BG1.spks[i] << " ";
-//			myfile << endl;
-//			for(int i=0;i < K ; i=i+stepsz) myfile << BG2.spks[i] << " ";
-//			myfile << endl;
-//			for(int i=0;i < K ; i=i+stepsz) myfile << In1.spks[i] << " ";
-//			myfile << endl;
-//			for(int i=0;i < K ; i=i+stepsz) myfile << In2.spks[i] << " ";
-//			myfile << endl;
+			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.X1[i] << " ";
+			myfile << endl;
+			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.X2[i] << " ";
+			myfile << endl;	
+			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.F1[i] << " ";
+			myfile << endl;
+			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.F2[i] << " ";
+			myfile << endl;
+			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.S1[i] << " ";
+			myfile << endl;
+			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.S2[i] << " ";
+			myfile << endl;
+			for(int i=0;i < K ; i=i+stepsz) myfile << BG1.spks[i] << " ";
+			myfile << endl;
+			for(int i=0;i < K ; i=i+stepsz) myfile << BG2.spks[i] << " ";
+			myfile << endl;
+			for(int i=0;i < K ; i=i+stepsz) myfile << In1.spks[i] << " ";
+			myfile << endl;
+			for(int i=0;i < K ; i=i+stepsz) myfile << In2.spks[i] << " ";
+			myfile << endl;
 			//for(int i=0;i < K ; i=i+stepsz) myfile << INS1.spks[i] << " ";
 			//myfile << endl;
 			//for(int i=0;i < K ; i=i+stepsz) myfile << INH1.spks[i] << " ";
