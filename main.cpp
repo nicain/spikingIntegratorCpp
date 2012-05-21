@@ -68,9 +68,9 @@ int main( int argc,      // Number of strings in array argv
 	const double I0 = 0.3255 - JAext*(BgFR+2240 - 4000);
 		
 	// Variables for thresholding:
-	double Th_start = 5;
-	double Th_max = 40;
-	double Th_step = 0.05;
+	double Th_start = 0.1;
+	double Th_max = 0.7;
+	double Th_step = 0.005;
 	int L = 1 + (Th_max-Th_start)/Th_step;
 	int count;
 	int Thi;
@@ -176,13 +176,13 @@ int main( int argc,      // Number of strings in array argv
 			count = tOn/(Network.dt*0.001)-1;
 			while(f)
 			{
-				if(ODE.F1[count] >= Th && ODE.F2[count] >= Th){
+				if(ODE.S1[count] >= Th && ODE.S2[count] >= Th){
 					f = false;
 				}
 				
 				else
 				{
-					if(ODE.F1[count] >= Th)
+					if(ODE.S1[count] >= Th)
 					{
 						hits[Thi]++;
 						times[Thi][j] = count+1;
@@ -190,7 +190,7 @@ int main( int argc,      // Number of strings in array argv
 					}
 					else
 					{
-						if(ODE.F2[count] >= Th)
+						if(ODE.S2[count] >= Th)
 						{
 							misses[Thi]++;
 							times[Thi][j] = count+1;
