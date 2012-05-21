@@ -167,7 +167,7 @@ int main( int argc,      // Number of strings in array argv
 			//myfile << endl;
 			
 		}
-		int K = ODE.S1.size();
+		//int K = ODE.S1.size();
 	//cout << "I0 = " << I0 << ": "<<  ODE.S1[K-10] << " " << ODE.S2[K-10] << endl;
 		Thi = 0;
 		for(double Th = Th_start; Th <= Th_max ; Th = Th + Th_step)
