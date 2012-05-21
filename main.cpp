@@ -46,7 +46,7 @@ int main( int argc,      // Number of strings in array argv
 	const int N = 240;//atof(argv[12]);
 	const int runs = atof(argv[1]);
 	const int stepsz = 1;
-		
+cout << argv[2] << endl;		
 	// Network dimension settings:
 		//  weights
 	double JAii = 0;//9.9026E-4;
@@ -91,7 +91,7 @@ int main( int argc,      // Number of strings in array argv
 	
 	// Poisson population
 	PoolPoisson BG1("BG1",Network,N,0,BgFR*N,0,0,tOff,tMax);
-	PoolPoisson BG2("BG2",Network,N,0,BgFR*N,0,0,tOff,tMax);
+	//PoolPoisson BG2("BG2",Network,N,0,BgFR*N,0,0,tOff,tMax);
 	PoolPoisson In1("In1",Network,N,0,InFR1*N,0,tOn,tOff,tMax);
 	PoolPoisson In2("In2",Network,N,0,InFR2*N,0,tOn,tOff,tMax);
 	
@@ -111,7 +111,7 @@ int main( int argc,      // Number of strings in array argv
 	
 	// file declaration
 	ofstream myfile;
-	if(saveResults) myfile.open(argv[2]);
+	if(saveResults) myfile.open(argv[3]);
 
 	//double tot = 1/(0.001*Network.dt);
 		
@@ -123,7 +123,7 @@ int main( int argc,      // Number of strings in array argv
 	for(int j = 0; j < runs ; j++)
 	{		
 		Network.init();	
-		ODE.run(In1,BG1,In2,BG2);
+		ODE.run(In1,BG1,In2,BG1);
 		//ODE.run2(In1,BG1,In2,BG2,I01,I02);
 		//ODE.run3(In1,BG1,In2,BG2,INS1,INH1,INS1,INH1);
 		
