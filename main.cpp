@@ -125,6 +125,7 @@ int main( int argc,      // Number of strings in array argv
 	{		
 		Network.init();	
 <<<<<<< HEAD
+<<<<<<< HEAD
 		//if(atof(argv[6]) == 1) ODE.run(I1,I2,IC);	
 		//if(atof(argv[6]) == 2) ODE.run2(I1,I2,IC);
 =======
@@ -132,6 +133,11 @@ int main( int argc,      // Number of strings in array argv
 		if(atof(argv[6]) == 2) ODE.run2(I1,I2,IC);
 >>>>>>> abab099e8e842a66d621719b6257dc8ea21b2d80
 		//ODE.run(In1,BG1,In2,BG2);
+=======
+		//if(atof(argv[6]) == 1) ODE.run(I1,I2,IC);	
+		//if(atof(argv[6]) == 2) ODE.run2(I1,I2,IC);
+		ODE.run(In1,BG1,In2,BG2);
+>>>>>>> 105e15c3263c74f37a6be87c265e97cdb043505d
 		//ODE.run2(In1,BG1,In2,BG2,I01,I02);
 		ODE.run3(In1,BG1,In2,BG2,INS1,INH1,INS1,INH1);
 		
