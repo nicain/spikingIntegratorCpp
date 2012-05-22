@@ -66,7 +66,7 @@ int main( int argc,      // Number of strings in array argv
 	const double BgFR = 2400; // background noise firing rate
 	const double InFR1 = 40 + .4*Coh; // "correct choice" input firing rate
 	const double InFR2 = 40 - .4*Coh; // "false choice" input firing rate
-	const double I0 = 0.3225 - JAext*(BgFR);//+2240 - 4000);
+	const double I0 = 0.3225 - JAext*(BgFR+2240 - 4000);
 		
 	// Variables for thresholding:
 	double Th_start = 0.05;
@@ -96,8 +96,8 @@ int main( int argc,      // Number of strings in array argv
 	PoolPoisson In1("In1",Network,N,0,InFR1*N,0,tOn,tOff,tMax);
 	PoolPoisson In2("In2",Network,N,0,InFR2*N,0,tOn,tOff,tMax);
 	
-	//PoolPoisson INS1("INS1",Network,N,0,2240*N,0,0,tOff,tMax);
-	//PoolPoisson INH1("INH1",Network,N,0,4000*N,0,0,tOff,tMax);
+	PoolPoisson INS1("INS1",Network,N,0,2240*N,0,0,tOff,tMax);
+	PoolPoisson INH1("INH1",Network,N,0,4000*N,0,0,tOff,tMax);
 	//PoolPoisson INS2("INS2",Network,N,0,2240*N,0,0,tOff,tMax);
 	//PoolPoisson INH2("INH2",Network,N,0,4000*N,0,0,tOff,tMax);
 	
@@ -126,9 +126,9 @@ int main( int argc,      // Number of strings in array argv
 		Network.init();	
 		//if(atof(argv[6]) == 1) ODE.run(I1,I2,IC);	
 		//if(atof(argv[6]) == 2) ODE.run2(I1,I2,IC);
-		ODE.run(In1,BG1,In2,BG2);
+		//ODE.run(In1,BG1,In2,BG2);
 		//ODE.run2(In1,BG1,In2,BG2,I01,I02);
-		//ODE.run3(In1,BG1,In2,BG2,INS1,INH1,INS1,INH1);
+		ODE.run3(In1,BG1,In2,BG2,INS1,INH1,INS1,INH1);
 		
 		if(saveResults)
 		{
