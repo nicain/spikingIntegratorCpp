@@ -7,7 +7,8 @@
 #include <string>
 #include <boost/lexical_cast.hpp>
 #include "Brain.h"
-#include "PoolODE.h"
+//#include "PoolODE.h"
+#include "PolkODE.h"
 #include "Monitor.h"
 #include <iostream>
 #include <fstream>
@@ -37,8 +38,8 @@ int main( int argc,      // Number of strings in array argv
 	// general parameters:
 	const double Coh = 6.4;//atof(argv[1]);
 	const double tOn = 0.5;//atof(argv[2]);
-	const double tOff = 6;//atof(argv[3]);
-	const double tMax = 6;//atof(argv[4]);
+	const double tOff = 2;//atof(argv[3]);
+	const double tMax = 2;//atof(argv[4]);
 	const double inputCorrelation = 0;//atof(argv[5]);
 	const bool saveResults = 1;//lexical_cast<bool>(argv[6]);
 	const bool recordBGSpikes = 0;//lexical_cast<bool>(argv[7]);
@@ -49,8 +50,8 @@ int main( int argc,      // Number of strings in array argv
 		
 	// Network dimension settings:
 		//  weights
-	double JAii = 0;//9.9026E-4;
-	double JAij = 0;//6.5177E-5;
+	double JAii = 0;
+	double JAij = 0;
 	double JNii = 0.2609;
 	double JNij = 0.0497;
 	double JAext= 5.2E-4;
@@ -65,12 +66,12 @@ int main( int argc,      // Number of strings in array argv
 	const double BgFR = 2400; // background noise firing rate
 	const double InFR1 = 40 + .4*Coh; // "correct choice" input firing rate
 	const double InFR2 = 40 - .4*Coh; // "false choice" input firing rate
-	const double I0 = 0.3255 - JAext*(BgFR+2240 - 4000);
+	const double I0 = 0.3225 - JAext*(BgFR);//+2240 - 4000);
 		
 	// Variables for thresholding:
-	double Th_start = 0.1;
+	double Th_start = 0.05;
 	double Th_max = 0.7;
-	double Th_step = 0.005;
+	double Th_step = 0.001;
 	int L = 1 + (Th_max-Th_start)/Th_step;
 	int count;
 	int Thi;
@@ -95,20 +96,20 @@ int main( int argc,      // Number of strings in array argv
 	PoolPoisson In1("In1",Network,N,0,InFR1*N,0,tOn,tOff,tMax);
 	PoolPoisson In2("In2",Network,N,0,InFR2*N,0,tOn,tOff,tMax);
 	
-	//PoolPoisson I01("I01",Network,N,0,-I0/JAbg*N,0,0,tOff,tMax);
-	//PoolPoisson I02("I02",Network,N,0,-I0/JAbg*N,0,0,tOff,tMax);
-
-	PoolPoisson INS1("INS1",Network,N,0,2240*N,0,0,tOff,tMax);
-	PoolPoisson INH1("INH1",Network,N,0,4000*N,0,0,tOff,tMax);
+	//PoolPoisson INS1("INS1",Network,N,0,2240*N,0,0,tOff,tMax);
+	//PoolPoisson INH1("INH1",Network,N,0,4000*N,0,0,tOff,tMax);
 	//PoolPoisson INS2("INS2",Network,N,0,2240*N,0,0,tOff,tMax);
 	//PoolPoisson INH2("INH2",Network,N,0,4000*N,0,0,tOff,tMax);
 	
-	//PoolPoisson In2("In2",Network,N,0,InFR2*N,0,tOn,tOff,tMax);
-	//PoolPoisson In2("In2",Network,N,0,InFR2*N,0,tOn,tOff,tMax);
+	//PoolPoisson I1("I2",Network,N,0,30*N,0,0,tOff,tMax);
+	//PoolPoisson I2("I2",Network,N,0,30*N,0,0,tOff,tMax);
+	//PoolPoisson IC("IC",Network,N,0,30*N,0,0,tOff,tMax);
 	
 	// ODE system
 	PoolODE ODE("ODE",Network,tMax,a,b,c,JNii,JNij,JAij,JAext,JAext,tau,gamma,I0);
-	
+	//PolkODE ODE("ODE",Network,tMax,30,80E-3,30,atof(argv[5]),atof(argv[3]),atof(argv[4]));
+				
+		//Brain &parentPool_in, double tmax_in,double I0_in, double tau_in,double mu_in,double m0_in,double sigma_in,double c_in)
 	// file declaration
 	ofstream myfile;
 	if(saveResults) myfile.open(argv[2]);
@@ -123,13 +124,20 @@ int main( int argc,      // Number of strings in array argv
 	for(int j = 0; j < runs ; j++)
 	{		
 		Network.init();	
-		//ODE.run(In1,BG1,In2,BG2);
+		//if(atof(argv[6]) == 1) ODE.run(I1,I2,IC);	
+		//if(atof(argv[6]) == 2) ODE.run2(I1,I2,IC);
+		ODE.run(In1,BG1,In2,BG2);
 		//ODE.run2(In1,BG1,In2,BG2,I01,I02);
-		ODE.run3(In1,BG1,In2,BG2,INS1,INH1,INS1,INH1);
+		//ODE.run3(In1,BG1,In2,BG2,INS1,INH1,INS1,INH1);
 		
 		if(saveResults)
 		{
-			//int K = ODE.S1.size();
+//			myfile << ODE.r1[5000] << " " << ODE.r2[5000] << " " << ODE.r1[10000] << " " << ODE.r2[10000] << endl;
+//			int K = ODE.r1.size();
+//			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.r1[i] << " ";
+//			myfile << endl;
+//			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.r2[i] << " ";
+//			myfile << endl;	
 //			temp[1] = 0;
 //			temp[2] = 0;
 //			for(int k = (tOff-1)/(Network.dt*0.001); k < tOff/(Network.dt*0.001) ; k++)
@@ -139,9 +147,9 @@ int main( int argc,      // Number of strings in array argv
 //			}
 //				
 //			myfile << temp[1] << " " << temp[2] << endl;
-			myfile << ODE.S1[10000] << " " << ODE.S2[10000] << " " << ODE.S1[25000] << " " << ODE.S2[25000] << " " << ODE.S1[50000] << " " << ODE.S2[50000] << endl;
+			myfile << ODE.S1[6000] << " " << ODE.S2[6000] << " " << ODE.S1[7500] << " " << ODE.S2[7500] << " " << ODE.S1[25000] << " " << ODE.S2[25000] << endl;
 			
-	//		for(int i=0;i < K ; i=i+stepsz) myfile << ODE.X1[i] << " ";
+//			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.X1[i] << " ";
 //			myfile << endl;
 //			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.X2[i] << " ";
 //			myfile << endl;	
