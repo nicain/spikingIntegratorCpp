@@ -117,7 +117,7 @@ int main( int argc,      // Number of strings in array argv
 	//double tot = 1/(0.001*Network.dt);
 		
 	
-	
+	//
     //double temp[2];
 	
 	// simulate "runs" trials
