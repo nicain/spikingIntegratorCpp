@@ -38,8 +38,8 @@ int main( int argc,      // Number of strings in array argv
 	// general parameters:
 	const double Coh = 6.4;//atof(argv[1]);
 	const double tOn = 0.5;//atof(argv[2]);
-	const double tOff = 2;//atof(argv[3]);
-	const double tMax = 2;//atof(argv[4]);
+	const double tOff = 4;//atof(argv[3]);
+	const double tMax = 4;//atof(argv[4]);
 	const double inputCorrelation = 0;//atof(argv[5]);
 	const bool saveResults = 1;//lexical_cast<bool>(argv[6]);
 	const bool recordBGSpikes = 0;//lexical_cast<bool>(argv[7]);
@@ -66,7 +66,7 @@ int main( int argc,      // Number of strings in array argv
 	const double BgFR = 2400; // background noise firing rate
 	const double InFR1 = 40 + .4*Coh; // "correct choice" input firing rate
 	const double InFR2 = 40 - .4*Coh; // "false choice" input firing rate
-	const double I0 = 0.3225 - JAext*(BgFR+2240 - 4000);
+	const double I0 = 0.3225 - JAext*(BgFR);//+2240 - 4000);
 		
 	// Variables for thresholding:
 	double Th_start = 0.05;
@@ -96,8 +96,8 @@ int main( int argc,      // Number of strings in array argv
 	PoolPoisson In1("In1",Network,N,0,InFR1*N,0,tOn,tOff,tMax);
 	PoolPoisson In2("In2",Network,N,0,InFR2*N,0,tOn,tOff,tMax);
 	
-	PoolPoisson INS1("INS1",Network,N,0,2240*N,0,0,tOff,tMax);
-	PoolPoisson INH1("INH1",Network,N,0,4000*N,0,0,tOff,tMax);
+	//PoolPoisson INS1("INS1",Network,N,0,2240*N,0,0,tOff,tMax);
+	//PoolPoisson INH1("INH1",Network,N,0,4000*N,0,0,tOff,tMax);
 	//PoolPoisson INS2("INS2",Network,N,0,2240*N,0,0,tOff,tMax);
 	//PoolPoisson INH2("INH2",Network,N,0,4000*N,0,0,tOff,tMax);
 	
@@ -126,14 +126,14 @@ int main( int argc,      // Number of strings in array argv
 		Network.init();	
 		//if(atof(argv[6]) == 1) ODE.run(I1,I2,IC);	
 		//if(atof(argv[6]) == 2) ODE.run2(I1,I2,IC);
-		//ODE.run(In1,BG1,In2,BG2);
+		ODE.run(In1,BG1,In2,BG2);
 		//ODE.run2(In1,BG1,In2,BG2,I01,I02);
-		ODE.run3(In1,BG1,In2,BG2,INS1,INH1,INS1,INH1);
+		//ODE.run3(In1,BG1,In2,BG2,INS1,INH1,INS1,INH1);
 		
 		if(saveResults)
 		{
 			//myfile << ODE.r1[5000] << " " << ODE.r2[5000] << " " << ODE.r1[10000] << " " << ODE.r2[10000] << endl;
-//			int K = ODE.r1.size();
+			int K = ODE.S1.size();
 //			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.r1[i] << " ";
 //			myfile << endl;
 //			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.r2[i] << " ";
@@ -147,7 +147,7 @@ int main( int argc,      // Number of strings in array argv
 //			}
 //				
 //			myfile << temp[1] << " " << temp[2] << endl;
-			myfile << ODE.S1[6000] << " " << ODE.S2[6000] << " " << ODE.S1[7500] << " " << ODE.S2[7500] << " " << ODE.S1[25000] << " " << ODE.S2[25000] << endl;
+			//myfile << ODE.S1[6000] << " " << ODE.S2[6000] << " " << ODE.S1[7500] << " " << ODE.S2[7500] << " " << ODE.S1[25000] << " " << ODE.S2[25000] << endl;
 			
 //			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.X1[i] << " ";
 //			myfile << endl;
@@ -156,11 +156,11 @@ int main( int argc,      // Number of strings in array argv
 //			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.F1[i] << " ";
 //			myfile << endl;
 //			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.F2[i] << " ";
-//			myfile << endl;
-//			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.S1[i] << " ";
-//			myfile << endl;
-//			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.S2[i] << " ";
-//			myfile << endl;
+			myfile << endl;
+			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.S1[i] << " ";
+			myfile << endl;
+			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.S2[i] << " ";
+			myfile << endl;
 //			for(int i=0;i < K ; i=i+stepsz) myfile << BG1.spks[i] << " ";
 //			myfile << endl;
 //			for(int i=0;i < K ; i=i+stepsz) myfile << BG2.spks[i] << " ";
