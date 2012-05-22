@@ -124,9 +124,9 @@ int main( int argc,      // Number of strings in array argv
 	for(int j = 0; j < runs ; j++)
 	{		
 		Network.init();	
-		if(atof(argv[6]) == 1) ODE.run(I1,I2,IC);	
-		if(atof(argv[6]) == 2) ODE.run2(I1,I2,IC);
-		//ODE.run(In1,BG1,In2,BG2);
+		//if(atof(argv[6]) == 1) ODE.run(I1,I2,IC);	
+		//if(atof(argv[6]) == 2) ODE.run2(I1,I2,IC);
+		ODE.run(In1,BG1,In2,BG2);
 		//ODE.run2(In1,BG1,In2,BG2,I01,I02);
 		//ODE.run3(In1,BG1,In2,BG2,INS1,INH1,INS1,INH1);
 		
