@@ -7,8 +7,8 @@
 #include <string>
 #include <boost/lexical_cast.hpp>
 #include "Brain.h"
-//#include "PoolODE.h"
-#include "PolkODE.h"
+#include "PoolODE.h"
+//#include "PolkODE.h"
 #include "Monitor.h"
 #include <iostream>
 #include <fstream>
