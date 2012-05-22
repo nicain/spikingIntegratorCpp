@@ -173,7 +173,7 @@ int main( int argc,      // Number of strings in array argv
 			//myfile << endl;
 			//for(int i=0;i < K ; i=i+stepsz) myfile << INH1.spks[i] << " ";
 			//myfile << endl;
-			
+			//
 		}
 		//int K = ODE.S1.size();
 	//cout << "I0 = " << I0 << ": "<<  ODE.S1[K-10] << " " << ODE.S2[K-10] << endl;
