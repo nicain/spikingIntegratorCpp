@@ -7,8 +7,8 @@
 #include <string>
 #include <boost/lexical_cast.hpp>
 #include "Brain.h"
-#include "PoolODE.h"
-//#include "PolkODE.h"
+//#include "PoolODE.h"
+#include "PolkODE.h"
 #include "Monitor.h"
 #include <iostream>
 #include <fstream>
@@ -91,23 +91,23 @@ int main( int argc,      // Number of strings in array argv
 	cout << Network.UUID_string << endl;
 	
 	// Poisson population
-	PoolPoisson BG1("BG1",Network,N,0,BgFR*N,0,0,tOff,tMax);
-	PoolPoisson BG2("BG2",Network,N,0,BgFR*N,0,0,tOff,tMax);
-	PoolPoisson In1("In1",Network,N,0,InFR1*N,0,tOn,tOff,tMax);
-	PoolPoisson In2("In2",Network,N,0,InFR2*N,0,tOn,tOff,tMax);
+//	PoolPoisson BG1("BG1",Network,N,0,BgFR*N,0,0,tOff,tMax);
+//	PoolPoisson BG2("BG2",Network,N,0,BgFR*N,0,0,tOff,tMax);
+//	PoolPoisson In1("In1",Network,N,0,InFR1*N,0,tOn,tOff,tMax);
+//	PoolPoisson In2("In2",Network,N,0,InFR2*N,0,tOn,tOff,tMax);
 	
 	//PoolPoisson INS1("INS1",Network,N,0,2240*N,0,0,tOff,tMax);
 	//PoolPoisson INH1("INH1",Network,N,0,4000*N,0,0,tOff,tMax);
 	//PoolPoisson INS2("INS2",Network,N,0,2240*N,0,0,tOff,tMax);
 	//PoolPoisson INH2("INH2",Network,N,0,4000*N,0,0,tOff,tMax);
 	
-	//PoolPoisson I1("I2",Network,N,0,30*N,0,0,tOff,tMax);
-	//PoolPoisson I2("I2",Network,N,0,30*N,0,0,tOff,tMax);
-	//PoolPoisson IC("IC",Network,N,0,30*N,0,0,tOff,tMax);
+	PoolPoisson I1("I2",Network,N,0,30*N,0,0,tOff,tMax);
+	PoolPoisson I2("I2",Network,N,0,30*N,0,0,tOff,tMax);
+	PoolPoisson IC("IC",Network,N,0,30*N,0,0,tOff,tMax);
 	
 	// ODE system
-	PoolODE ODE("ODE",Network,tMax,a,b,c,JNii,JNij,JAij,JAext,JAext,tau,gamma,I0);
-	//PolkODE ODE("ODE",Network,tMax,30,80E-3,30,atof(argv[5]),atof(argv[3]),atof(argv[4]));
+	//PoolODE ODE("ODE",Network,tMax,a,b,c,JNii,JNij,JAij,JAext,JAext,tau,gamma,I0);
+	PolkODE ODE("ODE",Network,tMax,30,80E-3,30,atof(argv[5]),atof(argv[3]),atof(argv[4]));
 				
 		//Brain &parentPool_in, double tmax_in,double I0_in, double tau_in,double mu_in,double m0_in,double sigma_in,double c_in)
 	// file declaration
@@ -124,15 +124,15 @@ int main( int argc,      // Number of strings in array argv
 	for(int j = 0; j < runs ; j++)
 	{		
 		Network.init();	
-		//if(atof(argv[6]) == 1) ODE.run(I1,I2,IC);	
-		//if(atof(argv[6]) == 2) ODE.run2(I1,I2,IC);
-		ODE.run(In1,BG1,In2,BG2);
+		if(atof(argv[6]) == 1) ODE.run(I1,I2,IC);	
+		if(atof(argv[6]) == 2) ODE.run2(I1,I2,IC);
+		//ODE.run(In1,BG1,In2,BG2);
 		//ODE.run2(In1,BG1,In2,BG2,I01,I02);
 		//ODE.run3(In1,BG1,In2,BG2,INS1,INH1,INS1,INH1);
 		
 		if(saveResults)
 		{
-//			myfile << ODE.r1[5000] << " " << ODE.r2[5000] << " " << ODE.r1[10000] << " " << ODE.r2[10000] << endl;
+			myfile << ODE.r1[5000] << " " << ODE.r2[5000] << " " << ODE.r1[10000] << " " << ODE.r2[10000] << endl;
 //			int K = ODE.r1.size();
 //			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.r1[i] << " ";
 //			myfile << endl;
@@ -147,7 +147,7 @@ int main( int argc,      // Number of strings in array argv
 //			}
 //				
 //			myfile << temp[1] << " " << temp[2] << endl;
-			myfile << ODE.S1[6000] << " " << ODE.S2[6000] << " " << ODE.S1[7500] << " " << ODE.S2[7500] << " " << ODE.S1[25000] << " " << ODE.S2[25000] << endl;
+//			myfile << ODE.S1[6000] << " " << ODE.S2[6000] << " " << ODE.S1[7500] << " " << ODE.S2[7500] << " " << ODE.S1[25000] << " " << ODE.S2[25000] << endl;
 			
 //			for(int i=0;i < K ; i=i+stepsz) myfile << ODE.X1[i] << " ";
 //			myfile << endl;
@@ -177,65 +177,65 @@ int main( int argc,      // Number of strings in array argv
 		}
 		//int K = ODE.S1.size();
 	//cout << "I0 = " << I0 << ": "<<  ODE.S1[K-10] << " " << ODE.S2[K-10] << endl;
-		Thi = 0;
-		for(double Th = Th_start; Th <= Th_max ; Th = Th + Th_step)
-		{
-			f = true;
-			count = tOn/(Network.dt*0.001)-1;
-			while(f)
-			{
-				if(ODE.S1[count] >= Th && ODE.S2[count] >= Th){
-					f = false;
-				}
-				
-				else
-				{
-					if(ODE.S1[count] >= Th)
-					{
-						hits[Thi]++;
-						times[Thi][j] = count+1;
-						f = false;
-					}
-					else
-					{
-						if(ODE.S2[count] >= Th)
-						{
-							misses[Thi]++;
-							times[Thi][j] = count+1;
-							f = false;
-						}
-					}
-				}
-				
-				if(count == ODE.S2.size()){
-					f = false;
-				}
-				count++;
-			}
-			Thi++;
-		}
+//		Thi = 0;
+//		for(double Th = Th_start; Th <= Th_max ; Th = Th + Th_step)
+//		{
+//			f = true;
+//			count = tOn/(Network.dt*0.001)-1;
+//			while(f)
+//			{
+//				if(ODE.S1[count] >= Th && ODE.S2[count] >= Th){
+//					f = false;
+//				}
+//				
+//				else
+//				{
+//					if(ODE.S1[count] >= Th)
+//					{
+//						hits[Thi]++;
+//						times[Thi][j] = count+1;
+//						f = false;
+//					}
+//					else
+//					{
+//						if(ODE.S2[count] >= Th)
+//						{
+//							misses[Thi]++;
+//							times[Thi][j] = count+1;
+//							f = false;
+//						}
+//					}
+//				}
+//				
+//				if(count == ODE.S2.size()){
+//					f = false;
+//				}
+//				count++;
+//			}
+//			Thi++;
+//		}
 	
 	}
 
 	if(saveResults) myfile.close();
 	
 				
-				myfile.open(argv[3]);	
-	
-
-				for(int i=0;i < L ; i++)
-				{
-					acc[i] = hits[i]/(hits[i]+misses[i]);
-					times_mean[i] = 0;
-					for(int j = 0;j < runs ; j++) times_mean[i] = times_mean[i] + times[i][j]*Network.dt*0.001/(hits[i]+misses[i]);
-				
-					//cout << acc[i] << " " << times_mean[i] << endl; 
-
-					myfile << times_mean[i] << " " << acc[i] << endl;
-				
-				}
-				myfile.close();
-			
+//				myfile.open(argv[3]);	
+//	
+//
+//				for(int i=0;i < L ; i++)
+//				{
+//					acc[i] = hits[i]/(hits[i]+misses[i]);
+//					times_mean[i] = 0;
+//					for(int j = 0;j < runs ; j++) times_mean[i] = times_mean[i] + times[i][j]*Network.dt*0.001/(hits[i]+misses[i]);
+//				
+//					//cout << acc[i] << " " << times_mean[i] << endl; 
+//
+//					myfile << times_mean[i] << " " << acc[i] << endl;
+//				
+//				}
+//				myfile.close();
+//			
 	
 				
 				
