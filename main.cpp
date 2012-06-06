@@ -113,7 +113,13 @@ int main( int argc,      // Number of strings in array argv
     MonitorNeuronFile GESel1MonitorConstRecAMPA(Network, GESel1, 0, S_ISynRecAMPA, "GESel1MonitorRecAMPA");
     MonitorNeuronFile GESel1MonitorConstRecNMDA(Network, GESel1, 0, S_ISynRecNMDA, "GESel1MonitorRecNMDA");
     MonitorNeuronFile GESel1MonitorConstRecGABA(Network, GESel1, 0, S_ISynRecGABA, "GESel1MonitorRecGABA");
-    MonitorNeuronFile GESel1MonitorConstTot(Network, GESel1, 0, S_ISyn, "GESel1MonitorTot");    
+    MonitorNeuronFile GESel1MonitorConstTot(Network, GESel1, 0, S_ISyn, "GESel1MonitorTot");
+    
+    MonitorNeuronFile GESel2MonitorConstBG(Network, GESel2, 0, S_ISynBG, "GESel2MonitorBG");
+    MonitorNeuronFile GESel2MonitorConstRecAMPA(Network, GESel2, 0, S_ISynRecAMPA, "GESel2MonitorRecAMPA");
+    MonitorNeuronFile GESel2MonitorConstRecNMDA(Network, GESel2, 0, S_ISynRecNMDA, "GESel2MonitorRecNMDA");
+    MonitorNeuronFile GESel2MonitorConstRecGABA(Network, GESel2, 0, S_ISynRecGABA, "GESel2MonitorRecGABA");
+    MonitorNeuronFile GESel2MonitorConstTot(Network, GESel2, 0, S_ISyn, "GESel2MonitorTot");
     
 	
 	// Connections to GESel1:
