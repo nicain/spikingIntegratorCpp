@@ -37,6 +37,10 @@ void PoolRec::construct()
 	V = new valarray<double>((double)0, N);
 	ISyn = new valarray<double>((double)0, N);
     ISynBG = new valarray<double>((double)0, N);
+    
+    ISynRecAMPA = new valarray<double>((double)0, N);
+    ISynRecNMDA = new valarray<double>((double)0, N);
+    ISynRecGABA = new valarray<double>((double)0, N);
 	
 	// Set up for RK:
 	RK1 = new valarray<double>((double)0, N);
@@ -64,6 +68,9 @@ PoolRec::~PoolRec()
 	delete V;
 	delete ISyn;
     delete ISynBG;
+    delete ISynRecAMPA;
+    delete ISynRecNMDA;
+    delete ISynRecGABA;
 	
 	delete RK1;
 	delete RK2;
@@ -89,16 +96,19 @@ PoolRec::~PoolRec()
 void PoolRec::updateV()
 {
 	//	 Compute current coming into the cell:.000005436
-	(*ISyn) = valarray<double>((double)-.000050436, N); //-5.4360e-07 = original value
-	(*ISynBG) = valarray<double>((double)-.000005436, N);
+	(*ISyn) = valarray<double>((double)0, N);
+	(*ISynBG) = valarray<double>((double)0, N);
+	(*ISynRecAMPA) = valarray<double>((double)0, N);
+	(*ISynRecNMDA) = valarray<double>((double)0, N);
+	(*ISynRecGABA) = valarray<double>((double)0, N);
 	(*VTmp) = ((*V) - VE * (*unitVector));
 	
 	// First, the background pools:
-//	for (i = 0; i < (*BG_Inputs_AMPA).size(); i++)
-//	{
-//		(*ISyn) += gext_AMPA * (*VTmp) * (*((*BG_Inputs_AMPA)[i]));
-//		(*ISynBG) += gext_AMPA * (*VTmp) * (*((*BG_Inputs_AMPA)[i]));
-//	}
+	for (i = 0; i < (*BG_Inputs_AMPA).size(); i++)
+	{
+		(*ISyn) += gext_AMPA * (*VTmp) * (*((*BG_Inputs_AMPA)[i]));
+		(*ISynBG) += gext_AMPA * (*VTmp) * (*((*BG_Inputs_AMPA)[i]));
+	}
 	
 	// Then, recurrent AMPA:
 	STmp = 0;
@@ -108,6 +118,7 @@ void PoolRec::updateV()
 		
 	}
 	(*ISyn) += grec_AMPA * STmp * (*VTmp);
+    (*ISynRecAMPA) += grec_AMPA * STmp * (*VTmp);
 	
 	// Next, recurrent NMDA:
 	(*VTmp) /= (*unitVector) + exp(K*(*V))/3.57;
@@ -117,6 +128,7 @@ void PoolRec::updateV()
 		STmp += (*((*Ex_Inputs_NMDA)[i])) * ((*Ex_Inputs_NMDA_w)[i]);
 	}
 	(*ISyn) += gNMDA * STmp * (*VTmp);
+    (*ISynRecNMDA) += gNMDA * STmp * (*VTmp);
 	
 	// Finally, recurrent GABA:
 	(*VTmp) = ((*V) - VI * (*unitVector));
@@ -126,6 +138,7 @@ void PoolRec::updateV()
 		STmp += (*((*Inh_Inputs_GABA)[i]));
 	}
 	(*ISyn) += gGABA * STmp * (*VTmp);
+    (*ISynRecGABA) += gGABA * STmp * (*VTmp);
 	
 	// Update voltage:			
 	(*VTmp) = ((*V) - VMin * (*unitVector));	//TODO: optimize below:
@@ -180,6 +193,15 @@ double* PoolRec::getStateLocation(int whichNeuron, State whichState)
 			break;
 		case S_ISynBG:
 			returnAddress = &((*ISynBG)[whichNeuron]);
+			break;
+		case S_ISynRecAMPA:
+			returnAddress = &((*ISynRecAMPA)[whichNeuron]);
+			break;
+		case S_ISynRecNMDA:
+			returnAddress = &((*ISynRecNMDA)[whichNeuron]);
+			break;
+		case S_ISynRecGABA:
+			returnAddress = &((*ISynRecGABA)[whichNeuron]);
 			break;
 		default:
 			returnAddress = getStateLocationConductance(whichNeuron, whichState);

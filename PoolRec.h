@@ -58,13 +58,18 @@ class PoolRec: public Pool
 	// Member data:
 	valarray<double> *V;
 	valarray<double> *ISyn;
-	valarray<double> *ISynBG;
 	vector< valarray<double>* > *BG_Inputs_AMPA;
 	vector<double*> *Ex_Inputs_AMPA;
 	vector<double> *Ex_Inputs_AMPA_w;
 	vector<double*> *Ex_Inputs_NMDA;
 	vector<double> *Ex_Inputs_NMDA_w;
 	vector<double*> *Inh_Inputs_GABA;
+    
+    // Currents to record:
+    valarray<double> *ISynBG;
+    valarray<double> *ISynRecAMPA;
+    valarray<double> *ISynRecNMDA;
+    valarray<double> *ISynRecGABA;
 	
 	// Helper vectors
 	valarray<double> *unitVector;

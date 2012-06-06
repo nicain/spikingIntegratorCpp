@@ -109,8 +109,12 @@ int main( int argc,      // Number of strings in array argv
 	//========================== Connect Network =============================//
 	//========================================================================//
     
-//    MonitorNeuronFile GESel1MonitorConst(Network, GESel1, 0, S_ISynBG, "GESel1Monitor2");
-//    MonitorNeuron GESel1MonitorConstLive(Network, GESel1, 0, S_ISynBG);
+    MonitorNeuronFile GESel1MonitorConstBG(Network, GESel1, 0, S_ISynBG, "GESel1MonitorBG");
+    MonitorNeuronFile GESel1MonitorConstRecAMPA(Network, GESel1, 0, S_ISynRecAMPA, "GESel1MonitorRecAMPA");
+    MonitorNeuronFile GESel1MonitorConstRecNMDA(Network, GESel1, 0, S_ISynRecNMDA, "GESel1MonitorRecNMDA");
+    MonitorNeuronFile GESel1MonitorConstRecGABA(Network, GESel1, 0, S_ISynRecGABA, "GESel1MonitorRecGABA");
+    MonitorNeuronFile GESel1MonitorConstTot(Network, GESel1, 0, S_ISyn, "GESel1MonitorTot");    
+    
 	
 	// Connections to GESel1:
 	GESel1.connectTo(BGESel1);
