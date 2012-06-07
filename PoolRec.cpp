@@ -139,6 +139,7 @@ void PoolRec::updateV()
 	}
 	(*ISyn) += gGABA * STmp * (*VTmp);
     (*ISynRecGABA) += gGABA * STmp * (*VTmp);
+    ISynPoolSum = (*ISyn).sum()/(*ISyn).size();
 	
 	// Update voltage:			
 	(*VTmp) = ((*V) - VMin * (*unitVector));	//TODO: optimize below:
@@ -202,9 +203,26 @@ double* PoolRec::getStateLocation(int whichNeuron, State whichState)
 			break;
 		case S_ISynRecGABA:
 			returnAddress = &((*ISynRecGABA)[whichNeuron]);
-			break;
+			break;          
 		default:
 			returnAddress = getStateLocationConductance(whichNeuron, whichState);
+	}
+	
+	return returnAddress;
+};
+
+double* PoolRec::getStateLocation(State whichState) 
+{
+	
+	double *returnAddress;
+	
+	switch (whichState)
+	{
+		case S_ISynPoolSum:
+			returnAddress = &ISynPoolSum;
+			break;            
+		default:
+			returnAddress = 0;
 	}
 	
 	return returnAddress;

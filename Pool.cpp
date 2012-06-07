@@ -62,6 +62,11 @@ double* Pool::getStateLocation(int whichNeuron, State whichState)
 	return 0;
 };
 
+double* Pool::getStateLocation(State whichState) 
+{
+	return 0;
+};
+
 void Pool::toFile(string appendString) 
 {
 	string myUnderscore = "_";

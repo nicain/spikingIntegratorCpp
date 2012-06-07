@@ -65,6 +65,8 @@ class PoolRec: public Pool
 	vector<double> *Ex_Inputs_NMDA_w;
 	vector<double*> *Inh_Inputs_GABA;
     
+    double ISynPoolSum;
+    
     // Currents to record:
     valarray<double> *ISynBG;
     valarray<double> *ISynRecAMPA;
@@ -83,6 +85,7 @@ class PoolRec: public Pool
 	void init();	
 	void updateV();
 	double* getStateLocation(int, State);
+	double* getStateLocation(State);
 	virtual double* getStateLocationConductance(int, State);
 	
 

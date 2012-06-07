@@ -35,6 +35,7 @@ public:
 	virtual void updateS();
 	virtual void updateV();
 	virtual double* getStateLocation(int, State);
+    virtual double* getStateLocation(State);
 	void print();
 	void toFile(string appendString);
 	void toFileExact(string fileNamePrefix);

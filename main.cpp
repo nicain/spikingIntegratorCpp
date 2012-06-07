@@ -19,6 +19,8 @@
 #include "Monitor.h"
 #include "MonitorNeuron.h"
 #include "MonitorNeuronFile.h"
+#include "MonitorPool.h"
+#include "MonitorPoolFile.h"
 #include "MonitorBrain.h"
 
 // Add variable names to scope:
@@ -100,7 +102,7 @@ int main( int argc,      // Number of strings in array argv
 	// Excitatory populations:
 	PoolRecEx GESel1("GESel1", Network, NSel, true);
 	PoolRecEx GESel2("GESel2", Network, NSel, true);
-	PoolRecEx GENSel("GENSel", Network, NNSel, false);
+	PoolRecEx GENSel("GENSel", Network, NNSel, true);
 	
 	// Inhibitory populations:
 	PoolRecInh GI("GI", Network, NI, false);
@@ -109,18 +111,21 @@ int main( int argc,      // Number of strings in array argv
 	//========================== Connect Network =============================//
 	//========================================================================//
     
-    MonitorNeuronFile GESel1MonitorConstBG(Network, GESel1, 0, S_ISynBG, "GESel1MonitorBG");
-    MonitorNeuronFile GESel1MonitorConstRecAMPA(Network, GESel1, 0, S_ISynRecAMPA, "GESel1MonitorRecAMPA");
-    MonitorNeuronFile GESel1MonitorConstRecNMDA(Network, GESel1, 0, S_ISynRecNMDA, "GESel1MonitorRecNMDA");
-    MonitorNeuronFile GESel1MonitorConstRecGABA(Network, GESel1, 0, S_ISynRecGABA, "GESel1MonitorRecGABA");
-    MonitorNeuronFile GESel1MonitorConstTot(Network, GESel1, 0, S_ISyn, "GESel1MonitorTot");
+//    MonitorNeuronFile GESel1MonitorConstBG(Network, GESel1, 0, S_ISynBG, "GESel1MonitorBG");
+//    MonitorNeuronFile GESel1MonitorConstRecAMPA(Network, GESel1, 0, S_ISynRecAMPA, "GESel1MonitorRecAMPA");
+//    MonitorNeuronFile GESel1MonitorConstRecNMDA(Network, GESel1, 0, S_ISynRecNMDA, "GESel1MonitorRecNMDA");
+//    MonitorNeuronFile GESel1MonitorConstRecGABA(Network, GESel1, 0, S_ISynRecGABA, "GESel1MonitorRecGABA");
+//    MonitorNeuronFile GESel1MonitorConstTot(Network, GESel1, 0, S_ISyn, "GESel1MonitorTot");
+//    
+//    MonitorNeuronFile GESel2MonitorConstBG(Network, GESel2, 0, S_ISynBG, "GESel2MonitorBG");
+//    MonitorNeuronFile GESel2MonitorConstRecAMPA(Network, GESel2, 0, S_ISynRecAMPA, "GESel2MonitorRecAMPA");
+//    MonitorNeuronFile GESel2MonitorConstRecNMDA(Network, GESel2, 0, S_ISynRecNMDA, "GESel2MonitorRecNMDA");
+//    MonitorNeuronFile GESel2MonitorConstRecGABA(Network, GESel2, 0, S_ISynRecGABA, "GESel2MonitorRecGABA");
+//    MonitorNeuronFile GESel2MonitorConstTot(Network, GESel2, 0, S_ISyn, "GESel2MonitorTot");
     
-    MonitorNeuronFile GESel2MonitorConstBG(Network, GESel2, 0, S_ISynBG, "GESel2MonitorBG");
-    MonitorNeuronFile GESel2MonitorConstRecAMPA(Network, GESel2, 0, S_ISynRecAMPA, "GESel2MonitorRecAMPA");
-    MonitorNeuronFile GESel2MonitorConstRecNMDA(Network, GESel2, 0, S_ISynRecNMDA, "GESel2MonitorRecNMDA");
-    MonitorNeuronFile GESel2MonitorConstRecGABA(Network, GESel2, 0, S_ISynRecGABA, "GESel2MonitorRecGABA");
-    MonitorNeuronFile GESel2MonitorConstTot(Network, GESel2, 0, S_ISyn, "GESel2MonitorTot");
-    
+    MonitorPoolFile GESel1MonitorPoolTot(Network, GESel1, S_ISynPoolSum, "GESel1MonitorPoolTot");
+    MonitorPoolFile GESel2MonitorPoolTot(Network, GESel2, S_ISynPoolSum, "GESel2MonitorPoolTot");
+    MonitorPoolFile GENSelMonitorPoolTot(Network, GENSel, S_ISynPoolSum, "GENSelMonitorPoolTot");
 	
 	// Connections to GESel1:
 	GESel1.connectTo(BGESel1);
