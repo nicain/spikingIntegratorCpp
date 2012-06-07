@@ -105,7 +105,7 @@ int main( int argc,      // Number of strings in array argv
 	PoolRecEx GENSel("GENSel", Network, NNSel, true);
 	
 	// Inhibitory populations:
-	PoolRecInh GI("GI", Network, NI, false);
+	PoolRecInh GI("GI", Network, NI, true);
 	
 	//========================================================================//
 	//========================== Connect Network =============================//
@@ -115,7 +115,7 @@ int main( int argc,      // Number of strings in array argv
 //    MonitorNeuronFile GESel1MonitorConstRecAMPA(Network, GESel1, 0, S_ISynRecAMPA, "GESel1MonitorRecAMPA");
 //    MonitorNeuronFile GESel1MonitorConstRecNMDA(Network, GESel1, 0, S_ISynRecNMDA, "GESel1MonitorRecNMDA");
 //    MonitorNeuronFile GESel1MonitorConstRecGABA(Network, GESel1, 0, S_ISynRecGABA, "GESel1MonitorRecGABA");
-//    MonitorNeuronFile GESel1MonitorConstTot(Network, GESel1, 0, S_ISyn, "GESel1MonitorTot");
+    MonitorNeuronFile GESel1MonitorConstTot(Network, GESel1, 0, S_ISyn, "GESel1MonitorTotN0");
 //    
 //    MonitorNeuronFile GESel2MonitorConstBG(Network, GESel2, 0, S_ISynBG, "GESel2MonitorBG");
 //    MonitorNeuronFile GESel2MonitorConstRecAMPA(Network, GESel2, 0, S_ISynRecAMPA, "GESel2MonitorRecAMPA");
@@ -126,6 +126,7 @@ int main( int argc,      // Number of strings in array argv
     MonitorPoolFile GESel1MonitorPoolTot(Network, GESel1, S_ISynPoolSum, "GESel1MonitorPoolTot");
     MonitorPoolFile GESel2MonitorPoolTot(Network, GESel2, S_ISynPoolSum, "GESel2MonitorPoolTot");
     MonitorPoolFile GENSelMonitorPoolTot(Network, GENSel, S_ISynPoolSum, "GENSelMonitorPoolTot");
+    MonitorPoolFile GIMonitorPoolTot(Network, GI, S_ISynPoolSum, "GIMonitorPoolTot");
 	
 	// Connections to GESel1:
 	GESel1.connectTo(BGESel1);
