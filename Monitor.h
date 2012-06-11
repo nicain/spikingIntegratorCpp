@@ -3,7 +3,7 @@
 
 class Brain;
 
-enum State {S_X, S_AMPA, S_NMDA, S_GABA, S_V, S_ISyn, S_ISynBG, S_ISynRecAMPA, S_ISynRecNMDA, S_ISynRecGABA, S_ISynPoolSum};
+enum State {S_X, S_AMPA, S_NMDA, S_GABA, S_V, S_ISyn, S_ISynBG, S_ISynRecAMPA, S_ISynRecNMDA, S_ISynRecGABA, S_ISynPoolSum, S_ISynInput,S_ISynInputPoolSum, S_ISynBGPoolSum, S_ISynRecAMPASum, S_ISynRecNMDASum, S_ISynRecGABASum};
 
 class Monitor
 {	

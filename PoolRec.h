@@ -66,9 +66,15 @@ class PoolRec: public Pool
 	vector<double*> *Inh_Inputs_GABA;
     
     double ISynPoolSum;
+    double ISynInputPoolSum;
+    double ISynBGPoolSum;
+    double ISynRecAMPASum;
+    double ISynRecNMDASum;
+    double ISynRecGABASum;
     
     // Currents to record:
     valarray<double> *ISynBG;
+    valarray<double> *ISynInput;
     valarray<double> *ISynRecAMPA;
     valarray<double> *ISynRecNMDA;
     valarray<double> *ISynRecGABA;

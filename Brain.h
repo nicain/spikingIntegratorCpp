@@ -5,6 +5,7 @@
 	1) Undo commented childPool
 */
 
+#include <valarray>
 #include <boost/uuid/uuid.hpp>
 #include <boost/uuid/uuid_generators.hpp>
 #include <boost/uuid/uuid_io.hpp>
@@ -17,6 +18,7 @@ using boost::uuids::uuid;
 
 class Pool;
 class Monitor;
+class PoolBG;
 
 class Brain
 {	
@@ -41,9 +43,12 @@ public:
 	double t;
 	vector<Pool*> *childPool;
 	vector<Monitor*> *monitor;
-	
+	vector< valarray<double>* > *Inputs_AMPA;
+    
 	// Member functions:
 	void addPool(Pool &addPool);
+    bool isBGInput(valarray<double>* inputPointer);
+	void addInputPool(PoolBG &addPool);
 	void addMonitor(Monitor &monitorToAdd);
 	void init();
 	void run(double);

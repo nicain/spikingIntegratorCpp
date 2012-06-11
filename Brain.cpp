@@ -5,6 +5,7 @@
 
 #include "Brain.h"
 #include "Pool.h" 
+#include "PoolBG.h" 
 #include "Monitor.h"
 
 using namespace std;
@@ -50,16 +51,24 @@ void Brain::construct(string poolName_in)
 	// Initialize as empty:
 	childPool = new vector<Pool*>;
 	monitor = new vector<Monitor*>;
+	Inputs_AMPA = new vector< valarray<double>* >;
 };
 
 Brain::~Brain() 
 {
 	delete childPool;
+    delete Inputs_AMPA;
 };
 
 void Brain::addPool(Pool &poolToAdd)
 {
 	childPool->push_back(&poolToAdd);
+}
+
+void Brain::addInputPool(PoolBG &poolToAdd)
+{
+    Inputs_AMPA->push_back(poolToAdd.AMPA);
+    cout << poolToAdd.AMPA << endl;
 }
 
 void Brain::addMonitor(Monitor &monitorToAdd)
@@ -126,6 +135,18 @@ void Brain::run(double deltaT)
 void Brain::spikesToFile()
 {
 	spikesToFile(this->UUID_string + "_" + this->poolName);
+}
+
+bool Brain::isBGInput(valarray<double>* inputPointer)
+{
+	bool match = false;
+    for (int i=0; i<(this->Inputs_AMPA)->size() ;i++){
+        if (inputPointer == (*(this->Inputs_AMPA))[i]) {
+            match = true;
+            break;
+        }
+    }
+    return match;
 }
 
 void Brain::spikesToFile(string inputString)

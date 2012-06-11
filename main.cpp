@@ -98,6 +98,8 @@ int main( int argc,      // Number of strings in array argv
 	// Input populations:
 	PoolBGHPoisson InputSel1("InputSel1", Network, NSel, recordInputSpikes, InputPoolFRSel1, inputCorrelation, tOn, tOff);
 	PoolBGHPoisson InputSel2("InputSel2", Network, NSel, recordInputSpikes, InputPoolFRSel2, inputCorrelation, tOn, tOff);
+    Network.addInputPool(InputSel1);
+    Network.addInputPool(InputSel2);
 	
 	// Excitatory populations:
 	PoolRecEx GESel1("GESel1", Network, NSel, true);
@@ -111,17 +113,24 @@ int main( int argc,      // Number of strings in array argv
 	//========================== Connect Network =============================//
 	//========================================================================//
     
+
     
-    MonitorNeuronFile** ITotSel1 = new MonitorNeuronFile*[240];
-    string MonitorFileNamePrefix1 = "GESel1MonitorTot_";
-    for (int i=0; i<240; i++){
-        ITotSel1[i] = new MonitorNeuronFile(Network, GESel1, i, S_ISyn, MonitorFileNamePrefix1 + boost::lexical_cast<string>(i));
-    }
+    MonitorPoolFile GESel1MonitorConstInput(Network, GESel1, S_ISynInputPoolSum, "GESel1PoolInput");
+    MonitorPoolFile GESel1MonitorConstBG(Network, GESel1, S_ISynBGPoolSum, "GESel1PoolBG");
+    MonitorPoolFile GESel1MonitorAMPA(Network, GESel1, S_ISynRecAMPASum, "GESel1PoolRecAMPA");
+    MonitorPoolFile GESel1MonitorNMDA(Network, GESel1, S_ISynRecNMDASum, "GESel1PoolRecNMDA");
+    MonitorPoolFile GESel1MonitorGABA(Network, GESel1, S_ISynRecGABASum, "GESel1PoolRecGABA");
+
+    MonitorPoolFile GESel2MonitorConstInput(Network, GESel2, S_ISynInputPoolSum, "GESel2PoolInput");
+    MonitorPoolFile GESel2MonitorConstBG(Network, GESel2, S_ISynBGPoolSum, "GESel2PoolBG");
+    MonitorPoolFile GESel2MonitorAMPA(Network, GESel2, S_ISynRecAMPASum, "GESel2PoolRecAMPA");
+    MonitorPoolFile GESel2MonitorNMDA(Network, GESel2, S_ISynRecNMDASum, "GESel2PoolRecNMDA");
+    MonitorPoolFile GESel2MonitorGABA(Network, GESel2, S_ISynRecGABASum, "GESel2PoolRecGABA");
     
-//    MonitorNeuronFile GESel1MonitorConstBG(Network, GESel1, 0, S_ISynBG, "GESel1MonitorBG");
-//    MonitorNeuronFile GESel1MonitorConstRecAMPA(Network, GESel1, 0, S_ISynRecAMPA, "GESel1MonitorRecAMPA");
-//    MonitorNeuronFile GESel1MonitorConstRecNMDA(Network, GESel1, 0, S_ISynRecNMDA, "GESel1MonitorRecNMDA");
-//    MonitorNeuronFile GESel1MonitorConstRecGABA(Network, GESel1, 0, S_ISynRecGABA, "GESel1MonitorRecGABA");
+//    MonitorNeuronFile GESel1MonitorConstRecAMPA(Network, GESel1, 0, S_ISynRecAMPA, "GESel1RecAMPA0");
+//    MonitorNeuronFile GESel1MonitorConstRecNMDA(Network, GESel1, 0, S_ISynRecNMDA, "GESel1RecNMDA0");
+//    MonitorNeuronFile GESel1MonitorConstRecGABA0(Network, GESel1, 0, S_ISynRecGABA, "GESel1RecGABA0");
+//    MonitorNeuronFile GESel1MonitorConstRecGABA1(Network, GESel1, 1, S_ISynRecGABA, "GESel1RecGABA1");
 //    MonitorNeuronFile GESel1MonitorConstTot(Network, GESel1, 0, S_ISyn, "GESel1MonitorTotN0");
     
 //    MonitorNeuronFile GESel2MonitorConstBG(Network, GESel2, 0, S_ISynBG, "GESel2MonitorBG");
@@ -134,6 +143,13 @@ int main( int argc,      // Number of strings in array argv
 //    MonitorPoolFile GESel2MonitorPoolTot(Network, GESel2, S_ISynPoolSum, "GESel2MonitorPoolTot");
 //    MonitorPoolFile GENSelMonitorPoolTot(Network, GENSel, S_ISynPoolSum, "GENSelMonitorPoolTot");
 //    MonitorPoolFile GIMonitorPoolTot(Network, GI, S_ISynPoolSum, "GIMonitorPoolTot");
+    
+//    int NRecordN = 2;
+//    MonitorNeuronFile** ITotSel1 = new MonitorNeuronFile*[NRecordN];
+//    string MonitorFileNamePrefix1 = "GESel1MonitorTot_";
+//    for (int i=0; i<NRecordN; i++){
+//        ITotSel1[i] = new MonitorNeuronFile(Network, GESel1, i, S_ISyn, MonitorFileNamePrefix1 + boost::lexical_cast<string>(i));
+//    }
 	
 	// Connections to GESel1:
 	GESel1.connectTo(BGESel1);
