@@ -23,7 +23,7 @@ MonitorPoolFile::MonitorPoolFile(Brain &parentPool_in, Pool &whichPool_in, State
 void MonitorPoolFile::construct(Brain &parentPool_in, Pool &whichPool_in, State whichState_in, string fileName_in)
 {
 	string fileTypeExtension = ".dat";
-	fileName = fileName_in + fileTypeExtension;
+	fileName = fileName_in + "_" + parentPool_in.UUID_string + fileTypeExtension;
 }
 
 MonitorPoolFile::~MonitorPoolFile() 

@@ -92,8 +92,8 @@ int main( int argc,      // Number of strings in array argv
 	// Backgroud populations:
 	PoolBGHPoisson BGESel1("BGESel1", Network, NSel, recordBGSpikes, BgFRE, 0, 0, tOff);
 	PoolBGHPoisson BGESel2("BGESel2", Network, NSel, recordBGSpikes, BgFRE, 0, 0, tOff);
-	PoolBGHPoisson BGENSel("BGENSel", Network, NNSel, recordBGSpikes, BgFRE, 0, 0, tOff);
-	PoolBGHPoisson BGI("BGI", Network, NI, recordBGSpikes, BgFRI, 0, 0, tOff);
+	PoolBGHPoisson BGENSel("BGENSel", Network, NNSel, false, BgFRE, 0, 0, tOff);
+	PoolBGHPoisson BGI("BGI", Network, NI, false, BgFRI, 0, 0, tOff);
 		
 	// Input populations:
 	PoolBGHPoisson InputSel1("InputSel1", Network, NSel, recordInputSpikes, InputPoolFRSel1, inputCorrelation, tOn, tOff);
@@ -104,10 +104,10 @@ int main( int argc,      // Number of strings in array argv
 	// Excitatory populations:
 	PoolRecEx GESel1("GESel1", Network, NSel, true);
 	PoolRecEx GESel2("GESel2", Network, NSel, true);
-	PoolRecEx GENSel("GENSel", Network, NNSel, true);
+	PoolRecEx GENSel("GENSel", Network, NNSel, false);
 	
 	// Inhibitory populations:
-	PoolRecInh GI("GI", Network, NI, true);
+	PoolRecInh GI("GI", Network, NI, false);
 	
 	//========================================================================//
 	//========================== Connect Network =============================//
@@ -117,15 +117,15 @@ int main( int argc,      // Number of strings in array argv
     
     MonitorPoolFile GESel1MonitorConstInput(Network, GESel1, S_ISynInputPoolSum, "GESel1PoolInput");
     MonitorPoolFile GESel1MonitorConstBG(Network, GESel1, S_ISynBGPoolSum, "GESel1PoolBG");
-    MonitorPoolFile GESel1MonitorAMPA(Network, GESel1, S_ISynRecAMPASum, "GESel1PoolRecAMPA");
-    MonitorPoolFile GESel1MonitorNMDA(Network, GESel1, S_ISynRecNMDASum, "GESel1PoolRecNMDA");
-    MonitorPoolFile GESel1MonitorGABA(Network, GESel1, S_ISynRecGABASum, "GESel1PoolRecGABA");
+//    MonitorPoolFile GESel1MonitorAMPA(Network, GESel1, S_ISynRecAMPASum, "GESel1PoolRecAMPA");
+//    MonitorPoolFile GESel1MonitorNMDA(Network, GESel1, S_ISynRecNMDASum, "GESel1PoolRecNMDA");
+//    MonitorPoolFile GESel1MonitorGABA(Network, GESel1, S_ISynRecGABASum, "GESel1PoolRecGABA");
 
     MonitorPoolFile GESel2MonitorConstInput(Network, GESel2, S_ISynInputPoolSum, "GESel2PoolInput");
     MonitorPoolFile GESel2MonitorConstBG(Network, GESel2, S_ISynBGPoolSum, "GESel2PoolBG");
-    MonitorPoolFile GESel2MonitorAMPA(Network, GESel2, S_ISynRecAMPASum, "GESel2PoolRecAMPA");
-    MonitorPoolFile GESel2MonitorNMDA(Network, GESel2, S_ISynRecNMDASum, "GESel2PoolRecNMDA");
-    MonitorPoolFile GESel2MonitorGABA(Network, GESel2, S_ISynRecGABASum, "GESel2PoolRecGABA");
+//    MonitorPoolFile GESel2MonitorAMPA(Network, GESel2, S_ISynRecAMPASum, "GESel2PoolRecAMPA");
+//    MonitorPoolFile GESel2MonitorNMDA(Network, GESel2, S_ISynRecNMDASum, "GESel2PoolRecNMDA");
+//    MonitorPoolFile GESel2MonitorGABA(Network, GESel2, S_ISynRecGABASum, "GESel2PoolRecGABA");
     
 //    MonitorNeuronFile GESel1MonitorConstRecAMPA(Network, GESel1, 0, S_ISynRecAMPA, "GESel1RecAMPA0");
 //    MonitorNeuronFile GESel1MonitorConstRecNMDA(Network, GESel1, 0, S_ISynRecNMDA, "GESel1RecNMDA0");
