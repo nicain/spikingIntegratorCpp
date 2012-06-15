@@ -118,10 +118,10 @@ if args.fr == 1:
 if args.thresholdTest == 1:
     CNP.thresholdTestUUID(currUUID, list(np.linspace(.1,40,5000)),tOn=args.tOn-50)
     CNP.thresholdTestUUIDDiff(currUUID, list(np.linspace(.1,40,5000)),tOn=args.tOn-50)
-    CNP.thresholdTestSpikesUUID(currUUID, list(np.linspace(1,5000,5000)),tOn=args.tOn)
-    CNP.thresholdTestSpikesBGTooUUID(currUUID, list(np.linspace(1,7000,5000)),tOn=args.tOn)
-    CNP.thresholdTestCurrentUUID(currUUID, list(np.linspace(.000001,.02,5000)),tOn=args.tOn)
-    CNP.thresholdTestCurrentBGTooUUID(currUUID, list(np.linspace(.000001,.05,5000)),tOn=args.tOn)
+    CNP.thresholdTestSpikesBGTooUUID(currUUID, list(np.linspace(1,7000,5000)),tOn=args.tOn, beta=0)
+    CNP.thresholdTestSpikesBGTooUUID(currUUID, list(np.linspace(1,7000,5000)),tOn=args.tOn, beta=.01)
+    CNP.thresholdTestSpikesBGTooUUID(currUUID, list(np.linspace(1,7000,5000)),tOn=args.tOn, beta=.05)
+    CNP.thresholdTestSpikesBGTooUUID(currUUID, list(np.linspace(1,7000,5000)),tOn=args.tOn, beta=.1)
 
     BGESel1FileName = CNP.findFileName([currUUID, ".ntf", "BGESel1"])[0]
     BGESel2FileName = CNP.findFileName([currUUID, ".ntf", "BGESel2"])[0]
