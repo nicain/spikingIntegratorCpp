@@ -120,8 +120,8 @@ if args.thresholdTest == 1:
     CNP.thresholdTestUUIDDiff(currUUID, list(np.linspace(.1,40,5000)),tOn=args.tOn-50)
     CNP.thresholdTestCurrentUUID(currUUID, list(np.linspace(.00001,.02,5000)),tOn=args.tOn)
     CNP.thresholdTestSpikesBGTooUUID(currUUID, list(np.linspace(1,7000,5000)),tOn=args.tOn, beta=0)
-    CNP.splitCurrentAnalysisBG(currUUID, list(np.linspace(1,.02,5000)))
-    CNP.splitCurrentAnalysisAll(currUUID, list(np.linspace(1,.2,5000)))
+    CNP.splitCurrentAnalysisBG(currUUID, list(np.linspace(.00001,.02,5000)))
+    CNP.splitCurrentAnalysisAll(currUUID, list(np.linspace(.00001,.2,5000)))
 
     BGESel1FileName = CNP.findFileName([currUUID, ".ntf", "BGESel1"])[0]
     BGESel2FileName = CNP.findFileName([currUUID, ".ntf", "BGESel2"])[0]
