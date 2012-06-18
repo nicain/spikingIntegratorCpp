@@ -108,24 +108,37 @@ int main( int argc,      // Number of strings in array argv
 	
 	// Inhibitory populations:
 	PoolRecInh GI("GI", Network, NI, false);
+    
+    // Dummy populations:
+//	PoolBGHPoisson BGESel1Dummy("BGESel1Dummy", Network, NSel, recordBGSpikes, BgFRE, 0, 0, tOff);
+    PoolRecEx GESel1Dummy("GESel1Dummy", Network, NSel, true);
+//    PoolBGHPoisson BGESel2Dummy("BGESel2Dummy", Network, NSel, recordBGSpikes, BgFRE, 0, 0, tOff);
+    PoolRecEx GESel2Dummy("GESel2Dummy", Network, NSel, true);
 	
 	//========================================================================//
 	//========================== Connect Network =============================//
 	//========================================================================//
     
-
     
-    MonitorPoolFile GESel1MonitorConstInput(Network, GESel1, S_ISynInputPoolSum, "GESel1PoolInput");
-    MonitorPoolFile GESel1MonitorConstBG(Network, GESel1, S_ISynBGPoolSum, "GESel1PoolBG");
-    MonitorPoolFile GESel1MonitorAMPA(Network, GESel1, S_ISynRecAMPASum, "GESel1PoolRecAMPA");
-    MonitorPoolFile GESel1MonitorNMDA(Network, GESel1, S_ISynRecNMDASum, "GESel1PoolRecNMDA");
-    MonitorPoolFile GESel1MonitorGABA(Network, GESel1, S_ISynRecGABASum, "GESel1PoolRecGABA");
 
-    MonitorPoolFile GESel2MonitorConstInput(Network, GESel2, S_ISynInputPoolSum, "GESel2PoolInput");
-    MonitorPoolFile GESel2MonitorConstBG(Network, GESel2, S_ISynBGPoolSum, "GESel2PoolBG");
-    MonitorPoolFile GESel2MonitorAMPA(Network, GESel2, S_ISynRecAMPASum, "GESel2PoolRecAMPA");
-    MonitorPoolFile GESel2MonitorNMDA(Network, GESel2, S_ISynRecNMDASum, "GESel2PoolRecNMDA");
-    MonitorPoolFile GESel2MonitorGABA(Network, GESel2, S_ISynRecGABASum, "GESel2PoolRecGABA");
+//    MonitorPoolFile GESel1DummyAll(Network, GESel1Dummy, S_ISynPoolSum, "GESel1DummyAll");
+//    MonitorPoolFile GESel2DummyAll(Network, GESel2Dummy, S_ISynPoolSum, "GESel2DummyAll");
+//    MonitorPoolFile GESel1DummyNMDA(Network, GESel1Dummy, S_ISynRecNMDASum, "GESel1DummyNMDA");
+//    MonitorPoolFile GESel2DummyNMDA(Network, GESel2Dummy, S_ISynRecNMDASum, "GESel2DummyNMDA");
+//    MonitorPoolFile GESel1DummyGABA(Network, GESel1Dummy, S_ISynRecGABASum, "GESel1DummyGABA");
+//    MonitorPoolFile GESel2DummyGABA(Network, GESel2Dummy, S_ISynRecGABASum, "GESel2DummyGABA");
+    
+//    MonitorPoolFile GESel1MonitorConstInput(Network, GESel1, S_ISynInputPoolSum, "GESel1PoolInput");
+//    MonitorPoolFile GESel1MonitorConstBG(Network, GESel1, S_ISynBGPoolSum, "GESel1PoolBG");
+//    MonitorPoolFile GESel1MonitorAMPA(Network, GESel1, S_ISynRecAMPASum, "GESel1PoolRecAMPA");
+//    MonitorPoolFile GESel1MonitorNMDA(Network, GESel1, S_ISynRecNMDASum, "GESel1PoolRecNMDA");
+//    MonitorPoolFile GESel1MonitorGABA(Network, GESel1, S_ISynRecGABASum, "GESel1PoolRecGABA");
+//
+//    MonitorPoolFile GESel2MonitorConstInput(Network, GESel2, S_ISynInputPoolSum, "GESel2PoolInput");
+//    MonitorPoolFile GESel2MonitorConstBG(Network, GESel2, S_ISynBGPoolSum, "GESel2PoolBG");
+//    MonitorPoolFile GESel2MonitorAMPA(Network, GESel2, S_ISynRecAMPASum, "GESel2PoolRecAMPA");
+//    MonitorPoolFile GESel2MonitorNMDA(Network, GESel2, S_ISynRecNMDASum, "GESel2PoolRecNMDA");
+//    MonitorPoolFile GESel2MonitorGABA(Network, GESel2, S_ISynRecGABASum, "GESel2PoolRecGABA");
     
 //    MonitorNeuronFile GESel1MonitorConstRecAMPA(Network, GESel1, 0, S_ISynRecAMPA, "GESel1RecAMPA0");
 //    MonitorNeuronFile GESel1MonitorConstRecNMDA(Network, GESel1, 0, S_ISynRecNMDA, "GESel1RecNMDA0");
@@ -153,15 +166,31 @@ int main( int argc,      // Number of strings in array argv
 	
 	// Connections to GESel1:
 	GESel1.connectTo(BGESel1);
-	GESel1.connectTo(InputSel1);
+//	GESel1.connectTo(InputSel1);
 	GESel1.connectTo(GESel1, wPlus);
 	GESel1.connectTo(GESel2, wMinus);
 	GESel1.connectTo(GENSel, wMinus);
 	GESel1.connectTo(GI);
+    
+	// Connections to GESel1Dummy:
+	GESel1Dummy.connectTo(BGESel1);
+	GESel1Dummy.connectTo(InputSel1);
+	GESel1Dummy.connectTo(GESel1, wPlus); //1, 1.3, 1.5      1.525      1.55  1.6   1.7
+	GESel1Dummy.connectTo(GESel2, wMinus);
+	GESel1Dummy.connectTo(GENSel, wMinus);
+	GESel1Dummy.connectTo(GI);
+    
+	// Connections to GESel2Dummy:
+	GESel2Dummy.connectTo(BGESel2);
+	GESel2Dummy.connectTo(InputSel2);
+	GESel2Dummy.connectTo(GESel2, wPlus);
+	GESel2Dummy.connectTo(GESel1, wMinus);
+	GESel2Dummy.connectTo(GENSel, wMinus);
+	GESel2Dummy.connectTo(GI);
 	
 	// Connections to GESel2:
 	GESel2.connectTo(BGESel2);
-	GESel2.connectTo(InputSel2);
+//	GESel2.connectTo(InputSel2);
 	GESel2.connectTo(GESel1, wMinus);
 	GESel2.connectTo(GESel2, wPlus);
 	GESel2.connectTo(GENSel, wMinus);

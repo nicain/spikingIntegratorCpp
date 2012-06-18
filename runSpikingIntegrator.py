@@ -118,16 +118,17 @@ if args.fr == 1:
 if args.thresholdTest == 1:
     CNP.thresholdTestUUID(currUUID, list(np.linspace(.1,40,5000)),tOn=args.tOn)
     CNP.thresholdTestUUIDDiff(currUUID, list(np.linspace(.1,40,5000)),tOn=args.tOn)
-    CNP.thresholdTestCurrentUUID(currUUID, list(np.linspace(.00001,.02,5000)),tOn=args.tOn)
-    CNP.thresholdTestSpikesBGTooUUID(currUUID, list(np.linspace(.1,7000,5000)),tOn=args.tOn, beta=0)
-    CNP.splitCurrentAnalysisBG(currUUID, list(np.linspace(.0000001,.02,5000)))
-    CNP.splitCurrentAnalysisAll(currUUID, list(np.linspace(.0000001,.2,5000)))
+    CNP.totalSpikeDiffCompare(currUUID, list(np.linspace(2000,5000,5000)),tOn=args.tOn)
+#    CNP.thresholdTestCurrentUUID(currUUID, list(np.linspace(.00001,.02,5000)),tOn=args.tOn)
+#    CNP.thresholdTestSpikesBGTooUUID(currUUID, list(np.linspace(.1,7000,5000)),tOn=args.tOn, beta=0)
+#    CNP.splitCurrentAnalysisBG(currUUID, list(np.linspace(.0000001,.02,5000)))
+#    CNP.splitCurrentAnalysisAll(currUUID, list(np.linspace(.0000001,.2,5000)))
 
-    BGESel1FileName = CNP.findFileName([currUUID, ".ntf", "BGESel1"])[0]
-    BGESel2FileName = CNP.findFileName([currUUID, ".ntf", "BGESel2"])[0]
-
-    os.remove(BGESel1FileName)
-    os.remove(BGESel2FileName)
+#    BGESel1FileName = CNP.findFileName([currUUID, ".ntf", "BGESel1"])[0]
+#    BGESel2FileName = CNP.findFileName([currUUID, ".ntf", "BGESel2"])[0]
+#
+#    os.remove(BGESel1FileName)
+#    os.remove(BGESel2FileName)
 
            
 tEnd = time.mktime(time.localtime())
