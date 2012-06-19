@@ -50,6 +50,7 @@ void PoolRec::construct()
 	Ex_Inputs_NMDA = new vector<double*>;
 	Ex_Inputs_NMDA_w = new vector<double>;
 	Inh_Inputs_GABA = new vector<double*>;
+    Inh_Inputs_GABA_w = new vector<double>;
 	
 	// Create helper vectors:
 	unitVector = new valarray<double>((double)1, N);
@@ -77,6 +78,7 @@ PoolRec::~PoolRec()
 	delete Ex_Inputs_NMDA;
 	delete Ex_Inputs_NMDA_w;
 	delete Inh_Inputs_GABA;
+    delete Inh_Inputs_GABA_w;
 	
 	delete unitVector;
 	delete VTmp;
@@ -119,7 +121,7 @@ void PoolRec::updateV()
 	STmp = 0;
 	for (i = 0; i < (*Inh_Inputs_GABA).size(); i++)
 	{
-		STmp += (*((*Inh_Inputs_GABA)[i]));
+		STmp += (*((*Inh_Inputs_GABA)[i])) * ((*Inh_Inputs_GABA_w)[i]);
 	}
 	(*ISyn) += gGABA * STmp * (*VTmp);
 	
@@ -156,9 +158,10 @@ void PoolRec::connectTo(PoolRecEx &ExPool_in, double wIn)
 	Ex_Inputs_NMDA_w->push_back(wIn);
 }
 
-void PoolRec::connectTo(PoolRecInh &InhPool_in)
+void PoolRec::connectTo(PoolRecInh &InhPool_in, double wIn)
 {
 	Inh_Inputs_GABA->push_back(&(InhPool_in).GABA_pooled);
+    Inh_Inputs_GABA_w->push_back(wIn);
 }
 
 double* PoolRec::getStateLocation(int whichNeuron, State whichState) 

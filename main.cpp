@@ -51,28 +51,24 @@ int main( int argc,      // Number of strings in array argv
 	const bool recordInputSpikes = lexical_cast<bool>(argv[8]);
 	
 	// Network dimension settings:
-	const int NN = 2000;
-	const double frEx = .8;
-	const double frSel = .15;
+    const double scale = 2;
 	const double BgFRE = 2400;
 	const double BgFRI = 2400;
 	
 	// Connectivity settings:
 	double w = 1;
 	double wPlus = 1.7;
+    const double wMinus = .876;
 	
 	// Derived from passed args:
 	const double InputPoolFRSel1 = 40 + .4*Coh;
 	const double InputPoolFRSel2 = 40 - .4*Coh;
 	
 	// Network dimension settings, derived from settings:
-	const int NE = NN*frEx;
-	const int NI = NN-NE;
-	const int NSel = NE*frSel;
-	const int NNSel = NE - 2*NSel;
-	
-	// Connectivity settings, derived from settings:
-	const double wMinus = (1 - frSel*(wPlus - 1)/(1 - frSel));
+	const int NI = 400*scale;
+	const int NSel = 240;
+	const int NNSel = 1120*scale;
+
 	
 	//========================================================================//
 	//========================== Create Network ==============================//
@@ -114,30 +110,30 @@ int main( int argc,      // Number of strings in array argv
 	GESel1.connectTo(InputSel1);
 	GESel1.connectTo(GESel1, wPlus);
 	GESel1.connectTo(GESel2, wMinus);
-	GESel1.connectTo(GENSel, wMinus);
-	GESel1.connectTo(GI);
+	GESel1.connectTo(GENSel, wMinus/scale);
+	GESel1.connectTo(GI, w/scale);
 	
 	// Connections to GESel2:
 	GESel2.connectTo(BGESel2);
 	GESel2.connectTo(InputSel2);
 	GESel2.connectTo(GESel1, wMinus);
 	GESel2.connectTo(GESel2, wPlus);
-	GESel2.connectTo(GENSel, wMinus);
-	GESel2.connectTo(GI);
+	GESel2.connectTo(GENSel, wMinus/scale);
+	GESel2.connectTo(GI, w/scale);
 	
 	// Connections to GENSel:
 	GENSel.connectTo(BGENSel);
 	GENSel.connectTo(GESel1, w);
 	GENSel.connectTo(GESel2, w);
-	GENSel.connectTo(GENSel, w);
-	GENSel.connectTo(GI);
+	GENSel.connectTo(GENSel, w/scale);
+	GENSel.connectTo(GI, w/scale);
 	
 	// Connections to GI:
 	GI.connectTo(BGI);
 	GI.connectTo(GESel1, w);
 	GI.connectTo(GESel2, w);
-	GI.connectTo(GENSel, w);
-	GI.connectTo(GI);
+	GI.connectTo(GENSel, w/scale);
+	GI.connectTo(GI, w/scale);
 	
 	//========================================================================//
 	//=========================== Run Network ================================//

@@ -64,6 +64,7 @@ class PoolRec: public Pool
 	vector<double*> *Ex_Inputs_NMDA;
 	vector<double> *Ex_Inputs_NMDA_w;
 	vector<double*> *Inh_Inputs_GABA;
+	vector<double> *Inh_Inputs_GABA_w;    
 	
 	// Helper vectors
 	valarray<double> *unitVector;
@@ -73,7 +74,7 @@ class PoolRec: public Pool
 	// Member functions:
 	void connectTo(PoolBG &BGPool_in);
 	void connectTo(PoolRecEx &BGPool_in, double wIn);
-	void connectTo(PoolRecInh &BGPool_in);
+	void connectTo(PoolRecInh &BGPool_in, double wIn);
 	void init();	
 	void updateV();
 	double* getStateLocation(int, State);
