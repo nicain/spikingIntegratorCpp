@@ -118,7 +118,8 @@ if args.fr == 1:
 if args.thresholdTest == 1:
     CNP.thresholdTestUUID(currUUID, list(np.linspace(.1,40,5000)),tOn=args.tOn)
     CNP.thresholdTestICUUID(currUUID, list(np.linspace(.1,40,5000)),tOn=args.tOn, FRDelta=.5)
-    CNP.thresholdTestUUIDDiff(currUUID, list(np.linspace(.1,40,5000)),tOn=args.tOn-50)
+    CNP.thresholdTestUUIDDiff(currUUID, list(np.linspace(.1,40,5000)),tOn=args.tOn)
+    CNP.thresholdTestICUUIDDiff(currUUID, list(np.linspace(.1,40,5000)),tOn=args.tOn, FRDelta=.5)
     CNP.thresholdTestSpikesUUID(currUUID, list(np.linspace(1,5000,5000)),tOn=args.tOn)
     CNP.thresholdTestSpikesBGTooUUID(currUUID, list(np.linspace(1,7000,5000)),tOn=args.tOn)
 
