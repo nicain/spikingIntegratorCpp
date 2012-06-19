@@ -96,10 +96,10 @@ int main( int argc,      // Number of strings in array argv
 	// Excitatory populations:
 	PoolRecEx GESel1("GESel1", Network, NSel, true);
 	PoolRecEx GESel2("GESel2", Network, NSel, true);
-	PoolRecEx GENSel("GENSel", Network, NNSel, true);
+	PoolRecEx GENSel("GENSel", Network, NNSel, false);
 	
 	// Inhibitory populations:
-	PoolRecInh GI("GI", Network, NI, true);
+	PoolRecInh GI("GI", Network, NI, false);
 	
 	//========================================================================//
 	//========================== Connect Network =============================//
