@@ -14,6 +14,7 @@ import time
 from subprocess import Popen as Popen
 from subprocess import PIPE as PIPE
 import compNeuroPython as CNP
+import numpy as np
 
 maxTDefault = 5000
 
