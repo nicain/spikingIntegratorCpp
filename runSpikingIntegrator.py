@@ -116,6 +116,7 @@ if args.fr == 1:
         CNP.ntfToFRFile(fileNamePrefix + ".ntf")
 
 if args.thresholdTest == 1:
+    print "Testing:"
     CNP.thresholdTestUUID(currUUID, list(np.linspace(.1,40,5000)),tOn=args.tOn)
     CNP.thresholdTestUUIDDiff(currUUID, list(np.linspace(.1,40,5000)),tOn=args.tOn)
     CNP.thresholdTestSpikesBGTooUUID(currUUID, list(np.linspace(1,7000,5000)),tOn=args.tOn, beta=0)
