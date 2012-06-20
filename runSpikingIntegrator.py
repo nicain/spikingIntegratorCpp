@@ -14,6 +14,7 @@ import time
 from subprocess import Popen as Popen
 from subprocess import PIPE as PIPE
 import compNeuroPython as CNP
+import numpy as np
 
 maxTDefault = 5000
 
@@ -114,7 +115,7 @@ if args.fr == 1:
 		CNP.ntfToFRFile(fileNamePrefix + ".ntf")
 
 if args.thresholdTest == 1:
-	CNP.thresholdTestUUID(currUUID, range(1,15+1), tOn=args.tOn)
+	CNP.thresholdTestUUID(currUUID, list(np.linspace(.1,40,5000)), tOn=args.tOn)
 		   
 tEnd = time.mktime(time.localtime())
 print 'Total Computation Time: ', time.strftime("H:%H M:%M S:%S",time.gmtime(tEnd - tBegin))
