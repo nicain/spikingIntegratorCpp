@@ -116,10 +116,10 @@ if args.fr == 1:
 
 if args.thresholdTest == 1:
 	CNP.thresholdTestUUID(currUUID, list(np.linspace(.1,40,500)),tOn=args.tOn)
-	CNP.thresholdTestSpikesUUID(currUUID, list(np.linspace(1,5000,5000)),tOn=args.tOn)
-	CNP.thresholdTestSpikesBGTooUUID(currUUID, list(np.linspace(1,5000,5000)),tOn=args.tOn)
-	CNP.thresholdTestCurrentUUID(currUUID, list(np.linspace(.000001,.2,5000)),tOn=args.tOn)
-	CNP.thresholdTestCurrentBGTooUUID(currUUID, list(np.linspace(.000001,20,5000)),tOn=args.tOn)
+#	CNP.thresholdTestSpikesUUID(currUUID, list(np.linspace(1,5000,5000)),tOn=args.tOn)
+#	CNP.thresholdTestSpikesBGTooUUID(currUUID, list(np.linspace(1,5000,5000)),tOn=args.tOn)
+#	CNP.thresholdTestCurrentUUID(currUUID, list(np.linspace(.000001,.2,5000)),tOn=args.tOn)
+#	CNP.thresholdTestCurrentBGTooUUID(currUUID, list(np.linspace(.000001,20,5000)),tOn=args.tOn)
 		   
 tEnd = time.mktime(time.localtime())
 print 'Total Computation Time: ', time.strftime("H:%H M:%M S:%S",time.gmtime(tEnd - tBegin))
