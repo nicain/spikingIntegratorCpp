@@ -42,6 +42,9 @@ void PoolRec::construct()
     ISynRecAMPA = new valarray<double>((double)0, N);
     ISynRecNMDA = new valarray<double>((double)0, N);
     ISynRecGABA = new valarray<double>((double)0, N);
+    
+    SInput = new valarray<double>((double)0, N);
+    SBG = new valarray<double>((double)0, N);
 	
 	// Set up for RK:
 	RK1 = new valarray<double>((double)0, N);
@@ -98,6 +101,9 @@ PoolRec::~PoolRec()
 	delete unitVector;
 	delete VTmp;
 	delete thresholdTest;
+    
+    delete SInput;
+    delete SBG;
 	
 };
 
@@ -111,22 +117,29 @@ void PoolRec::updateV()
 	(*ISynRecNMDA) = valarray<double>((double)0, N);
 	(*ISynRecGABA) = valarray<double>((double)0, N);
 	(*VTmp) = ((*V) - VE * (*unitVector));
-	
+    
+    (*SInput) = valarray<double>((double)0, N);
+	(*SBG) = valarray<double>((double)0, N);
+	cout << "new" << endl;
 	// First, the background pools:
 	for (i = 0; i < (*BG_Inputs_AMPA).size(); i++)
 	{
         if ((*(this->parentBrain)).isBGInput((*BG_Inputs_AMPA)[i])) {
-         
             (*ISynInput) += gext_AMPA * (*VTmp) * (*((*BG_Inputs_AMPA)[i]));
-            
+            (*SInput) += (*((*BG_Inputs_AMPA)[i]));
         } else 
         {
             (*ISynBG) += gext_AMPA * (*VTmp) * (*((*BG_Inputs_AMPA)[i]));
+            (*SBG) += (*((*BG_Inputs_AMPA)[i]));
         }
         (*ISyn) += gext_AMPA * (*VTmp) * (*((*BG_Inputs_AMPA)[i]));
 	}
     ISynInputPoolSum = (*ISynInput).sum();///(*ISynInput).size();
     ISynBGPoolSum = (*ISynBG).sum();///(*ISynBG).size();
+    SBGSum = (*SBG).sum();///(*ISynBG).size();
+    SInputSum = (*SInput).sum();///(*ISynBG).size();
+//    cout <<  SInputSum << " " << &SInputSum << endl;
+//    cout <<  SBGSum << " " << &SBGSum << endl;
 	
 	// Then, recurrent AMPA:
 	STmp = 0;
@@ -260,6 +273,12 @@ double* PoolRec::getStateLocation(State whichState)
 			break;
 		case S_ISynRecGABASum:
 			returnAddress = &ISynRecGABASum;
+            break;
+		case S_SBGSum:
+			returnAddress = &SBGSum;
+            break;
+		case S_SInputSum:
+			returnAddress = &SInputSum;
 			break;
             
             
@@ -267,6 +286,8 @@ double* PoolRec::getStateLocation(State whichState)
 			returnAddress = 0;
 	}
 	
+
+    
 	return returnAddress;
 };
 

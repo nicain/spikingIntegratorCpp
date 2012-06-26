@@ -71,6 +71,8 @@ class PoolRec: public Pool
     double ISynRecAMPASum;
     double ISynRecNMDASum;
     double ISynRecGABASum;
+    double SInputSum;
+    double SBGSum;
     
     // Currents to record:
     valarray<double> *ISynBG;
@@ -78,6 +80,10 @@ class PoolRec: public Pool
     valarray<double> *ISynRecAMPA;
     valarray<double> *ISynRecNMDA;
     valarray<double> *ISynRecGABA;
+    
+    // Synapse variables to record:
+    valarray<double> *SInput;
+    valarray<double> *SBG;
 	
 	// Helper vectors
 	valarray<double> *unitVector;
