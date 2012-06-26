@@ -127,6 +127,8 @@ if args.thresholdTest == 1:
 
     CNP.thresholdTestSynapseUUID(currUUID, list(np.linspace(.000001,700000,5000)),tOn=args.tOn)
     CNP.thresholdTestSynapseBGTooUUID(currUUID, list(np.linspace(.000001,1500000,5000)),tOn=args.tOn)
+    
+    CNP.thresholdTestICUUIDDiff(currUUID, list(np.linspace(.1,40,5000)),tOn=args.tOn, FRDelta=.5)
 
         
     BGESel1FileName = CNP.findFileName([currUUID, ".ntf", "BGESel1"])[0]
