@@ -131,10 +131,10 @@ if args.thresholdTest == 1:
     CNP.thresholdTestICUUIDDiff(currUUID, list(np.linspace(.1,40,5000)),tOn=args.tOn, FRDelta=.5)
 
         
-#    BGESel1FileName = CNP.findFileName([currUUID, ".ntf", "BGESel1"])[0]
-#    BGESel2FileName = CNP.findFileName([currUUID, ".ntf", "BGESel2"])[0]
-#    os.remove(BGESel1FileName)
-#    os.remove(BGESel2FileName)
+    BGESel1FileName = CNP.findFileName([currUUID, ".ntf", "BGESel1"])[0]
+    BGESel2FileName = CNP.findFileName([currUUID, ".ntf", "BGESel2"])[0]
+    os.remove(BGESel1FileName)
+    os.remove(BGESel2FileName)
            
 tEnd = time.mktime(time.localtime())
 print 'Total Computation Time: ', time.strftime("H:%H M:%M S:%S",time.gmtime(tEnd - tBegin))
