@@ -87,7 +87,7 @@ int main( int argc,      // Number of strings in array argv
 	cout << Network.UUID_string << endl;
 	
     // Monitor time, if you want:
-    MonitorBrain brainMonitor(Network);
+//    MonitorBrain brainMonitor(Network);
 	
 	// Backgroud populations:
 	PoolBGHPoisson BGESel1("BGESel1", Network, NSel, recordBGSpikes, BgFRE, 0, 0, tOff);
@@ -113,16 +113,16 @@ int main( int argc,      // Number of strings in array argv
 	//========================== Connect Network =============================//
 	//========================================================================//
     
-    MonitorPoolFile GESel1MonitorSBGSum(Network, GESel1, S_SBGSum, "GESel1SBGSum");
-    MonitorPoolFile GESel1MonitorSInputSum(Network, GESel1, S_SInputSum, "GESel1SInputSum");
+//    MonitorPoolFile GESel1MonitorSBGSum(Network, GESel1, S_SBGSum, "GESel1SBGSum");
+//    MonitorPoolFile GESel1MonitorSInputSum(Network, GESel1, S_SInputSum, "GESel1SInputSum");
 //    MonitorPoolFile GESel1MonitorConstInput(Network, GESel1, S_ISynInputPoolSum, "GESel1PoolInput");
 //    MonitorPoolFile GESel1MonitorConstBG(Network, GESel1, S_ISynBGPoolSum, "GESel1PoolBG");
 //    MonitorPoolFile GESel1MonitorAMPA(Network, GESel1, S_ISynRecAMPASum, "GESel1PoolRecAMPA");
 //    MonitorPoolFile GESel1MonitorNMDA(Network, GESel1, S_ISynRecNMDASum, "GESel1PoolRecNMDA");
 //    MonitorPoolFile GESel1MonitorGABA(Network, GESel1, S_ISynRecGABASum, "GESel1PoolRecGABA");
 
-    MonitorPoolFile GESel2MonitorSBGSum(Network, GESel2, S_SBGSum, "GESel2SBGSum");
-    MonitorPoolFile GESel2MonitorSInputSum(Network, GESel2, S_SInputSum, "GESel2SInputSum");
+//    MonitorPoolFile GESel2MonitorSBGSum(Network, GESel2, S_SBGSum, "GESel2SBGSum");
+//    MonitorPoolFile GESel2MonitorSInputSum(Network, GESel2, S_SInputSum, "GESel2SInputSum");
 
 //    MonitorPoolFile GESel2MonitorConstInput(Network, GESel2, S_ISynInputPoolSum, "GESel2PoolInput");
 //    MonitorPoolFile GESel2MonitorConstBG(Network, GESel2, S_ISynBGPoolSum, "GESel2PoolBG");
