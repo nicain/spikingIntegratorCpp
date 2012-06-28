@@ -61,15 +61,15 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "1000"
+            argument = "0"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "4000"
+            argument = "2000"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "4000"
+            argument = "2000"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
@@ -81,11 +81,11 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "1"
+            argument = "0"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "1"
+            argument = "0"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

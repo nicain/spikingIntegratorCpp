@@ -120,7 +120,7 @@ void PoolRec::updateV()
     
     (*SInput) = valarray<double>((double)0, N);
 	(*SBG) = valarray<double>((double)0, N);
-	cout << "new" << endl;
+//	cout << "new" << endl;
 	// First, the background pools:
 	for (i = 0; i < (*BG_Inputs_AMPA).size(); i++)
 	{
