@@ -106,13 +106,9 @@ currUUID = process.communicate()[0].strip().split("\n")[0]
 print currUUID
 
 if args.fr == 1:
-	fileNamePrefixList = ["GESel1","GESel2"]
-	for fileNamePrefix in fileNamePrefixList:
-		fileNamePrefix += "_" + currUUID
-		for setting in callString.split()[1:]:
-			fileNamePrefix += "_" + setting
-		
-		CNP.ntfToFRFile(fileNamePrefix + ".ntf",tIn=np.arange(args.tOn,args.tMax,1))
+    fileList = CNP.findFileName([".ntf", "GESel"])
+    for file in fileList:
+        CNP.ntfToFRFile(file,tIn=np.arange(args.tOn,args.tMax,1))
 
 #if args.thresholdTest == 1:
 #	CNP.thresholdTestUUID(currUUID, list(np.linspace(.1,40,500)),tOn=args.tOn)
