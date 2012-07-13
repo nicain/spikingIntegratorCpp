@@ -112,14 +112,10 @@ if args.fr == 1:
 		for setting in callString.split()[1:]:
 			fileNamePrefix += "_" + setting
 		
-		CNP.ntfToFRFile(fileNamePrefix + ".ntf",tIn=np.arange(args.tOn,args.tMax,1))
+		CNP.ntfToFRFile(fileNamePrefix + ".ntf",tIn=np.arange(0,args.tMax,1))
 
-#if args.thresholdTest == 1:
-#	CNP.thresholdTestUUID(currUUID, list(np.linspace(.1,40,500)),tOn=args.tOn)
-#	CNP.thresholdTestSpikesUUID(currUUID, list(np.linspace(1,5000,5000)),tOn=args.tOn)
-#	CNP.thresholdTestSpikesBGTooUUID(currUUID, list(np.linspace(1,5000,5000)),tOn=args.tOn)
-#	CNP.thresholdTestCurrentUUID(currUUID, list(np.linspace(.000001,.2,5000)),tOn=args.tOn)
-#	CNP.thresholdTestCurrentBGTooUUID(currUUID, list(np.linspace(.000001,20,5000)),tOn=args.tOn)
+if args.thresholdTest == 1:
+	CNP.thresholdTestSpikesUUID(currUUID, list(np.linspace(1,1000,5000)),tOn=args.tOn,namePrefix="GESel")
 		   
 tEnd = time.mktime(time.localtime())
 print 'Total Computation Time: ', time.strftime("H:%H M:%M S:%S",time.gmtime(tEnd - tBegin))
