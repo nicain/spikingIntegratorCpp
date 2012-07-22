@@ -130,7 +130,7 @@ int main( int argc,      // Number of strings in array argv
 	//========================== Connect Network =============================//
 	//========================================================================//
 
-    MonitorPoolFile GESel1MonitorSBGSum(Network, GESel1, S_SBGSum, "GESel1SBGSum");
+    //    MonitorPoolFile GESel1MonitorSBGSum(Network, GESel1, S_SBGSum, "GESel1SBGSum");
     //    MonitorPoolFile GESel1MonitorSBGIBarSum(Network, BGEOU1, S_AMPASum, "BGEOU1Sum");
     //    MonitorNeuronFile GESel1MonitorSBGIBar0(Network, BGEOU1, 0, S_AMPA, "BGEOU1_0");
     //    MonitorPoolFile GESel1MonitorSInputSum(Network, GESel1, S_SInputSum, "GESel1SInputSum");
