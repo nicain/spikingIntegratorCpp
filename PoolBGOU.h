@@ -16,7 +16,9 @@ class PoolBGOU: public PoolBG
 	
 	// Constructor+Destructor:
 	PoolBGOU(string, Brain&, int, bool, double, double, double);
-	void construct(double, double, double);
+    PoolBGOU(string, Brain&, int, bool, double, double, double, double);
+	void constructFR(double, double, double);
+    void constructMuSigma(double, double, double, double);
 	~PoolBGOU();
 	
 	// Member data:

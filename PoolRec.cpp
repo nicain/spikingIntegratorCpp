@@ -132,7 +132,7 @@ void PoolRec::updateV()
             (*ISynBG) += gext_AMPA * (*VTmp) * (*((*BG_Inputs_AMPA)[i]));
             (*SBG) += (*((*BG_Inputs_AMPA)[i]));
         }
-        (*ISyn) += gext_AMPA * (*VTmp) * (*((*BG_Inputs_AMPA)[i]));
+        (*ISyn) += gext_AMPA * (*VTmp) * (*((*BG_Inputs_AMPA)[i])) ;
 	}
     ISynInputPoolSum = (*ISynInput).sum();///(*ISynInput).size();
     ISynBGPoolSum = (*ISynBG).sum();///(*ISynBG).size();

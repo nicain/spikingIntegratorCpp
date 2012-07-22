@@ -115,7 +115,7 @@ if args.fr == 1:
 		CNP.ntfToFRFile(fileNamePrefix + ".ntf",tIn=np.arange(0,args.tMax,1))
 
 if args.thresholdTest == 1:
-	CNP.thresholdTestSpikesUUID(currUUID, list(np.linspace(1,1000,5000)),tOn=args.tOn,namePrefix="GESel")
+	CNP.thresholdTestSpikesUUID(currUUID, list(np.linspace(1,500,5000)),tOn=args.tOn,namePrefix="GESel")
 		   
 tEnd = time.mktime(time.localtime())
 print 'Total Computation Time: ', time.strftime("H:%H M:%M S:%S",time.gmtime(tEnd - tBegin))

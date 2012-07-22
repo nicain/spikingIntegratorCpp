@@ -98,7 +98,30 @@ int main( int argc,      // Number of strings in array argv
 	PoolBGHPoisson InputSel2("InputSel2", Network, NSel, recordInputSpikes, InputPoolFRSel2, inputCorrelation, tOn, tOff);
     Network.addInputPool(InputSel1);
     Network.addInputPool(InputSel2);
+    
+    // IBar Offset:
+    PoolBGOU BGEOU1("BGEOU1", Network, NSel, false, .416, .01, 0, tOff);
+    PoolBGOU BGEOU2("BGEOU2", Network, NSel, false, .416, .01, 0, tOff);
+
 	
+    
+    
+//    PoolBGOU::PoolBGOU(string poolName_in,
+//                       Brain &parentPool_in,
+//                       int N_in, 
+//                       bool recordSpikes_in, 
+//                       double mu_in,
+//                       double sigma_in,
+//                       double tOn_in,
+//                       double tOff_in): PoolBG(poolName_in, 
+//                                               parentPool_in, 
+//                                               N_in, 
+//                                               recordSpikes_in)
+    
+    
+    
+    
+    
 	// Excitatory populations:
 	PoolRecEx GESel1("GESel1", Network, NSel, true);
 	PoolRecEx GESel2("GESel2", Network, NSel, true);
@@ -107,13 +130,27 @@ int main( int argc,      // Number of strings in array argv
 	//========================== Connect Network =============================//
 	//========================================================================//
 
+    MonitorPoolFile GESel1MonitorSBGSum(Network, GESel1, S_SBGSum, "GESel1SBGSum");
+    //    MonitorPoolFile GESel1MonitorSBGIBarSum(Network, BGEOU1, S_AMPASum, "BGEOU1Sum");
+    //    MonitorNeuronFile GESel1MonitorSBGIBar0(Network, BGEOU1, 0, S_AMPA, "BGEOU1_0");
+    //    MonitorPoolFile GESel1MonitorSInputSum(Network, GESel1, S_SInputSum, "GESel1SInputSum");
+    //    MonitorPoolFile GESel1MonitorConstInput(Network, GESel1, S_ISynInputPoolSum, "GESel1PoolInput");
+    //    MonitorPoolFile GESel1MonitorConstBG(Network, GESel1, S_ISynBGPoolSum, "GESel1PoolBG");
+    //    MonitorPoolFile GESel1MonitorAMPA(Network, GESel1, S_ISynRecAMPASum, "GESel1PoolRecAMPA");
+    //    MonitorPoolFile GESel1MonitorNMDA(Network, GESel1, S_ISynRecNMDASum, "GESel1PoolRecNMDA");
+    //    MonitorPoolFile GESel1MonitorGABA(Network, GESel1, S_ISynRecGABASum, "GESel1PoolRecGABA");
+    
+    
+
 	// Connections to GESel1:
 	GESel1.connectTo(BGESel1);
 	GESel1.connectTo(InputSel1);
+    GESel1.connectTo(BGEOU1);
 
 	// Connections to GESel2:
 	GESel2.connectTo(BGESel2);
 	GESel2.connectTo(InputSel2);
+    GESel2.connectTo(BGEOU2);
 	
 	//========================================================================//
 	//=========================== Run Network ================================//

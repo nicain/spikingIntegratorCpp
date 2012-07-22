@@ -25,10 +25,12 @@ class PoolBG: public Pool
 
 	// Member data:
 	valarray<double> *AMPA;
+    double AMPASum;
 	
 	// Member functions:
 	void updateS();
 	double* getStateLocation(int, State);
+    double* getStateLocation(State);
 	
 	// Friends:
 	friend class PoolBGFile;

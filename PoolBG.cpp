@@ -35,6 +35,7 @@ PoolBG::~PoolBG()
 void PoolBG::updateS() 
 {
 	(*AMPA) *= exp(-tau_AMPA_Inv_times_dt);
+    AMPASum = (*AMPA).sum();
 };
 
 double* PoolBG::getStateLocation(int whichNeuron, State whichState) 
@@ -55,7 +56,23 @@ double* PoolBG::getStateLocation(int whichNeuron, State whichState)
 	return returnAddress;
 };
 
-
+double* PoolBG::getStateLocation(State whichState) 
+{
+	
+	double *returnAddress;
+	
+	switch (whichState)
+	{
+		case S_AMPASum:
+			returnAddress = &AMPASum;
+			break;         
+        default:
+			cout << "Unacceptable Monitor variable." << endl;
+			exit(-1);
+	}
+    
+	return returnAddress;
+};
 
 
 
