@@ -100,8 +100,8 @@ int main( int argc,      // Number of strings in array argv
     Network.addInputPool(InputSel2);
     
     // IBar Offset:
-    PoolBGOU BGEOU1("BGEOU1", Network, NSel, false,-.416, .01, 0, tOff);
-    PoolBGOU BGEOU2("BGEOU2", Network, NSel, false,-.416, .01, 0, tOff);
+    PoolBGOU BGEOU1("BGEOU1", Network, NSel, false,-.416*2, .01, 0, tOff);
+    PoolBGOU BGEOU2("BGEOU2", Network, NSel, false,-.416*2, .01, 0, tOff);
 
 	
     
