@@ -90,80 +90,80 @@ int main( int argc,      // Number of strings in array argv
     MonitorBrain brainMonitor(Network);
 	
 	// Backgroud populations:
-	PoolBGHPoisson BGESel1("BGESel1", Network, NSel, recordBGSpikes, 1700, 0, 0, tOff);  //1700->.7 // 2400->30
-	PoolRecInh GESel1("GESel1", Network, NSel, true);
+	PoolBGHPoisson BGESel1("BGESel1", Network, NI, recordBGSpikes, 1700, 0, 0, tOff);  //1700->.7 // 2400->30
+	PoolRecInh GESel1("GESel1", Network, NI, true);
     MonitorPoolFile GESel1MonitorSBGSum(Network, GESel1, S_SBGSum, "GESel1SBGSum");
     MonitorPoolFile GESel1MonitorIBGSum(Network, GESel1, S_ISynBGPoolSum, "GESel1IBGSum");
 	GESel1.connectTo(BGESel1);
     
-    PoolBGHPoisson BGESel2("BGESel2", Network, NSel, recordBGSpikes, 1800, 0, 0, tOff);  //1700->.7 // 2400->30
-	PoolRecInh GESel2("GESel2", Network, NSel, true);
+    PoolBGHPoisson BGESel2("BGESel2", Network, NI, recordBGSpikes, 1800, 0, 0, tOff);  //1700->.7 // 2400->30
+	PoolRecInh GESel2("GESel2", Network, NI, true);
     MonitorPoolFile GESel2MonitorSBGSum(Network, GESel2, S_SBGSum, "GESel2SBGSum");
     MonitorPoolFile GESel2MonitorIBGSum(Network, GESel2, S_ISynBGPoolSum, "GESel2IBGSum");
 	GESel2.connectTo(BGESel2);
     
-    PoolBGHPoisson BGESel3("BGESel3", Network, NSel, recordBGSpikes, 1900, 0, 0, tOff);
-	PoolRecInh GESel3("GESel3", Network, NSel, true);
+    PoolBGHPoisson BGESel3("BGESel3", Network, NI, recordBGSpikes, 1900, 0, 0, tOff);
+	PoolRecInh GESel3("GESel3", Network, NI, true);
     MonitorPoolFile GESel3MonitorSBGSum(Network, GESel3, S_SBGSum, "GESel3SBGSum");
     MonitorPoolFile GESel3MonitorIBGSum(Network, GESel3, S_ISynBGPoolSum, "GESel3IBGSum");
 	GESel3.connectTo(BGESel3);
     
-    PoolBGHPoisson BGESel4("BGESel4", Network, NSel, recordBGSpikes, 2000, 0, 0, tOff);
-	PoolRecInh GESel4("GESel4", Network, NSel, true);
+    PoolBGHPoisson BGESel4("BGESel4", Network, NI, recordBGSpikes, 2000, 0, 0, tOff);
+	PoolRecInh GESel4("GESel4", Network, NI, true);
     MonitorPoolFile GESel4MonitorSBGSum(Network, GESel4, S_SBGSum, "GESel4SBGSum");
     MonitorPoolFile GESel4MonitorIBGSum(Network, GESel4, S_ISynBGPoolSum, "GESel4IBGSum");
 	GESel4.connectTo(BGESel4);
     
-    PoolBGHPoisson BGESel5("BGESel5", Network, NSel, recordBGSpikes, 2100, 0, 0, tOff);
-	PoolRecInh GESel5("GESel5", Network, NSel, true);
+    PoolBGHPoisson BGESel5("BGESel5", Network, NI, recordBGSpikes, 2100, 0, 0, tOff);
+	PoolRecInh GESel5("GESel5", Network, NI, true);
     MonitorPoolFile GESel5MonitorSBGSum(Network, GESel5, S_SBGSum, "GESel5SBGSum");
     MonitorPoolFile GESel5MonitorIBGSum(Network, GESel5, S_ISynBGPoolSum, "GESel5IBGSum");
 	GESel5.connectTo(BGESel5);
     
-    PoolBGHPoisson BGESel6("BGESel6", Network, NSel, recordBGSpikes, 2200, 0, 0, tOff);
-	PoolRecInh GESel6("GESel6", Network, NSel, true);
+    PoolBGHPoisson BGESel6("BGESel6", Network, NI, recordBGSpikes, 2200, 0, 0, tOff);
+	PoolRecInh GESel6("GESel6", Network, NI, true);
     MonitorPoolFile GESel6MonitorSBGSum(Network, GESel6, S_SBGSum, "GESel6SBGSum");
     MonitorPoolFile GESel6MonitorIBGSum(Network, GESel6, S_ISynBGPoolSum, "GESel6IBGSum");
 	GESel6.connectTo(BGESel6);
     
-    PoolBGHPoisson BGESel7("BGESel7", Network, NSel, recordBGSpikes, 2300, 0, 0, tOff);
-	PoolRecInh GESel7("GESel7", Network, NSel, true);
+    PoolBGHPoisson BGESel7("BGESel7", Network, NI, recordBGSpikes, 2300, 0, 0, tOff);
+	PoolRecInh GESel7("GESel7", Network, NI, true);
     MonitorPoolFile GESel7MonitorSBGSum(Network, GESel7, S_SBGSum, "GESel7SBGSum");
     MonitorPoolFile GESel7MonitorIBGSum(Network, GESel7, S_ISynBGPoolSum, "GESel7IBGSum");
 	GESel7.connectTo(BGESel7);
     
-    PoolBGHPoisson BGESel8("BGESel8", Network, NSel, recordBGSpikes, 2400, 0, 0, tOff);
-	PoolRecInh GESel8("GESel8", Network, NSel, true);
+    PoolBGHPoisson BGESel8("BGESel8", Network, NI, recordBGSpikes, 2400, 0, 0, tOff);
+	PoolRecInh GESel8("GESel8", Network, NI, true);
     MonitorPoolFile GESel8MonitorSBGSum(Network, GESel8, S_SBGSum, "GESel8SBGSum");
     MonitorPoolFile GESel8MonitorIBGSum(Network, GESel8, S_ISynBGPoolSum, "GESel8IBGSum");
 	GESel8.connectTo(BGESel8);
     
-    PoolBGHPoisson BGESel9("BGESel9", Network, NSel, recordBGSpikes, 2500, 0, 0, tOff);
-	PoolRecInh GESel9("GESel9", Network, NSel, true);
+    PoolBGHPoisson BGESel9("BGESel9", Network, NI, recordBGSpikes, 2500, 0, 0, tOff);
+	PoolRecInh GESel9("GESel9", Network, NI, true);
     MonitorPoolFile GESel9MonitorSBGSum(Network, GESel9, S_SBGSum, "GESel9SBGSum");
     MonitorPoolFile GESel9MonitorIBGSum(Network, GESel9, S_ISynBGPoolSum, "GESel9IBGSum");
 	GESel9.connectTo(BGESel9);
     
-    PoolBGHPoisson BGESel10("BGESel10", Network, NSel, recordBGSpikes, 2600, 0, 0, tOff);
-	PoolRecInh GESel10("GESel10", Network, NSel, true);
+    PoolBGHPoisson BGESel10("BGESel10", Network, NI, recordBGSpikes, 2600, 0, 0, tOff);
+	PoolRecInh GESel10("GESel10", Network, NI, true);
     MonitorPoolFile GESel10MonitorSBGSum(Network, GESel10, S_SBGSum, "GESel10SBGSum");
     MonitorPoolFile GESel10MonitorIBGSum(Network, GESel10, S_ISynBGPoolSum, "GESel10IBGSum");
 	GESel10.connectTo(BGESel10);
     
-    PoolBGHPoisson BGESel11("BGESel11", Network, NSel, recordBGSpikes, 2700, 0, 0, tOff);
-	PoolRecInh GESel11("GESel11", Network, NSel, true);
+    PoolBGHPoisson BGESel11("BGESel11", Network, NI, recordBGSpikes, 2700, 0, 0, tOff);
+	PoolRecInh GESel11("GESel11", Network, NI, true);
     MonitorPoolFile GESel11MonitorSBGSum(Network, GESel11, S_SBGSum, "GESel11SBGSum");
     MonitorPoolFile GESel11MonitorIBGSum(Network, GESel11, S_ISynBGPoolSum, "GESel11IBGSum");
 	GESel11.connectTo(BGESel11);
     
-    PoolBGHPoisson BGESel12("BGESel12", Network, NSel, recordBGSpikes, 2800, 0, 0, tOff);
-	PoolRecInh GESel12("GESel12", Network, NSel, true);
+    PoolBGHPoisson BGESel12("BGESel12", Network, NI, recordBGSpikes, 2800, 0, 0, tOff);
+	PoolRecInh GESel12("GESel12", Network, NI, true);
     MonitorPoolFile GESel12MonitorSBGSum(Network, GESel12, S_SBGSum, "GESel12SBGSum");
     MonitorPoolFile GESel12MonitorIBGSum(Network, GESel12, S_ISynBGPoolSum, "GESel12IBGSum");
 	GESel12.connectTo(BGESel12);
     
-    PoolBGHPoisson BGESel13("BGESel13", Network, NSel, recordBGSpikes, 2900, 0, 0, tOff);
-	PoolRecInh GESel13("GESel13", Network, NSel, true);
+    PoolBGHPoisson BGESel13("BGESel13", Network, NI, recordBGSpikes, 2900, 0, 0, tOff);
+	PoolRecInh GESel13("GESel13", Network, NI, true);
     MonitorPoolFile GESel13MonitorSBGSum(Network, GESel13, S_SBGSum, "GESel13SBGSum");
     MonitorPoolFile GESel13MonitorIBGSum(Network, GESel13, S_ISynBGPoolSum, "GESel13IBGSum");
 	GESel13.connectTo(BGESel13);
