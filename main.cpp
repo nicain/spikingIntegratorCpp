@@ -51,7 +51,7 @@ int main( int argc,      // Number of strings in array argv
 	const bool recordInputSpikes = lexical_cast<bool>(argv[8]);
 	
 	// Network dimension settings:
-    const double scale = 10;
+    const double scale = 20;
 	const double BgFRE = 2400;
 	const double BgFRI = 2400;
 	
@@ -99,7 +99,7 @@ int main( int argc,      // Number of strings in array argv
 	PoolRecEx GENSel("GENSel", Network, NNSel, false);
 	
 	// Inhibitory populations:
-	PoolRecInh GI("GI", Network, NI, false);
+	PoolRecInh GI("GI", Network, NI, true);
 	
 	//========================================================================//
 	//========================== Connect Network =============================//
