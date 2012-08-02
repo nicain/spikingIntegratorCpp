@@ -55,7 +55,7 @@ int main( int argc,      // Number of strings in array argv
 	const double frEx = .8;
 	const double frSel = .15;
 	const double BgFRE = 2400;
-	const double BgFRI = 2400;
+	const double BgFRI = 2350;
 	
 	// Connectivity settings:
 	double w = 1;
