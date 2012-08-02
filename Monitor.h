@@ -3,7 +3,7 @@
 
 class Brain;
 
-enum State {S_X, S_AMPA, S_NMDA, S_GABA, S_V, S_ISyn};
+enum State {S_X, S_AMPA, S_NMDA, S_GABA, S_V, S_ISyn, S_GABA_pooled};
 
 class Monitor
 {	

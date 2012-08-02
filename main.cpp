@@ -67,7 +67,7 @@ int main( int argc,      // Number of strings in array argv
 	// Network dimension settings, derived from settings:
 	const int NI = 400*scale;
 	const int NSel = 240;
-	const int NNSel = 1120*scale;
+	const int NNSel = 1120;
 
 	
 	//========================================================================//
@@ -110,7 +110,7 @@ int main( int argc,      // Number of strings in array argv
 	GESel1.connectTo(InputSel1);
 	GESel1.connectTo(GESel1, wPlus);
 	GESel1.connectTo(GESel2, wMinus);
-	GESel1.connectTo(GENSel, wMinus/scale);
+	GESel1.connectTo(GENSel, wMinus);
 	GESel1.connectTo(GI, w/scale);
 	
 	// Connections to GESel2:
@@ -118,21 +118,21 @@ int main( int argc,      // Number of strings in array argv
 	GESel2.connectTo(InputSel2);
 	GESel2.connectTo(GESel1, wMinus);
 	GESel2.connectTo(GESel2, wPlus);
-	GESel2.connectTo(GENSel, wMinus/scale);
+	GESel2.connectTo(GENSel, wMinus);
 	GESel2.connectTo(GI, w/scale);
 	
 	// Connections to GENSel:
 	GENSel.connectTo(BGENSel);
 	GENSel.connectTo(GESel1, w);
 	GENSel.connectTo(GESel2, w);
-	GENSel.connectTo(GENSel, w/scale);
+	GENSel.connectTo(GENSel, w);
 	GENSel.connectTo(GI, w/scale);
 	
 	// Connections to GI:
 	GI.connectTo(BGI);
 	GI.connectTo(GESel1, w);
 	GI.connectTo(GESel2, w);
-	GI.connectTo(GENSel, w/scale);
+	GI.connectTo(GENSel, w);
 	GI.connectTo(GI, w/scale);
 	
 	//========================================================================//
