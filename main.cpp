@@ -51,7 +51,7 @@ int main( int argc,      // Number of strings in array argv
 	const bool recordInputSpikes = lexical_cast<bool>(argv[8]);
 	
 	// Network dimension settings:
-    const double scale = 40;
+    const double scale = 4;
 	const double BgFRE = 2400;
 	const double BgFRI = 2400;
 	
@@ -66,8 +66,8 @@ int main( int argc,      // Number of strings in array argv
 	
 	// Network dimension settings, derived from settings:
 	const int NI = 400*scale;
-	const int NSel = 240;
-	const int NNSel = 1120;
+	const int NSel = 240*scale;
+	const int NNSel = 1120*scale;
 
 	
 	//========================================================================//
@@ -108,31 +108,31 @@ int main( int argc,      // Number of strings in array argv
 	// Connections to GESel1:
 	GESel1.connectTo(BGESel1);
 	GESel1.connectTo(InputSel1);
-	GESel1.connectTo(GESel1, wPlus);
-	GESel1.connectTo(GESel2, wMinus);
-	GESel1.connectTo(GENSel, wMinus);
+	GESel1.connectTo(GESel1, wPlus/scale);
+	GESel1.connectTo(GESel2, wMinus/scale);
+	GESel1.connectTo(GENSel, wMinus/scale);
 	GESel1.connectTo(GI, w/scale);
 	
 	// Connections to GESel2:
 	GESel2.connectTo(BGESel2);
 	GESel2.connectTo(InputSel2);
-	GESel2.connectTo(GESel1, wMinus);
-	GESel2.connectTo(GESel2, wPlus);
-	GESel2.connectTo(GENSel, wMinus);
+	GESel2.connectTo(GESel1, wMinus/scale);
+	GESel2.connectTo(GESel2, wPlus/scale);
+	GESel2.connectTo(GENSel, wMinus/scale);
 	GESel2.connectTo(GI, w/scale);
 	
 	// Connections to GENSel:
 	GENSel.connectTo(BGENSel);
-	GENSel.connectTo(GESel1, w);
-	GENSel.connectTo(GESel2, w);
-	GENSel.connectTo(GENSel, w);
+	GENSel.connectTo(GESel1, w/scale);
+	GENSel.connectTo(GESel2, w/scale);
+	GENSel.connectTo(GENSel, w/scale);
 	GENSel.connectTo(GI, w/scale);
 	
 	// Connections to GI:
 	GI.connectTo(BGI);
-	GI.connectTo(GESel1, w);
-	GI.connectTo(GESel2, w);
-	GI.connectTo(GENSel, w);
+	GI.connectTo(GESel1, w/scale);
+	GI.connectTo(GESel2, w/scale);
+	GI.connectTo(GENSel, w/scale);
 	GI.connectTo(GI, w/scale);
 	
 	//========================================================================//
