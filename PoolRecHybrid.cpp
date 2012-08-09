@@ -19,6 +19,7 @@ const double PoolRecHybrid::VMax;
 const double PoolRecHybrid::VReset;
 const double PoolRecHybrid::alpha;
 const double PoolRecHybrid::K;
+double PoolRecHybrid::tau_GABA_Inv_times_dt = Brain::dt*(1.0/(PoolRecInh::tau_GABA));
 
 PoolRecHybrid::PoolRecHybrid(string poolName_in, Brain &parentPool_in, int N_in): Pool(poolName_in, parentPool_in, N_in)
 {
@@ -126,7 +127,7 @@ void PoolRecHybrid::updateV()
 //        {
 //            
 //        }
-        ITot += -VAvgE *1000* gext_AMPA * (*((*BG_Inputs_AMPA)[i])).sum(); // Isyn has to be in nA at all times
+        ITot += -VAvgE *1000* gext_AMPA * 1920;//-VAvgE *1000* gext_AMPA * (*((*BG_Inputs_AMPA)[i])).sum(); // Isyn has to be in nA at all times
 	}
 
     
@@ -219,16 +220,20 @@ void PoolRecHybrid::updateS()
     // Cutoff between the regimes:
     double M = -0.000143533420332;
     
+    double phi;
+    
     if (ITot < M) {
         
         // Linear:
-        GABA_pooled = b_L + m_L*ITot;
+        phi = b_L + m_L*ITot;
         
     } else {
         
         // Exponential:
-         GABA_pooled = b_E + m_E*exp(a_E*ITot);   
+         phi = b_E + m_E*exp(a_E*ITot);   
     }
+    
+    GABA_pooled += .2*Brain::dt*(-GABA_pooled + phi);
     
     cout << "GABA_pooled Hybrid: " << GABA_pooled   << "(" << ITot << ")" << endl;
     

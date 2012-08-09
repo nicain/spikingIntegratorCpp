@@ -35,6 +35,7 @@ class PoolRecHybrid: public Pool
 	double gGABA;
 	double dt_times_gL_over_cm;
 	double dt_over_cm;
+    static double PoolRecHybrid::tau_GABA_Inv_times_dt;
 	
 	// Small stuff:
 	int i;

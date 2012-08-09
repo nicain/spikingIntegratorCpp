@@ -92,10 +92,10 @@ int main( int argc,      // Number of strings in array argv
     MonitorBrain brainMonitor(Network);
 	
 	// Backgroud populations:
-	PoolBGHPoisson BGESel1("BGESel1", Network, NSel, recordBGSpikes, 2400, 0, 0, tOff);
+	PoolBGHPoisson BGESel1("BGESel1", Network, NSel, recordBGSpikes, BgFRE, 0, 0, tOff);
 	PoolBGHPoisson BGESel2("BGESel2", Network, NSel, recordBGSpikes, BgFRE, 0, 0, tOff);
 	PoolBGHPoisson BGENSel("BGENSel", Network, NNSel, false, BgFRE, 0, 0, tOff);
-	PoolBGHPoisson BGI("BGI", Network, NI, false, 3000, 0, 0, tOff);
+	PoolBGHPoisson BGI("BGI", Network, NI, false, BgFRI, 0, 0, tOff);
 
 		
 	// Input populations:
@@ -111,11 +111,13 @@ int main( int argc,      // Number of strings in array argv
 	
 	// Inhibitory populations:	
 //    PoolRecInh GI("GI", Network, NI, true);
-	PoolRecHybrid GIHybrid("GIHybrid", Network, NI);
+	PoolRecHybrid GI("GI", Network, NI);
 	
 	//========================================================================//
 	//========================== Connect Network =============================//
 	//========================================================================//
+
+//    MonitorPoolFile GESel1MonitorSBGSum(Network, GI, S_SBGSum, "GI_papeSBGSum");
     
 //    MonitorPoolFile GESel1MonitorSBGSum(Network, GESel1, S_SBGSum, "GESel1SBGSum");
 //    MonitorPoolFile GESel1MonitorSInputSum(Network, GESel1, S_SInputSum, "GESel1SInputSum");
@@ -164,7 +166,7 @@ int main( int argc,      // Number of strings in array argv
 	GESel1.connectTo(GESel1, wPlus);
 	GESel1.connectTo(GESel2, wMinus);
 	GESel1.connectTo(GENSel, wMinus);
-	GESel1.connectTo(GIHybrid);
+	GESel1.connectTo(GI);
 	
 	// Connections to GESel2:
 	GESel2.connectTo(BGESel2);
@@ -172,21 +174,21 @@ int main( int argc,      // Number of strings in array argv
 	GESel2.connectTo(GESel1, wMinus);
 	GESel2.connectTo(GESel2, wPlus);
 	GESel2.connectTo(GENSel, wMinus);
-	GESel2.connectTo(GIHybrid);
+	GESel2.connectTo(GI);
 	
 	// Connections to GENSel:
 	GENSel.connectTo(BGENSel);
 	GENSel.connectTo(GESel1, w);
 	GENSel.connectTo(GESel2, w);
 	GENSel.connectTo(GENSel, w);
-	GENSel.connectTo(GIHybrid);
+	GENSel.connectTo(GI);
 	
 	// Connections to GI:
-	GIHybrid.connectTo(BGI);
-	GIHybrid.connectTo(GESel1, w);
-	GIHybrid.connectTo(GESel2, w);
-	GIHybrid.connectTo(GENSel, w);
-	GIHybrid.connectTo(GIHybrid);
+	GI.connectTo(BGI);
+	GI.connectTo(GESel1, w);
+	GI.connectTo(GESel2, w);
+	GI.connectTo(GENSel, w);
+	GI.connectTo(GI);
 	
 	//========================================================================//
 	//=========================== Run Network ================================//
