@@ -73,4 +73,11 @@ void PoolRecInh::updateS()
 	
 	// Update state vars sums:
 	GABA_pooled = (*GABA).sum();
+    
+    if (poolName == "GI") {
+        cout << "GABA_pooled Spiking: " << GABA_pooled  << "(" << (*ISyn).sum() << ")" << endl;
+    }
+    
+
+    
 }

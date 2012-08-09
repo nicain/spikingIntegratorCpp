@@ -22,6 +22,8 @@
 #include "MonitorPool.h"
 #include "MonitorPoolFile.h"
 #include "MonitorBrain.h"
+#include "PoolRecHybrid.h"
+
 
 // Add variable names to scope:
 using namespace std;
@@ -90,10 +92,11 @@ int main( int argc,      // Number of strings in array argv
     MonitorBrain brainMonitor(Network);
 	
 	// Backgroud populations:
-	PoolBGHPoisson BGESel1("BGESel1", Network, NSel, recordBGSpikes, BgFRE, 0, 0, tOff);
+	PoolBGHPoisson BGESel1("BGESel1", Network, NSel, recordBGSpikes, 2400, 0, 0, tOff);
 	PoolBGHPoisson BGESel2("BGESel2", Network, NSel, recordBGSpikes, BgFRE, 0, 0, tOff);
 	PoolBGHPoisson BGENSel("BGENSel", Network, NNSel, false, BgFRE, 0, 0, tOff);
-	PoolBGHPoisson BGI("BGI", Network, NI, false, BgFRI, 0, 0, tOff);
+	PoolBGHPoisson BGI("BGI", Network, NI, false, 3000, 0, 0, tOff);
+
 		
 	// Input populations:
 	PoolBGHPoisson InputSel1("InputSel1", Network, NSel, recordInputSpikes, InputPoolFRSel1, inputCorrelation, tOn, tOff);
@@ -106,23 +109,24 @@ int main( int argc,      // Number of strings in array argv
 	PoolRecEx GESel2("GESel2", Network, NSel, true);
 	PoolRecEx GENSel("GENSel", Network, NNSel, false);
 	
-	// Inhibitory populations:
-	PoolRecInh GI("GI", Network, NI, false);
+	// Inhibitory populations:	
+//    PoolRecInh GI("GI", Network, NI, true);
+	PoolRecHybrid GIHybrid("GIHybrid", Network, NI);
 	
 	//========================================================================//
 	//========================== Connect Network =============================//
 	//========================================================================//
     
-    MonitorPoolFile GESel1MonitorSBGSum(Network, GESel1, S_SBGSum, "GESel1SBGSum");
-    MonitorPoolFile GESel1MonitorSInputSum(Network, GESel1, S_SInputSum, "GESel1SInputSum");
+//    MonitorPoolFile GESel1MonitorSBGSum(Network, GESel1, S_SBGSum, "GESel1SBGSum");
+//    MonitorPoolFile GESel1MonitorSInputSum(Network, GESel1, S_SInputSum, "GESel1SInputSum");
 //    MonitorPoolFile GESel1MonitorConstInput(Network, GESel1, S_ISynInputPoolSum, "GESel1PoolInput");
 //    MonitorPoolFile GESel1MonitorConstBG(Network, GESel1, S_ISynBGPoolSum, "GESel1PoolBG");
 //    MonitorPoolFile GESel1MonitorAMPA(Network, GESel1, S_ISynRecAMPASum, "GESel1PoolRecAMPA");
 //    MonitorPoolFile GESel1MonitorNMDA(Network, GESel1, S_ISynRecNMDASum, "GESel1PoolRecNMDA");
 //    MonitorPoolFile GESel1MonitorGABA(Network, GESel1, S_ISynRecGABASum, "GESel1PoolRecGABA");
 
-    MonitorPoolFile GESel2MonitorSBGSum(Network, GESel2, S_SBGSum, "GESel2SBGSum");
-    MonitorPoolFile GESel2MonitorSInputSum(Network, GESel2, S_SInputSum, "GESel2SInputSum");
+//    MonitorPoolFile GESel2MonitorSBGSum(Network, GESel2, S_SBGSum, "GESel2SBGSum");
+//    MonitorPoolFile GESel2MonitorSInputSum(Network, GESel2, S_SInputSum, "GESel2SInputSum");
 
 //    MonitorPoolFile GESel2MonitorConstInput(Network, GESel2, S_ISynInputPoolSum, "GESel2PoolInput");
 //    MonitorPoolFile GESel2MonitorConstBG(Network, GESel2, S_ISynBGPoolSum, "GESel2PoolBG");
@@ -160,7 +164,7 @@ int main( int argc,      // Number of strings in array argv
 	GESel1.connectTo(GESel1, wPlus);
 	GESel1.connectTo(GESel2, wMinus);
 	GESel1.connectTo(GENSel, wMinus);
-	GESel1.connectTo(GI);
+	GESel1.connectTo(GIHybrid);
 	
 	// Connections to GESel2:
 	GESel2.connectTo(BGESel2);
@@ -168,21 +172,21 @@ int main( int argc,      // Number of strings in array argv
 	GESel2.connectTo(GESel1, wMinus);
 	GESel2.connectTo(GESel2, wPlus);
 	GESel2.connectTo(GENSel, wMinus);
-	GESel2.connectTo(GI);
+	GESel2.connectTo(GIHybrid);
 	
 	// Connections to GENSel:
 	GENSel.connectTo(BGENSel);
 	GENSel.connectTo(GESel1, w);
 	GENSel.connectTo(GESel2, w);
 	GENSel.connectTo(GENSel, w);
-	GENSel.connectTo(GI);
+	GENSel.connectTo(GIHybrid);
 	
 	// Connections to GI:
-	GI.connectTo(BGI);
-	GI.connectTo(GESel1, w);
-	GI.connectTo(GESel2, w);
-	GI.connectTo(GENSel, w);
-	GI.connectTo(GI);
+	GIHybrid.connectTo(BGI);
+	GIHybrid.connectTo(GESel1, w);
+	GIHybrid.connectTo(GESel2, w);
+	GIHybrid.connectTo(GENSel, w);
+	GIHybrid.connectTo(GIHybrid);
 	
 	//========================================================================//
 	//=========================== Run Network ================================//

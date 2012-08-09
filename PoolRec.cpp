@@ -1,9 +1,10 @@
 #include <string>
 #include "PoolBG.h"
-#include "PoolRec.h"
 #include "PoolRecEx.h"
 #include "PoolRecInh.h"
+#include "PoolRecHybrid.h"
 #include "Brain.h"
+#include "PoolRec.h"
 
 class Brain;
 class Pool;
@@ -121,6 +122,17 @@ void PoolRec::updateV()
     (*SInput) = valarray<double>((double)0, N);
 	(*SBG) = valarray<double>((double)0, N);
     
+    
+    
+    
+    
+    
+//    cout << "V: " << (*VTmp)[0] << endl;
+    
+    
+    
+    
+    
 	// First, the background pools:
 	for (i = 0; i < (*BG_Inputs_AMPA).size(); i++)
 	{
@@ -134,6 +146,11 @@ void PoolRec::updateV()
         }
         (*ISyn) += gext_AMPA * (*VTmp) * (*((*BG_Inputs_AMPA)[i]));
 	}
+    
+    
+
+    
+    
     ISynInputPoolSum = (*ISynInput).sum();///(*ISynInput).size();
     ISynBGPoolSum = (*ISynBG).sum();///(*ISynBG).size();
     SBGSum = (*SBG).sum();///(*ISynBG).size();
@@ -151,9 +168,14 @@ void PoolRec::updateV()
 	(*ISyn) += grec_AMPA * STmp * (*VTmp);
     (*ISynRecAMPA) += grec_AMPA * STmp * (*VTmp);
     ISynRecAMPASum = (*ISynRecAMPA).sum();///(*ISynRecAMPA).size();
+    
+    
+
+    
 	
 	// Next, recurrent NMDA:
 	(*VTmp) /= (*unitVector) + exp(K*(*V))/3.57;
+
 	STmp = 0;
 	for (i = 0; i < (*Ex_Inputs_NMDA).size(); i++)
 	{
@@ -162,6 +184,7 @@ void PoolRec::updateV()
 	(*ISyn) += gNMDA * STmp * (*VTmp);
     (*ISynRecNMDA) += gNMDA * STmp * (*VTmp);
     ISynRecNMDASum = (*ISynRecNMDA).sum();///(*ISynRecNMDA).size();
+    
 	
 	// Finally, recurrent GABA:
 	(*VTmp) = ((*V) - VI * (*unitVector));
@@ -174,6 +197,12 @@ void PoolRec::updateV()
     (*ISynRecGABA) += gGABA * STmp * (*VTmp);
     ISynPoolSum = (*ISyn).sum();///(*ISyn).size();
     ISynRecGABASum = (*ISynRecGABA).sum();///(*ISynRecGABA).size();
+    
+//    if (poolName == "GI") {
+//        cout << "ITotRec:       " << (*ISyn).sum() << "\t(" << (*VTmp).sum()/(*VTmp).size() << ")\t" << STmp << endl;        
+//    }
+
+
 	
 	// Update voltage:			
 	(*VTmp) = ((*V) - VMin * (*unitVector));	//TODO: optimize below:
@@ -209,6 +238,11 @@ void PoolRec::connectTo(PoolRecEx &ExPool_in, double wIn)
 }
 
 void PoolRec::connectTo(PoolRecInh &InhPool_in)
+{
+	Inh_Inputs_GABA->push_back(&(InhPool_in).GABA_pooled);
+}
+
+void PoolRec::connectTo(PoolRecHybrid &InhPool_in)
 {
 	Inh_Inputs_GABA->push_back(&(InhPool_in).GABA_pooled);
 }

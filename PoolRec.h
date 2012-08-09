@@ -4,6 +4,7 @@
 #include <valarray>
 #include <boost/random.hpp>
 #include "Pool.h"
+#include "PoolRecHybrid.h"
 #include "Monitor.h"
 
 using namespace std;
@@ -94,6 +95,9 @@ class PoolRec: public Pool
 	void connectTo(PoolBG &BGPool_in);
 	void connectTo(PoolRecEx &BGPool_in, double wIn);
 	void connectTo(PoolRecInh &BGPool_in);
+    void connectTo(PoolRecHybrid &BGPool_in);
+    
+    
 	void init();	
 	void updateV();
 	double* getStateLocation(int, State);
