@@ -280,6 +280,9 @@ double* PoolRec::getStateLocation(State whichState)
 		case S_SInputSum:
 			returnAddress = &SInputSum;
 			break;
+		case S_GABA_pooled:
+			returnAddress = &GABA_pooled;
+			break;
             
             
 		default:

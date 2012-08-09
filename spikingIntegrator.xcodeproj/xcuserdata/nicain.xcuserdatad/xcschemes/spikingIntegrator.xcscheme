@@ -88,6 +88,18 @@
             argument = "0"
             isEnabled = "YES">
          </CommandLineArgument>
+         <CommandLineArgument
+            argument = ".01"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = ".01"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "tmp"
+            isEnabled = "YES">
+         </CommandLineArgument>
       </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>

@@ -28,7 +28,6 @@ parser.add_argument('-C','--Coh',
                     action='store',
                     dest='C',
                     help='Dot coherence value')
-
 parser.add_argument('--tOn',
                     default=0,
                     action='store',
@@ -84,6 +83,29 @@ parser.add_argument('--thresholdTest',
                     dest='thresholdTest',
                     help='Perform threshold test?')
 
+
+
+
+parser.add_argument('--shadowEFR',
+                    default=.01,
+                    type=float,
+                    action='store',
+                    dest='shadowEFR',
+                    help='Extra drive E')
+parser.add_argument('--shadowIFR',
+                    default=.01,
+                    type=float,
+                    action='store',
+                    dest='shadowIFR',
+                    help='Extra drive I')
+parser.add_argument('--label',
+                    default=0,
+                    type=str,
+                    action='store',
+                    dest='label',
+                    help='Label')
+
+
 args = parser.parse_args(sys.argv[1:])
 
 ################################################################################
@@ -96,9 +118,9 @@ tBegin = time.mktime(time.localtime())
 
 callString = executable
 for arg in [args.C, args.tOn, args.tOff, args.tMax, args.correlation,
-            args.saveResults, args.recordBGSpikes, args.recordInputSpikes]:
+            args.saveResults, args.recordBGSpikes, args.recordInputSpikes, 
+            args.shadowEFR, args.shadowIFR, args.label]:
 	callString += " " + str(arg)
-
 
 process = Popen(callString.split(), shell=False, stdout=PIPE)
 currUUID = process.communicate()[0].strip().split("\n")[0]

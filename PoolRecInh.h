@@ -33,7 +33,7 @@ class PoolRecInh: public PoolRec
 
 	// Member data:
 	valarray<double> *GABA;
-	double GABA_pooled;
+//	double GABA_pooled;
 	
 	// Member functions:
 	void propogate();

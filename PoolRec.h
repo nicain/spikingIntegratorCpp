@@ -44,6 +44,8 @@ class PoolRec: public Pool
 	// Small stuff:
 	int i;
 	double STmp;
+    
+    double GABA_pooled;
 	
 	// Constructor+Destructor:
 	PoolRec(string, Brain&, int);

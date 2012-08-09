@@ -51,6 +51,9 @@ int main( int argc,      // Number of strings in array argv
 	const bool saveResults = lexical_cast<bool>(argv[6]);
 	const bool recordBGSpikes = lexical_cast<bool>(argv[7]);
 	const bool recordInputSpikes = lexical_cast<bool>(argv[8]);
+    const double shadowEFR = atof(argv[9]);
+    const double shadowIFR = atof(argv[10]);
+    string label = argv[11];
 	
 	// Network dimension settings:
 	const int NN = 2000;
@@ -87,91 +90,91 @@ int main( int argc,      // Number of strings in array argv
 	cout << Network.UUID_string << endl;
 	
     // Monitor time, if you want:
-    MonitorBrain brainMonitor(Network);
-	
+//    MonitorBrain brainMonitor(Network);
+    
 	// Backgroud populations:
-	PoolBGHPoisson BGESel1("BGESel1", Network, NI, recordBGSpikes, 1700, 0, 0, tOff);  //1700->.7 // 2400->30
-	PoolRecInh GESel1("GESel1", Network, NI, true);
-    MonitorPoolFile GESel1MonitorSBGSum(Network, GESel1, S_SBGSum, "GESel1SBGSum");
-    MonitorPoolFile GESel1MonitorIBGSum(Network, GESel1, S_ISynBGPoolSum, "GESel1IBGSum");
+	PoolBGHPoisson BGESel1("BGESel1", Network, NSel, recordBGSpikes, BgFRE, 0, 0, tOff);
+	PoolBGHPoisson BGESel2("BGESel2", Network, NSel, recordBGSpikes, BgFRE, 0, 0, tOff);
+	PoolBGHPoisson BGENSel("BGENSel", Network, NNSel, false, BgFRE, 0, 0, tOff);
+	PoolBGHPoisson BGI("BGI", Network, NI, false, BgFRI, 0, 0, tOff);    
+    
+	// Input populations:
+	PoolBGHPoisson InputSel1("InputSel1", Network, NSel, recordInputSpikes, InputPoolFRSel1, inputCorrelation, tOn, tOff);
+	PoolBGHPoisson InputSel2("InputSel2", Network, NSel, recordInputSpikes, InputPoolFRSel2, inputCorrelation, tOn, tOff);
+    Network.addInputPool(InputSel1);
+    Network.addInputPool(InputSel2);
+	
+	// Excitatory populations:
+	PoolRecEx GESel1("GESel1", Network, NSel, false);
+	PoolRecEx GESel2("GESel2", Network, NSel, false);
+	PoolRecEx GENSel("GENSel", Network, NNSel, false);
+	
+	// Inhibitory populations:	
+    PoolRecInh GI("GI", Network, NI, false);
+    PoolRecInh GIShadow("GIShadow", Network, NI, false);
+    
+    
+        // Modulatory pools:
+        PoolBGHPoisson BGIShadowExtraDriveE("BGIShadow", Network, NE, false, shadowEFR, 0, 0, tOff);
+        PoolRecEx GEShadowExtraDrive("GEShadowExtraDrive", Network, NSel, true);
+        
+        PoolBGHPoisson BGIShadowExtraDriveI("BGEShadow", Network, NI, false, shadowIFR, 0, 0, tOff);
+        PoolRecInh GIShadowExtraDrive("GIShadowExtraDrive", Network, NSel, true);
+    
+        // Connect Shadow extra drive:
+        GEShadowExtraDrive.connectTo(BGIShadowExtraDriveE);
+        GIShadow.connectTo(GEShadowExtraDrive, 1);
+
+        GIShadowExtraDrive.connectTo(BGIShadowExtraDriveI);
+        GIShadow.connectTo(GIShadowExtraDrive);
+    
+        // Monitors to collect data:
+        
+        MonitorPoolFile GIShadowMonitorSBGSum(Network, GIShadow, S_GABA_pooled, "GIShadowS" + label);
+        MonitorPoolFile GIShadowMonitorIBGSum(Network, GIShadow, S_ISynPoolSum, "GIShadowI" + label);
+        
+        MonitorPoolFile GIMonitorSBGSum(Network, GI, S_GABA_pooled, "GIS" + label);
+        MonitorPoolFile GIMonitorIBGSum(Network, GI, S_ISynPoolSum, "GII" + label);
+    
+    
+    
+    
+    // Connections to GESel1:
 	GESel1.connectTo(BGESel1);
-    
-    PoolBGHPoisson BGESel2("BGESel2", Network, NI, recordBGSpikes, 1800, 0, 0, tOff);  //1700->.7 // 2400->30
-	PoolRecInh GESel2("GESel2", Network, NI, true);
-    MonitorPoolFile GESel2MonitorSBGSum(Network, GESel2, S_SBGSum, "GESel2SBGSum");
-    MonitorPoolFile GESel2MonitorIBGSum(Network, GESel2, S_ISynBGPoolSum, "GESel2IBGSum");
+	GESel1.connectTo(InputSel1);
+	GESel1.connectTo(GESel1, wPlus);
+	GESel1.connectTo(GESel2, wMinus);
+	GESel1.connectTo(GENSel, wMinus);
+	GESel1.connectTo(GI);
+	
+	// Connections to GESel2:
 	GESel2.connectTo(BGESel2);
+	GESel2.connectTo(InputSel2);
+	GESel2.connectTo(GESel1, wMinus);
+	GESel2.connectTo(GESel2, wPlus);
+	GESel2.connectTo(GENSel, wMinus);
+	GESel2.connectTo(GI);
+	
+	// Connections to GENSel:
+	GENSel.connectTo(BGENSel);
+	GENSel.connectTo(GESel1, w);
+	GENSel.connectTo(GESel2, w);
+	GENSel.connectTo(GENSel, w);
+	GENSel.connectTo(GI);
+	
+	// Connections to GI:
+	GI.connectTo(BGI);
+	GI.connectTo(GESel1, w);
+	GI.connectTo(GESel2, w);
+	GI.connectTo(GENSel, w);
+	GI.connectTo(GI);
     
-    PoolBGHPoisson BGESel3("BGESel3", Network, NI, recordBGSpikes, 1900, 0, 0, tOff);
-	PoolRecInh GESel3("GESel3", Network, NI, true);
-    MonitorPoolFile GESel3MonitorSBGSum(Network, GESel3, S_SBGSum, "GESel3SBGSum");
-    MonitorPoolFile GESel3MonitorIBGSum(Network, GESel3, S_ISynBGPoolSum, "GESel3IBGSum");
-	GESel3.connectTo(BGESel3);
-    
-    PoolBGHPoisson BGESel4("BGESel4", Network, NI, recordBGSpikes, 2000, 0, 0, tOff);
-	PoolRecInh GESel4("GESel4", Network, NI, true);
-    MonitorPoolFile GESel4MonitorSBGSum(Network, GESel4, S_SBGSum, "GESel4SBGSum");
-    MonitorPoolFile GESel4MonitorIBGSum(Network, GESel4, S_ISynBGPoolSum, "GESel4IBGSum");
-	GESel4.connectTo(BGESel4);
-    
-    PoolBGHPoisson BGESel5("BGESel5", Network, NI, recordBGSpikes, 2100, 0, 0, tOff);
-	PoolRecInh GESel5("GESel5", Network, NI, true);
-    MonitorPoolFile GESel5MonitorSBGSum(Network, GESel5, S_SBGSum, "GESel5SBGSum");
-    MonitorPoolFile GESel5MonitorIBGSum(Network, GESel5, S_ISynBGPoolSum, "GESel5IBGSum");
-	GESel5.connectTo(BGESel5);
-    
-    PoolBGHPoisson BGESel6("BGESel6", Network, NI, recordBGSpikes, 2200, 0, 0, tOff);
-	PoolRecInh GESel6("GESel6", Network, NI, true);
-    MonitorPoolFile GESel6MonitorSBGSum(Network, GESel6, S_SBGSum, "GESel6SBGSum");
-    MonitorPoolFile GESel6MonitorIBGSum(Network, GESel6, S_ISynBGPoolSum, "GESel6IBGSum");
-	GESel6.connectTo(BGESel6);
-    
-    PoolBGHPoisson BGESel7("BGESel7", Network, NI, recordBGSpikes, 2300, 0, 0, tOff);
-	PoolRecInh GESel7("GESel7", Network, NI, true);
-    MonitorPoolFile GESel7MonitorSBGSum(Network, GESel7, S_SBGSum, "GESel7SBGSum");
-    MonitorPoolFile GESel7MonitorIBGSum(Network, GESel7, S_ISynBGPoolSum, "GESel7IBGSum");
-	GESel7.connectTo(BGESel7);
-    
-    PoolBGHPoisson BGESel8("BGESel8", Network, NI, recordBGSpikes, 2400, 0, 0, tOff);
-	PoolRecInh GESel8("GESel8", Network, NI, true);
-    MonitorPoolFile GESel8MonitorSBGSum(Network, GESel8, S_SBGSum, "GESel8SBGSum");
-    MonitorPoolFile GESel8MonitorIBGSum(Network, GESel8, S_ISynBGPoolSum, "GESel8IBGSum");
-	GESel8.connectTo(BGESel8);
-    
-    PoolBGHPoisson BGESel9("BGESel9", Network, NI, recordBGSpikes, 2500, 0, 0, tOff);
-	PoolRecInh GESel9("GESel9", Network, NI, true);
-    MonitorPoolFile GESel9MonitorSBGSum(Network, GESel9, S_SBGSum, "GESel9SBGSum");
-    MonitorPoolFile GESel9MonitorIBGSum(Network, GESel9, S_ISynBGPoolSum, "GESel9IBGSum");
-	GESel9.connectTo(BGESel9);
-    
-    PoolBGHPoisson BGESel10("BGESel10", Network, NI, recordBGSpikes, 2600, 0, 0, tOff);
-	PoolRecInh GESel10("GESel10", Network, NI, true);
-    MonitorPoolFile GESel10MonitorSBGSum(Network, GESel10, S_SBGSum, "GESel10SBGSum");
-    MonitorPoolFile GESel10MonitorIBGSum(Network, GESel10, S_ISynBGPoolSum, "GESel10IBGSum");
-	GESel10.connectTo(BGESel10);
-    
-    PoolBGHPoisson BGESel11("BGESel11", Network, NI, recordBGSpikes, 2700, 0, 0, tOff);
-	PoolRecInh GESel11("GESel11", Network, NI, true);
-    MonitorPoolFile GESel11MonitorSBGSum(Network, GESel11, S_SBGSum, "GESel11SBGSum");
-    MonitorPoolFile GESel11MonitorIBGSum(Network, GESel11, S_ISynBGPoolSum, "GESel11IBGSum");
-	GESel11.connectTo(BGESel11);
-    
-    PoolBGHPoisson BGESel12("BGESel12", Network, NI, recordBGSpikes, 2800, 0, 0, tOff);
-	PoolRecInh GESel12("GESel12", Network, NI, true);
-    MonitorPoolFile GESel12MonitorSBGSum(Network, GESel12, S_SBGSum, "GESel12SBGSum");
-    MonitorPoolFile GESel12MonitorIBGSum(Network, GESel12, S_ISynBGPoolSum, "GESel12IBGSum");
-	GESel12.connectTo(BGESel12);
-    
-    PoolBGHPoisson BGESel13("BGESel13", Network, NI, recordBGSpikes, 2900, 0, 0, tOff);
-	PoolRecInh GESel13("GESel13", Network, NI, true);
-    MonitorPoolFile GESel13MonitorSBGSum(Network, GESel13, S_SBGSum, "GESel13SBGSum");
-    MonitorPoolFile GESel13MonitorIBGSum(Network, GESel13, S_ISynBGPoolSum, "GESel13IBGSum");
-	GESel13.connectTo(BGESel13);
-    
-    
-    
-    
-    
+	// Connections to GIShadow:
+	GIShadow.connectTo(BGI);
+	GIShadow.connectTo(GESel1, w);
+	GIShadow.connectTo(GESel2, w);
+	GIShadow.connectTo(GENSel, w);
+	GIShadow.connectTo(GI);
 	
 	//========================================================================//
 	//=========================== Run Network ================================//
