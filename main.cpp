@@ -111,8 +111,8 @@ int main( int argc,      // Number of strings in array argv
 	PoolRecEx GENSel("GENSel", Network, NNSel, false);
 	
 	// Inhibitory populations:	
-    PoolRecInh GI("GI", Network, NI, true);
-//	PoolRecHybrid GI("GI", Network, NI);
+//    PoolRecInh GI("GI", Network, NI, true);
+	PoolRecHybrid GI("GI", Network, NI);
 	
 	//========================================================================//
 	//========================== Connect Network =============================//
