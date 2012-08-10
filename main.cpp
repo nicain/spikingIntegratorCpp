@@ -95,7 +95,8 @@ int main( int argc,      // Number of strings in array argv
 	PoolBGHPoisson BGESel1("BGESel1", Network, NSel, recordBGSpikes, BgFRE, 0, 0, tOff);
 	PoolBGHPoisson BGESel2("BGESel2", Network, NSel, recordBGSpikes, BgFRE, 0, 0, tOff);
 	PoolBGHPoisson BGENSel("BGENSel", Network, NNSel, false, BgFRE, 0, 0, tOff);
-	PoolBGHPoisson BGI("BGI", Network, NI, false, BgFRI, 0, 0, tOff);
+    
+	PoolBGHPoisson BGI("BGI", Network, NI, false, BgFRI+100, 0, 0, tOff);
 
 		
 	// Input populations:
@@ -110,8 +111,8 @@ int main( int argc,      // Number of strings in array argv
 	PoolRecEx GENSel("GENSel", Network, NNSel, false);
 	
 	// Inhibitory populations:	
-//    PoolRecInh GI("GI", Network, NI, true);
-	PoolRecHybrid GI("GI", Network, NI);
+    PoolRecInh GI("GI", Network, NI, true);
+//	PoolRecHybrid GI("GI", Network, NI);
 	
 	//========================================================================//
 	//========================== Connect Network =============================//

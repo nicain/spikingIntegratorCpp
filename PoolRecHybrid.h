@@ -29,6 +29,10 @@ class PoolRecHybrid: public Pool
 	static const double VReset = -55;
 	static const double alpha = .5;
 	static const double K = -.062;
+    
+    static const double xVals[100];
+    static const double yVals[100];
+    
 	double gext_AMPA;
 	double grec_AMPA;
 	double gNMDA;
@@ -72,6 +76,11 @@ class PoolRecHybrid: public Pool
     
     double GABA_pooled;
     
+    
+//    double xVals[100];
+//    double yVals[100];
+    double xMin;
+    double xDelta;
     
 //    double ISynPoolSum;
 //    double ISynInputPoolSum;
