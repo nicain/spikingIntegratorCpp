@@ -131,11 +131,11 @@ int main( int argc,      // Number of strings in array argv
     
         // Monitors to collect data:
         
-        MonitorPoolFile GIShadowMonitorSBGSum(Network, GENSelShadow, S_GABA_pooled, "GNSelShadowS" + label);
+        MonitorPoolFile GIShadowMonitorSBGSum(Network, GENSelShadow, S_AMPA_pooled, "GNSelShadowS" + label);
         MonitorPoolFile GIShadowMonitorIBGSum(Network, GENSelShadow, S_ISynPoolSum, "GNSelShadowI" + label);
         
-        MonitorPoolFile GIMonitorSBGSum(Network, GENSelShadow, S_GABA_pooled, "GNSelS" + label);
-        MonitorPoolFile GIMonitorIBGSum(Network, GENSelShadow, S_ISynPoolSum, "GNSelI" + label);
+        MonitorPoolFile GIMonitorSBGSum(Network, GENSel, S_AMPA_pooled, "GNSelS" + label);
+        MonitorPoolFile GIMonitorIBGSum(Network, GENSel, S_ISynPoolSum, "GNSelI" + label);
     
     
     
