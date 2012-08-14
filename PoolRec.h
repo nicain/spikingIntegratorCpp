@@ -46,6 +46,7 @@ class PoolRec: public Pool
 	double STmp;
     
     double GABA_pooled;
+    double AMPA_pooled;
 	
 	// Constructor+Destructor:
 	PoolRec(string, Brain&, int);

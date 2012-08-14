@@ -43,8 +43,8 @@ class PoolRecEx: public PoolRec
 	// Member data:
 	valarray<double> *AMPA;
 	valarray<double> *NMDA;
-	valarray<double> *X;
-	double AMPA_pooled;
+//	valarray<double> *X;
+//	double AMPA_pooled;
 	double NMDA_pooled;
 	
 	// Member functions:

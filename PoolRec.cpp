@@ -283,6 +283,9 @@ double* PoolRec::getStateLocation(State whichState)
 		case S_GABA_pooled:
 			returnAddress = &GABA_pooled;
 			break;
+		case S_AMPA_pooled:
+			returnAddress = &AMPA_pooled;
+			break;
             
             
 		default:

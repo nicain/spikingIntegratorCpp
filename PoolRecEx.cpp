@@ -40,7 +40,7 @@ void PoolRecEx::construct()
 	// Initialize connection vectors, and weight vector:
 	AMPA = new valarray<double>((double)0, N);
 	NMDA = new valarray<double>((double)0, N);
-	X = new valarray<double>((double)0, N);	
+//	X = new valarray<double>((double)0, N);	
 
 
 	gext_AMPA = PoolRecEx::gext_AMPA_E;
@@ -57,7 +57,7 @@ PoolRecEx::~PoolRecEx()
 {
 	delete AMPA;
 	delete NMDA;
-	delete X;
+//	delete X;
 };
 
 void PoolRecEx::propogate()
@@ -66,7 +66,7 @@ void PoolRecEx::propogate()
 	(*thresholdTest) = (*V) > PoolRec::VMax;
 	(*V)[(*thresholdTest)] = PoolRec::VReset;
 	(*AMPA)[(*thresholdTest)] += valarray<double>(1,(*thresholdTest).sum());
-	(*X)[(*thresholdTest)] += valarray<double>(1,(*thresholdTest).sum());
+//	(*X)[(*thresholdTest)] += valarray<double>(1,(*thresholdTest).sum());
 	if (recordSpikes)
 	{
 		for (i = 0; i < N; i++) 
@@ -86,9 +86,9 @@ void PoolRecEx::updateS()
 //	(*X) -= tau_AMPA_rise_Inv_times_dt*(*X);
 	
 	(*AMPA) *= exp(-tau_AMPA_Inv_times_dt);
-	(*X) *= exp(-tau_AMPA_rise_Inv_times_dt);
+//	(*X) *= exp(-tau_AMPA_rise_Inv_times_dt);
 	
-	(*NMDA) = one_minus_tau_NMDA_Inv_times_dt*(*NMDA) + alpha_times_dt*(*X)*(*unitVector - (*NMDA));
+	(*NMDA) = one_minus_tau_NMDA_Inv_times_dt*(*NMDA) + alpha_times_dt*(*AMPA)*(*unitVector - (*NMDA));
 	
 	// Update state vars sums:
 	AMPA_pooled = (*AMPA).sum();
@@ -107,8 +107,8 @@ double* PoolRecEx::getStateLocationConductance(int whichNeuron, State whichState
 		case S_NMDA:
 			returnAddress = &((*NMDA)[whichNeuron]);
 			break;
-		case S_X:
-			returnAddress = &((*X)[whichNeuron]);
+//		case S_X:
+//			returnAddress = &((*X)[whichNeuron]);
 			break;
 		default:
 			cout << "Unacceptable Monitor variable." << endl;

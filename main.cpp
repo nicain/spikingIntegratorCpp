@@ -105,36 +105,37 @@ int main( int argc,      // Number of strings in array argv
     Network.addInputPool(InputSel2);
 	
 	// Excitatory populations:
-	PoolRecEx GESel1("GESel1", Network, NSel, false);
-	PoolRecEx GESel2("GESel2", Network, NSel, false);
+	PoolRecEx GESel1("GESel1", Network, NSel, true);
+	PoolRecEx GESel2("GESel2", Network, NSel, true);
+
 	PoolRecEx GENSel("GENSel", Network, NNSel, false);
-	
+	PoolRecEx GENSelShadow("GENSelShadow", Network, NNSel, false);
+    
 	// Inhibitory populations:	
     PoolRecInh GI("GI", Network, NI, false);
-    PoolRecInh GIShadow("GIShadow", Network, NI, false);
     
     
         // Modulatory pools:
-        PoolBGHPoisson BGIShadowExtraDriveE("BGIShadow", Network, NE, false, shadowEFR, 0, 0, tOff);
-        PoolRecEx GEShadowExtraDrive("GEShadowExtraDrive", Network, NSel, true);
+        PoolBGHPoisson BGENSelShadowExtraDriveE("BGIShadow", Network, NE, false, shadowEFR, 0, 0, tOff);
+        PoolRecEx GEShadowExtraDrive("GENSelShadowExtraDrive", Network, NSel, true);
         
-        PoolBGHPoisson BGIShadowExtraDriveI("BGEShadow", Network, NI, false, shadowIFR, 0, 0, tOff);
-        PoolRecInh GIShadowExtraDrive("GIShadowExtraDrive", Network, NSel, true);
+        PoolBGHPoisson BGENSelShadowExtraDriveI("BGEShadow", Network, NI, false, shadowIFR, 0, 0, tOff);
+        PoolRecInh GIShadowExtraDrive("GENSelShadowExtraDrive", Network, NSel, true);
     
         // Connect Shadow extra drive:
-        GEShadowExtraDrive.connectTo(BGIShadowExtraDriveE);
-        GIShadow.connectTo(GEShadowExtraDrive, 1);
+        GEShadowExtraDrive.connectTo(BGENSelShadowExtraDriveE);
+        GENSelShadow.connectTo(GEShadowExtraDrive, 1);
 
-        GIShadowExtraDrive.connectTo(BGIShadowExtraDriveI);
-        GIShadow.connectTo(GIShadowExtraDrive);
+        GIShadowExtraDrive.connectTo(BGENSelShadowExtraDriveI);
+        GENSelShadow.connectTo(GIShadowExtraDrive);
     
         // Monitors to collect data:
         
-        MonitorPoolFile GIShadowMonitorSBGSum(Network, GIShadow, S_GABA_pooled, "GIShadowS" + label);
-        MonitorPoolFile GIShadowMonitorIBGSum(Network, GIShadow, S_ISynPoolSum, "GIShadowI" + label);
+        MonitorPoolFile GIShadowMonitorSBGSum(Network, GENSelShadow, S_GABA_pooled, "GNSelShadowS" + label);
+        MonitorPoolFile GIShadowMonitorIBGSum(Network, GENSelShadow, S_ISynPoolSum, "GNSelShadowI" + label);
         
-        MonitorPoolFile GIMonitorSBGSum(Network, GI, S_GABA_pooled, "GIS" + label);
-        MonitorPoolFile GIMonitorIBGSum(Network, GI, S_ISynPoolSum, "GII" + label);
+        MonitorPoolFile GIMonitorSBGSum(Network, GENSelShadow, S_GABA_pooled, "GNSelS" + label);
+        MonitorPoolFile GIMonitorIBGSum(Network, GENSelShadow, S_ISynPoolSum, "GNSelI" + label);
     
     
     
@@ -170,11 +171,11 @@ int main( int argc,      // Number of strings in array argv
 	GI.connectTo(GI);
     
 	// Connections to GIShadow:
-	GIShadow.connectTo(BGI);
-	GIShadow.connectTo(GESel1, w);
-	GIShadow.connectTo(GESel2, w);
-	GIShadow.connectTo(GENSel, w);
-	GIShadow.connectTo(GI);
+	GENSelShadow.connectTo(BGI);
+	GENSelShadow.connectTo(GESel1, w);
+	GENSelShadow.connectTo(GESel2, w);
+	GENSelShadow.connectTo(GENSel, w);
+	GENSelShadow.connectTo(GI);
 	
 	//========================================================================//
 	//=========================== Run Network ================================//
