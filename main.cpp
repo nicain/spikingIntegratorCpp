@@ -171,7 +171,7 @@ int main( int argc,      // Number of strings in array argv
 	GI.connectTo(GI);
     
 	// Connections to GIShadow:
-	GENSelShadow.connectTo(BGI);
+	GENSelShadow.connectTo(BGENSel);
 	GENSelShadow.connectTo(GESel1, w);
 	GENSelShadow.connectTo(GESel2, w);
 	GENSelShadow.connectTo(GENSel, w);
