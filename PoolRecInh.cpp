@@ -74,10 +74,25 @@ void PoolRecInh::updateS()
 	// Update state vars sums:
 	GABA_pooled = (*GABA).sum();
     
-    if (poolName == "GI") {
-        cout << "GABA_pooled Spiking: " << GABA_pooled  << "(" << (*ISyn).sum() << ")" << endl;
-    }
-    
-
+//    if (poolName == "GI") {
+//        cout << "GABA_pooled Spiking: " << GABA_pooled  << "(" << (*ISyn).sum() << ")" << endl;
+//    }
     
 }
+
+double* PoolRecInh::getStateLocation(State whichState) 
+{
+	double *returnAddress;
+	
+	switch (whichState)
+	{
+		case S_GABA_pooled:
+			returnAddress = &GABA_pooled;
+			break;
+		default:
+			cout << "Unacceptable Monitor variable." << endl;
+			exit(-1);
+	}
+	
+	return returnAddress;
+};

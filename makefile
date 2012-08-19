@@ -10698,7 +10698,7 @@ PoolBGHPoissonRecSimEx.o: PoolBGHPoissonRecSimEx.cpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/uuid/uuid_io.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/io/ios_state.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/io_fwd.hpp SpikeList.h \
-  PoolRecEx.h PoolRec.h PoolRecHybrid.h
+  PoolRecEx.h PoolRec.h PoolRecHybridInh.h
 PoolBGHPoissonRecSimInh.o: PoolBGHPoissonRecSimInh.cpp \
   /usr/include/c++/4.2.1/string /usr/include/c++/4.2.1/bits/c++config.h \
   /usr/include/c++/4.2.1/bits/os_defines.h /usr/include/unistd.h \
@@ -11585,7 +11585,7 @@ PoolBGHPoissonRecSimInh.o: PoolBGHPoissonRecSimInh.cpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/uuid/uuid_io.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/io/ios_state.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/io_fwd.hpp SpikeList.h \
-  PoolRecInh.h PoolRec.h PoolRecHybrid.h
+  PoolRecInh.h PoolRec.h PoolRecHybridInh.h
 PoolBGInHPoisson.o: PoolBGInHPoisson.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/c++config.h \
   /usr/include/c++/4.2.1/bits/os_defines.h /usr/include/unistd.h \
@@ -15192,7 +15192,7 @@ PoolRec.o: PoolRec.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/random/uniform_on_sphere.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/random/uniform_smallint.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/random/weibull_distribution.hpp \
-  PoolRecHybrid.h SpikeList.h PoolRecInh.h Brain.h \
+  PoolRecHybridInh.h SpikeList.h PoolRecInh.h Brain.h \
   /Users/nicain/local/lib/boost_1_47_0/boost/uuid/uuid.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/uuid/uuid_generators.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/uuid/nil_generator.hpp \
@@ -16078,7 +16078,7 @@ PoolRecEx.o: PoolRecEx.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/random/uniform_on_sphere.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/random/uniform_smallint.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/random/weibull_distribution.hpp \
-  Pool.h Monitor.h PoolRecHybrid.h SpikeList.h Brain.h \
+  Pool.h Monitor.h PoolRecHybridInh.h SpikeList.h Brain.h \
   /Users/nicain/local/lib/boost_1_47_0/boost/uuid/uuid.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/uuid/uuid_generators.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/uuid/nil_generator.hpp \
@@ -16102,7 +16102,7 @@ PoolRecEx.o: PoolRecEx.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/uuid/uuid_io.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/io/ios_state.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/io_fwd.hpp
-PoolRecHybrid.o: PoolRecHybrid.cpp /usr/include/c++/4.2.1/string \
+PoolRecHybridInh.o: PoolRecHybridInh.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/c++config.h \
   /usr/include/c++/4.2.1/bits/os_defines.h /usr/include/unistd.h \
   /usr/include/_types.h /usr/include/sys/_types.h \
@@ -16210,7 +16210,7 @@ PoolRecHybrid.o: PoolRecHybrid.cpp /usr/include/c++/4.2.1/string \
   /usr/include/c++/4.2.1/bits/gslice.h \
   /usr/include/c++/4.2.1/bits/gslice_array.h \
   /usr/include/c++/4.2.1/bits/mask_array.h \
-  /usr/include/c++/4.2.1/bits/indirect_array.h PoolRecHybrid.h \
+  /usr/include/c++/4.2.1/bits/indirect_array.h PoolRecHybridInh.h \
   /Users/nicain/local/lib/boost_1_47_0/boost/random.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/random/additive_combine.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/config.hpp \
@@ -17850,7 +17850,7 @@ PoolRecInh.o: PoolRecInh.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/random/uniform_on_sphere.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/random/uniform_smallint.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/random/weibull_distribution.hpp \
-  Pool.h Monitor.h PoolRecHybrid.h SpikeList.h Brain.h \
+  Pool.h Monitor.h PoolRecHybridInh.h SpikeList.h Brain.h \
   /Users/nicain/local/lib/boost_1_47_0/boost/uuid/uuid.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/uuid/uuid_generators.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/uuid/nil_generator.hpp \
@@ -19385,7 +19385,7 @@ main.o: main.cpp /usr/include/c++/4.2.1/string \
   /Users/nicain/local/lib/boost_1_47_0/boost/numeric/ublas/matrix.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/numeric/ublas/matrix_expression.hpp \
   /Users/nicain/local/lib/boost_1_47_0/boost/numeric/ublas/detail/matrix_assign.hpp \
-  PoolBGOU.h PoolRecEx.h PoolRec.h PoolRecHybrid.h SpikeList.h \
+  PoolBGOU.h PoolRecEx.h PoolRec.h PoolRecHybridInh.h SpikeList.h \
   PoolRecInh.h MonitorNeuron.h MonitorNeuronFile.h \
   /usr/include/c++/4.2.1/fstream /usr/include/c++/4.2.1/bits/basic_file.h \
   /usr/include/c++/4.2.1/bits/fstream.tcc MonitorPool.h MonitorPoolFile.h \

@@ -38,6 +38,7 @@ class PoolRecInh: public PoolRec
 	// Member functions:
 	void propogate();
 	void updateS();
+    double* getStateLocation(State);
 
 };
 

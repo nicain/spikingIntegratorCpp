@@ -22,7 +22,8 @@
 #include "MonitorPool.h"
 #include "MonitorPoolFile.h"
 #include "MonitorBrain.h"
-#include "PoolRecHybrid.h"
+#include "PoolRecHybridInh.h"
+#include "PoolRecHybridEx.h"
 
 
 // Add variable names to scope:
@@ -62,7 +63,7 @@ int main( int argc,      // Number of strings in array argv
 	const double BgFRI = 2400;
 	
 	// Connectivity settings:
-	double w = 1;
+	double w = .98;
 	double wPlus = 1.7;
 	
 	// Derived from passed args:
@@ -107,18 +108,26 @@ int main( int argc,      // Number of strings in array argv
 	// Excitatory populations:
 	PoolRecEx GESel1("GESel1", Network, NSel, true);
 	PoolRecEx GESel2("GESel2", Network, NSel, true);
-	PoolRecEx GENSel("GENSel", Network, NNSel, false);
+	PoolRecEx GENSelShadow("GENSelShadow", Network, NNSel, true);
+	PoolRecHybridEx GENSel("GENSel", Network, NNSel);
 	
 	// Inhibitory populations:	
-//    PoolRecInh GI("GI", Network, NI, true);
-	PoolRecHybrid GI("GI", Network, NI);
+    PoolRecInh GI("GI", Network, NI, true);
+//	PoolRecHybridInh GI("GI", Network, NI);
 	
 	//========================================================================//
 	//========================== Connect Network =============================//
 	//========================================================================//
 
-//    MonitorPoolFile GESel1MonitorSBGSum(Network, GI, S_SBGSum, "GI_papeSBGSum");
+    MonitorPoolFile GENSelShadow_AMPA_pooled(Network, GENSelShadow, S_AMPA_pooled, "GENSelShadow_AMPA_pooled");
+    MonitorPoolFile GENSelShadow_NMDA_pooled(Network, GENSelShadow, S_NMDA_pooled, "GENSelShadow_NMDA_pooled");
     
+    MonitorPoolFile GENSel_AMPA_pooled(Network, GENSel, S_AMPA_pooled, "GENSel_AMPA_pooled");
+    MonitorPoolFile GENSel_NMDA_pooled(Network, GENSel, S_NMDA_pooled, "GENSel_NMDA_pooled");
+    
+//    MonitorPoolFile GI_GABA_pooled(Network, GI, S_GABA_pooled, "GI_GABA_pooled");
+//    MonitorPoolFile GIShadow_GABA_pooled(Network, GIShadow, S_GABA_pooled, "GIShadow_GABA_pooled");
+
 //    MonitorPoolFile GESel1MonitorSBGSum(Network, GESel1, S_SBGSum, "GESel1SBGSum");
 //    MonitorPoolFile GESel1MonitorSInputSum(Network, GESel1, S_SInputSum, "GESel1SInputSum");
 //    MonitorPoolFile GESel1MonitorConstInput(Network, GESel1, S_ISynInputPoolSum, "GESel1PoolInput");
@@ -182,6 +191,13 @@ int main( int argc,      // Number of strings in array argv
 	GENSel.connectTo(GESel2, w);
 	GENSel.connectTo(GENSel, w);
 	GENSel.connectTo(GI);
+    
+	// Connections to GENSelShadow:
+	GENSelShadow.connectTo(BGENSel);
+	GENSelShadow.connectTo(GESel1, w);
+	GENSelShadow.connectTo(GESel2, w);
+	GENSelShadow.connectTo(GENSel, w);
+	GENSelShadow.connectTo(GI);
 	
 	// Connections to GI:
 	GI.connectTo(BGI);

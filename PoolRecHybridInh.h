@@ -1,5 +1,5 @@
-#ifndef POOLRECHYBRID_H
-#define POOLRECHYBRID_H
+#ifndef POOLRECHYBRIDINH_H
+#define POOLRECHYBRIDINH_H
 
 #include <valarray>
 #include <boost/random.hpp>
@@ -15,7 +15,7 @@ class PoolBG;
 class PoolRecEx;
 class PoolRecInh;
 
-class PoolRecHybrid: public Pool
+class PoolRecHybridInh: public Pool
 {	
 	
   public:
@@ -46,10 +46,10 @@ class PoolRecHybrid: public Pool
 	double STmp;
 	
 	// Constructor+Destructor:
-	PoolRecHybrid(string, Brain&, int);
-	PoolRecHybrid(string, Brain&, int, bool);
+	PoolRecHybridInh(string, Brain&, int);
+	PoolRecHybridInh(string, Brain&, int, bool);
 	void construct();
-	~PoolRecHybrid();
+	~PoolRecHybridInh();
 	
 	// RNG:
 //	uniform_real_distribution<double> *uniDist;
@@ -111,11 +111,13 @@ class PoolRecHybrid: public Pool
 	void connectTo(PoolBG &BGPool_in);
 	void connectTo(PoolRecEx &BGPool_in, double wIn);
 	void connectTo(PoolRecInh &BGPool_in);
-	void connectTo(PoolRecHybrid &BGPool_in);
+	void connectTo(PoolRecHybridInh &BGPool_in);
 	void init();	
 	void updateV();
 	void propogate();
 	void updateS();
+    
+    double* getStateLocation(State);
     
 //	double* getStateLocation(int, State);
 //	double* getStateLocation(State);

@@ -46,11 +46,13 @@ class PoolRecEx: public PoolRec
 	valarray<double> *X;
 	double AMPA_pooled;
 	double NMDA_pooled;
+	double X_pooled;
 	
 	// Member functions:
 	void propogate();
 	void updateS();
 	double* getStateLocationConductance(int, State);
+    double* getStateLocation(State);
 
 };
 

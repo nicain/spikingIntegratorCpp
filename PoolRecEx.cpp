@@ -93,6 +93,13 @@ void PoolRecEx::updateS()
 	// Update state vars sums:
 	AMPA_pooled = (*AMPA).sum();
 	NMDA_pooled = (*NMDA).sum();
+	X_pooled = (*X).sum();
+    
+    if (poolName == "GENSelShadow") {
+        cout << "AMPA_pooledHybrid: "<< AMPA_pooled << endl;
+    }
+    
+
 }
 
 double* PoolRecEx::getStateLocationConductance(int whichNeuron, State whichState) 
@@ -109,6 +116,29 @@ double* PoolRecEx::getStateLocationConductance(int whichNeuron, State whichState
 			break;
 		case S_X:
 			returnAddress = &((*X)[whichNeuron]);
+			break;
+		default:
+			cout << "Unacceptable Monitor variable." << endl;
+			exit(-1);
+	}
+	
+	return returnAddress;
+};
+
+double* PoolRecEx::getStateLocation(State whichState) 
+{
+	double *returnAddress;
+	
+	switch (whichState)
+	{
+		case S_AMPA_pooled:
+			returnAddress = &AMPA_pooled;
+			break;
+		case S_NMDA_pooled:
+			returnAddress = &NMDA_pooled;
+			break;
+		case S_X_pooled:
+			returnAddress = &X_pooled;
 			break;
 		default:
 			cout << "Unacceptable Monitor variable." << endl;

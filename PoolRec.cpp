@@ -2,7 +2,8 @@
 #include "PoolBG.h"
 #include "PoolRecEx.h"
 #include "PoolRecInh.h"
-#include "PoolRecHybrid.h"
+#include "PoolRecHybridInh.h"
+#include "PoolRecHybridEx.h"
 #include "Brain.h"
 #include "PoolRec.h"
 
@@ -147,8 +148,11 @@ void PoolRec::updateV()
         (*ISyn) += gext_AMPA * (*VTmp) * (*((*BG_Inputs_AMPA)[i]));
 	}
     
-    
 
+
+    //    if (poolName == "GI") {
+//        cout << "ITotRec:       " << (*ISyn).sum() << endl;        
+//    }
     
     
     ISynInputPoolSum = (*ISynInput).sum();///(*ISynInput).size();
@@ -202,7 +206,9 @@ void PoolRec::updateV()
 //        cout << "ITotRec:       " << (*ISyn).sum() << "\t(" << (*VTmp).sum()/(*VTmp).size() << ")\t" << STmp << endl;        
 //    }
 
-
+    if (poolName == "GENSelShadow") {
+        cout << "ITotRec:       " << (*ISyn).sum() << endl;
+    }
 	
 	// Update voltage:			
 	(*VTmp) = ((*V) - VMin * (*unitVector));	//TODO: optimize below:
@@ -242,9 +248,17 @@ void PoolRec::connectTo(PoolRecInh &InhPool_in)
 	Inh_Inputs_GABA->push_back(&(InhPool_in).GABA_pooled);
 }
 
-void PoolRec::connectTo(PoolRecHybrid &InhPool_in)
+void PoolRec::connectTo(PoolRecHybridInh &InhPool_in)
 {
 	Inh_Inputs_GABA->push_back(&(InhPool_in).GABA_pooled);
+}
+
+void PoolRec::connectTo(PoolRecHybridEx &ExPool_in, double wIn)
+{
+	Ex_Inputs_AMPA->push_back(&(ExPool_in).AMPA_pooled);
+	Ex_Inputs_AMPA_w->push_back(wIn);
+	Ex_Inputs_NMDA->push_back(&(ExPool_in).NMDA_pooled);
+	Ex_Inputs_NMDA_w->push_back(wIn);
 }
 
 double* PoolRec::getStateLocation(int whichNeuron, State whichState) 

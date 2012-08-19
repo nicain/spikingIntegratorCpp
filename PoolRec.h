@@ -4,7 +4,8 @@
 #include <valarray>
 #include <boost/random.hpp>
 #include "Pool.h"
-#include "PoolRecHybrid.h"
+#include "PoolRecHybridInh.h"
+#include "PoolRecHybridEx.h"
 #include "Monitor.h"
 
 using namespace std;
@@ -95,7 +96,8 @@ class PoolRec: public Pool
 	void connectTo(PoolBG &BGPool_in);
 	void connectTo(PoolRecEx &BGPool_in, double wIn);
 	void connectTo(PoolRecInh &BGPool_in);
-    void connectTo(PoolRecHybrid &BGPool_in);
+    void connectTo(PoolRecHybridInh &BGPool_in);
+    void connectTo(PoolRecHybridEx &BGPool_in, double wIn);
     
     
 	void init();	

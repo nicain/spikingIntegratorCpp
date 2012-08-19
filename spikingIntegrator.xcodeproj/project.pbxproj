@@ -24,9 +24,10 @@
 		9E826195149326120066B67C /* MonitorNeuronFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E826190149326120066B67C /* MonitorNeuronFile.cpp */; };
 		9E93D8F91581198600F4788A /* MonitorPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E93D8F71581198600F4788A /* MonitorPool.cpp */; };
 		9E93D8FC15811BF700F4788A /* MonitorPoolFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E93D8FB15811BF700F4788A /* MonitorPoolFile.cpp */; };
+		9EACCA2015DB24EC004E7D4B /* PoolRecHybridEx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9EACCA1F15DB24EC004E7D4B /* PoolRecHybridEx.cpp */; };
 		9EB5EB7114A274E500287F09 /* PoolBGSL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9EB5EB7014A274E500287F09 /* PoolBGSL.cpp */; };
 		9EB5EC4814A3B7D600287F09 /* PoolBGInHPoisson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9EB5EC4714A3B7D600287F09 /* PoolBGInHPoisson.cpp */; };
-		9ED969EE15D3001A003A8D29 /* PoolRecHybrid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ED969EC15D3001A003A8D29 /* PoolRecHybrid.cpp */; };
+		9ED969EE15D3001A003A8D29 /* PoolRecHybridInh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ED969EC15D3001A003A8D29 /* PoolRecHybridInh.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -77,13 +78,15 @@
 		9E93D8F81581198600F4788A /* MonitorPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonitorPool.h; sourceTree = "<group>"; };
 		9E93D8FA15811BF600F4788A /* MonitorPoolFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonitorPoolFile.h; sourceTree = "<group>"; };
 		9E93D8FB15811BF700F4788A /* MonitorPoolFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MonitorPoolFile.cpp; sourceTree = "<group>"; };
+		9EACCA1E15DB24EC004E7D4B /* PoolRecHybridEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolRecHybridEx.h; sourceTree = "<group>"; };
+		9EACCA1F15DB24EC004E7D4B /* PoolRecHybridEx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PoolRecHybridEx.cpp; sourceTree = "<group>"; };
 		9EAD355414934CB20058E50D /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
 		9EB5EB6F14A274E500287F09 /* PoolBGSL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolBGSL.h; sourceTree = "<group>"; };
 		9EB5EB7014A274E500287F09 /* PoolBGSL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PoolBGSL.cpp; sourceTree = "<group>"; };
 		9EB5EC4614A3B7D600287F09 /* PoolBGInHPoisson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolBGInHPoisson.h; sourceTree = "<group>"; };
 		9EB5EC4714A3B7D600287F09 /* PoolBGInHPoisson.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PoolBGInHPoisson.cpp; sourceTree = "<group>"; };
-		9ED969EC15D3001A003A8D29 /* PoolRecHybrid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PoolRecHybrid.cpp; sourceTree = "<group>"; };
-		9ED969ED15D3001A003A8D29 /* PoolRecHybrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolRecHybrid.h; sourceTree = "<group>"; };
+		9ED969EC15D3001A003A8D29 /* PoolRecHybridInh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PoolRecHybridInh.cpp; sourceTree = "<group>"; };
+		9ED969ED15D3001A003A8D29 /* PoolRecHybridInh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolRecHybridInh.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,8 +200,10 @@
 			children = (
 				9E826179149325F60066B67C /* PoolRec.cpp */,
 				9E82617A149325F60066B67C /* PoolRec.h */,
-				9ED969EC15D3001A003A8D29 /* PoolRecHybrid.cpp */,
-				9ED969ED15D3001A003A8D29 /* PoolRecHybrid.h */,
+				9EACCA1F15DB24EC004E7D4B /* PoolRecHybridEx.cpp */,
+				9EACCA1E15DB24EC004E7D4B /* PoolRecHybridEx.h */,
+				9ED969EC15D3001A003A8D29 /* PoolRecHybridInh.cpp */,
+				9ED969ED15D3001A003A8D29 /* PoolRecHybridInh.h */,
 				9E82617D149325F60066B67C /* PoolRecEx.cpp */,
 				9E826183149326120066B67C /* PoolRecEx.h */,
 				9E82617C149325F60066B67C /* PoolRecInh.cpp */,
@@ -295,7 +300,8 @@
 				9EB5EC4814A3B7D600287F09 /* PoolBGInHPoisson.cpp in Sources */,
 				9E93D8F91581198600F4788A /* MonitorPool.cpp in Sources */,
 				9E93D8FC15811BF700F4788A /* MonitorPoolFile.cpp in Sources */,
-				9ED969EE15D3001A003A8D29 /* PoolRecHybrid.cpp in Sources */,
+				9ED969EE15D3001A003A8D29 /* PoolRecHybridInh.cpp in Sources */,
+				9EACCA2015DB24EC004E7D4B /* PoolRecHybridEx.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
