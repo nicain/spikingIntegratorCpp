@@ -66,6 +66,7 @@ class PoolRec: public Pool
 	vector<double*> *Ex_Inputs_NMDA;
 	vector<double> *Ex_Inputs_NMDA_w;
 	vector<double*> *Inh_Inputs_GABA;
+	vector<double> *Inh_Inputs_GABA_w;
     
     double ISynPoolSum;
     double ISynInputPoolSum;
@@ -95,8 +96,8 @@ class PoolRec: public Pool
 	// Member functions:
 	void connectTo(PoolBG &BGPool_in);
 	void connectTo(PoolRecEx &BGPool_in, double wIn);
-	void connectTo(PoolRecInh &BGPool_in);
-    void connectTo(PoolRecHybridInh &BGPool_in);
+	void connectTo(PoolRecInh &BGPool_in, double wIn);
+    void connectTo(PoolRecHybridInh &BGPool_in, double wIn);
     void connectTo(PoolRecHybridEx &BGPool_in, double wIn);
     
     

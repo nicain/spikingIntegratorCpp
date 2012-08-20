@@ -142,7 +142,7 @@ void PoolRecHybridInh::updateV()
 //        }
 
         ITot += -VAvgE *1000* gext_AMPA * (*((*BG_Inputs_AMPA)[i])).sum();
-        ITot += -VAvgE *1000* gext_AMPA * 67.8;
+//        ITot += -VAvgE *1000* gext_AMPA * 67.8;
         
         
 	}
