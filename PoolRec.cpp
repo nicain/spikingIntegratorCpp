@@ -198,7 +198,7 @@ void PoolRec::updateV()
 	for (i = 0; i < (*Inh_Inputs_GABA).size(); i++)
 	{
 		STmp += (*((*Inh_Inputs_GABA)[i])) * ((*Inh_Inputs_GABA_w)[i]);
-//        cout << ((*Inh_Inputs_GABA_w)[i]) << endl;
+//        cout << ((*Inh_Inputs_GABA_w)[i]) << "\t" << poolName << endl;
 	}
 	(*ISyn) += gGABA * STmp * (*VTmp);
     (*ISynRecGABA) += gGABA * STmp * (*VTmp);

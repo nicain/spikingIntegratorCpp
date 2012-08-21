@@ -146,7 +146,7 @@ void PoolRecHybridEx::updateV()
         ITot += -VAvgE *1000* gext_AMPA * (*((*BG_Inputs_AMPA)[i])).sum();
 //        ITot += -VAvgE *1000* gext_AMPA *40;
         
-        ITot -= -VAvgE *1000* gext_AMPA *50; // 160 not enough, 170 maybe too much
+//        ITot -= -VAvgE *1000* gext_AMPA *50; // 160 not enough, 170 maybe too much
 	}
     
 
