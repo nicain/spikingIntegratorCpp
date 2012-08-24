@@ -273,9 +273,10 @@ void PoolRecHybridInh::connectTo(PoolRecEx &ExPool_in, double wIn)
 	Ex_Inputs_NMDA_w->push_back(wIn);
 }
 
-void PoolRecHybridInh::connectTo(PoolRecInh &InhPool_in)
+void PoolRecHybridInh::connectTo(PoolRecInh &InhPool_in, double wIn)
 {
 	Inh_Inputs_GABA->push_back(&(InhPool_in).GABA_pooled);
+	Inh_Inputs_GABA_w->push_back(wIn);
 }
 
 void PoolRecHybridInh::connectTo(PoolRecHybridInh &InhPool_in, double wIn)
@@ -293,6 +294,9 @@ double* PoolRecHybridInh::getStateLocation(State whichState)
 		case S_GABA_pooled:
 			returnAddress = &GABA_pooled;
 			break;
+		case S_ISynPoolSum:
+			returnAddress = &ITot;
+			break;  
 		default:
 			cout << "Unacceptable Monitor variable." << endl;
 			exit(-1);

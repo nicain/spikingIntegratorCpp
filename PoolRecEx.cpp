@@ -140,6 +140,9 @@ double* PoolRecEx::getStateLocation(State whichState)
 		case S_X_pooled:
 			returnAddress = &X_pooled;
 			break;
+		case S_VPoolSum:
+			returnAddress = &VPoolSum;
+			break;  
 		default:
 			cout << "Unacceptable Monitor variable." << endl;
 			exit(-1);

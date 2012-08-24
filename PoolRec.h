@@ -76,6 +76,7 @@ class PoolRec: public Pool
     double ISynRecGABASum;
     double SInputSum;
     double SBGSum;
+    double VPoolSum;
     
     // Currents to record:
     valarray<double> *ISynBG;

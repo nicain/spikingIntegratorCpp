@@ -108,13 +108,13 @@ int main( int argc,      // Number of strings in array argv
 	// Excitatory populations:
 	PoolRecEx GESel1("GESel1", Network, NSel, true);
 	PoolRecEx GESel2("GESel2", Network, NSel, true);
-//	PoolRecEx GENSel("GENSel", Network, NNSel, true);
+	PoolRecEx GENSel("GENSel", Network, NNSel, true);
 //	PoolRecEx GENSel2("GENSel2", Network, NNSel, true);
-	PoolRecHybridEx GENSel("GENSel", Network, NNSel);
+//	PoolRecHybridEx GENSel("GENSel", Network, NNSel);
 	
 	// Inhibitory populations:	
-    PoolRecInh GI("GI", Network, NI, true);
-//	PoolRecHybridInh GI("GI", Network, NI);
+    PoolRecInh GISpike("GI", Network, NI, true);
+	PoolRecHybridInh GI("GI", Network, NI);
 	
 	//========================================================================//
 	//========================== Connect Network =============================//
@@ -127,7 +127,15 @@ int main( int argc,      // Number of strings in array argv
 //    MonitorPoolFile GENSel_NMDA_pooled(Network, GENSel, S_NMDA_pooled, "GENSel_NMDA_pooled");
     
 //    MonitorPoolFile GI_GABA_pooled(Network, GI, S_GABA_pooled, "GI_GABA_pooled");
-//    MonitorPoolFile GIShadow_GABA_pooled(Network, GIShadow, S_GABA_pooled, "GIShadow_GABA_pooled");
+//    MonitorPoolFile GIShadow_GABA_pooled(Network, GIHybrid, S_GABA_pooled, "GIShadow_GABA_pooled");
+//    
+    MonitorPoolFile GI_ISyn(Network, GI, S_ISynPoolSum, "GI_ISyn");
+    MonitorPoolFile GISpike_ISyn(Network, GISpike, S_ISynPoolSum, "GISpike_ISyn");
+//    
+//    
+//    MonitorPoolFile GI_VBar(Network, GI, S_VPoolSum, "GI_VBar");
+//    MonitorPoolFile GENSel_VBar(Network, GENSel, S_VPoolSum, "GENSel_VBar");
+    
 
 //    MonitorPoolFile GESel1MonitorSBGSum(Network, GESel1, S_SBGSum, "GESel1SBGSum");
 //    MonitorPoolFile GESel1MonitorSInputSum(Network, GESel1, S_SInputSum, "GESel1SInputSum");
@@ -191,20 +199,20 @@ int main( int argc,      // Number of strings in array argv
 	GENSel.connectTo(GESel1, w);
 	GENSel.connectTo(GESel2, w);
 	GENSel.connectTo(GENSel, w);
-	GENSel.connectTo(GI);
+	GENSel.connectTo(GI, 1);
     
 	// Connections to GENSelShadow:
-//	GENSel.connectTo(BGENSel);
-//	GENSel.connectTo(GESel1, w);
-//	GENSel.connectTo(GESel2, w);
-//	GENSel.connectTo(GENSel, w);
-//	GENSel.connectTo(GI, 1);
+	GISpike.connectTo(BGI);
+	GISpike.connectTo(GESel1, w);
+	GISpike.connectTo(GESel2, w);
+	GISpike.connectTo(GENSel, w);
+	GISpike.connectTo(GI,1);
 	
 	// Connections to GI:
 	GI.connectTo(BGI);
 	GI.connectTo(GESel1, w);
 	GI.connectTo(GESel2, w);
-	GI.connectTo(GENSel, 1.1);
+	GI.connectTo(GENSel, w);
 	GI.connectTo(GI,1);
 	
 	//========================================================================//

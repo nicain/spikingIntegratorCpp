@@ -89,6 +89,12 @@ double* PoolRecInh::getStateLocation(State whichState)
 		case S_GABA_pooled:
 			returnAddress = &GABA_pooled;
 			break;
+		case S_ISynPoolSum:
+			returnAddress = &ISynPoolSum;
+			break;      
+		case S_VPoolSum:
+			returnAddress = &VPoolSum;
+			break;  
 		default:
 			cout << "Unacceptable Monitor variable." << endl;
 			exit(-1);

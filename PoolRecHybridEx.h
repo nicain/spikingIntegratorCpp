@@ -23,7 +23,7 @@ class PoolRecHybridEx: public Pool
 	// Used in updateV:
 	static const double VE = 0;
 	static const double VI = -70;
-    static const double Vm = -52.5;
+    static const double Vm = -52.5; //-53.397637210301845
 	static const double VMin = -70;
 	static const double VMax = -50;
 	static const double VReset = -55;

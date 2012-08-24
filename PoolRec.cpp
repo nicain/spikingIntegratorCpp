@@ -74,6 +74,7 @@ void PoolRec::construct()
     ISynRecAMPASum = 0;
     ISynRecNMDASum = 0;
     ISynRecGABASum = 0;
+    VPoolSum = 0;
 	
 };
 
@@ -223,6 +224,8 @@ void PoolRec::updateV()
 	
 	(*V) += (double(1)/double(6))*(   (*RK1) + double(2)*(*RK2) + double(2)*(*RK3) + (*RK4)    );
 //	(*V) -= dt_times_gL_over_cm * (*VTmp) + dt_over_cm*(*ISyn);
+    
+    VPoolSum = (*V).sum();
 }
 
 void PoolRec::init()
@@ -309,7 +312,10 @@ double* PoolRec::getStateLocation(State whichState)
 	
 	switch (whichState)
 	{
-		case S_ISynPoolSum:
+		case S_VPoolSum:
+			returnAddress = &VPoolSum;
+			break;  
+        case S_ISynPoolSum:
 			returnAddress = &ISynPoolSum;
 			break;         
 		case S_ISynInputPoolSum:

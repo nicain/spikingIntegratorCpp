@@ -23,7 +23,7 @@ class PoolRecHybridInh: public Pool
 	// Used in updateV:
 	static const double VE = 0;
 	static const double VI = -70;
-    static const double Vm = -52.5;
+    static const double Vm = -53.2; // -52.5 (-53.7)
 	static const double VMin = -70;
 	static const double VMax = -50;
 	static const double VReset = -55;
@@ -111,7 +111,7 @@ class PoolRecHybridInh: public Pool
 	// Member functions:
 	void connectTo(PoolBG &BGPool_in);
 	void connectTo(PoolRecEx &BGPool_in, double wIn);
-	void connectTo(PoolRecInh &BGPool_in);
+	void connectTo(PoolRecInh &BGPool_in, double wIn);
 	void connectTo(PoolRecHybridInh &BGPool_in, double wIn);
 	void init();	
 	void updateV();
